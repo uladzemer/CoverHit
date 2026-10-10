@@ -92,10 +92,10 @@ Source originals remain in ignored artifacts/photos; transformations are reprodu
 | photos/tower-normal.webp | Svetlov Artem | https://commons.wikimedia.org/wiki/File:Moscow_Kantemitovskaya_street_2021-09.jpg | CC0 |
 | photos/tower-roughness.webp | Svetlov Artem | https://commons.wikimedia.org/wiki/File:Moscow_Kantemitovskaya_street_2021-09.jpg | CC0 |
 | photos/tower-windows.webp | Stolbovsky | https://commons.wikimedia.org/wiki/File:Apartment_building_in_Pavlovspy_Posad.jpg | CC BY-SA 3.0 |
-| photos/panel335-albedo.webp | RG72 | https://commons.wikimedia.org/wiki/File:Domo_en_strato_Fabri%C4%89naja_17_(Tjumeno).jpg | CC BY-SA 4.0 |
+| photos/panel335-albedo.webp | Дмитрий Cкляренко | https://commons.wikimedia.org/wiki/File:Valday,_Novgorod_Oblast,_Russia_-_panoramio_(990).jpg | CC BY 3.0 |
 | photos/panel335-normal.webp | Дмитрий Cкляренко | https://commons.wikimedia.org/wiki/File:Valday,_Novgorod_Oblast,_Russia_-_panoramio_(990).jpg | CC BY 3.0 |
 | photos/panel335-roughness.webp | Дмитрий Cкляренко | https://commons.wikimedia.org/wiki/File:Valday,_Novgorod_Oblast,_Russia_-_panoramio_(990).jpg | CC BY 3.0 |
-| photos/panel335-windows.webp | RG72 | https://commons.wikimedia.org/wiki/File:Domo_en_strato_Fabri%C4%89naja_17_(Tjumeno).jpg | CC BY-SA 4.0 |
+| photos/panel335-windows.webp | Дмитрий Cкляренко | https://commons.wikimedia.org/wiki/File:Valday,_Novgorod_Oblast,_Russia_-_panoramio_(990).jpg | CC BY 3.0 |
 | photos/concrete-reference.webp | Amal Kumar / Poly Haven | https://polyhaven.com/a/concrete_slab_wall_02 | CC0 |
 
 - photos/manifest.json: local source metadata, crop corners and derivative inventory.
@@ -106,11 +106,13 @@ Source originals remain in ignored artifacts/photos; transformations are reprodu
 
 | photos/panel-impostor-albedo.webp | RG72 | https://commons.wikimedia.org/wiki/File:Domo_en_strato_Fabri%C4%89naja_17_(Tjumeno).jpg | CC BY-SA 4.0 |
 | photos/panel-impostor-windows.webp | RG72 | https://commons.wikimedia.org/wiki/File:Domo_en_strato_Fabri%C4%89naja_17_(Tjumeno).jpg | CC BY-SA 4.0 |
-| photos/panel335-impostor-albedo.webp | RG72 | https://commons.wikimedia.org/wiki/File:Domo_en_strato_Fabri%C4%89naja_17_(Tjumeno).jpg | CC BY-SA 4.0 |
-| photos/panel335-impostor-windows.webp | RG72 | https://commons.wikimedia.org/wiki/File:Domo_en_strato_Fabri%C4%89naja_17_(Tjumeno).jpg | CC BY-SA 4.0 |
+| photos/panel335-impostor-albedo.webp | Дмитрий Cкляренко | https://commons.wikimedia.org/wiki/File:Valday,_Novgorod_Oblast,_Russia_-_panoramio_(990).jpg | CC BY 3.0 |
+| photos/panel335-impostor-windows.webp | Дмитрий Cкляренко | https://commons.wikimedia.org/wiki/File:Valday,_Novgorod_Oblast,_Russia_-_panoramio_(990).jpg | CC BY 3.0 |
 | photos/brick-impostor-albedo.webp | Андрей Романенко | https://commons.wikimedia.org/wiki/File:A_house_at_Lenina_street_(Bor).JPG | CC BY-SA 3.0 |
 | photos/brick-impostor-windows.webp | Андрей Романенко | https://commons.wikimedia.org/wiki/File:A_house_at_Lenina_street_(Bor).JPG | CC BY-SA 3.0 |
 | photos/nine-impostor-albedo.webp | Stolbovsky | https://commons.wikimedia.org/wiki/File:Apartment_building_in_Pavlovspy_Posad.jpg | CC BY-SA 3.0 |
 | photos/nine-impostor-windows.webp | Stolbovsky | https://commons.wikimedia.org/wiki/File:Apartment_building_in_Pavlovspy_Posad.jpg | CC BY-SA 3.0 |
 | photos/tower-impostor-albedo.webp | Stolbovsky | https://commons.wikimedia.org/wiki/File:Apartment_building_in_Pavlovspy_Posad.jpg | CC BY-SA 3.0 |
 | photos/tower-impostor-windows.webp | Stolbovsky | https://commons.wikimedia.org/wiki/File:Apartment_building_in_Pavlovspy_Posad.jpg | CC BY-SA 3.0 |
+
+| photos/car-flat-atlas.webp | Fiver, der Hellseher; Fiver, der Hellseher; Bull-Doser; Marseille77 at German Wikipedia | https://commons.wikimedia.org/wiki/File:Schiguli_WAS-2101_(side).jpg; https://commons.wikimedia.org/wiki/File:Schiguli_WAS-2101_(front).jpg; https://commons.wikimedia.org/wiki/File:Lada_1600_--_Rear.JPG; https://commons.wikimedia.org/wiki/File:Lada_1200.svg | CC BY-SA 4.0; CC BY-SA 4.0; Public domain; Public domain |

@@ -94,3 +94,8 @@ docs/qa/flipcontact/*.png
 # QA raster captures are regenerated artefacts and may show licensed local stock.
 docs/qa/**/*.png
 docs/qa/**/*.jpg
+
+# Facades3 captures block optional stock; explicitly stock-bearing probes stay local.
+!docs/qa/facades3/*.png
+docs/qa/facades3/licensed-stock-*.png
+docs/qa/facades3/colour/*.png

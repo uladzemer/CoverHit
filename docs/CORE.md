@@ -220,3 +220,16 @@ not a claim that every free node crosses simultaneously within its column.
 `docs/qa/flipwave/metrics.json`, `positions.json`, rendered and wireframe nine-frame
 front/side sheets, and the regression probe reports provide the evidence. All
 PNGs below that directory are ignored because local assets may be licensed.
+
+
+Throw amplitude revision (2026-10-10): hands now drive with either clock, follow
+an elevated delayed scoop, and progressively restore native grip mass on release.
+Outward launch and flip-only velocity bounds allow a 9 m/s throw while polar
+contact preserves tangential momentum and cylinder projection remains active.
+The original crown release wave remains. See docs/qa/flipamp/README.md for real
+Ammo Node regression, 60/30 Hz Chrome metrics and 12-frame front/side sheets.
+Amplitude, timing and hem smoothness pass, but the complete change is unaccepted:
+oracle p99 remains about 13.9 mm including outside the collar; the final 30 Hz
+contact audit measures +1.003 ms/frame against +1 ms. Contact retains exit 1.
+tests/flipAmplitude.test.js supplements the mock-based tests with packaged Ammo
+WASM physics running in Node without a DOM.

@@ -2,6 +2,7 @@ import sharp from 'sharp';
 import {mkdir,readFile,writeFile,copyFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
+import {buildCarPlanes} from './build-car-planes.mjs';
 
 const DIR='public/yard/photos';
 export const luminance=(r,g,b)=>(r*.2126+g*.7152+b*.0722)/255;
@@ -90,6 +91,7 @@ export async function correctPhotos({fresh=false}={}){
  await writeFile('docs/qa/exposure/assets.json',JSON.stringify(report,null,2)+'\n');
  if(report.car.decalResidual>=report.car.threshold)throw Error('Civilian paint decal residual exceeds threshold');
  const manifest=JSON.parse(await readFile(`${DIR}/manifest.json`));for(const f of manifest.files){if(f.file==='car-atlas.webp'||f.file==='car-side.webp')f.transform=f.transform.split('; civilian')[0]+'; civilian decal removal, alpha paint mask';if(f.file.endsWith('-albedo.webp'))f.transform=f.transform.split('; neutral gray-world')[0]+'; neutral gray-world balance and blurred luminance division';}await writeFile(`${DIR}/manifest.json`,JSON.stringify(manifest,null,2)+'\n');
+ if(manifest.version>=3)await buildCarPlanes();
  console.log(JSON.stringify(report));
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))await correctPhotos();

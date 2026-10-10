@@ -8,7 +8,7 @@ export async function resampleFacadeModule(source,slot,width,height){
 }
 export async function bakeFacadeImpostors(){
  const dir='public/yard/photos',manifest=JSON.parse(await readFile(`${dir}/manifest.json`));
- const config=JSON.parse(await readFile('scripts/facade-modules.json','utf8'));
+ const config=JSON.parse(await readFile('scripts/facade-grid.json','utf8'));
  for(const family of ['panel','panel335','brick','nine','tower']){
   const floors=family==='tower'?16:family==='nine'?9:5,bays=family==='tower'?8:20;
   for(const suffix of ['albedo','windows']){
@@ -22,7 +22,8 @@ export async function bakeFacadeImpostors(){
    }
    const file=`${family}-impostor-${suffix}.webp`;
    await sharp(atlas,{raw:{width:1024,height:1024,channels:3}}).webp({quality:94}).toFile(`${dir}/${file}`);
-   if(!manifest.files.some(f=>f.file===file))manifest.files.push({file,sources:[config[family].source],transform:'four seeded full-building impostors baked from upright joint-aligned floor/bay modules; full bay resampling; no reflections'});
+   const entry={file,sources:[config[family].source],transform:'four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections'};
+   const existing=manifest.files.find(f=>f.file===file);if(existing)Object.assign(existing,entry);else manifest.files.push(entry);
   }
  }
  await writeFile(`${dir}/manifest.json`,JSON.stringify(manifest,null,2)+'\n');

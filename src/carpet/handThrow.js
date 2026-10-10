@@ -9,7 +9,7 @@ const smooth = t => { t=Math.max(0,Math.min(1,t));return t*t*(3-2*t); };
 export function handThrow(cloth, seed, style) {
   const rng=seededRandom(seed);
   style ??= rng()<.3?'corner':'both';
-  const leading=rng()<.5?0:1, delay=.04+rng()*.08, lead=.03+rng()*.07;
+  const leading=rng()<.5?0:1, delay=.18+rng()*.04, lead=.03+rng()*.07;
   const acrossCount=cloth.foldAxis==='u'?cloth.rows:cloth.cols;
   const end=cloth.visibleSide===0?0:(cloth.foldAxis==='u'?cloth.cols:cloth.rows);
   const grips=[];
@@ -21,13 +21,13 @@ export function handThrow(cloth, seed, style) {
       grips.push({i,column:c,delay:(fraction<.5?0:1)===leading?0:delay});
     }
   }
-  return {style,leading,delay,lead,grips,spread:style==='corner'?.32:.2};
+  return {style,leading,delay,lead,grips,spread:style==='corner'?.32:.2,launchSpread:style==='corner'?.46:.2};
 }
 
 export function handPosition(start, axis, age, delay, lead) {
-  const wind=smooth(age/WINDUP), t=smooth((age-WINDUP-delay)/(RELEASE-WINDUP-delay));
+  const wind=smooth((age-delay)/WINDUP), t=smooth((age-WINDUP-delay)/(RELEASE-WINDUP));
   // A compact scooping arc bunches the hem before it clears the crown.
   const lift=Math.sin(Math.PI*t);
-  return [start[0],start[1]-.055*wind+(axis.y-start[1]+.3+lead)*lift,
-    axis.z+(start[2]-axis.z-.1*wind)*Math.cos(Math.PI*t)-.32*Math.sin(2*Math.PI*t)];
+    return [start[0],start[1]-.055*wind+(axis.y-start[1]+.8+lead)*lift,
+    axis.z+(start[2]-axis.z-.1*wind)*Math.cos(Math.PI*t)-.85*Math.sin(2*Math.PI*t)];
 }

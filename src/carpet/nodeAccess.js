@@ -13,8 +13,9 @@ export function cacheNodes(ammo, native) {
     setValue(x,y,z){const heap=ammo.HEAPF32;heap[offset]=x;heap[offset+1]=y;heap[offset+2]=z;}}:vector;
    cached[`get_m_${field}`]=()=>view;
   }
-  // Inverse mass remains constant after construction; anchors are configured first.
-  const inverseMass=node.get_m_im();cached.get_m_im=()=>inverseMass;
+  // Hand patches become kinematic only while gripped; cache the public setter.
+  let inverseMass=node.get_m_im();cached.get_m_im=()=>inverseMass;
+  cached.set_m_im=value=>{node.set_m_im(value);inverseMass=value;};
   nodes[i]=cached;
  }
  return {size:()=>count,at:i=>nodes[i]};

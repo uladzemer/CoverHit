@@ -4,7 +4,8 @@ import { layerPairs } from './layerCollision.js';
 
 export const CONTACT_THICKNESS = 2 * CARPET_HALF_THICKNESS + .002;
 export const MAX_CONTACT_CORRECTION = .005;
-export const CONTACT_FRICTION = .5;
+export const CONTACT_FRICTION = 0;
+export const CONTACT_RESTITUTION = .05;
 const TAU = 2 * Math.PI;
 
 // Bounded atan approximation (maximum error < .000012 rad). No lookup objects
@@ -149,7 +150,8 @@ export class PolarContact {
       const start = this.theta[a]; let end = this.theta[b];
       if (end - start > Math.PI) end -= TAU; if (end - start < -Math.PI) end += TAU;
       const lo = Math.floor(Math.min(start, end) * this.nt / TAU), hi = Math.floor(Math.max(start, end) * this.nt / TAU);
-      const xa = Math.floor(this.bin[a] / this.nt), xb = Math.floor(this.bin[b] / this.nt);
+      const xa = Math.min(this.nx-1,Math.max(0,Math.floor((Math.min(this.p[a*3],this.p[b*3])-this.spacing*.55-this.x0)/this.spacing)));
+      const xb = Math.max(0,Math.min(this.nx-1,Math.floor((Math.max(this.p[a*3],this.p[b*3])+this.spacing*.55-this.x0)/this.spacing)));
       for (let x = Math.min(xa, xb); x <= Math.max(xa, xb); x++) for (let t = lo; t <= hi; t++) {
         if (entry === this.edgeNext.length) throw new Error('Polar edge occupancy capacity exceeded');
         const bin = x * this.nt + (t + this.nt) % this.nt;
@@ -159,6 +161,7 @@ export class PolarContact {
   }
   edge(i, e) {
     const a = this.edges[e * 2], b = this.edges[e * 2 + 1];
+    if(!(this.im[i]+this.im[a]+this.im[b]))return;
     if (!this.remote(i, a) || !this.remote(i, b)) return;
     const p = this.p, k = i * 3, ak = a * 3, bk = b * 3;
     const ny = this.ry[i], nz = this.rz[i], ay = p[ak + 1] - this.bar.y, az = p[ak + 2] - this.bar.z;
@@ -173,59 +176,56 @@ export class PolarContact {
     const gap = this.r[i] - radius, cosine = Math.abs(den) / Math.hypot(uy, uz);
     if (cosine < .3 || Math.abs(gap) > .06) return;
     const thickness = CONTACT_THICKNESS / cosine, sign = gap >= 0 ? 1 : -1;
-    this.resolveEdge(i, a, b, t, ny*sign, nz*sign, gap*sign, thickness);
+    const length=Math.hypot(uy,uz),orientation=(-uz*ny+uy*nz)>=0?sign:-sign;
+    this.resolveEdge(i, a, b, t, ny*sign, nz*sign, gap*sign, thickness,-uz/length*orientation,uy/length*orientation);
   }
-  resolveEdge(i, a, b, t, ny, nz, gap, thickness) {
+  resolveEdge(i, a, b, t, ny, nz, gap, thickness,contactNy=ny,contactNz=nz) {
     const wa = 1-t, wb = t;
     const mi = this.im[i], ma = this.im[a], mb = this.im[b], sum = mi + wa*wa*ma + wb*wb*mb;
     if (!sum) return;
+    const v=this.v,k=i*3,ak=a*3,bk=b*3;
+    const vy=v[k+1]-wa*v[ak+1]-wb*v[bk+1],vz=v[k+2]-wa*v[ak+2]-wb*v[bk+2];
+    const cosine=Math.max(.3,ny*contactNy+nz*contactNz),vn=vy*contactNy+vz*contactNz;
+    const normal=Math.max(0,-Math.max(0,(gap-thickness)*cosine)/this.dt-vn)*(gap<thickness?1+CONTACT_RESTITUTION:1)/sum;
+    if(gap>=thickness&&!normal)return;
     const availableI = this.allowance(i, ny, nz), availableA = this.allowance(a, -ny, -nz), availableB = this.allowance(b, -ny, -nz);
     let push = Math.max(0, thickness-gap)/sum;
     if(mi)push=Math.min(push,availableI/mi);
     if(ma&&wa)push=Math.min(push,availableA/(ma*wa));
     if(mb&&wb)push=Math.min(push,availableB/(mb*wb));
     this.move(i,push*mi,ny,nz);this.move(a,-push*ma*wa,ny,nz);this.move(b,-push*mb*wb,ny,nz);
-    const v=this.v,k=i*3,ak=a*3,bk=b*3;
-    const vx=v[k]-wa*v[ak]-wb*v[bk],vy=v[k+1]-wa*v[ak+1]-wb*v[bk+1],vz=v[k+2]-wa*v[ak+2]-wb*v[bk+2];
-    const vn=vy*ny+vz*nz,normal=Math.max(0,-Math.max(0,gap-thickness)/this.dt-vn)/sum;
-    const ty=vy-vn*ny,tz=vz-vn*nz,speed=Math.hypot(vx,ty,tz);
-    const friction=speed>1e-12?Math.min(speed/sum,CONTACT_FRICTION*Math.max(normal,push/this.dt))/speed:0;
-    const jx=-friction*vx,jy=normal*ny-friction*ty,jz=normal*nz-friction*tz;
-    v[k]+=mi*jx;v[k+1]+=mi*jy;v[k+2]+=mi*jz;
-    v[ak]-=ma*wa*jx;v[ak+1]-=ma*wa*jy;v[ak+2]-=ma*wa*jz;
-    v[bk]-=mb*wb*jx;v[bk+1]-=mb*wb*jy;v[bk+2]-=mb*wb*jz;
+    const jy=normal*contactNy,jz=normal*contactNz;
+    v[k+1]+=mi*jy;v[k+2]+=mi*jz;
+    v[ak+1]-=ma*wa*jy;v[ak+2]-=ma*wa*jz;
+    v[bk+1]-=mb*wb*jy;v[bk+2]-=mb*wb*jz;
     if(push||normal)this.metrics.contacts++;
   }
   visitEdges() {
     this.buildEdges();
     for (let i = 0; i < this.count; i++) {
       if (this.hangingBin[i] >= 0) continue;
-      const b = this.bin[i], x = Math.floor(b / this.nt), t = b % this.nt;
-      for (let dx = -1; dx <= 1; dx++) {
-        if (x + dx < 0 || x + dx >= this.nx) continue;
-        for(let e=this.edgeHead[(x+dx)*this.nt+t];e>=0;e=this.edgeNext[e])this.edge(i,this.edgeId[e]);
-      }
+      const b = this.bin[i];
+      for(let e=this.edgeHead[b];e>=0;e=this.edgeNext[e])this.edge(i,this.edgeId[e]);
     }
   }
   resolve(a, b, ny, nz, gap, thickness=CONTACT_THICKNESS) {
     const depth = thickness - gap;
     if (!(depth > -.08)) return;
+    const ia=this.im[a],ib=this.im[b],physicalMass=ia+ib;
+    if(!physicalMass)return;
+    const k=a*3,l=b*3,v=this.v;
+    const vn=(v[k+1]-v[l+1])*ny+(v[k+2]-v[l+2])*nz;
+    const normal=Math.max(0,-Math.max(0,gap-thickness)/this.dt-vn)*(gap<thickness?1+CONTACT_RESTITUTION:1)/physicalMass;
+    if(depth<=0&&!normal)return;
     const availableA = this.allowance(a, ny, nz), availableB = this.allowance(b, -ny, -nz);
     const ma = availableA > 1e-12 ? this.im[a] : 0, mb = availableB > 1e-12 ? this.im[b] : 0, sum = ma + mb;
-    if (!sum) return;
-    let da = Math.min(availableA, Math.max(0, depth) * ma / sum);
-    let db = Math.min(availableB, Math.max(0, depth) * mb / sum);
+    let da = sum?Math.min(availableA, Math.max(0, depth) * ma / sum):0;
+    let db = sum?Math.min(availableB, Math.max(0, depth) * mb / sum):0;
     if (ma) da = Math.min(availableA, Math.max(0, depth) - db);
     if (mb) db = Math.min(availableB, Math.max(0, depth) - da);
     this.move(a, da, ny, nz); this.move(b, -db, ny, nz);
-    const k = a * 3, l = b * 3, v = this.v;
-    const vx = v[k] - v[l], vy = v[k + 1] - v[l + 1], vz = v[k + 2] - v[l + 2];
-    const vn = vy * ny + vz * nz, normal = Math.max(0, -Math.max(0,gap-thickness)/this.dt-vn) / sum;
-    const ty = vy - vn * ny, tz = vz - vn * nz, speed = Math.sqrt(vx * vx + ty * ty + tz * tz);
-    const friction = speed > 1e-12 ? Math.min(speed / sum, CONTACT_FRICTION * Math.max(normal, (da + db) / (this.dt * sum))) / speed : 0;
-    const jx = -friction * vx, jy = normal * ny - friction * ty, jz = normal * nz - friction * tz;
-    v[k] += ma * jx; v[k + 1] += ma * jy; v[k + 2] += ma * jz;
-    v[l] -= mb * jx; v[l + 1] -= mb * jy; v[l + 2] -= mb * jz;
+    v[k+1]+=ia*normal*ny;v[k+2]+=ia*normal*nz;
+    v[l+1]-=ib*normal*ny;v[l+2]-=ib*normal*nz;
     if(da || db || normal)this.metrics.contacts++;
   }
   pair(i, j) {
@@ -291,7 +291,9 @@ export class PolarContact {
     this.read(nodes, flip); this.used.fill(0); this.metrics.contacts = 0;
     this.lastNeighbour.set(this.neighbour);this.lastAbove.set(this.above);this.nearest.fill(Infinity);
     this.x0 = (bar.x ?? 0) - this.spacing * (this.nx - 2) / 2;
-    for (let sweep = 0; sweep < 2; sweep++) { this.build(); this.visit(); this.visitEdges(); this.hanging(); }
+    // Uniform xy bins already contain every valid mirrored/neighbour graph
+    // pair. Visiting the material-neighbour list again duplicated those solves.
+    this.build();this.visit();this.visitEdges();
     let max = 0;
     for (let i = 0; i < this.count; i++) {
       const n = nodes.at(i), k = i * 3, p = n.get_m_x(), q = n.get_m_q();

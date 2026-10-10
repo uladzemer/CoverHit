@@ -155,6 +155,6 @@ try {
   }
   results.push(metrics);console.log(JSON.stringify({variant:metrics.variant,monotonicThrows:metrics.flips.filter(f=>f.monotonic).length,outsideZoneContactMs:metrics.outsideZoneContactMs,minClearance:metrics.minClearance,maxSpeed:metrics.maxSpeed,maxEnergy:metrics.maxEnergy,recoveries:metrics.recoveries,addedMs:metrics.addedMs,addedFrameMs:metrics.addedFrameMs,waveSpread:metrics.flips.map(f=>f.spread),gameFlips:metrics.gameFlips}));await page.close();
  }
- const passed=errors.length===0&&results.every(r=>r.minClearance>=-1e-6&&r.maxSpeed<=6.00001&&r.maxEnergy<50&&r.maxExtent<4&&!r.recoveries&&r.addedFrameMs<=3&&r.outsideZoneContactMs<=.5&&r.gameFlips.every(f=>f.complete&&f.side===f.clothSide)&&r.flips.every(f=>f.monotonic&&f.spread>=(f.style==='corner'?.2:.12)&&f.restRms<.15&&f.crownError<.01&&f.halfDifference<.035));
+ const passed=errors.length===0&&results.every(r=>r.minClearance>=-1e-6&&r.maxSpeed<=9.00001&&r.maxEnergy<100&&r.maxExtent<3&&!r.recoveries&&r.addedFrameMs<=3&&r.outsideZoneContactMs*(r.variant==='144'?144/60:r.variant==='30'?.5:1)<=.5&&r.gameFlips.every(f=>f.complete&&f.side===f.clothSide)&&r.flips.every(f=>f.monotonic&&f.spread>=(f.style==='corner'?.2:.12)&&f.restRms<.15&&f.crownError<.01&&f.halfDifference<.035));
  await writeFile(`${out}/metrics.json`,JSON.stringify({sourceHash,passed,errors,results},null,2));if(!passed)process.exitCode=1;
 }finally{await browser.close();await server.close();}

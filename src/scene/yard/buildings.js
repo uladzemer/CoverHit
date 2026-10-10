@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {createFacadeMaterial,facadeBox,facadeImpostorBox,facadeTint} from './facade.js';
+import {createFacadeMaterial,facadeBox,facadeImpostorBox,facadeTint,FACADE_SERIES} from './facade.js';
 import {createBatch} from './batch.js';
 
 // Far 1-464 / 1-447 facades bake windows, sills and panel seams into one atlas.
@@ -26,7 +26,7 @@ function facadeTexture(brick){
 export function createStockHousingFallback(entry,placements){
  const group=new THREE.Group();group.name=`yard-procedural-${entry.id}`;
  const b=createBatch(group),floors=entry.role==='horizon'?9:5;
- const width=entry.role==='horizon'?33:60,height=floors*2.86,depth=12;
+ const width=entry.role==='horizon'?33:60,height=floors*2.7,depth=12;
  const map=facadeTexture(false),wall=createFacadeMaterial('panel',{map,color:'#b8b6ac'});
  wall.userData.castShadow=false;
  const roof=new THREE.MeshStandardMaterial({color:'#575b55',roughness:1});roof.userData.castShadow=false;
@@ -54,31 +54,33 @@ export function buildHousing(b,m,random,root){
  // Distant housing receives atmosphere and sunlight without entering the play-area shadow pass.
  farMaterials.forEach(mat=>{mat.userData.castShadow=false;});
  function building(cx,cz,angle,brick=false,far=false,floors=5){
-  housing.push({x:cx,z:cz,angle,width:60,depth:12,height:floors*2.86,variant:brick?'1-447':'1-464',lod:far?'far':'near'});
+  housing.push({x:cx,z:cz,angle,width:60,depth:12,height:floors*2.7,variant:brick?'1-447':'1-464',lod:far?'far':'near'});
   if(far){
-   const series=brick?'brick':floors===9?'nine':'panel';
-   const key=`${brick}-${floors}`;if(!farGeometry.has(key))farGeometry.set(key,facadeImpostorBox(60,floors*2.86,12,series));
+   const series=brick?'brick':floors===9?'nine':'panel',bay=FACADE_SERIES[series].bay,width=20*bay,depth=4*bay;Object.assign(housing.at(-1),{width,depth});
+   const key=`${brick}-${floors}`;if(!farGeometry.has(key))farGeometry.set(key,facadeImpostorBox(width,floors*2.7,depth,series));
    const geometry=farGeometry.get(key);
-   add(geometry,farMaterials[series==='nine'?2:Number(brick)],cx,floors*2.86/2,cz,60,floors*2.86,12,0,angle,0,facadeTint(housing.length));
+   add(geometry,farMaterials[series==='nine'?2:Number(brick)],cx,floors*2.7/2,cz,width,floors*2.7,depth,0,angle,0,facadeTint(housing.length));
    return;
   }
   const ca=Math.cos(angle),sa=Math.sin(angle);
-  const at=(mat,x,y,z,sx,sy,sz,color)=>cube(mat,cx+x*ca+z*sa,y,cz-x*sa+z*ca,sx,sy,sz,angle,color);
-  const pane=(mat,x,y,z,sx,sy,color)=>add(plane,mat,cx+x*ca+z*sa,y,cz-x*sa+z*ca,sx,sy,1,0,angle,0,color);
-  const wall=nearMaterials[cx>40?2:brick?1:0],wallGeometry=facadeBox(60,14.3,12,wall.userData.photoSeries,housing.length);
-  add(wallGeometry,wall,cx,7.15,cz,60,14.3,12,0,angle);
-  at(m.roof,0,14.45,0,60.5,.25,12.5);at(m.trim,0,14.55,6.1,60,.13,.16);
+  const at=(mat,x,y,z,sx,sy,sz,color)=>{const wallZ=z>=6&&z<=6.3?z+2*bay-6:z;cube(mat,cx+x*ca+wallZ*sa,y,cz-x*sa+wallZ*ca,sx,sy,sz,angle,color);};
+  const pane=(mat,x,y,z,sx,sy,color)=>{const wallZ=z+2*bay-6;add(plane,mat,cx+x*ca+wallZ*sa,y,cz-x*sa+wallZ*ca,sx,sy,1,0,angle,0,color);};
+  const wall=nearMaterials[cx>40?2:brick?1:0],bay=wall.userData.photoSeries==='brick'?3:3.1,width=20*bay,wallGeometry=facadeBox(width,13.5,4*bay,wall.userData.photoSeries,housing.length);
+  Object.assign(housing.at(-1),{width,depth:4*bay});
+  add(wallGeometry,wall,cx,6.75,cz,width,13.5,4*bay,0,angle);
+  at(m.roof,0,13.65,0,width+.5,.25,4*bay+.5);at(m.trim,0,13.75,2*bay+.1,width,.13,.16);
   for(let floor=0;floor<5;floor++){
-   const y=1.9+floor*2.85;
+   const y=1.55+floor*2.7;
+   b.setRole(`photo-window-${wall.userData.photoSeries}`);
    // Concrete panel joints follow the actual 3m structural bays.
-   if(!brick)if(!brick)at(m.seam,0,floor*2.85,6.012,60,.026,.026);
+   if(!brick)at(m.seam,0,floor*2.7,6.012,60,.026,.026);
    for(let col=0;col<20;col++){
-    const x=-28.5+col*3;if(!brick)at(m.seam,x-1.5,7.15,6.014,.035,14.3,.03);
+    const x=(col-9.5)*bay;if(!brick)at(m.seam,x-bay/2,6.75,6.014,.035,13.5,.03);
     b.setRole(`photo-window-${wall.userData.photoSeries}`);
     at(m.recess,x,y,6.025,1.64,1.86,.09);
     const warm=random()<.12,mat=warm?lit:glass;
     pane(mat,x,y,6.086,1.48,1.67,warm?'#ffe2a7':['#718082','#45555a','#8a928e'][col%3]);
-    b.setRole('');pane(m.stain,x,y-1.46,6.022,1.9,.95);b.setRole(`photo-window-${wall.userData.photoSeries}`);
+    pane(m.stain,x,y-1.46,6.022,1.9,.95);b.setRole(`photo-window-${wall.userData.photoSeries}`);
     pane(m.stain,x-.63,y-1.8,6.024,.14,1.1);
     for(const side of [-1,1])at(m.trim,x+side*.78,y,6.17,.065,1.83,.12);
     for(const side of [-1,1])at(m.trim,x,y+side*.885,6.17,1.62,.06,.12);
@@ -91,16 +93,10 @@ export function buildHousing(b,m,random,root){
     if(warm)pane(m.glow,x,y,6.3,2.05,2.35);
     b.setRole('');
     if(floor>0 && col%4===2){
-     if(wall.userData.photoSeries==='brick')b.setRole('photo-window-brick');
-     at(m.concrete,x,y-1.07,6.55,2.55,.18,1.3);
-     const glazed=(floor+col)%3===0;
-     if((col+floor)%2===0){if((col+floor)%2===0){at(m.painted,x,y-.52,7.14,2.4,.9,.06);for(let rib=0;rib<24;rib++)at(m.metal,x-1.15+rib*.1,y-.52,7.18,.022,.86,.02);}else at(m.concrete,x,y-.52,7.14,2.4,.9,.06);
-     if(floor%2===0){at(m.wood,x-.7,y+.12,6.85,.08,1.8,.09);at(m.wood,x-.5,y+.12,6.85,.08,1.8,.09);for(let j=0;j<3;j++)at(m.glass,x+.4+j*.18,y-.84,6.85,.12,.24,.12);}for(let rib=0;rib<24;rib++)at(m.metal,x-1.15+rib*.1,y-.52,7.18,.022,.86,.02);}else at(m.concrete,x,y-.52,7.14,2.4,.9,.06);
-     if(floor%2===0){at(m.wood,x-.7,y+.12,6.85,.08,1.8,.09);at(m.wood,x-.5,y+.12,6.85,.08,1.8,.09);for(let j=0;j<3;j++)at(m.glass,x+.4+j*.18,y-.84,6.85,.12,.24,.12);}
-     at(m.metal,x,y-.03,7.16,2.45,.055,.055);
-     for(let j=0;j<11;j++)at(m.metal,x-1.2+j*.24,y-.52,7.19,.026,.92,.03);
-     for(const side of [-1,1])at(m.metal,x+side*1.2,y-.5,6.57,.04,1,1.2);
-     if(glazed){pane(glass,x,y+.38,7.16,2.38,.75);for(let j=0;j<5;j++)at(m.trim,x-1.2+j*.6,y+.4,7.2,.045,.85,.06);at(m.trim,x,y+.82,7.2,2.5,.06,.08);}
+     at(m.concrete,x,floor*2.7+.075,2*bay+.35,2.55,.15,.7);
+     at(m.painted,x,floor*2.7+.55,2*bay+.67,2.4,.9,.06);
+     at(m.metal,x,floor*2.7+1.03,2*bay+.67,2.45,.055,.055);
+     for(let j=0;j<11;j++)at(m.metal,x-1.2+j*.24,floor*2.7+.55,2*bay+.69,.026,.92,.03);
     }
    }
   }
@@ -115,8 +111,8 @@ export function buildHousing(b,m,random,root){
    for(const dx of [-.85,.85])at(m.concrete,x+3.4+dx,.25,6.9,.22,.5,.55);
   }
  }
- building(32,-30,0);building(-37,-6,Math.PI/2,true);
- building(80,-8,-Math.PI/2,true);
+ building(32,-30.2,0);building(-37,-6,Math.PI/2,true);
+ building(80.2,-8,-Math.PI/2,true);
  // Overlapping perimeter closes both facade gaps and both street ends. Facades
  // face the yard; the rotated side blocks read as a lived-in enclosed courtyard.
  building(-48,-62,.12,true,true);building(44,-88,-.08,false,true,9);

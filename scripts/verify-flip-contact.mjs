@@ -45,7 +45,7 @@ try {
    }
    const mesh=a.beater.carpetMeshGetter(),beater={update(){},beforePhysics(){},afterPhysics(){}};
    let acc=0,frame=0,maxSpeed=0,maxEnergy=0,minClearance=Infinity,maxExtent=0,steps=0;
-   const clearances=[];let events=0,minContactClearance=Infinity,maxCorrection=0,contactMs=0,contactSteps=0;const penetrations=[],eventRows={},examples=[];let pairEvents=0,pairMinClearance=Infinity;const pairExamples=[];const pairPenetrations=[],pairNormals=new Float64Array(c.nodes.size()*3);
+   const clearances=[];let events=0,minContactClearance=Infinity,maxCorrection=0,contactMs=0,contactSteps=0;const penetrations=[],eventRows={},examples=[];const collarPenetrations=[],outsidePenetrations=[];let outsideCollarDeep14=0;const outsideByAge={},arcPenetrations=[],settlePenetrations=[];let pairEvents=0,pairMinClearance=Infinity;const pairExamples=[];const pairPenetrations=[],pairNormals=new Float64Array(c.nodes.size()*3);
    let sampleMs=0;const baseline=[],flipCpu=[],baselineFrame=[],flipFrame=[],flips=[],frames=[];
    const oracle=new ClothContact(c.cols,c.rows,Math.max(c.width/c.cols,c.height/c.rows),c.foldAxis);
    let outsideContactMs=0,outsideContactCalls=0,outsideSteps=0;
@@ -66,6 +66,13 @@ try {
      qaStart=performance.now();for(let i=0;i<c.nodes.size();i++){const p=c.nodes.at(i).get_m_x(),k=i*3,push=Math.hypot(p.x()-positions[k],p.y()-positions[k+1],p.z()-positions[k+2]);maxHandoffCorrection=Math.max(maxHandoffCorrection,push);stepContactPush[i]+=push;}sampleMs+=performance.now()-qaStart;
      return result;
     };
+   }
+   function regionDepth(ids,depth){
+    const collar=ids.some(i=>Math.hypot(oracle.p[i*3+1]-c.barAxis.y,oracle.p[i*3+2]-c.barAxis.z)<.3);
+    (collar?collarPenetrations:outsidePenetrations).push(depth);
+    (c.flip.age<1.05?arcPenetrations:settlePenetrations).push(depth);
+    if(!collar){const age=(Math.floor(c.flip.age*10)/10).toFixed(1);outsideByAge[age]=(outsideByAge[age]??0)+1;}
+    if(!collar&&depth>.014)outsideCollarDeep14++;
    }
    const integrate=c.integrate.bind(c);
    c.integrate=dt=>{
@@ -94,11 +101,11 @@ try {
       const a=tri[t*3],other=c.foldAxis==='u'?a%(c.cols+1):Math.floor(a/(c.cols+1));
       if((axis-middle)*(other-middle)>=0)return;
       const clearance=gap-.014;minContactClearance=Math.min(minContactClearance,clearance);clearances.push(clearance);
-      if(gap<.014){const depth=.014-gap;penetrations.push(depth);if(depth>.003){events++;if(examples.length<30)examples.push({age:c.flip.age,i,t,gap,node:Array.from(oracle.p.slice(i*3,i*3+3)),vertices:Array.from(oracle.triangles.slice(t*3,t*3+3))});eventRows[axis]=(eventRows[axis]??0)+1;}}
+      if(gap<.014){const depth=.014-gap;penetrations.push(depth);regionDepth([i,...oracle.triangles.slice(t*3,t*3+3)],depth);if(depth>.003){events++;if(examples.length<30)examples.push({age:c.flip.age,i,t,gap,node:Array.from(oracle.p.slice(i*3,i*3+3)),vertices:Array.from(oracle.triangles.slice(t*3,t*3+3))});eventRows[axis]=(eventRows[axis]??0)+1;}}
      });
      sampleContactPairs(oracle.p,c.cols,c.rows,c.foldAxis,Math.max(c.width/c.cols,c.height/c.rows),pairNormals,(i,j,gap)=>{
       pairMinClearance=Math.min(pairMinClearance,gap-.014);
-      if(gap<.007){const depth=.014-gap;pairPenetrations.push(depth);if(depth>.003){pairEvents++;if(c.selfContact.im[i]===0&&c.selfContact.im[j]===0&&pairExamples.length<20)pairExamples.push({age:c.flip.age,i,j,gap,positions:[...oracle.p.slice(i*3,i*3+3),...oracle.p.slice(j*3,j*3+3)]});}}
+      if(gap<.007){const depth=.014-gap;pairPenetrations.push(depth);regionDepth([i,j],depth);if(depth>.003){pairEvents++;if(c.selfContact.im[i]===0&&c.selfContact.im[j]===0&&pairExamples.length<20)pairExamples.push({age:c.flip.age,i,j,gap,positions:[...oracle.p.slice(i*3,i*3+3),...oracle.p.slice(j*3,j*3+3)]});}}
      });
     }
     sampleMs+=performance.now()-sampleStart;
@@ -159,7 +166,9 @@ try {
    penetrations.sort((a,b)=>a-b);pairPenetrations.sort((a,b)=>a-b);
    clearances.sort((a,b)=>a-b);const clearanceStats={min:clearances[0]??null,p1:clearances[Math.floor(clearances.length*.01)]??null,median:clearances[Math.floor(clearances.length*.5)]??null,p99:clearances[Math.floor(clearances.length*.99)]??null};
    const p99=Math.max(penetrations[Math.floor((penetrations.length-1)*.99)]??0,pairPenetrations[Math.floor((pairPenetrations.length-1)*.99)]??0);
-   return {variant,flipIterations:window.contactFlipIterations,handoffMeasured:window.contactHandoff,maxHandoffCorrection,maxPolarCorrection,collarExtra:window.contactCollarExtra,profile,examples,pairExamples,windOn:c.wind===1,windTime:qaWind.time,clearanceStats,outsideContactMs:outsideSteps?outsideContactMs/outsideSteps:0,outsideContactCalls,pairEvents,pairMinClearance,pairPenetrationCount:pairPenetrations.length,eventRows,events:events+pairEvents,p99,minContactClearance,maxCorrection,contactMs:contactMs/contactSteps,contactSteps,gameFlips,width:c.width,height:c.height,cols:c.cols,rows:c.rows,foldAxis:c.foldAxis,axis:c.barAxis,nodeCount:c.nodes.size(),steps,minClearance,maxSpeed,maxEnergy,maxExtent,recoveries:c.watchdogRecoveries??0,baselineMs:mean(baseline),flipMs:mean(flipCpu),addedMs:mean(flipCpu)-mean(baseline),baselineFrameMs:mean(baselineFrame),flipFrameMs:mean(flipFrame),addedFrameMs:mean(flipFrame)-mean(baselineFrame),flips,frames};
+   const regionP99=values=>{values.sort((a,b)=>a-b);return values[Math.floor((values.length-1)*.99)]??0;};
+   const collarP99=regionP99(collarPenetrations),outsideCollarP99=regionP99(outsidePenetrations);
+   return {arcP99:regionP99(arcPenetrations),settleP99:regionP99(settlePenetrations),outsideByAge,collarP99,outsideCollarP99,outsideCollarDeep14,collarPenetrationCount:collarPenetrations.length,outsidePenetrationCount:outsidePenetrations.length,variant,flipIterations:window.contactFlipIterations,handoffMeasured:window.contactHandoff,maxHandoffCorrection,maxPolarCorrection,collarExtra:window.contactCollarExtra,profile,examples,pairExamples,windOn:c.wind===1,windTime:qaWind.time,clearanceStats,outsideContactMs:outsideSteps?outsideContactMs/outsideSteps:0,outsideContactCalls,pairEvents,pairMinClearance,pairPenetrationCount:pairPenetrations.length,eventRows,events:events+pairEvents,p99,minContactClearance,maxCorrection,contactMs:contactMs/contactSteps,contactSteps,gameFlips,width:c.width,height:c.height,cols:c.cols,rows:c.rows,foldAxis:c.foldAxis,axis:c.barAxis,nodeCount:c.nodes.size(),steps,minClearance,maxSpeed,maxEnergy,maxExtent,recoveries:c.watchdogRecoveries??0,baselineMs:mean(baseline),flipMs:mean(flipCpu),addedMs:mean(flipCpu)-mean(baseline),baselineFrameMs:mean(baselineFrame),flipFrameMs:mean(flipFrame),addedFrameMs:mean(flipFrame)-mean(baselineFrame),flips,frames};
   },variant);
   const {frames,...metrics}=result;
   if(variant==='60'&&!process.argv.includes('--no-images')) {
@@ -207,5 +216,9 @@ try {
  const physicsPassed=errors.length===0&&results.every(contactThresholds);
  const budgetPassed=results.every(r=>contactBudget(r.addedFrameMs));
  const passed=physicsPassed&&budgetPassed;
- await writeFile(`${out}/metrics${process.argv.includes('--profile')?'-profile':process.argv.includes('--clusters')?'-clusters':''}.json`,JSON.stringify({sourceHash,passed,penetrationPassed,physicsPassed,budgetPassed,errors,results},null,2));if(!passed)process.exitCode=1;
+ const requestedPenetrationPassed=results.every(r=>r.p99<=.006&&r.outsideCollarDeep14===0);
+ const requestedCpuPassed=results.every(r=>r.addedFrameMs<=1&&r.outsideContactCalls===0&&r.outsideContactMs===0);
+ const requestedPhysicsPassed=errors.length===0&&results.every(r=>r.maxSpeed<=9.00001&&r.maxEnergy<=100&&r.maxExtent<3&&!r.recoveries&&r.minClearance>=-1e-6&&r.maxPolarCorrection<=.005001);
+ const requestedPassed=requestedPenetrationPassed&&requestedCpuPassed&&requestedPhysicsPassed;
+ await writeFile(`${out}/metrics${process.argv.includes('--profile')?'-profile':process.argv.includes('--clusters')?'-clusters':''}.json`,JSON.stringify({sourceHash,passed,penetrationPassed,physicsPassed,budgetPassed,requestedPassed,requestedPenetrationPassed,requestedCpuPassed,requestedPhysicsPassed,errors,results},null,2));if(!passed)process.exitCode=1;
 }finally{await browser.close();await server.close();}

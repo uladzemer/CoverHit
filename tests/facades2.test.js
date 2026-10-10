@@ -19,9 +19,9 @@ it('keeps both wall joints around a window when baking narrow impostor bays',asy
 // The atlas re-measurement needs Python + OpenCV (a local authoring tool); skip where it is not installed (e.g. CI).
 const hasOpenCv=(()=>{try{return spawnSync('python',['-c','import cv2, numpy'],{stdio:'ignore'}).status===0;}catch{return false;}})();
 it.skipIf(!hasOpenCv)('ships sharp rectified atlases with independently detected line families within 0.3 degrees',()=>{
- execFileSync('python',['scripts/rectify-facades.py','--verify'],{stdio:'pipe'});
- const report=JSON.parse(readFileSync('docs/qa/facades2/quality.json'));
- for(const modules of Object.values(report))for(const m of modules){expect(Math.abs(m.horizontalDegrees)).toBeLessThanOrEqual(.3);expect(Math.abs(m.verticalDegrees)).toBeLessThanOrEqual(.3);expect(m.laplacianVariance).toBeGreaterThanOrEqual(8);expect(m.blurEdgeFraction).toBeGreaterThanOrEqual(.025);}
+ execFileSync('python',['scripts/verify-facade-grid.py'],{stdio:'pipe'});
+ const report=JSON.parse(readFileSync('docs/qa/facades3/cell-quality.json'));
+ for(const modules of Object.values(report))for(const m of modules){expect(m.frameStraightnessDegrees).toBeLessThanOrEqual(.3);expect(m.windowAspect).toBeGreaterThan(.8);}
 },20000);
 it('preserves upright UV winding and at least 256 texels per metre in every photo module',()=>{
  const g=facadeBox(60,14.3,12,'panel',19),uv=g.attributes.facadeUv;

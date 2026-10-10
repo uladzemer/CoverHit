@@ -15,7 +15,7 @@ it.each(['u','v'])('chooses reproducible grip patches on the back hem for %s in 
  for(const side of [0,1]) {
   const {c}=cloth(axis,side),a=handThrow(c,'repeat','both'),b=handThrow(c,'repeat','both');expect(a).toEqual(b);expect(a.grips).toHaveLength(6);
   for(const g of a.grips)expect(axis==='u'?g.i%13:Math.floor(g.i/13)).toBe(side===0?0:axis==='u'?12:16);
-  expect(a.delay).toBeGreaterThanOrEqual(.04);expect(a.delay).toBeLessThanOrEqual(.12);expect(a.lead).toBeGreaterThanOrEqual(.03);expect(a.lead).toBeLessThanOrEqual(.1);
+  expect(a.delay).toBeGreaterThanOrEqual(.18);expect(a.delay).toBeLessThanOrEqual(.22);expect(a.lead).toBeGreaterThanOrEqual(.03);expect(a.lead).toBeLessThanOrEqual(.1);
  }
 });
 it('uses about 30 percent corner throws without consuming global randomness',()=>{

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {createFacadeMaterial,facadeImpostorBox,facadeTint} from './facade.js';
+import {createFacadeMaterial,facadeImpostorBox,facadeTint,FACADE_SERIES} from './facade.js';
 import {createBatch} from './batch.js';
 
 // Our own deterministic facades: all floors are baked into a single texture per
@@ -47,7 +47,7 @@ export function buildBackdrop(root){
  const box=new THREE.BoxGeometry(1,1,1),uv=box.attributes.uv;
  for(let i=0;i<uv.count;i++)uv.setXY(i,i<8?uv.getX(i)*.17:i<16?.002:uv.getX(i),i>=8&&i<16?.002:uv.getY(i));
  const boxes=new Map();
- function building(kind,x,z,width,angle=0){const height=specs[kind][0]*2.9,depth=kind==='tower'?20:12;
+ function building(kind,x,z,width,angle=0){const bay=FACADE_SERIES[kind].bay;width=Math.round(width/bay)*bay;const height=specs[kind][0]*2.7,depth=kind==='tower'?20:12;
   const key=`${kind}-${width}`;if(!boxes.has(key))boxes.set(key,facadeImpostorBox(width,height,depth,kind));
   b.add(boxes.get(key),materials[kind],x,height/2,z,width,height,depth,0,angle,0,facadeTint(housing.length));
   housing.push({x,z,width,height,depth,angle,variant:kind==='nine'?'II-49':kind==='tower'?'P-44':kind==='brick'?'1-447':kind==='school'?'school':'1-464',lod:'backdrop'});

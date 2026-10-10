@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "sources": [
     {
       "index": 0,
@@ -269,7 +269,7 @@
       "sources": [
         7
       ],
-      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
     },
     {
       "file": "panel-normal.webp",
@@ -290,14 +290,14 @@
       "sources": [
         7
       ],
-      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
     },
     {
       "file": "brick-albedo.webp",
       "sources": [
         8
       ],
-      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
     },
     {
       "file": "brick-normal.webp",
@@ -318,14 +318,14 @@
       "sources": [
         8
       ],
-      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
     },
     {
       "file": "nine-albedo.webp",
       "sources": [
         6
       ],
-      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
     },
     {
       "file": "nine-normal.webp",
@@ -346,14 +346,14 @@
       "sources": [
         6
       ],
-      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
     },
     {
       "file": "tower-albedo.webp",
       "sources": [
         6
       ],
-      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
     },
     {
       "file": "tower-normal.webp",
@@ -374,14 +374,14 @@
       "sources": [
         6
       ],
-      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
     },
     {
       "file": "panel335-albedo.webp",
       "sources": [
-        7
+        11
       ],
-      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
     },
     {
       "file": "panel335-normal.webp",
@@ -400,9 +400,9 @@
     {
       "file": "panel335-windows.webp",
       "sources": [
-        7
+        11
       ],
-      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
     },
     {
       "file": "concrete-reference.webp",
@@ -423,70 +423,80 @@
       "sources": [
         7
       ],
-      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
     },
     {
       "file": "panel-impostor-windows.webp",
       "sources": [
         7
       ],
-      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
     },
     {
       "file": "panel335-impostor-albedo.webp",
       "sources": [
-        7
+        11
       ],
-      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
     },
     {
       "file": "panel335-impostor-windows.webp",
       "sources": [
-        7
+        11
       ],
-      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
     },
     {
       "file": "brick-impostor-albedo.webp",
       "sources": [
         8
       ],
-      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
     },
     {
       "file": "brick-impostor-windows.webp",
       "sources": [
         8
       ],
-      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
     },
     {
       "file": "nine-impostor-albedo.webp",
       "sources": [
         6
       ],
-      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
     },
     {
       "file": "nine-impostor-windows.webp",
       "sources": [
         6
       ],
-      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
     },
     {
       "file": "tower-impostor-albedo.webp",
       "sources": [
         6
       ],
-      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
     },
     {
       "file": "tower-impostor-windows.webp",
       "sources": [
         6
       ],
-      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
+    },
+    {
+      "file": "car-flat-atlas.webp",
+      "sources": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "transform": "civilian cleaned photo; piecewise wheelbase landmark rectification (2.42m); manual body silhouette and wheel-arch alpha; flat side/end cards; circular photo rim crop"
     }
   ],
   "facadeModules": {
@@ -497,10 +507,26 @@
     "rows": 2,
     "slots": [
       "ground",
-      "typical-a",
-      "typical-b",
+      "typical",
+      "end-bay/glass-variation",
       "top"
     ],
     "mirrored": false
+  },
+  "carPlanes": {
+    "wheelbase": 2.42,
+    "wheelRadius": 0.31,
+    "sideOffset": 0.818,
+    "curvedProjection": false,
+    "sourceWheelCentres": [
+      120,
+      597
+    ],
+    "targetWheelCentres": [
+      161,
+      607
+    ],
+    "sourceSill": 214,
+    "targetSill": 199
   }
 }

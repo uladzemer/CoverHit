@@ -87,14 +87,20 @@ it('never changes supported crown rows in the contact solve', () => {
   contact.project(list, bar, 0, null, { age: 1, grips: [] });
   expect(nodes[10].get_m_x().y()).toBe(.08); expect(nodes[30].get_m_x().y()).toBe(.09);
 });
-it('applies inelastic normal response and capped tangential drag without adding energy', () => {
+it('preserves tangential momentum with small normal restitution without adding energy', () => {
   const c = new PolarContact(4, 8, .05); c.im.fill(1); c.dt = 1 / 60;
   c.v[0] = 2; c.v[1] = -1;
   const before = c.v.reduce((s, v) => s + v * v, 0);
   c.resolve(0, 40, 1, 0, .013);
-  expect(c.v[120]).toBeGreaterThan(0); expect(c.v[0]).toBeLessThan(2);
-  expect(c.v[1] - c.v[121]).toBeCloseTo(0, 12);
+  expect(c.v[120]).toBe(0); expect(c.v[0]).toBe(2);
+  expect(c.v[1] - c.v[121]).toBeCloseTo(.05, 12);
   expect(c.v.reduce((s, v) => s + v * v, 0)).toBeLessThanOrEqual(before);
+});
+it('does not turn positional overlap repair into drag on the throw direction',()=>{
+  const c=new PolarContact(4,8,.05);c.im.fill(1);c.dt=1/60;c.v[2]=5;
+  c.resolve(0,40,1,0,.009);
+  expect(c.p[1]-c.p[121]).toBeCloseTo(.005,12);
+  expect(c.v[2]).toBe(5);expect(c.v[122]).toBe(0);
 });
 it('uses the hanging separator where radial displacement would run along the panel', () => {
   const { nodes, list, contact, bar } = fixture();
@@ -133,7 +139,7 @@ it('launches hanging panels outward before they reach the pipe, once per travell
   });
   cloth.throwWave();
   expect(nodes[0].get_m_v().y()).toBeGreaterThan(0);
-  expect(nodes[0].get_m_v().z()).toBe(-1.8);
+  expect(nodes[0].get_m_v().z()).toBe(-3.2);
   const vy = nodes[0].get_m_v().y(); cloth.throwWave();
   expect(nodes[0].get_m_v().y()).toBe(vy);
   expect(cloth.flip.launched[4]).toBe(0);

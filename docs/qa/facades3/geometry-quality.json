@@ -1,0 +1,312 @@
+{
+  "facades": {
+    "panel": {
+      "floors": 5,
+      "straightnessDegrees": 0.25691208243370056,
+      "windowFrameTopRowsPixels": [
+        176.80256271362305,
+        536.8062915802002,
+        896.8062915802002,
+        1256.8037643432617,
+        1616.8066692352295
+      ],
+      "jointCandidateRowsPixels": [
+        458,
+        818,
+        1178,
+        1538
+      ],
+      "floorPitchMethod": "spacing of repeated detected window-frame top edges; separates courses from structural floors",
+      "floorPitchPixels": [
+        360.00372886657715,
+        360.0,
+        359.9974727630615,
+        360.0029048919678
+      ],
+      "floorPitchMaxErrorPixels": 0.0037288665771484375,
+      "floorHeightVariancePixelsSquared": 6.128472477939795e-06,
+      "windowAspectMean": 1.064711808675898,
+      "windowAspectRange": [
+        1.0424613550589874,
+        1.078222760762396
+      ]
+    },
+    "panel335": {
+      "floors": 5,
+      "straightnessDegrees": 0.1928253173828125,
+      "windowFrameTopRowsPixels": [
+        176.78342580795288,
+        536.7812520265579,
+        896.7811477184296,
+        1256.7811477184296,
+        1616.784691810608
+      ],
+      "jointCandidateRowsPixels": [
+        460,
+        820,
+        1180,
+        1540
+      ],
+      "floorPitchMethod": "spacing of repeated detected window-frame top edges; separates courses from structural floors",
+      "floorPitchPixels": [
+        359.99782621860504,
+        359.99989569187164,
+        360.0,
+        360.00354409217834
+      ],
+      "floorPitchMaxErrorPixels": 0.0035440921783447266,
+      "floorHeightVariancePixelsSquared": 4.224026106669498e-06,
+      "windowAspectMean": 1.0697046272367732,
+      "windowAspectRange": [
+        1.0650844871164724,
+        1.0781826872723763
+      ]
+    },
+    "brick": {
+      "floors": 5,
+      "straightnessDegrees": 0.04701235145330429,
+      "windowFrameTopRowsPixels": [
+        176.79994344711304,
+        536.7984254360199,
+        896.7984254360199,
+        1256.79842543602,
+        1616.7923328876495
+      ],
+      "jointCandidateRowsPixels": [
+        458,
+        818,
+        1178,
+        1538
+      ],
+      "floorPitchMethod": "spacing of repeated detected window-frame top edges; separates courses from structural floors",
+      "floorPitchPixels": [
+        359.99848198890686,
+        360.0,
+        360.0,
+        359.99390745162964
+      ],
+      "floorPitchMaxErrorPixels": 0.006092548370361328,
+      "floorHeightVariancePixelsSquared": 6.235837371804109e-06,
+      "windowAspectMean": 1.0430389859674232,
+      "windowAspectRange": [
+        1.0429816050074197,
+        1.0433779690194371
+      ]
+    },
+    "nine": {
+      "floors": 9,
+      "straightnessDegrees": 0.03060910664498806,
+      "windowFrameTopRowsPixels": [
+        256.8806777000427,
+        616.8805162906647,
+        976.8805162906647,
+        1336.8805162906647,
+        1696.8805162906647,
+        2056.8805162906647,
+        2416.8805162906647,
+        2776.8805162906647,
+        3136.883997440338
+      ],
+      "jointCandidateRowsPixels": [
+        538,
+        898,
+        1258,
+        1618,
+        1978,
+        2338,
+        2698,
+        3058
+      ],
+      "floorPitchMethod": "spacing of repeated detected window-frame top edges; separates courses from structural floors",
+      "floorPitchPixels": [
+        359.99983859062195,
+        360.0,
+        360.0,
+        360.0,
+        360.0,
+        360.0,
+        360.0,
+        360.00348114967346
+      ],
+      "floorPitchMaxErrorPixels": 0.003481149673461914,
+      "floorHeightVariancePixelsSquared": 1.345858947843226e-06,
+      "windowAspectMean": 1.709605022467189,
+      "windowAspectRange": [
+        1.7093726104984244,
+        1.7100730784266711
+      ]
+    },
+    "top-front-panel": {
+      "floors": 5,
+      "straightnessDegrees": 0.1409301906824112,
+      "windowFrameTopRowsPixels": [
+        361.815637588501,
+        713.8815002441406,
+        1066.8519928455353,
+        1418.8887214660645,
+        1771.8806726932526
+      ],
+      "jointCandidateRowsPixels": [
+        637,
+        989,
+        1342,
+        1694
+      ],
+      "floorPitchMethod": "spacing of repeated detected window-frame top edges; separates courses from structural floors",
+      "floorPitchPixels": [
+        352.06586265563965,
+        352.97049260139465,
+        352.0367286205292,
+        352.9919512271881
+      ],
+      "floorPitchMaxErrorPixels": 0.47978582982528906,
+      "floorHeightVariancePixelsSquared": 0.2163543778728858,
+      "windowAspectMean": 1.0812059726691374,
+      "windowAspectRange": [
+        1.0639177243331026,
+        1.0985294045510128
+      ]
+    },
+    "top-front-panel335": {
+      "floors": 5,
+      "straightnessDegrees": 0.2122192084789276,
+      "windowFrameTopRowsPixels": [
+        361.8116760253906,
+        713.8445426225662,
+        1066.8357462882996,
+        1418.8443048000336,
+        1771.8590551614761
+      ],
+      "jointCandidateRowsPixels": [
+        639,
+        992,
+        1344,
+        1697
+      ],
+      "floorPitchMethod": "spacing of repeated detected window-frame top edges; separates courses from structural floors",
+      "floorPitchPixels": [
+        352.0328665971756,
+        352.99120366573334,
+        352.008558511734,
+        353.01475036144257
+      ],
+      "floorPitchMaxErrorPixels": 0.5079559386204551,
+      "floorHeightVariancePixelsSquared": 0.24135403315611637,
+      "windowAspectMean": 1.0905827110526214,
+      "windowAspectRange": [
+        1.0740041806000657,
+        1.1157651691059802
+      ]
+    },
+    "top-front-brick": {
+      "floors": 5,
+      "straightnessDegrees": 0.04618839919567108,
+      "windowFrameTopRowsPixels": [
+        355.90010356903076,
+        708.7720293998718,
+        1060.9073615074158,
+        1413.78604388237,
+        1765.9402318000793
+      ],
+      "jointCandidateRowsPixels": [
+        631,
+        984,
+        1339,
+        1689
+      ],
+      "floorPitchMethod": "spacing of repeated detected window-frame top edges; separates courses from structural floors",
+      "floorPitchPixels": [
+        352.87192583084106,
+        352.13533210754395,
+        352.8786823749542,
+        352.15418791770935
+      ],
+      "floorPitchMaxErrorPixels": 0.38118234281051855,
+      "floorHeightVariancePixelsSquared": 0.13347381601563768,
+      "windowAspectMean": 1.0588684187622976,
+      "windowAspectRange": [
+        1.0495637012984893,
+        1.062480753911526
+      ]
+    },
+    "top-front-nine": {
+      "floors": 9,
+      "straightnessDegrees": 0.05323796719312668,
+      "windowFrameTopRowsPixels": [
+        461.94531440734863,
+        814.6740435361862,
+        1166.9470086097717,
+        1519.7211371660233,
+        1871.9737794399261,
+        2224.760749101639,
+        2576.973975777626,
+        2929.818587779999,
+        3281.9818502664566
+      ],
+      "jointCandidateRowsPixels": [
+        737,
+        1092,
+        1442,
+        1797,
+        2147,
+        2502,
+        2852,
+        3207
+      ],
+      "floorPitchMethod": "spacing of repeated detected window-frame top edges; separates courses from structural floors",
+      "floorPitchPixels": [
+        352.7287291288376,
+        352.2729650735855,
+        352.7741285562515,
+        352.2526422739029,
+        352.78696966171265,
+        352.21322667598724,
+        352.84461200237274,
+        352.1632624864578
+      ],
+      "floorPitchMaxErrorPixels": 0.35325196389663915,
+      "floorHeightVariancePixelsSquared": 0.07959592936161619,
+      "windowAspectMean": 1.7439566223186793,
+      "windowAspectRange": [
+        1.7410131351538771,
+        1.7473332593583197
+      ]
+    }
+  },
+  "thresholds": {
+    "straightnessDegrees": 0.3,
+    "floorPitchErrorPixels": 1,
+    "wheelAspectError": 0.03,
+    "sillErrorPixels": 1
+  },
+  "car": {
+    "wheels": [
+      {
+        "visibleTyreEllipseAxesPixels": [
+          245.33367919921875,
+          245.41226196289062
+        ],
+        "aspect": 1.0003203097264444,
+        "darkComponentBoundsPixels": [
+          264,
+          248
+        ],
+        "method": "ellipse on external tyre contour excluding the known chassis connection"
+      },
+      {
+        "visibleTyreEllipseAxesPixels": [
+          245.36544799804688,
+          245.4752655029297
+        ],
+        "aspect": 1.0004475671117463,
+        "darkComponentBoundsPixels": [
+          264,
+          248
+        ],
+        "method": "ellipse on external tyre contour excluding the known chassis connection"
+      }
+    ],
+    "sillStraightnessDegrees": 0.0411377027630806,
+    "sillMaxDeviationPixels": 0.0
+  }
+}

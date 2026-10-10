@@ -1,7 +1,7 @@
 import {createServer} from 'vite';
 import {spawn} from 'node:child_process';
 import {mkdir,writeFile} from 'node:fs/promises';
-const out='docs/qa/flipcontact';await mkdir(out,{recursive:true});
+const out=process.env.QA_OUT||'docs/qa/flipcontact';await mkdir(out,{recursive:true});
 const server=await createServer({server:{host:'127.0.0.1',port:0,hmr:false,watch:null}});await server.listen();
 const results=[];
 try {

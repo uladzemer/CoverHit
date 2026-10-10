@@ -364,9 +364,9 @@ export class Cloth {
     this.time += dt;
     if (this.flip && !this.flip.externalClock) {
       this.flip.age=Math.min(FLIP_DURATION,this.flip.age+Math.min(dt,1/30));
-      this.driveFlip(this.flip.age/FLIP_DURATION);
       if(this.flip.age>=FLIP_DURATION || (this.flip.age>=1.4 && this.flipSettled())) this.pendingFlipFinish=true;
     }
+    if(this.flip){this.driveFlip(this.flip.age/FLIP_DURATION);this.seatGrips(dt);}
     const nodes = (this.nodes ?? this.body.get_m_nodes());
     // A short contact pulse maintains the dent through the first 100 ms;
     // after release, Bullet propagates its momentum through the soft links.
@@ -402,7 +402,7 @@ export class Cloth {
   clampVelocities() {
     if(!this.barAxis)return;
     const nodes=(this.nodes ?? this.body.get_m_nodes());
-    for(let i=0;i<nodes.size();i++)clampNodeVelocity(nodes.at(i),this.barAxis);
+    for(let i=0;i<nodes.size();i++)clampNodeVelocity(nodes.at(i),this.barAxis,!!this.flip);
   }
   projectBar() {
     if(!this.barAxis)return;
@@ -437,10 +437,11 @@ export class Cloth {
           v.setValue(v.x(),0,0);
         }
         let physical=f.sides[i];
+        if(f.age>=1.05&&Math.abs(d)>crown){physical=Math.sign(p.z()-this.barAxis.z)||physical;f.sides[i]=physical;}
         // A side can change only above the crown, with a 4 mm dead band.
         if(crownSide(node,this.barAxis,physical)!==physical) {f.sides[i]=-physical;physical=-physical;f.crossed[i]=f.age;}
         projectBarNode(node,this.barAxis,physical,BAR_FLIP_RADIUS);
-        clampNodeVelocity(node,this.barAxis);
+        clampNodeVelocity(node,this.barAxis,true);
         continue;
       }
       if(Math.abs(d)>crown && p.y()<this.barAxis.y-.3){clampNodeVelocity(node,this.barAxis);continue;}
@@ -457,7 +458,7 @@ export class Cloth {
         p.setValue(p.x(),y,z);node.get_m_q().setValue(p.x(),y,z);
       }
       projectBarNode(node,this.barAxis,restSide,BAR_CONTACT_RADIUS);
-      clampNodeVelocity(node,this.barAxis);
+      clampNodeVelocity(node,this.barAxis,!!this.flip);
     }
   }
   projectLayers() {
@@ -465,6 +466,13 @@ export class Cloth {
     const nodes=this.nodes??this.body.get_m_nodes();
     if(this.flip) {
       this.selfContact?.project(nodes,this.barAxis,BAR_FLIP_RADIUS,this.flip.sides,this.flip);
+      if(this.flip.age>=1.05){
+        // Landing drag damps the swing, while gravity remains free to lower
+        // the far corner. Damping Y too held that corner above its rest hem.
+        for(let i=0;i<nodes.size();i++){const v=nodes.at(i).get_m_v();v.setValue(v.x()*.8,v.y()-.2,v.z()*.8);}
+        projectLayers(nodes,this.layerContacts,this.flip.to,0,null,.1);
+        this.ensureBarClearance(this.flip);
+      }
     } else {
       projectLayers(nodes,this.layerContacts,this.visibleSide);
     }
@@ -474,8 +482,9 @@ export class Cloth {
   ensureBarClearance(f=this.flip) {
     for(let i=0;i<this.nodes.size();i++) {
       const node=this.nodes.at(i);
-      projectBarNode(node,this.barAxis,f.sides[i],BAR_FLIP_RADIUS);
-      clampNodeVelocity(node,this.barAxis);
+      const p=node.get_m_x(),physical=this.flip&&f.age<1.05?f.sides[i]:Math.sign(p.z()-this.barAxis.z)||f.sides[i];
+      projectBarNode(node,this.barAxis,physical,BAR_FLIP_RADIUS);
+      clampNodeVelocity(node,this.barAxis,!!this.flip);
     }
   }
   setVisibleSide(side) {
@@ -495,20 +504,44 @@ export class Cloth {
     crossed.fill(Infinity);
     for(let i=0;i<count;i++)sides[i]=Math.sign(this.foldAxis==='u'?i%(this.cols+1)-this.cols/2:Math.floor(i/(this.cols+1))-this.rows/2)*(this.visibleSide===0?1:-1);
     this.flip={age:0,externalClock,positions:this.positions.slice(),from:this.visibleSide,to:1-this.visibleSide,...gesture,sides,initialSides:sides.slice(),crossed,launched:new Uint8Array(count)};
+    this.flip.grips=gesture.grips.filter(g=>g.i<count);
+    for(const grip of this.flip.grips){const n=this.nodes.at(grip.i);grip.inverseMass=n.get_m_im();n.set_m_im?.(0);}
     return true;
   }
   driveFlip(t) {
-    const f=this.flip;if(!f||f.age>=RELEASE)return;
+    const f=this.flip;if(!f)return;
+    const gripAge=f.age+(f.style==='corner'?.05:0);
     const nodes=this.nodes??this.body.get_m_nodes();
     for(const grip of f.grips) {
+      if(gripAge>=RELEASE+grip.delay)continue;
       const k=grip.i*3,start=[f.positions[k],f.positions[k+1],f.positions[k+2]];
-      const target=handPosition(start,this.barAxis,f.age,grip.delay,grip.delay===0?f.lead:0);
+      const target=handPosition(start,this.barAxis,gripAge,grip.delay,grip.delay===0?f.lead:0);
       const node=nodes.at(grip.i);
       const p=node.get_m_x(),velocity=node.get_m_v();
       // A hand applies velocity; it cannot teleport through another patch.
       const vx=(target[0]-p.x())*30,vy=(target[1]-p.y())*30,vz=(target[2]-p.z())*30;
-      const scale=Math.min(1,6/Math.max(1e-12,Math.hypot(vx,vy,vz)));
+      const scale=Math.min(1,9/Math.max(1e-12,Math.hypot(vx,vy,vz)));
       velocity.setValue(vx*scale,vy*scale,vz*scale);
+    }
+  }
+  seatGrips(dt) {
+    const f=this.flip;if(!f)return;
+    const gripAge=f.age+(f.style==='corner'?.05:0);
+    for(const grip of f.grips) {
+      if(gripAge>=RELEASE+grip.delay){
+        // Let the loaded links take the released patch over a few fixed steps.
+        // Restoring its full inverse mass at once caused a solver-position snap.
+        const release=Math.min(1,Math.max(.3,(gripAge-RELEASE-grip.delay)/.15));
+        this.nodes.at(grip.i).set_m_im?.(grip.inverseMass*release*release);
+        continue;
+      }
+      const k=grip.i*3,start=[f.positions[k],f.positions[k+1],f.positions[k+2]];
+      const target=handPosition(start,this.barAxis,gripAge,grip.delay,grip.delay===0?f.lead:0);
+      const node=this.nodes.at(grip.i),p=node.get_m_x(),q=node.get_m_q();
+      const dx=target[0]-p.x(),dy=target[1]-p.y(),dz=target[2]-p.z();
+      const scale=Math.min(1,9*dt/Math.max(1e-12,Math.hypot(dx,dy,dz)));
+      p.setValue(p.x()+dx*scale,p.y()+dy*scale,p.z()+dz*scale);
+      q.setValue(p.x(),p.y(),p.z());
     }
   }
   throwWave() {
@@ -522,10 +555,17 @@ export class Cloth {
       this.anchorHandles?.[anchor++]?.set_m_influence(f.age<.25+phase*f.spread || f.age>1.1+phase*f.spread?1:0);
     }
     for(let i=0;i<nodes.size();i++) {
-      if(f.launched[i])continue;
       const column=this.foldAxis==='u'?Math.floor(i/(this.cols+1)):i%(this.cols+1);
       const across=column/acrossCount,phase=f.leading===0?across:1-across;
-      if(f.age<.25+phase*f.spread)continue;
+      const launchSpread=f.launchSpread??f.spread;
+      if(f.age<.25+phase*launchSpread)continue;
+      if(f.launched[i]) {
+        if(f.style==='corner' && f.age<.45+phase*launchSpread && nodes.at(i).get_m_im()>0){
+          const v=nodes.at(i).get_m_v();
+          v.setValue(v.x(),v.y()+.9,v.z()+f.initialSides[i]*.35);
+        }
+        continue;
+      }
       f.launched[i]=1;
       const node=nodes.at(i),p=node.get_m_x(),v=node.get_m_v();
       const depth=Math.max(0,this.barAxis.y-p.y());
@@ -534,7 +574,7 @@ export class Cloth {
       // sheet. The outward pulse clears the hanging panel before crossing the pipe;
       // an inward pulse crosses the opposite sheet before the hand reaches the crown.
       // Positions, inverse masses and links remain entirely Bullet-owned.
-      v.setValue(v.x(),v.y()+Math.min(5.5,Math.sqrt(2*9.81*(depth+.3))),v.z()+side*1.8);
+      v.setValue(v.x(),v.y()+Math.min(8.3,Math.sqrt(2*9.81*(depth+.85))),v.z()+side*3.2);
     }
   }
   flipSettled() {
@@ -547,6 +587,7 @@ export class Cloth {
   }
   finishFlip() {
     if(!this.flip)return;
+    for(const g of this.flip.grips)this.nodes.at(g.i).set_m_im?.(g.inverseMass);
     for(const anchor of this.anchorHandles??[])anchor.set_m_influence(1);
     this.lastFlip=this.flip;
     this.setVisibleSide(this.flip.to);this.flip=null;
@@ -573,6 +614,7 @@ export class Cloth {
         this.watchdogLogged = true;
       }
       for(const anchor of this.anchorHandles??[])anchor.set_m_influence(1);
+      for(const grip of this.flip?.grips??[])nodes.at(grip.i).set_m_im?.(grip.inverseMass);
       this.flip = null;
       this.hitPulses = [];
       this.previousBeaterPose = null;

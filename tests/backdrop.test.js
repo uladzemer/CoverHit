@@ -23,5 +23,5 @@ it('budgets the entire far ring independently of the detailed courtyard',()=>{
  yard.backdrop.group.traverse(o=>{if(o.isMesh){draws++;triangles+=(o.geometry.index?.count||o.geometry.attributes.position.count)/3*(o.isInstancedMesh?o.count:1);expect(o.castShadow).toBe(o.material.isMeshStandardMaterial === true);expect(o.receiveShadow).toBe(o.material.isMeshStandardMaterial === true);}});
  expect(draws).toBeLessThanOrEqual(20);expect(triangles).toBeLessThanOrEqual(60000);
  expect(yard.backdrop.housing.filter(h=>h.variant==='P-44')).toHaveLength(2);
- expect(yard.backdrop.housing.find(h=>h.variant==='II-49').height).toBeCloseTo(26.1);
+ expect(yard.backdrop.housing.find(h=>h.variant==='II-49').height).toBeCloseTo(9*2.7);
 });

@@ -6,9 +6,9 @@ export function barHitScale(point, axis) {
   return .2 + .8 * Math.min(1, Math.hypot(point.y-axis.y,point.z-axis.z)/.25);
 }
 
-export function clampNodeVelocity(node, axis) {
+export function clampNodeVelocity(node, axis, throwing=false) {
   const p=node.get_m_x(),v=node.get_m_v();
-  const max=Math.hypot(p.y()-axis.y,p.z()-axis.z)<.3 ? .9 : 6;
+  const max=throwing ? 9 : Math.hypot(p.y()-axis.y,p.z()-axis.z)<.3 ? .9 : 6;
   const speed=Math.hypot(v.x(),v.y(),v.z());
   if(speed>max)v.setValue(v.x()*max/speed,v.y()*max/speed,v.z()*max/speed);
 }

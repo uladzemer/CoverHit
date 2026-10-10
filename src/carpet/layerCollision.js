@@ -110,7 +110,8 @@ export function separateLayerNodes(front, back, gap=LAYER_GAP, restitution=.1) {
   return true;
 }
 
-export function projectLayers(nodes, pairs, side=0, refinement=0, contactGaps=null) {
+export function projectLayers(nodes, pairs, side=0, refinement=0, contactGaps=null, correctionLimit=Infinity) {
+  if(typeof correctionLimit!=='number'||correctionLimit<0)correctionLimit=Infinity;
   // Read/write WASM once per node, not once per constraint per iteration.
   const {count,z,v,mass,original,wrappers}=workspace(nodes,pairs);
   for(let i=0;i<count;i++) {
@@ -139,14 +140,14 @@ export function projectLayers(nodes, pairs, side=0, refinement=0, contactGaps=nu
     if(depth>1e-12 && sum && Number.isFinite(depth) && Number.isFinite(sum)){z[f]+=(depth+1e-9)*mass[f]/sum;z[b]-=(depth+1e-9)*mass[b]/sum;}
   }
   for(let i=0;i<count;i++) {
-    if(Number.isFinite(z[i])&&Number.isFinite(original[i])&&z[i]!==original[i])move(wrappers[i],z[i]-original[i]);
+    if(Number.isFinite(z[i])&&Number.isFinite(original[i])&&z[i]!==original[i])move(wrappers[i],Math.max(-correctionLimit,Math.min(correctionLimit,z[i]-original[i])));
     const velocity=wrappers[i].get_m_v();
     if(v[i]!==velocity.z()&&Number.isFinite(velocity.x())&&Number.isFinite(velocity.y())&&Number.isFinite(v[i]))velocity.setValue(velocity.x(),velocity.y(),v[i]);
   }
   // Neighbour corrections can bend the mid-surface. Refresh its linearized
   // frame until the corrected geometry also satisfies the normal gap.
   // A tight pipe collar can require more refinement than broad, loose folds.
-  if(pairs.grid && refinement<24) {
+  if(pairs.grid && refinement<24 && correctionLimit===Infinity) {
     const updated=layerRequiredGaps(nodes,pairs,side,workspace(nodes,pairs).updated);
     for(let j=0;j<pairs.length;j++)if(updated[j]-z[pairs[j][side]]+z[pairs[j][1-side]]>5e-7){
       projectLayers(nodes,pairs,side,refinement+1,updated);break;
