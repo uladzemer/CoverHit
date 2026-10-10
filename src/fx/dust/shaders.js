@@ -25,9 +25,9 @@ void main() {
  vec3 q=aorigin*2.1+vec3(alife.w*.01,age*.22,0.);
  // Bounded procedural curl displacement; subtract birth field to avoid teleporting.
  p+=(curl(q)-curl(q-vec3(0.,age*.22,0.)))*(.07+.10*min(age,3.));
- p.y+=kind<.5?.065*age:-.018*age*age;
- if(kind>1.5) p.y-=.10*age*age;
- float size=alife.z*(kind<.5?1.+4.*min(t,1.):1.);
+ p.y+=kind<.5?.035*age:-.018*age;
+ if(kind>1.5) p.y-=.25*(age-(1.-exp(-4.*age))/4.);
+ float size=alife.z*(kind<.5?1.+3.5*min(age/3.5,1.):1.);
  float angle=ashape.y+age*(kind>1.5?2.:.13);
  vec2 xy=position.xy; if(kind>1.5) xy*=vec2(.25,2.8);
  xy=mat2(cos(angle),-sin(angle),sin(angle),cos(angle))*xy*size;
@@ -57,7 +57,7 @@ void main() {
  float hg=.64/(12.56637*pow(max(.001,1.36-1.2*c),1.5));
  float sun=clamp(hg*1.5,0.,1.)*smoothstep(.1,1.3,vWorld.y);
  vec3 color=mix(vec3(.30,.27,.22),vec3(.72,.56,.38),sun);
- float twinkle=.65+.35*pow(.5+.5*sin(time*(2.+fract(vData.w)*3.)+vData.w),8.);
+ float twinkle=.65+.35*pow(.5+.5*sin(time*(1.884956+fract(vData.w)*3.141593)+vData.w),8.);
  if(vData.x>.5) {alpha*=twinkle*(.3+sun*1.7);color*=1.+sun*.6;}
  gl_FragColor=vec4(color,alpha*vAlpha);
  #include <tonemapping_fragment>

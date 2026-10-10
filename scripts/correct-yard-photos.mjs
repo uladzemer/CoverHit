@@ -73,6 +73,8 @@ export async function normalizeFacade(input){
  return {data,width,height,gains};
 }
 export async function correctPhotos({fresh=false}={}){
+ const revision=JSON.parse(await readFile(`${DIR}/manifest.json`));
+ if(revision.version>=4){const {buildNaturalPhotos}=await import('./build-natural-photos.mjs');return buildNaturalPhotos();}
  const cache='artifacts/exposure-source';await mkdir(cache,{recursive:true});await mkdir('docs/qa/exposure',{recursive:true});
  const source=async file=>{const saved=`${cache}/${file}`;if(fresh)await copyFile(`${DIR}/${file}`,saved);else try{await readFile(saved);}catch{await copyFile(`${DIR}/${file}`,saved);}return saved;};
  const car=await cleanCar(await source('car-atlas.webp'));

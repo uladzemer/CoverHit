@@ -116,3 +116,39 @@ Source originals remain in ignored artifacts/photos; transformations are reprodu
 | photos/tower-impostor-windows.webp | Stolbovsky | https://commons.wikimedia.org/wiki/File:Apartment_building_in_Pavlovspy_Posad.jpg | CC BY-SA 3.0 |
 
 | photos/car-flat-atlas.webp | Fiver, der Hellseher; Fiver, der Hellseher; Bull-Doser; Marseille77 at German Wikipedia | https://commons.wikimedia.org/wiki/File:Schiguli_WAS-2101_(side).jpg; https://commons.wikimedia.org/wiki/File:Schiguli_WAS-2101_(front).jpg; https://commons.wikimedia.org/wiki/File:Lada_1600_--_Rear.JPG; https://commons.wikimedia.org/wiki/File:Lada_1200.svg | CC BY-SA 4.0; CC BY-SA 4.0; Public domain; Public domain |
+
+<!-- natural-photo-sections -->
+## Whole photographs (natural revision)
+
+Derivative photographs retain their source licence. Series names in the renderer are material slots, not a claim of architectural identity. Historical cell atlases/car cards remain inventoried as inactive references.
+
+| Source / derivative | Author | URL | Licence |
+| --- | --- | --- | --- |
+| Klumava Street social housing.jpg | Homoatrox | https://commons.wikimedia.org/wiki/File:Klumava_Street_social_housing.jpg | CC BY-SA 4.0 |
+| Фото Озёрска 03.06.2022.jpg | Artyom Vasilyev | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0 |
+| Arzamas, Nizhny Novgorod Oblast, Russia - panoramio (341).jpg | Arzamassky | https://commons.wikimedia.org/wiki/File:Arzamas,_Nizhny_Novgorod_Oblast,_Russia_-_panoramio_(341).jpg | CC BY 3.0 |
+| Moscow car show 2025-08-03 VAZ-2101 red 02.jpg | Retired electrician | https://commons.wikimedia.org/wiki/File:Moscow_car_show_2025-08-03_VAZ-2101_red_02.jpg | CC0 |
+| Lada 1600 -- Front.JPG | Bull-Doser | https://commons.wikimedia.org/wiki/File:Lada_1600_--_Front.JPG | Public domain |
+| photos/nine-reference.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/panel-albedo.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/panel-windows.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/brick-albedo.webp | Arzamassky; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:Arzamas,_Nizhny_Novgorod_Oblast,_Russia_-_panoramio_(341).jpg | CC BY 3.0; CC0 |
+| photos/brick-windows.webp | Arzamassky; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:Arzamas,_Nizhny_Novgorod_Oblast,_Russia_-_panoramio_(341).jpg | CC BY 3.0; CC0 |
+| photos/nine-albedo.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/nine-windows.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/tower-albedo.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/tower-windows.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/panel335-albedo.webp | Homoatrox; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:Klumava_Street_social_housing.jpg | CC BY-SA 4.0; CC0 |
+| photos/panel335-windows.webp | Homoatrox; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:Klumava_Street_social_housing.jpg | CC BY-SA 4.0; CC0 |
+| photos/panel-impostor-albedo.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/panel-impostor-windows.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/panel335-impostor-albedo.webp | Homoatrox; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:Klumava_Street_social_housing.jpg | CC BY-SA 4.0; CC0 |
+| photos/panel335-impostor-windows.webp | Homoatrox; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:Klumava_Street_social_housing.jpg | CC BY-SA 4.0; CC0 |
+| photos/brick-impostor-albedo.webp | Arzamassky; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:Arzamas,_Nizhny_Novgorod_Oblast,_Russia_-_panoramio_(341).jpg | CC BY 3.0; CC0 |
+| photos/brick-impostor-windows.webp | Arzamassky; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:Arzamas,_Nizhny_Novgorod_Oblast,_Russia_-_panoramio_(341).jpg | CC BY 3.0; CC0 |
+| photos/nine-impostor-albedo.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/nine-impostor-windows.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/tower-impostor-albedo.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/tower-impostor-windows.webp | Artyom Vasilyev; Amal Kumar / Poly Haven | https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg | CC0; CC0 |
+| photos/car-cream-cutout.webp | Bull-Doser | https://commons.wikimedia.org/wiki/File:Lada_1600_--_Front.JPG | Public domain |
+| photos/car-red-cutout.webp | Retired electrician | https://commons.wikimedia.org/wiki/File:Moscow_car_show_2025-08-03_VAZ-2101_red_02.jpg | CC0 |

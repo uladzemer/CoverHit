@@ -92,19 +92,11 @@ export function buildHousing(b,m,random,root){
     }
     if(warm)pane(m.glow,x,y,6.3,2.05,2.35);
     b.setRole('');
-    if(floor>0 && col%4===2){
-     at(m.concrete,x,floor*2.7+.075,2*bay+.35,2.55,.15,.7);
-     at(m.painted,x,floor*2.7+.55,2*bay+.67,2.4,.9,.06);
-     at(m.metal,x,floor*2.7+1.03,2*bay+.67,2.45,.055,.055);
-     for(let j=0;j<11;j++)at(m.metal,x-1.2+j*.24,floor*2.7+.55,2*bay+.69,.026,.92,.03);
-    }
+
    }
   }
   b.setRole('');
   for(const x of [-22,-7,8,23]){
-   at(m.concrete,x,1.3,6.08,2.5,2.6,.25);at(m.door,x,1.13,6.26,1.66,2.26,.14);
-   at(m.metal,x,1.13,6.35,.04,2.2,.035);at(m.trim,x+.5,1.1,6.36,.04,.24,.05);
-   at(m.concrete,x,2.67,6.8,3.2,.16,1.8);at(m.concrete,x,.1,6.8,2.7,.2,1.7);
    // Slatted entrance bench, oriented with the facade.
    for(let j=0;j<4;j++)at(m.wood,x+3.4,.5,6.7+j*.14,2.3,.07,.11);
    for(let j=0;j<3;j++)at(m.wood,x+3.4,.78+j*.16,6.6,2.3,.12,.06);

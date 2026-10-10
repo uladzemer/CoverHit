@@ -1,0 +1,599 @@
+{
+  "browser": "155.0.8059.39",
+  "viewport": [
+    1440,
+    900
+  ],
+  "seed": "colour-1986",
+  "modes": {
+    "baseline": {
+      "default": {
+        "performance": {
+          "drawCalls": {
+            "mean": 124,
+            "p95": 124,
+            "max": 124
+          },
+          "triangles": {
+            "mean": 325894,
+            "p95": 325894,
+            "max": 325894
+          },
+          "frameMs": {
+            "mean": 11.917083332439264,
+            "p95": 15.5,
+            "max": 26.69999998807907
+          },
+          "renderMs": {
+            "mean": 2.436250001192093,
+            "p95": 3.399999976158142,
+            "max": 5.5
+          },
+          "gpuMs": {
+            "mean": 8.593265866666666,
+            "p95": 12.266912,
+            "max": 13.644128
+          },
+          "intervalMs": {
+            "mean": 31.25041666666666,
+            "p95": 31.600000000002183,
+            "max": 32.5
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.24886655608045757,
+            "lawn": 0.20521450214005582,
+            "facade": 0.26507166621231376
+          },
+          "clippedPercent": 0
+        }
+      },
+      "aim-left": {
+        "performance": {
+          "drawCalls": {
+            "mean": 114,
+            "p95": 114,
+            "max": 114
+          },
+          "triangles": {
+            "mean": 318448,
+            "p95": 318448,
+            "max": 318448
+          },
+          "frameMs": {
+            "mean": 12.319999999801318,
+            "p95": 17.19999998807907,
+            "max": 49.5
+          },
+          "renderMs": {
+            "mean": 2.0937500004967053,
+            "p95": 3.100000023841858,
+            "max": 7.900000035762787
+          },
+          "gpuMs": {
+            "mean": 7.657851333333335,
+            "p95": 12.529248,
+            "max": 23.41456
+          },
+          "intervalMs": {
+            "mean": 31.249583333333323,
+            "p95": 31.600000000002183,
+            "max": 31.799999999999272
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.21898487502607045,
+            "lawn": 0.20683123360514444,
+            "facade": 0.2410830411126924
+          },
+          "clippedPercent": 0
+        }
+      },
+      "aim-right": {
+        "performance": {
+          "drawCalls": {
+            "mean": 116,
+            "p95": 116,
+            "max": 116
+          },
+          "triangles": {
+            "mean": 323950,
+            "p95": 323950,
+            "max": 323950
+          },
+          "frameMs": {
+            "mean": 10.36874999726812,
+            "p95": 13.899999976158142,
+            "max": 25.69999998807907
+          },
+          "renderMs": {
+            "mean": 2.1120833337306975,
+            "p95": 2.699999988079071,
+            "max": 5.400000035762787
+          },
+          "gpuMs": {
+            "mean": 8.622103733333331,
+            "p95": 12.885504,
+            "max": 16.492896
+          },
+          "intervalMs": {
+            "mean": 31.38166666666666,
+            "p95": 31.699999999997093,
+            "max": 62.5
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.2615823809113075,
+            "lawn": 0.1730502864633666,
+            "facade": 0.2538380901151842
+          },
+          "clippedPercent": 0
+        }
+      },
+      "wide": {
+        "performance": {
+          "drawCalls": {
+            "mean": 123,
+            "p95": 123,
+            "max": 123
+          },
+          "triangles": {
+            "mean": 325892,
+            "p95": 325892,
+            "max": 325892
+          },
+          "frameMs": {
+            "mean": 10.173749995728334,
+            "p95": 14.699999988079071,
+            "max": 16.599999964237213
+          },
+          "renderMs": {
+            "mean": 2.138750001043081,
+            "p95": 2.800000011920929,
+            "max": 5.200000047683716
+          },
+          "gpuMs": {
+            "mean": 8.01012933333333,
+            "p95": 12.417024,
+            "max": 15.134688
+          },
+          "intervalMs": {
+            "mean": 31.25,
+            "p95": 31.599999999998545,
+            "max": 31.799999999995638
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.24569704544964407,
+            "lawn": 0.19212652755700196,
+            "facade": 0.23419459289473343
+          },
+          "clippedPercent": 0
+        }
+      },
+      "facade-close": {
+        "performance": {
+          "drawCalls": {
+            "mean": 90,
+            "p95": 90,
+            "max": 90
+          },
+          "triangles": {
+            "mean": 289834,
+            "p95": 289834,
+            "max": 289834
+          },
+          "frameMs": {
+            "mean": 10.401666664580505,
+            "p95": 13.600000023841858,
+            "max": 19.19999998807907
+          },
+          "renderMs": {
+            "mean": 1.9683333307504653,
+            "p95": 2.800000011920929,
+            "max": 3.800000011920929
+          },
+          "gpuMs": {
+            "mean": 8.055334400000001,
+            "p95": 14.598176,
+            "max": 21.012832
+          },
+          "intervalMs": {
+            "mean": 31.25041666666666,
+            "p95": 31.600000000005817,
+            "max": 31.700000000004362
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.27650172344816315,
+            "lawn": 0.27820646249719855,
+            "facade": 0.31188284092228136
+          },
+          "clippedPercent": 0
+        }
+      },
+      "facade-mid": {
+        "performance": {
+          "drawCalls": {
+            "mean": 92,
+            "p95": 92,
+            "max": 92
+          },
+          "triangles": {
+            "mean": 290406,
+            "p95": 290406,
+            "max": 290406
+          },
+          "frameMs": {
+            "mean": 8.65125000278155,
+            "p95": 13.699999988079071,
+            "max": 17.899999976158142
+          },
+          "renderMs": {
+            "mean": 1.527083335071802,
+            "p95": 2.399999976158142,
+            "max": 3.199999988079071
+          },
+          "gpuMs": {
+            "mean": 8.707425066666666,
+            "p95": 15.204352,
+            "max": 18.583552
+          },
+          "intervalMs": {
+            "mean": 31.24958333333334,
+            "p95": 31.599999999998545,
+            "max": 31.80000000000291
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.3164673067150011,
+            "lawn": 0.28672557285341005,
+            "facade": 0.10390699256670426
+          },
+          "clippedPercent": 0
+        }
+      },
+      "facade-far": {
+        "performance": {
+          "drawCalls": {
+            "mean": 102,
+            "p95": 102,
+            "max": 102
+          },
+          "triangles": {
+            "mean": 294314,
+            "p95": 294314,
+            "max": 294314
+          },
+          "frameMs": {
+            "mean": 8.527916668603817,
+            "p95": 12,
+            "max": 17.30000001192093
+          },
+          "renderMs": {
+            "mean": 1.5016666705409685,
+            "p95": 2.199999988079071,
+            "max": 4.800000011920929
+          },
+          "gpuMs": {
+            "mean": 7.618240533333335,
+            "p95": 10.697728,
+            "max": 21.907648
+          },
+          "intervalMs": {
+            "mean": 31.248749999999987,
+            "p95": 31.600000000005817,
+            "max": 31.80000000000291
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.23963882009246518,
+            "lawn": 0.20080108010505107,
+            "facade": 0.34633636627887726
+          },
+          "clippedPercent": 0
+        }
+      },
+      "car-side": {
+        "performance": {
+          "drawCalls": {
+            "mean": 99,
+            "p95": 99,
+            "max": 99
+          },
+          "triangles": {
+            "mean": 292474,
+            "p95": 292474,
+            "max": 292474
+          },
+          "frameMs": {
+            "mean": 8.183750000347693,
+            "p95": 11.400000035762787,
+            "max": 14.899999976158142
+          },
+          "renderMs": {
+            "mean": 1.4250000012417634,
+            "p95": 2.100000023841858,
+            "max": 2.899999976158142
+          },
+          "gpuMs": {
+            "mean": 9.544961733333333,
+            "p95": 16.493792,
+            "max": 22.063008
+          },
+          "intervalMs": {
+            "mean": 31.25,
+            "p95": 31.600000000005817,
+            "max": 31.900000000008735
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.2322467630593165,
+            "lawn": 0.24082132046419413,
+            "facade": 0.2744938068090216
+          },
+          "clippedPercent": 0
+        }
+      },
+      "car-front": {
+        "performance": {
+          "drawCalls": {
+            "mean": 108,
+            "p95": 108,
+            "max": 108
+          },
+          "triangles": {
+            "mean": 306944,
+            "p95": 306944,
+            "max": 306944
+          },
+          "frameMs": {
+            "mean": 8.346249999850988,
+            "p95": 11.899999976158142,
+            "max": 17
+          },
+          "renderMs": {
+            "mean": 1.5216666646301746,
+            "p95": 2.299999952316284,
+            "max": 3.300000011920929
+          },
+          "gpuMs": {
+            "mean": 9.409033066666666,
+            "p95": 10.757568,
+            "max": 17.405952
+          },
+          "intervalMs": {
+            "mean": 31.25041666666663,
+            "p95": 31.699999999997093,
+            "max": 32
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.24658129446277904,
+            "lawn": 0.24653077011456626,
+            "facade": 0.19351571426297717
+          },
+          "clippedPercent": 0
+        }
+      },
+      "car-three-quarter": {
+        "performance": {
+          "drawCalls": {
+            "mean": 106,
+            "p95": 106,
+            "max": 106
+          },
+          "triangles": {
+            "mean": 302320,
+            "p95": 302320,
+            "max": 302320
+          },
+          "frameMs": {
+            "mean": 8.898750002433855,
+            "p95": 14.199999988079071,
+            "max": 19.19999998807907
+          },
+          "renderMs": {
+            "mean": 1.613750002036492,
+            "p95": 2.600000023841858,
+            "max": 3.5
+          },
+          "gpuMs": {
+            "mean": 9.841102799999993,
+            "p95": 15.146432,
+            "max": 22.638528
+          },
+          "intervalMs": {
+            "mean": 31.248749999999987,
+            "p95": 31.600000000005817,
+            "max": 31.70000000001164
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.2387844271734368,
+            "lawn": 0.23632378068646712,
+            "facade": 0.21881943200636045
+          },
+          "clippedPercent": 0
+        }
+      }
+    }
+  },
+  "errors": [],
+  "facades": [
+    {
+      "series": "panel",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "brick",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "panel335",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "brick",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "nine",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "panel",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "nine",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "brick",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "panel",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "tower",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "school",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    }
+  ],
+  "photoTextures": [
+    {
+      "file": "panel-albedo.webp",
+      "width": 2048,
+      "height": 2048,
+      "rgbaMipBytes": 22369621.333333332
+    },
+    {
+      "file": "concrete-detail-normal.webp",
+      "width": 512,
+      "height": 512,
+      "rgbaMipBytes": 1398101.3333333333
+    },
+    {
+      "file": "panel-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "brick-albedo.webp",
+      "width": 2048,
+      "height": 2048,
+      "rgbaMipBytes": 22369621.333333332
+    },
+    {
+      "file": "brick-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "panel335-albedo.webp",
+      "width": 2048,
+      "height": 2048,
+      "rgbaMipBytes": 22369621.333333332
+    },
+    {
+      "file": "panel335-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "brick-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "brick-impostor-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "nine-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "nine-impostor-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "panel-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "panel-impostor-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "car-flat-atlas.webp",
+      "width": 1024,
+      "height": 512,
+      "rgbaMipBytes": 2796202.6666666665
+    },
+    {
+      "file": "tower-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "tower-impostor-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    }
+  ]
+}

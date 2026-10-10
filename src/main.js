@@ -1,5 +1,6 @@
 ﻿import * as THREE from "three";
 import {wind} from "./scene/wind.js";
+import {bindYardWindResponses} from './scene/windResponses.js';
 import { createCarpet } from "./carpet/carpetMesh.js";
 import { DustSystem } from "./fx/dust.js";
 import { DirtyHints } from "./fx/dirtyHints.js";
@@ -56,6 +57,7 @@ async function boot() {
   const assets = await loadCarpetAssets(renderer);
   const barLength = rackSpan(assets.manifest.map(c => foldLayout(fitCarpetSize(carpetEntryType(c), c.aspect)).span));
   const yard = createYard(scene, {barLength});
+  bindYardWindResponses(yard.root);
   const yardAssets = await loadYardAssets(yard, renderer, (done, total) => {
     loading.textContent = `Загрузка двора… ${done}/${total}`;
   });
@@ -366,17 +368,18 @@ async function boot() {
     // Render counters and measured frame time are available without a debug overlay.
     performance: { drawCalls: 0, frameMs: 0, intervalMs: 0, triangles: 0, physicsMs: 0, renderMs: 0, gpuMs: null },
   };
-  let previous = performance.now(),
+  let previous = null,
     accumulator = 0,
     frameId;
   function frame(now) {
-    const elapsedDt = (now - previous) / 1000;
-    const dt = Math.min(elapsedDt, 0.05);
+    const elapsedDt = previous===null?0:(now - previous) / 1000;
+    const dt = Math.max(0,elapsedDt);
     previous = now;
     elapsed += dt;
     wind.update(dt);
     const frameStart = performance.now();
     if (!hud.blocking) accumulator = advanceGameplayFrame({ game, beater, cloth: carpet.cloth, mesh: carpet.mesh }, elapsedDt, accumulator);
+    else carpet.cloth.windTimeOrigin=wind.time-carpet.cloth.time;
     window.__coverhit.performance.physicsMs = performance.now() - frameStart;
     shake *= Math.exp(-dt * 16);
     camera.position

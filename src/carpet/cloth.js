@@ -1,7 +1,7 @@
 import { handThrow, handPosition, RELEASE } from './handThrow.js';
 import { FLIP_DURATION } from '../game/state.js';
 import * as THREE from "three";
-import {wind as sharedWind} from "../scene/wind.js";
+import {wind as sharedWind,WIND_RESPONSE} from "../scene/wind.js";
 const carpetWind = new THREE.Vector3();
 
 import { BAR_HEIGHT, BAR_RADIUS, CARPET_THICKNESS, projectBarNode, crownSide, barHitScale, clampNodeVelocity } from './barCollision.js';
@@ -49,6 +49,7 @@ export function clothParameters(options = {}) {
     clusterSelfCollision: false,
     ...options,
   };
+  if(p.arealDensity!==undefined)p.mass=p.width*p.height*p.arealDensity;
   if (
     ![p.width, p.height, p.mass].every((v) => Number.isFinite(v) && v > 0) ||
     ![p.cols, p.rows].every((v) => Number.isInteger(v) && v >= 2) ||
@@ -270,6 +271,7 @@ export class Cloth {
     if(this.foldAxis==='u')for(let i=0;i<indices.length;i+=3)[indices[i+1],indices[i+2]]=[indices[i+2],indices[i+1]];
     this.geometry.setIndex(indices);
     this.time = 0;
+    this.windTimeOrigin=sharedWind.time;
     this.hitPulses = [];
     this.readNodes();
     this.refreshGeometry();
@@ -368,6 +370,14 @@ export class Cloth {
     }
     if(this.flip){this.driveFlip(this.flip.age/FLIP_DURATION);this.seatGrips(dt);}
     const nodes = (this.nodes ?? this.body.get_m_nodes());
+    if(this.hangingGravity!==undefined){
+      // Artistic swing inertia for a thick rug, separate from wall-clock time.
+      // Hand throws retain full gravity and their established damping.
+      this.vector.setValue(0,-(this.flip?9.81:this.hangingGravity),0);
+      this.world.setGravity(this.vector);
+      this.world.getWorldInfo().set_m_gravity(this.vector);
+      this.solverConfig.set_kDP(this.flip?(this.flipDamping??this.damping):this.damping);
+    }
     // A short contact pulse maintains the dent through the first 100 ms;
     // after release, Bullet propagates its momentum through the soft links.
     for (const pulse of this.hitPulses) {
@@ -380,8 +390,9 @@ export class Cloth {
       }
     }
     for(let i=this.hitPulses.length-1;i>=0;i--)if(this.hitPulses[i].age>=this.hitPulses[i].duration)this.hitPulses.splice(i,1);
-    sharedWind.velocity(carpetWind, 0, BAR_HEIGHT, 0);
-    const windScale = this.wind * this.mass / Math.max(1,nodes.size()) * .16;
+    sharedWind.velocity(carpetWind, 0, BAR_HEIGHT, 0, (this.windTimeOrigin??0)+this.time);
+    // Area-based pressure: added wool mass reduces acceleration naturally.
+    const windScale = this.wind ? this.wind * WIND_RESPONSE.carpet * this.width*this.height / Math.max(1,nodes.size()) * .16 : 0;
     if(nodes.size())this.vector.setValue(carpetWind.x * windScale, 0, carpetWind.z * windScale);
     for (let i = 0; i < nodes.size(); i++) {
       if (this.anchored.has(i)) continue;
@@ -389,6 +400,7 @@ export class Cloth {
     }
 
     this.throwWave();
+    this.dampStructure(dt);
     if(this.flip)this.projectBar();
     this.clampVelocities();
     this.world.stepSimulation(dt,0);
@@ -403,6 +415,25 @@ export class Cloth {
     if(!this.barAxis)return;
     const nodes=(this.nodes ?? this.body.get_m_nodes());
     for(let i=0;i<nodes.size();i++)clampNodeVelocity(nodes.at(i),this.barAxis,!!this.flip);
+  }
+  dampStructure(dt) {
+    if(!this.structuralDamping||this.flip)return;
+    const nodes=this.nodes,count=nodes.size();
+    this.structuralVelocity??=new Float64Array(count*3);
+    this.structuralDelta??=new Float64Array(count*3);
+    const v=this.structuralVelocity,delta=this.structuralDelta;
+    delta.fill(0);
+    for(let i=0;i<count;i++){const p=nodes.at(i).get_m_v();v[i*3]=p.x();v[i*3+1]=p.y();v[i*3+2]=p.z();}
+    const gain=(1-Math.exp(-this.structuralDamping*dt))*.25;
+    const pair=(i,j)=>{
+      if(this.anchored.has(i)||this.anchored.has(j))return;
+      for(let k=0;k<3;k++){const impulse=(v[j*3+k]-v[i*3+k])*gain;delta[i*3+k]+=impulse;delta[j*3+k]-=impulse;}
+    };
+    for(let y=0;y<=this.rows;y++)for(let x=0;x<=this.cols;x++){
+      const i=y*(this.cols+1)+x;
+      if(x<this.cols)pair(i,i+1);if(y<this.rows)pair(i,i+this.cols+1);
+    }
+    for(let i=0;i<count;i++)nodes.at(i).get_m_v().setValue(v[i*3]+delta[i*3],v[i*3+1]+delta[i*3+1],v[i*3+2]+delta[i*3+2]);
   }
   projectBar() {
     if(!this.barAxis)return;
@@ -672,7 +703,7 @@ export class Cloth {
         sum += w;
       }
     }
-    const impulse = THREE.MathUtils.clamp(strength, 0, 1) * 2.4 * (this.barAxis ? barHitScale(point,this.barAxis) : 1),
+    const impulse = THREE.MathUtils.clamp(strength, 0, 1) * (this.hitImpulse??2.4) * (this.barAxis ? barHitScale(point,this.barAxis) : 1),
       nodeMass = this.mass / nodes.size();
     if (!sum || !impulse) return;
     this.hitPulses.push({age:0,duration:0.15,impulse:impulse*0.7,dir:dir.clone().normalize(),weights:weights.map(([i,w])=>[i,w/sum])});

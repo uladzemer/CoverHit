@@ -18,16 +18,16 @@ it('keeps both wall joints around a window when baking narrow impostor bays',asy
 
 // The atlas re-measurement needs Python + OpenCV (a local authoring tool); skip where it is not installed (e.g. CI).
 const hasOpenCv=(()=>{try{return spawnSync('python',['-c','import cv2, numpy'],{stdio:'ignore'}).status===0;}catch{return false;}})();
-it.skipIf(!hasOpenCv)('ships sharp rectified atlases with independently detected line families within 0.3 degrees',()=>{
- execFileSync('python',['scripts/verify-facade-grid.py'],{stdio:'pipe'});
- const report=JSON.parse(readFileSync('docs/qa/facades3/cell-quality.json'));
- for(const modules of Object.values(report))for(const m of modules){expect(m.frameStraightnessDegrees).toBeLessThanOrEqual(.3);expect(m.windowAspect).toBeGreaterThan(.8);}
+it.skipIf(!hasOpenCv)('independently decodes whole photos and verifies joints, pitch, seams and alpha edges',()=>{
+ execFileSync('python',['scripts/verify-natural-photos.py'],{stdio:'pipe'});
+ const report=JSON.parse(readFileSync('docs/qa/natural/asset-quality.json'));
+ expect(report.passes).toBe(true);
 },20000);
-it('preserves upright UV winding and at least 256 texels per metre in every photo module',()=>{
+it('preserves upright UV winding and photographic section density without per-pane rebuilding',()=>{
  const g=facadeBox(60,14.3,12,'panel',19),uv=g.attributes.facadeUv;
  // First triangle in each front-facing bay: right edge never reverses UV.
- const frontCount=Math.ceil(60/3.1)*5*6;
- for(let i=0;i<frontCount;i+=6){expect(uv.getX(i+1)).toBeGreaterThan(uv.getX(i));expect(uv.getY(i+2)).toBeGreaterThan(uv.getY(i));const metres=(g.attributes.position.getX(i+1)-g.attributes.position.getX(i))*60;expect((uv.getX(i+1)-uv.getX(i))*2048/metres).toBeGreaterThan(256);}
+ const frontCount=4*6;
+ for(let i=0;i<frontCount;i+=6){expect(uv.getX(i+1)).toBeGreaterThan(uv.getX(i));expect(uv.getY(i+2)).toBeGreaterThan(uv.getY(i));const metres=(g.attributes.position.getX(i+1)-g.attributes.position.getX(i))*60;expect((uv.getX(i+1)-uv.getX(i))*2048/metres).toBeGreaterThan(120);}
  const report=JSON.parse(readFileSync('docs/qa/facades2/rectification.json'));
  for(const p of Object.values(report.photos))expect(Math.min(...p.texelsPerMetre)).toBeGreaterThanOrEqual(256);
  // Seeded avalanche hash avoids the old checkerboard/reflected repeating blocks.
@@ -48,8 +48,8 @@ it('persists valid facade modes and survives unavailable or denied browser stora
  Object.defineProperty(globalThis,'localStorage',{configurable:true,get(){throw Error('denied');}});expect(readFacadeMode()).toBe('photo');expect(()=>setFacadeMode(root,'photo')).not.toThrow();
  }finally{if(descriptor)Object.defineProperty(globalThis,'localStorage',descriptor);else delete globalThis.localStorage;}
 });
-it('keeps mip filtered emission bounded and disables photo shader additions in procedural mode',()=>{
+it('keeps original photographic glass without generated emission and disables photo UVs in procedural mode',()=>{
  const material=createFacadeMaterial('panel');material.userData.photoLoaded=true;
- const shader={vertexShader:'#include <uv_vertex>',fragmentShader:'#include <emissivemap_fragment>\n#include <normal_fragment_maps>'};material.onBeforeCompile(shader);expect(shader.fragmentShader).toContain('min(totalEmissiveRadiance,vec3(.24))');expect(shader.fragmentShader).not.toContain('fract(sin');expect(shader.vertexShader).toContain('facadeUv');
+ const shader={vertexShader:'#include <uv_vertex>',fragmentShader:'#include <emissivemap_fragment>\n#include <normal_fragment_maps>'};material.onBeforeCompile(shader);expect(shader.fragmentShader).toBe('#include <emissivemap_fragment>\n#include <normal_fragment_maps>');expect(shader.fragmentShader).not.toContain('fract(sin');expect(shader.vertexShader).toContain('facadeUv');
  material.userData.applyFacadeMode('procedural');const fallback={vertexShader:'#include <uv_vertex>',fragmentShader:'#include <emissivemap_fragment>'};material.onBeforeCompile(fallback);expect(fallback.vertexShader).not.toContain('facadeUv');material.dispose();
 });

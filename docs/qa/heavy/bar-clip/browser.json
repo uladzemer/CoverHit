@@ -1,0 +1,491 @@
+{
+  "contact": {
+    "enabled": [
+      0.028990190476179123,
+      0.028990697115659714,
+      0.02895331382751465
+    ],
+    "disabled": [
+      -0.09999998658895493,
+      -0.09999998658895493,
+      -0.09999998658895493
+    ],
+    "anchoredEnabled": [
+      0.021458281204104424,
+      0.02228979952633381,
+      0.030059196054935455
+    ],
+    "anchorSuppressed": [
+      -0.09999998658895493,
+      -0.09999998658895493,
+      -0.09999998658895493
+    ]
+  },
+  "stress": {
+    "hits": 40,
+    "steps": 480,
+    "worstInside": 0,
+    "maxSpeed": 2.0751775807989006,
+    "radius": 0.0301
+  },
+  "pointer": {
+    "steps": 2486,
+    "inside": 0,
+    "wrongSide": 0,
+    "hits": 40,
+    "misses": 0,
+    "log": [
+      {
+        "uv": [
+          0.3589840253851908,
+          0.442554706219637
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.43591977053921516,
+          0.44256077374533404
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.4871617741263935,
+          0.43179551114961906
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.5640259004307295,
+          0.43176556492837104
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.6409346829019,
+          0.4318075773426632
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.35890702686150305,
+          0.44256150857897875
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.4359060527461145,
+          0.4425589045284933
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.48715655403261143,
+          0.43179242181456784
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.5640724189542967,
+          0.43175802426387133
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.640972896387777,
+          0.4317981067631662
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.35891085683911195,
+          0.4425714253683112
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.43590810974981886,
+          0.4425617733379935
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.4871575683780013,
+          0.4317952841985111
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.5640339669845694,
+          0.4317661107848768
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.6409276787484177,
+          0.43180372502200964
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.35891978334407254,
+          0.4425662485710662
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.43591466174706195,
+          0.44255846918036784
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.48715934129988536,
+          0.43179304174864164
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.5640331549377455,
+          0.43176286664896446
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.640921979120622,
+          0.43180506378801065
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.35889850648641725,
+          0.442515945874114
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.4359123530766739,
+          0.4425579849233502
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.4871591504737184,
+          0.4317908589700121
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.5640501003915287,
+          0.4317529720831682
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.64096609860238,
+          0.43181629548355727
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.35890339022038426,
+          0.44255773213110466
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.4359061374081274,
+          0.4425619451024406
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.4871576666648032,
+          0.43179434256222216
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.5640281514902554,
+          0.4317638012432111
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.6409443232140518,
+          0.431801091101061
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.3589495762437482,
+          0.4425560537077641
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.4359097131174974,
+          0.4425590464552549
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.4871580818025214,
+          0.4317953919415838
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.5640350244774364,
+          0.43176564524861893
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.6409205649200094,
+          0.43180473059621904
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.35889509606887726,
+          0.44257170968393517
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.4359074494162549,
+          0.4425599135208129
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.487155948814566,
+          0.43179103492002957
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.5640733089466243,
+          0.43175572426397435
+        ],
+        "strength": 1,
+        "physicalContact": false
+      },
+      {
+        "uv": [
+          0.6409686817679462,
+          0.43179833357681796
+        ],
+        "strength": 1,
+        "physicalContact": false
+      }
+    ],
+    "side": 0,
+    "flipping": false
+  },
+  "metrics": [
+    {
+      "id": "01",
+      "aspect": 0.5,
+      "width": 1.5,
+      "height": 3,
+      "axis": "v",
+      "span": 1.5,
+      "drop": 1.5
+    },
+    {
+      "id": "03",
+      "aspect": 0.783212161269002,
+      "width": 2.349636483807006,
+      "height": 3,
+      "axis": "v",
+      "span": 2.349636483807006,
+      "drop": 1.5
+    },
+    {
+      "id": "04",
+      "aspect": 0.810994441012971,
+      "width": 2.432983323038913,
+      "height": 3,
+      "axis": "v",
+      "span": 2.432983323038913,
+      "drop": 1.5
+    },
+    {
+      "id": "05",
+      "aspect": 0.7661290322580645,
+      "width": 2.681451612903226,
+      "height": 3.5,
+      "axis": "v",
+      "span": 2.681451612903226,
+      "drop": 1.75
+    },
+    {
+      "id": "06",
+      "aspect": 0.6559734513274337,
+      "width": 1.4431415929203542,
+      "height": 2.2,
+      "axis": "v",
+      "span": 1.4431415929203542,
+      "drop": 1.1
+    },
+    {
+      "id": "07",
+      "aspect": 1.390894819466248,
+      "width": 3,
+      "height": 2.156884875846501,
+      "axis": "u",
+      "span": 2.156884875846501,
+      "drop": 1.5
+    },
+    {
+      "id": "08",
+      "aspect": 0.5880758807588076,
+      "width": 1.7642276422764227,
+      "height": 3,
+      "axis": "v",
+      "span": 1.7642276422764227,
+      "drop": 1.5
+    },
+    {
+      "id": "09",
+      "aspect": 0.8834355828220859,
+      "width": 1.943558282208589,
+      "height": 2.2,
+      "axis": "v",
+      "span": 1.943558282208589,
+      "drop": 1.1
+    },
+    {
+      "id": "10",
+      "aspect": 0.548964745383324,
+      "width": 1.6468942361499719,
+      "height": 3,
+      "axis": "v",
+      "span": 1.6468942361499719,
+      "drop": 1.5
+    },
+    {
+      "id": "envato-6325SWE",
+      "aspect": 1.3161953727506426,
+      "width": 3,
+      "height": 2.279296875,
+      "axis": "u",
+      "span": 2.279296875,
+      "drop": 1.5
+    },
+    {
+      "id": "envato-B7PV8QR",
+      "aspect": 1.6397117694155323,
+      "width": 3,
+      "height": 1.8295898437500002,
+      "axis": "u",
+      "span": 1.8295898437500002,
+      "drop": 1.5
+    },
+    {
+      "id": "envato-EPRJ58X",
+      "aspect": 1.5003663003663004,
+      "width": 3,
+      "height": 1.99951171875,
+      "axis": "u",
+      "span": 1.99951171875,
+      "drop": 1.5
+    },
+    {
+      "id": "envato-RBFEDY2",
+      "aspect": 0.69189453125,
+      "width": 2.07568359375,
+      "height": 3,
+      "axis": "v",
+      "span": 2.07568359375,
+      "drop": 1.5
+    },
+    {
+      "id": "envato-T834FYR",
+      "aspect": 1.6907730673316708,
+      "width": 2.2,
+      "height": 1.30117994100295,
+      "axis": "u",
+      "span": 1.30117994100295,
+      "drop": 1.1
+    }
+  ],
+  "errors": []
+}

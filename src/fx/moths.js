@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
-import { wind } from '../scene/wind.js';
+import { wind,WIND_RESPONSE } from '../scene/wind.js';
 import { createFlight, stepFlight } from './mothFlight.js';
 import { DustSystem } from './dust.js';
 import { lampPositions } from '../scene/yard/layout.js';
@@ -87,7 +87,7 @@ export class MothSystem {
     for(const [id,m] of this.moths) {
       m.age+=dt;
       if(m.state==='flying') {
-        wind.velocity(this.sample,m.flight.x,m.flight.y,m.flight.z);stepFlight(m.flight,dt,this.sample,this.opts);
+        wind.velocity(this.sample,m.flight.x,m.flight.y,m.flight.z);this.sample.multiplyScalar(WIND_RESPONSE.moths);stepFlight(m.flight,dt,this.sample,this.opts);
         const f=m.flight;m.group.position.set(f.x,f.y,f.z);m.group.rotation.set(f.pitch,Math.atan2(f.vx,f.vz)*.35,f.bank);
         m.trail+=dt;if(m.trail>.18){m.trail=0;this.scales.emit(m.group.position,this.sample.set(0,0,1),.0002);}
       } else {

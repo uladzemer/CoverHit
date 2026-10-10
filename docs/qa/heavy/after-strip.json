@@ -1,0 +1,15 @@
+{
+  "view": "oblique",
+  "clock": "native fixed-step physical seconds; separate wall-clock audit in time.json",
+  "strength": 1,
+  "frames": [
+    0,
+    0.11666666666666667,
+    0.3,
+    0.55,
+    0.9,
+    1.5,
+    2.5,
+    4
+  ]
+}

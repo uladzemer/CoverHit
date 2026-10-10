@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-export const FACADE_SERIES={panel:{file:'panel',bays:4,floors:3,bay:3.1},panel335:{file:'panel335',bays:4,floors:3,bay:3.1},brick:{file:'brick',bays:4,floors:3,bay:3},nine:{file:'nine',bays:4,floors:3,bay:3.2},tower:{file:'tower',bays:4,floors:3,bay:3.2},school:{file:'panel',bays:4,floors:3,bay:3.1}};
+export const FACADE_SERIES={panel:{file:'panel',bays:4,floors:3,bay:3.1,sectionWidth:15.5},panel335:{file:'panel335',bays:4,floors:3,bay:3.1,sectionWidth:15.5},brick:{file:'brick',bays:4,floors:3,bay:3,sectionWidth:15},nine:{file:'nine',bays:4,floors:3,bay:3.2},tower:{file:'tower',bays:4,floors:3,bay:3.2},school:{file:'panel',bays:4,floors:3,bay:3.1}};
 const photoCache=new Map();
 export async function loadPhotoTexture(file,color=false){
  const key=`${file}:${color}`;
@@ -18,38 +18,28 @@ export function facadeUV(horizontal,vertical,series='panel'){
 export function facadeTint(seed){return new THREE.Color().setRGB(.996+(seed%4)*.001,1,1);}
 // UVs are baked before static instance merging: rotations never change bay size.
 export function moduleChoice(col,row,seed=0){let h=(Math.imul(col+1,73856093)^Math.imul(row+1,19349663)^Math.imul(seed+1,83492791))>>>0;h=Math.imul(h^(h>>>16),0x45d9f3b);h=Math.imul(h^(h>>>16),0x45d9f3b);return 1+((h^(h>>>16))>>>0)%2;}
+// Each front quad carries a complete photographed entrance section, upright.
+// Concrete for ends/rears occupies the bottom atlas strip (same draw/material).
 export function facadeBox(width,height,depth,series='panel',seed=0){
- const s=FACADE_SERIES[series]||FACADE_SERIES.panel;
- const positions=[],normals=[],uvs=[],photo=[],detail=[],colors=[],openings=[];
- function face(horizontal,point,normal){
-  const columns=Math.round(horizontal/s.bay),bayWidth=horizontal/columns,rows=Math.ceil(height/2.7-1e-8);
-  for(let row=0;row<rows;row++)for(let col=0;col<columns;col++){
-   const x0=col*bayWidth,x1=Math.min(horizontal,(col+1)*bayWidth),y0=row*2.7,y1=Math.min(height,(row+1)*2.7);
-   const slot=row===0?0:row===rows-1?3:col===0||col===columns-1?2:moduleChoice(col,row,seed);
-   for(const [x,y]of [[x0,y0],[x1,y0],[x0,y1],[x0,y1],[x1,y0],[x1,y1]]){
-    positions.push(...point(x/horizontal,y/height));normals.push(...normal);
-    uvs.push(...facadeUV(x*s.bay/bayWidth,y,series));
-    photo.push((slot%2+(8.5+1007*(x-x0)/bayWidth)/1024)/2,(1-Math.floor(slot/2)+(8.5+1007*(y-y0)/2.7)/1024)/2);
-    detail.push(x/3.5,y/3.5);colors.push(1,1,1);
-   }
-   // Thin photographic opening layer in this same material batch. Its mask
-   // uses exactly the cell UVs, never procedural per-fragment randomness.
-   const loggia=series==='nine'||series==='tower',a=loggia?64/1008:220/1008,c=loggia?944/1008:788/1008;
-   for(const [u,v]of [[a,183/1008],[c,183/1008],[a,788/1008],[a,788/1008],[c,183/1008],[c,788/1008]]){
-    const x=x0+u*bayWidth,y=y0+v*2.7,p=point(x/horizontal,y/height);
-    const axis=normal[0]?0:2;p[axis]+=normal[axis]*.001;
-    openings.push({p,normal,uv:facadeUV(x*s.bay/bayWidth,y,series),photo:[(slot%2+(8.5+1007*u)/1024)/2,(1-Math.floor(slot/2)+(8.5+1007*v)/1024)/2],detail:[x/3.5,y/3.5]});
-   }
+ const family=FACADE_SERIES[series]||FACADE_SERIES.panel;
+ const positions=[],normals=[],uvs=[],photo=[],detail=[],colors=[];
+ function quad(x0,x1,y0,y1,horizontal,point,normal,rect,tint=1){
+  for(const [x,y]of [[x0,y0],[x1,y0],[x0,y1],[x0,y1],[x1,y0],[x1,y1]]){
+   positions.push(...point(x/horizontal,y/height));normals.push(...normal);
+   uvs.push(...facadeUV(x,y,series));detail.push(x/3.5,y/3.5);
+   photo.push(rect[0]+(rect[2]-rect[0])*(x-x0)/(x1-x0),rect[1]+(rect[3]-rect[1])*(y-y0)/(y1-y0));
+   colors.push(tint,tint,tint);
   }
  }
- face(width,(x,y)=>[x-.5,y-.5,.5],[0,0,1]);
- face(width,(x,y)=>[.5-x,y-.5,-.5],[0,0,-1]);
- face(depth,(x,y)=>[.5,y-.5,.5-x],[1,0,0]);
- face(depth,(x,y)=>[-.5,y-.5,x-.5],[-1,0,0]);
- for(const sign of [-1,1])for(const [x,z]of [[-.5,-.5],[-.5,.5],[.5,-.5],[.5,-.5],[-.5,.5],[.5,.5]]){
-  positions.push(x,sign*.5,z);normals.push(0,sign,0);uvs.push(.001,.001);photo.push(.002,.002);detail.push(x,z);colors.push(1,1,1);
+ const sections=Math.max(1,Math.round(width/(family.sectionWidth||15.5))),pitch=width/sections;
+ for(let i=0;i<sections;i++)quad(i*pitch,(i+1)*pitch,0,height,width,(x,y)=>[x-.5,y-.5,.5],[0,0,1],[8.5/2048,8.5/2048,2039.5/2048,1791.5/2048],.975+((i+seed)%3)*.025);
+ for(const [horizontal,point,normal]of [[width,(x,y)=>[.5-x,y-.5,-.5],[0,0,-1]],[depth,(x,y)=>[.5,y-.5,.5-x],[1,0,0]],[depth,(x,y)=>[-.5,y-.5,x-.5],[-1,0,0]]]){
+  const cols=Math.ceil(horizontal/3.1),rows=Math.ceil(height/2.7);
+  for(let y=0;y<rows;y++)for(let x=0;x<cols;x++)quad(x*horizontal/cols,(x+1)*horizontal/cols,y*height/rows,(y+1)*height/rows,horizontal,point,normal,[8.5/2048,1800.5/2048,503.5/2048,2039.5/2048]);
  }
- for(const o of openings){positions.push(...o.p);normals.push(...o.normal);uvs.push(...o.uv);photo.push(...o.photo);detail.push(...o.detail);colors.push(1,1,1);}
+ for(const sign of [-1,1])for(const [x,z]of [[-.5,-.5],[-.5,.5],[.5,-.5],[.5,-.5],[-.5,.5],[.5,.5]]){
+  positions.push(x,sign*.5,z);normals.push(0,sign,0);uvs.push(.001,.001);photo.push(.05,.95);detail.push(x,z);colors.push(1,1,1);
+ }
  const g=new THREE.BufferGeometry();
  for(const [name,data,size]of [['position',positions,3],['normal',normals,3],['uv',uvs,2],['facadeUv',photo,2],['detailUv',detail,2],['color',colors,3]])g.setAttribute(name,new THREE.Float32BufferAttribute(data,size));
  g.computeBoundingBox();g.computeBoundingSphere();return g;
@@ -60,10 +50,10 @@ export function facadeImpostorBox(width,height,depth,series='panel',seed=0){
  const g=new THREE.BoxGeometry(1,1,1),uv=g.attributes.uv,photo=new Float32Array(uv.count*2),colors=new Float32Array(uv.count*3).fill(1);
  const slot=seed%4,s=FACADE_SERIES[series]||FACADE_SERIES.panel,bakedBays=series==='tower'?8:20,bakedFloors=series==='tower'?16:series==='nine'?9:5;
  for(let i=0;i<uv.count;i++){
-  const face=Math.floor(i/4),x=uv.getX(i),y=uv.getY(i),roof=face===2||face===3,horizontal=face<2?depth:width;
+  const face=Math.floor(i/4),x=uv.getX(i),y=uv.getY(i),roof=face===2||face===3,concrete=face!==4,horizontal=face<2?depth:width;
   const columns=Math.round(horizontal/s.bay),floorRatio=Math.min(1,height/2.7/bakedFloors),bayRatio=Math.min(1,columns/bakedBays);
-  photo[i*2]=slot%2*.5+(.5+(roof?0:x*511*bayRatio))/1024;
-  photo[i*2+1]=(1-Math.floor(slot/2))*.5+(.5+(roof?0:y*511*floorRatio))/1024;
+  photo[i*2]=slot%2*.5+(.5+(concrete?x*255:x*511*bayRatio))/1024;
+  photo[i*2+1]=(1-Math.floor(slot/2))*.5+(.5+(concrete?y*62:64+y*447*floorRatio))/1024;
   const p=facadeUV(x*horizontal,y*height,series);uv.setXY(i,roof?.001:p[0],roof?.001:p[1]);
  }
  g.setAttribute('facadeUv',new THREE.BufferAttribute(photo,2));g.setAttribute('detailUv',uv.clone());g.setAttribute('color',new THREE.BufferAttribute(colors,3));return g;
@@ -107,7 +97,7 @@ export function createFacadeMaterial(series='panel',fallback={},onReady=()=>{},d
  const material=new THREE.MeshStandardMaterial({roughness:.94,vertexColors:true,...fallback});
  material.userData.photoSeries=series;material.userData.castShadow=false;
  material.userData.facadeMode=readFacadeMode();
- const procedural={map:material.map,color:material.color.clone(),normalMap:material.normalMap,roughnessMap:material.roughnessMap,emissiveMap:material.emissiveMap,emissive:material.emissive.clone(),emissiveIntensity:material.emissiveIntensity};
+ const procedural={map:material.map,color:material.color.clone(),normalMap:material.normalMap,roughnessMap:material.roughnessMap,roughness:material.roughness,emissiveMap:material.emissiveMap,emissive:material.emissive.clone(),emissiveIntensity:material.emissiveIntensity};
  material.addEventListener('dispose',()=>{if(procedural.map!==material.map)procedural.map?.dispose();});
  let photos;
  material.userData.applyFacadeMode=mode=>{
@@ -136,21 +126,16 @@ export function createFacadeMaterial(series='panel',fallback={},onReady=()=>{},d
    #ifdef USE_NORMALMAP
     vNormalMapUv=detailUv;
    #endif`);
-  // Mip-filtered emission is baked into the module. No interpolated seed,
-  // sin/hash or alpha test can turn one window into unrelated bright texels.
-  shader.fragmentShader=shader.fragmentShader.replace('#include <emissivemap_fragment>',`#include <emissivemap_fragment>
-   totalEmissiveRadiance=min(totalEmissiveRadiance,vec3(.24));`);
-  shader.fragmentShader=shader.fragmentShader.replace('#include <normal_fragment_maps>',THREE.ShaderChunk.normal_fragment_maps.replace('mapN.xy *= normalScale;',`mapN.xy *= normalScale * (1.0-smoothstep(.006,.035,max(length(dFdx(vNormalMapUv)),length(dFdy(vNormalMapUv)))));`));
+
  };
- material.customProgramCacheKey=()=>`photo-facade-${series}-modules-v2-${impostor}-${material.userData.facadeMode}-${!!material.userData.photoLoaded}`;
+ material.customProgramCacheKey=()=>`photo-facade-${series}-whole-section-v4-${impostor}-${material.userData.facadeMode}-${!!material.userData.photoLoaded}`;
  if(typeof document!=='undefined'){
   material.userData.photoReady=Promise.allSettled([
-   loadPhotoTexture(`${s.file}${impostor?'-impostor':''}-albedo.webp`,true),loadPhotoTexture(`${s.file}${impostor?'-impostor':''}-windows.webp`),
-   ...(detail?[loadPhotoTexture('concrete-detail-normal.webp')]:[]),
+   loadPhotoTexture(`${s.file}${impostor?'-impostor':''}-albedo.webp`,true),
   ]).then(results=>{
    if(results[0].status!=='fulfilled')return false;
-   photos={map:results[0].value,color:new THREE.Color('#ffffff'),normalMap:results[2]?.status==='fulfilled'?results[2].value:null,roughnessMap:null,emissiveMap:results[1].status==='fulfilled'?results[1].value:null,emissive:new THREE.Color('#ffd39c'),emissiveIntensity:.55};
-   material.normalScale.set(.08,.08);material.userData.photoLoaded=true;
+   photos={map:results[0].value,color:new THREE.Color('#ffffff'),normalMap:null,roughnessMap:null,roughness:.94,emissiveMap:null,emissive:new THREE.Color('#000000'),emissiveIntensity:0};
+   material.userData.photoLoaded=true;
    material.userData.applyFacadeMode(material.userData.facadeMode);onReady();return true;
   });
  }

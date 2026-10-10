@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "sources": [
     {
       "index": 0,
@@ -203,6 +203,78 @@
       "page": "https://commons.wikimedia.org/wiki/File:Valday,_Novgorod_Oblast,_Russia_-_panoramio_(990).jpg",
       "author": "Дмитрий Cкляренко",
       "license": "CC BY 3.0"
+    },
+    {
+      "id": 220,
+      "title": "Moscow car show 2025-08-03 VAZ-2101 beige 0.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Moscow_car_show_2025-08-03_VAZ-2101_beige_0.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Moscow_car_show_2025-08-03_VAZ-2101_beige_0.jpg",
+      "width": 5184,
+      "height": 3456,
+      "car": true,
+      "author": "Retired electrician",
+      "license": "CC0",
+      "index": 220
+    },
+    {
+      "id": 20,
+      "title": "Klumava Street social housing.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Klumava_Street_social_housing.jpg",
+      "width": 3072,
+      "height": 2304,
+      "car": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Klumava_Street_social_housing.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Homoatrox",
+      "index": 20
+    },
+    {
+      "id": 77,
+      "title": "Фото Озёрска 03.06.2022.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg",
+      "width": 4000,
+      "height": 3000,
+      "car": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg",
+      "license": "CC0",
+      "author": "Artyom Vasilyev",
+      "index": 77
+    },
+    {
+      "id": 94,
+      "title": "Arzamas, Nizhny Novgorod Oblast, Russia - panoramio (341).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Arzamas,_Nizhny_Novgorod_Oblast,_Russia_-_panoramio_(341).jpg",
+      "width": 4000,
+      "height": 3000,
+      "car": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Arzamas%2C_Nizhny_Novgorod_Oblast%2C_Russia_-_panoramio_%28341%29.jpg",
+      "license": "CC BY 3.0",
+      "author": "Arzamassky",
+      "index": 94
+    },
+    {
+      "id": 222,
+      "title": "Moscow car show 2025-08-03 VAZ-2101 red 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Moscow_car_show_2025-08-03_VAZ-2101_red_02.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Moscow_car_show_2025-08-03_VAZ-2101_red_02.jpg",
+      "width": 5184,
+      "height": 3456,
+      "car": true,
+      "author": "Retired electrician",
+      "license": "CC0",
+      "index": 222
+    },
+    {
+      "id": 231,
+      "title": "Lada 1600 -- Front.JPG",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Lada_1600_--_Front.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Lada_1600_--_Front.JPG",
+      "width": 3759,
+      "height": 2206,
+      "car": true,
+      "author": "Bull-Doser",
+      "license": "Public domain",
+      "index": 231
     }
   ],
   "files": [
@@ -260,16 +332,18 @@
     {
       "file": "nine-reference.webp",
       "sources": [
-        9
+        77,
+        "polyhaven"
       ],
-      "transform": "reference, resized; not uploaded to GPU"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "panel-albedo.webp",
       "sources": [
-        7
+        77,
+        "polyhaven"
       ],
-      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "panel-normal.webp",
@@ -288,16 +362,18 @@
     {
       "file": "panel-windows.webp",
       "sources": [
-        7
+        77,
+        "polyhaven"
       ],
-      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "brick-albedo.webp",
       "sources": [
-        8
+        94,
+        "polyhaven"
       ],
-      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "brick-normal.webp",
@@ -316,16 +392,18 @@
     {
       "file": "brick-windows.webp",
       "sources": [
-        8
+        94,
+        "polyhaven"
       ],
-      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "nine-albedo.webp",
       "sources": [
-        6
+        77,
+        "polyhaven"
       ],
-      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "nine-normal.webp",
@@ -344,16 +422,18 @@
     {
       "file": "nine-windows.webp",
       "sources": [
-        6
+        77,
+        "polyhaven"
       ],
-      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "tower-albedo.webp",
       "sources": [
-        6
+        77,
+        "polyhaven"
       ],
-      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "tower-normal.webp",
@@ -372,16 +452,18 @@
     {
       "file": "tower-windows.webp",
       "sources": [
-        6
+        77,
+        "polyhaven"
       ],
-      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "panel335-albedo.webp",
       "sources": [
-        11
+        20,
+        "polyhaven"
       ],
-      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "panel335-normal.webp",
@@ -400,9 +482,10 @@
     {
       "file": "panel335-windows.webp",
       "sources": [
-        11
+        20,
+        "polyhaven"
       ],
-      "transform": "Constructive frontal composite: manual wall/window quad homographies; fixed rectangular openings and courses; 2.7m exact floor grid; half-texel UV inset; upright cells; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "concrete-reference.webp",
@@ -421,72 +504,82 @@
     {
       "file": "panel-impostor-albedo.webp",
       "sources": [
-        7
+        77,
+        "polyhaven"
       ],
-      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "panel-impostor-windows.webp",
       "sources": [
-        7
+        77,
+        "polyhaven"
       ],
-      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "panel335-impostor-albedo.webp",
       "sources": [
-        11
+        20,
+        "polyhaven"
       ],
-      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "panel335-impostor-windows.webp",
       "sources": [
-        11
+        20,
+        "polyhaven"
       ],
-      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "brick-impostor-albedo.webp",
       "sources": [
-        8
+        94,
+        "polyhaven"
       ],
-      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "brick-impostor-windows.webp",
       "sources": [
-        8
+        94,
+        "polyhaven"
       ],
-      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "nine-impostor-albedo.webp",
       "sources": [
-        6
+        77,
+        "polyhaven"
       ],
-      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "nine-impostor-windows.webp",
       "sources": [
-        6
+        77,
+        "polyhaven"
       ],
-      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "tower-impostor-albedo.webp",
       "sources": [
-        6
+        77,
+        "polyhaven"
       ],
-      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "tower-impostor-windows.webp",
       "sources": [
-        6
+        77,
+        "polyhaven"
       ],
-      "transform": "four seeded full-building impostors baked from constructive 2.7m grid cells; full bay resampling; no reflections"
+      "transform": "complete five-floor photograph; one reviewed homography, whole-floor lens/pitch correction, bounded flat field, 16px edge join; plain CC0 concrete atlas strip; no generated panes/noise/emission"
     },
     {
       "file": "car-flat-atlas.webp",
@@ -497,6 +590,20 @@
         4
       ],
       "transform": "civilian cleaned photo; piecewise wheelbase landmark rectification (2.42m); manual body silhouette and wheel-arch alpha; flat side/end cards; circular photo rim crop"
+    },
+    {
+      "file": "car-cream-cutout.webp",
+      "sources": [
+        231
+      ],
+      "transform": "whole photograph; polygon-seeded GrabCut; morphological cleanup; 1px feather and nearest interior RGB bleed; no paint reconstruction"
+    },
+    {
+      "file": "car-red-cutout.webp",
+      "sources": [
+        222
+      ],
+      "transform": "whole photograph; polygon-seeded GrabCut; morphological cleanup; 1px feather and nearest interior RGB bleed; no paint reconstruction"
     }
   ],
   "facadeModules": {
@@ -528,5 +635,626 @@
     ],
     "sourceSill": 214,
     "targetSill": 199
-  }
+  },
+  "photographicSections": {
+    "panel": {
+      "source": 77,
+      "previewWidth": 960,
+      "corners": [
+        [
+          447,
+          314
+        ],
+        [
+          898,
+          411
+        ],
+        [
+          929,
+          695
+        ],
+        [
+          446,
+          729
+        ]
+      ],
+      "widthMetres": 15.5,
+      "floors": 5,
+      "floorLines": [
+        [
+          0,
+          0
+        ],
+        [
+          178.8597355948503,
+          179.89606060444362
+        ],
+        [
+          342.0232748411518,
+          335.2961489846261
+        ],
+        [
+          513.1628713888866,
+          490.09854136029975
+        ],
+        [
+          690.5181160292993,
+          648.4324479367655
+        ],
+        [
+          878,
+          838
+        ]
+      ]
+    },
+    "panel335": {
+      "source": 20,
+      "previewWidth": 960,
+      "corners": [
+        [
+          357,
+          139
+        ],
+        [
+          673,
+          12
+        ],
+        [
+          673,
+          663
+        ],
+        [
+          357,
+          584
+        ]
+      ],
+      "widthMetres": 15.5,
+      "floors": 5,
+      "floorLines": [
+        [
+          0,
+          0
+        ],
+        [
+          150.0886111313825,
+          137.07584713000344
+        ],
+        [
+          298.65447943305946,
+          287.01889774755847
+        ],
+        [
+          450.96200032617855,
+          438.629053796023
+        ],
+        [
+          614.9188113813303,
+          621.1768200041075
+        ],
+        [
+          761,
+          761
+        ]
+      ]
+    },
+    "brick": {
+      "source": 94,
+      "previewWidth": 960,
+      "corners": [
+        [
+          175,
+          147
+        ],
+        [
+          507,
+          208
+        ],
+        [
+          507,
+          502
+        ],
+        [
+          175,
+          519
+        ]
+      ],
+      "widthMetres": 15,
+      "floors": 5,
+      "inpaint": [
+        [
+          [
+            358,
+            210
+          ],
+          [
+            365,
+            210
+          ],
+          [
+            367,
+            523
+          ],
+          [
+            354,
+            523
+          ]
+        ],
+        [
+          [
+            358,
+            212
+          ],
+          [
+            379,
+            184
+          ],
+          [
+            401,
+            167
+          ],
+          [
+            405,
+            174
+          ],
+          [
+            382,
+            190
+          ],
+          [
+            364,
+            216
+          ]
+        ]
+      ],
+      "floorLines": [
+        [
+          0,
+          0
+        ],
+        [
+          19.620623230274003,
+          29.646613717427098
+        ],
+        [
+          207.054419058872,
+          176.16404509746326
+        ],
+        [
+          360.02081306025315,
+          366.46427597298015
+        ],
+        [
+          536.8328848415393,
+          534.5729808996791
+        ],
+        [
+          720.864848300899,
+          711.541151636279
+        ],
+        [
+          860,
+          860
+        ]
+      ],
+      "floorTargets": [
+        0,
+        50,
+        406.8,
+        763.6,
+        1120.4,
+        1477.2,
+        1784
+      ]
+    }
+  },
+  "billboards": [
+    {
+      "source": 231,
+      "name": "cream",
+      "polygon": [
+        [
+          25,
+          181
+        ],
+        [
+          36,
+          112
+        ],
+        [
+          155,
+          105
+        ],
+        [
+          204,
+          43
+        ],
+        [
+          239,
+          29
+        ],
+        [
+          303,
+          30
+        ],
+        [
+          610,
+          65
+        ],
+        [
+          653,
+          87
+        ],
+        [
+          681,
+          128
+        ],
+        [
+          718,
+          183
+        ],
+        [
+          733,
+          205
+        ],
+        [
+          925,
+          281
+        ],
+        [
+          963,
+          306
+        ],
+        [
+          956,
+          355
+        ],
+        [
+          906,
+          479
+        ],
+        [
+          888,
+          494
+        ],
+        [
+          913,
+          498
+        ],
+        [
+          892,
+          550
+        ],
+        [
+          817,
+          544
+        ],
+        [
+          793,
+          530
+        ],
+        [
+          774,
+          545
+        ],
+        [
+          744,
+          558
+        ],
+        [
+          707,
+          559
+        ],
+        [
+          678,
+          552
+        ],
+        [
+          650,
+          535
+        ],
+        [
+          628,
+          504
+        ],
+        [
+          615,
+          464
+        ],
+        [
+          231,
+          342
+        ],
+        [
+          211,
+          349
+        ],
+        [
+          180,
+          350
+        ],
+        [
+          151,
+          340
+        ],
+        [
+          125,
+          320
+        ],
+        [
+          108,
+          292
+        ],
+        [
+          100,
+          254
+        ],
+        [
+          76,
+          245
+        ],
+        [
+          32,
+          222
+        ]
+      ],
+      "holes": [],
+      "wheelCentres": [
+        [
+          160,
+          287
+        ],
+        [
+          720,
+          476
+        ]
+      ],
+      "levelAngleDegrees": 18.649538754051406,
+      "backgroundDarkBoxes": [
+        [
+          490,
+          38,
+          640,
+          90,
+          90
+        ]
+      ]
+    },
+    {
+      "source": 222,
+      "name": "red",
+      "polygon": [
+        [
+          28,
+          391
+        ],
+        [
+          37,
+          339
+        ],
+        [
+          39,
+          321
+        ],
+        [
+          45,
+          315
+        ],
+        [
+          190,
+          294
+        ],
+        [
+          243,
+          217
+        ],
+        [
+          260,
+          201
+        ],
+        [
+          292,
+          191
+        ],
+        [
+          389,
+          181
+        ],
+        [
+          456,
+          184
+        ],
+        [
+          574,
+          184
+        ],
+        [
+          691,
+          194
+        ],
+        [
+          721,
+          208
+        ],
+        [
+          791,
+          310
+        ],
+        [
+          938,
+          339
+        ],
+        [
+          951,
+          349
+        ],
+        [
+          955,
+          372
+        ],
+        [
+          951,
+          413
+        ],
+        [
+          960,
+          423
+        ],
+        [
+          958,
+          440
+        ],
+        [
+          939,
+          443
+        ],
+        [
+          931,
+          482
+        ],
+        [
+          914,
+          517
+        ],
+        [
+          900,
+          529
+        ],
+        [
+          882,
+          531
+        ],
+        [
+          864,
+          526
+        ],
+        [
+          850,
+          511
+        ],
+        [
+          840,
+          491
+        ],
+        [
+          833,
+          473
+        ],
+        [
+          525,
+          477
+        ],
+        [
+          519,
+          493
+        ],
+        [
+          505,
+          520
+        ],
+        [
+          488,
+          537
+        ],
+        [
+          466,
+          544
+        ],
+        [
+          442,
+          542
+        ],
+        [
+          421,
+          531
+        ],
+        [
+          404,
+          510
+        ],
+        [
+          389,
+          471
+        ],
+        [
+          341,
+          477
+        ],
+        [
+          298,
+          475
+        ],
+        [
+          279,
+          511
+        ],
+        [
+          259,
+          529
+        ],
+        [
+          232,
+          538
+        ],
+        [
+          210,
+          535
+        ],
+        [
+          188,
+          522
+        ],
+        [
+          178,
+          501
+        ],
+        [
+          166,
+          475
+        ],
+        [
+          153,
+          474
+        ],
+        [
+          150,
+          506
+        ],
+        [
+          138,
+          507
+        ],
+        [
+          135,
+          471
+        ],
+        [
+          67,
+          453
+        ],
+        [
+          46,
+          444
+        ],
+        [
+          40,
+          423
+        ],
+        [
+          26,
+          420
+        ]
+      ]
+    }
+  ],
+  "runtime": [
+    "panel-albedo.webp",
+    "panel335-albedo.webp",
+    "brick-albedo.webp",
+    "panel-impostor-albedo.webp",
+    "brick-impostor-albedo.webp",
+    "nine-impostor-albedo.webp",
+    "tower-impostor-albedo.webp",
+    "car-cream-cutout.webp",
+    "car-red-cutout.webp"
+  ]
 }

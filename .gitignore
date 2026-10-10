@@ -99,3 +99,8 @@ docs/qa/**/*.jpg
 !docs/qa/facades3/*.png
 docs/qa/facades3/licensed-stock-*.png
 docs/qa/facades3/colour/*.png
+
+# Natural-photo QA blocks optional licensed stock; CC source derivatives may be tracked.
+!docs/qa/natural/*.png
+!docs/qa/natural/*.jpg
+docs/qa/natural/colour/*.png

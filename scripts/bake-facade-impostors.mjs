@@ -8,6 +8,7 @@ export async function resampleFacadeModule(source,slot,width,height){
 }
 export async function bakeFacadeImpostors(){
  const dir='public/yard/photos',manifest=JSON.parse(await readFile(`${dir}/manifest.json`));
+ if(manifest.version>=4){const {buildNaturalPhotos}=await import('./build-natural-photos.mjs');return buildNaturalPhotos();}
  const config=JSON.parse(await readFile('scripts/facade-grid.json','utf8'));
  for(const family of ['panel','panel335','brick','nine','tower']){
   const floors=family==='tower'?16:family==='nine'?9:5,bays=family==='tower'?8:20;

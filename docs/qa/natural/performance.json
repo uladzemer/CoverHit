@@ -1,0 +1,733 @@
+{
+  "browser": "155.0.8059.39",
+  "viewport": [
+    1440,
+    900
+  ],
+  "seed": "colour-1986",
+  "modes": {
+    "photo": {
+      "default": {
+        "performance": {
+          "drawCalls": {
+            "mean": 128,
+            "p95": 128,
+            "max": 128
+          },
+          "triangles": {
+            "mean": 323282,
+            "p95": 323282,
+            "max": 323282
+          },
+          "frameMs": {
+            "mean": 7.475833333532015,
+            "p95": 10.800000011920929,
+            "max": 33.19999998807907
+          },
+          "renderMs": {
+            "mean": 1.3233333299557368,
+            "p95": 1.5999999642372131,
+            "max": 3.900000035762787
+          },
+          "gpuMs": {
+            "mean": 7.288793599999997,
+            "p95": 11.120416,
+            "max": 11.624448
+          },
+          "intervalMs": {
+            "mean": 18.354166666666668,
+            "p95": 20.399999999999636,
+            "max": 21.5
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.24876109893081966,
+            "lawn": 0.20544483865433116,
+            "facade": 0.26952867793021296
+          },
+          "clippedPercent": 0
+        }
+      },
+      "aim-left": {
+        "performance": {
+          "drawCalls": {
+            "mean": 118,
+            "p95": 118,
+            "max": 118
+          },
+          "triangles": {
+            "mean": 317068,
+            "p95": 317068,
+            "max": 317068
+          },
+          "frameMs": {
+            "mean": 7.2270833325882755,
+            "p95": 10,
+            "max": 29.5
+          },
+          "renderMs": {
+            "mean": 1.303750002135833,
+            "p95": 1.600000023841858,
+            "max": 3.100000023841858
+          },
+          "gpuMs": {
+            "mean": 7.687813200000002,
+            "p95": 11.157728,
+            "max": 11.788256
+          },
+          "intervalMs": {
+            "mean": 18.266666666666666,
+            "p95": 18.899999999997817,
+            "max": 20.600000000002183
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.21914756511861044,
+            "lawn": 0.2068098462703866,
+            "facade": 0.2407066990056888
+          },
+          "clippedPercent": 0
+        }
+      },
+      "aim-right": {
+        "performance": {
+          "drawCalls": {
+            "mean": 121,
+            "p95": 121,
+            "max": 121
+          },
+          "triangles": {
+            "mean": 321340,
+            "p95": 321340,
+            "max": 321340
+          },
+          "frameMs": {
+            "mean": 6.658749998857577,
+            "p95": 9.200000047683716,
+            "max": 29.399999976158142
+          },
+          "renderMs": {
+            "mean": 1.3449999985595544,
+            "p95": 1.600000023841858,
+            "max": 3.400000035762787
+          },
+          "gpuMs": {
+            "mean": 7.6968294666666655,
+            "p95": 11.657152,
+            "max": 14.65312
+          },
+          "intervalMs": {
+            "mean": 18.288749999999997,
+            "p95": 18.899999999997817,
+            "max": 21.700000000000728
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.2616094381817405,
+            "lawn": 0.1721463032651715,
+            "facade": 0.25757283905938094
+          },
+          "clippedPercent": 0
+        }
+      },
+      "wide": {
+        "performance": {
+          "drawCalls": {
+            "mean": 127,
+            "p95": 127,
+            "max": 127
+          },
+          "triangles": {
+            "mean": 323280,
+            "p95": 323280,
+            "max": 323280
+          },
+          "frameMs": {
+            "mean": 6.502083336561919,
+            "p95": 9.399999976158142,
+            "max": 29.400000035762787
+          },
+          "renderMs": {
+            "mean": 1.3137500007947287,
+            "p95": 1.5,
+            "max": 3.5
+          },
+          "gpuMs": {
+            "mean": 7.177709866666665,
+            "p95": 10.860544,
+            "max": 13.24768
+          },
+          "intervalMs": {
+            "mean": 18.32249999999999,
+            "p95": 19,
+            "max": 21.599999999998545
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.2455723554146264,
+            "lawn": 0.19268539205802548,
+            "facade": 0.2743924666671256
+          },
+          "clippedPercent": 0
+        }
+      },
+      "facade-close": {
+        "performance": {
+          "drawCalls": {
+            "mean": 93,
+            "p95": 93,
+            "max": 93
+          },
+          "triangles": {
+            "mean": 282848,
+            "p95": 282848,
+            "max": 282848
+          },
+          "frameMs": {
+            "mean": 6.3525000003476935,
+            "p95": 9.100000023841858,
+            "max": 10.5
+          },
+          "renderMs": {
+            "mean": 1.2175000014404456,
+            "p95": 1.5,
+            "max": 2.800000011920929
+          },
+          "gpuMs": {
+            "mean": 8.304253466666669,
+            "p95": 9.18528,
+            "max": 10.32192
+          },
+          "intervalMs": {
+            "mean": 18.233749999999993,
+            "p95": 18.80000000000291,
+            "max": 21.5
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.2809438520531631,
+            "lawn": 0.112992376729703,
+            "facade": 0.3421752342218586
+          },
+          "clippedPercent": 0
+        }
+      },
+      "facade-mid": {
+        "performance": {
+          "drawCalls": {
+            "mean": 95,
+            "p95": 95,
+            "max": 95
+          },
+          "triangles": {
+            "mean": 283420,
+            "p95": 283420,
+            "max": 283420
+          },
+          "frameMs": {
+            "mean": 6.543333333482345,
+            "p95": 9.700000047683716,
+            "max": 28.19999998807907
+          },
+          "renderMs": {
+            "mean": 1.1770833325882752,
+            "p95": 1.5,
+            "max": 4.100000023841858
+          },
+          "gpuMs": {
+            "mean": 7.131803866666666,
+            "p95": 10.10688,
+            "max": 11.816928
+          },
+          "intervalMs": {
+            "mean": 18.328750000000007,
+            "p95": 19,
+            "max": 21.60000000000582
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.2815210577162528,
+            "lawn": 0.34202371515483754,
+            "facade": 0.10096235730302526
+          },
+          "clippedPercent": 0
+        }
+      },
+      "facade-far": {
+        "performance": {
+          "drawCalls": {
+            "mean": 106,
+            "p95": 106,
+            "max": 106
+          },
+          "triangles": {
+            "mean": 291668,
+            "p95": 291668,
+            "max": 291668
+          },
+          "frameMs": {
+            "mean": 6.891250000645717,
+            "p95": 10.100000023841858,
+            "max": 28.099999964237213
+          },
+          "renderMs": {
+            "mean": 1.3545833344260851,
+            "p95": 2.199999988079071,
+            "max": 2.800000011920929
+          },
+          "gpuMs": {
+            "mean": 8.749711733333331,
+            "p95": 10.336,
+            "max": 12.92688
+          },
+          "intervalMs": {
+            "mean": 18.295833333333334,
+            "p95": 18.900000000001455,
+            "max": 21.30000000000291
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.23975381716603023,
+            "lawn": 0.1907063812298283,
+            "facade": 0.39351159952382586
+          },
+          "clippedPercent": 0
+        }
+      },
+      "car-side": {
+        "performance": {
+          "drawCalls": {
+            "mean": 103,
+            "p95": 103,
+            "max": 103
+          },
+          "triangles": {
+            "mean": 290534,
+            "p95": 290534,
+            "max": 290534
+          },
+          "frameMs": {
+            "mean": 6.680416667461396,
+            "p95": 9.299999952316284,
+            "max": 10.699999988079071
+          },
+          "renderMs": {
+            "mean": 1.33125,
+            "p95": 1.7000000476837158,
+            "max": 2.300000011920929
+          },
+          "gpuMs": {
+            "mean": 6.587927466666665,
+            "p95": 10.004512,
+            "max": 11.628704
+          },
+          "intervalMs": {
+            "mean": 18.296666666666685,
+            "p95": 18.900000000001455,
+            "max": 20.69999999999709
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.23236256642004108,
+            "lawn": 0.24190591025393454,
+            "facade": 0.2859730055704155
+          },
+          "clippedPercent": 0
+        }
+      },
+      "car-front": {
+        "performance": {
+          "drawCalls": {
+            "mean": 112,
+            "p95": 112,
+            "max": 112
+          },
+          "triangles": {
+            "mean": 304332,
+            "p95": 304332,
+            "max": 304332
+          },
+          "frameMs": {
+            "mean": 8.426250000546377,
+            "p95": 19.19999998807907,
+            "max": 35.09999996423721
+          },
+          "renderMs": {
+            "mean": 1.808750000844399,
+            "p95": 5,
+            "max": 10.200000047683716
+          },
+          "gpuMs": {
+            "mean": 6.492149866666667,
+            "p95": 10.635264,
+            "max": 16.216128
+          },
+          "intervalMs": {
+            "mean": 18.445833333333333,
+            "p95": 19,
+            "max": 38.599999999998545
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.24847659650409426,
+            "lawn": 0.236937230086909,
+            "facade": 0.19239332973251994
+          },
+          "clippedPercent": 0
+        }
+      },
+      "car-three-quarter": {
+        "performance": {
+          "drawCalls": {
+            "mean": 110,
+            "p95": 110,
+            "max": 110
+          },
+          "triangles": {
+            "mean": 299708,
+            "p95": 299708,
+            "max": 299708
+          },
+          "frameMs": {
+            "mean": 6.742916668454806,
+            "p95": 9.300000011920929,
+            "max": 29.600000023841858
+          },
+          "renderMs": {
+            "mean": 1.3275000005960464,
+            "p95": 1.600000023841858,
+            "max": 3.400000035762787
+          },
+          "gpuMs": {
+            "mean": 6.657761066666666,
+            "p95": 10.144096,
+            "max": 12.40736
+          },
+          "intervalMs": {
+            "mean": 18.272083333333345,
+            "p95": 18.700000000004366,
+            "max": 21.10000000000582
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.22413370177671568,
+            "lawn": 0.2394850050911646,
+            "facade": 0.16782629795470502
+          },
+          "clippedPercent": 0
+        }
+      }
+    },
+    "procedural": {
+      "default": {
+        "performance": {
+          "drawCalls": {
+            "mean": 147,
+            "p95": 147,
+            "max": 147
+          },
+          "triangles": {
+            "mean": 351612,
+            "p95": 351612,
+            "max": 351612
+          },
+          "frameMs": {
+            "mean": 7.529166666666667,
+            "p95": 10.400000035762787,
+            "max": 11.599999964237213
+          },
+          "renderMs": {
+            "mean": 1.4862500021855036,
+            "p95": 1.800000011920929,
+            "max": 2.5
+          },
+          "gpuMs": {
+            "mean": 7.808188133333335,
+            "p95": 10.6984,
+            "max": 12.682528
+          },
+          "intervalMs": {
+            "mean": 18.29916666666668,
+            "p95": 18.89999999999418,
+            "max": 21.40000000000873
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.24879618775212275,
+            "lawn": 0.2051638958609297,
+            "facade": 0.2930438541531346
+          },
+          "clippedPercent": 0
+        }
+      }
+    },
+    "photo-restored": {
+      "default": {
+        "performance": {
+          "drawCalls": {
+            "mean": 128,
+            "p95": 128,
+            "max": 128
+          },
+          "triangles": {
+            "mean": 323282,
+            "p95": 323282,
+            "max": 323282
+          },
+          "frameMs": {
+            "mean": 7.4204166685541475,
+            "p95": 10,
+            "max": 32.30000001192093
+          },
+          "renderMs": {
+            "mean": 1.360833333681027,
+            "p95": 1.699999988079071,
+            "max": 3.199999988079071
+          },
+          "gpuMs": {
+            "mean": 7.410650000000002,
+            "p95": 10.7008,
+            "max": 12.161728
+          },
+          "intervalMs": {
+            "mean": 18.261666666666677,
+            "p95": 18.89999999999418,
+            "max": 21.5
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.24872545855893538,
+            "lawn": 0.20522152862495707,
+            "facade": 0.2691592023622112
+          },
+          "clippedPercent": 0
+        }
+      }
+    }
+  },
+  "errors": [],
+  "facades": [
+    {
+      "series": "panel",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "brick",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "panel335",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "brick",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "nine",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "panel",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "nine",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "brick",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "panel",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "tower",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    },
+    {
+      "series": "school",
+      "loaded": true,
+      "mode": "photo",
+      "anisotropy": 16
+    }
+  ],
+  "photoTextures": [
+    {
+      "file": "panel-albedo.webp",
+      "width": 2048,
+      "height": 2048,
+      "rgbaMipBytes": 22369621.333333332
+    },
+    {
+      "file": "brick-albedo.webp",
+      "width": 2048,
+      "height": 2048,
+      "rgbaMipBytes": 22369621.333333332
+    },
+    {
+      "file": "panel335-albedo.webp",
+      "width": 2048,
+      "height": 2048,
+      "rgbaMipBytes": 22369621.333333332
+    },
+    {
+      "file": "brick-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "nine-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "panel-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "car-red-cutout.webp",
+      "width": 1490,
+      "height": 590,
+      "rgbaMipBytes": 4688533.333333333
+    },
+    {
+      "file": "car-cream-cutout.webp",
+      "width": 1529,
+      "height": 688,
+      "rgbaMipBytes": 5610410.666666667
+    },
+    {
+      "file": "tower-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    }
+  ],
+  "quality": {
+    "photo-high": {
+      "drawCalls": 128,
+      "frameMs": 6.900000035762787,
+      "intervalMs": 17.89999999999418,
+      "triangles": 323282,
+      "physicsMs": 4.700000047683716,
+      "renderMs": 1.300000011920929,
+      "gpuMs": 6.441152
+    },
+    "photo-medium": {
+      "drawCalls": 129,
+      "frameMs": 3356.400000035763,
+      "intervalMs": 18,
+      "triangles": 323283,
+      "physicsMs": 5.300000011920929,
+      "renderMs": 3350.199999988079,
+      "gpuMs": null
+    },
+    "photo-low": {
+      "drawCalls": 76,
+      "frameMs": 1719.6000000238419,
+      "intervalMs": 18.39999999999418,
+      "triangles": 181146,
+      "physicsMs": 5.200000047683716,
+      "renderMs": 1713.6000000238419,
+      "gpuMs": null
+    },
+    "procedural-high": {
+      "drawCalls": 147,
+      "frameMs": 6.400000035762787,
+      "intervalMs": 18.80000000000291,
+      "triangles": 351612,
+      "physicsMs": 4.300000011920929,
+      "renderMs": 1.5,
+      "gpuMs": 5.0704
+    },
+    "procedural-medium": {
+      "drawCalls": 148,
+      "frameMs": 6.800000011920929,
+      "intervalMs": 17.90000000000873,
+      "triangles": 351613,
+      "physicsMs": 4.5,
+      "renderMs": 1.600000023841858,
+      "gpuMs": 4.876288
+    },
+    "procedural-low": {
+      "drawCalls": 95,
+      "frameMs": 6.599999964237213,
+      "intervalMs": 17.80000000000291,
+      "triangles": 209476,
+      "physicsMs": 4.5,
+      "renderMs": 1.300000011920929,
+      "gpuMs": 8.443872
+    }
+  },
+  "persisted": "procedural",
+  "missing": {
+    "photographs": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "windowsVisible": true,
+    "performance": {
+      "drawCalls": 150,
+      "frameMs": 9.800000011920929,
+      "intervalMs": 18.199999999999818,
+      "triangles": 363284,
+      "physicsMs": 7.300000011920929,
+      "renderMs": 1.699999988079071,
+      "gpuMs": 5.79328
+    }
+  },
+  "drawCallDelta": 4,
+  "delta": {
+    "frameMs": -4.468958331396182,
+    "renderMs": -1.094166669373711,
+    "gpuMs": -1.2435440666666668
+  }
+}

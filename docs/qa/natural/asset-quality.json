@@ -1,0 +1,161 @@
+{
+  "method": "Shipped WebP decode; strongest connected wall-joint gradient near each full-floor boundary, robust edge fit. Car edge RGB compared to nearest fully opaque local interior (chrome and tyres are car pixels).",
+  "facades": {
+    "panel": {
+      "probeX": [
+        366,
+        866
+      ],
+      "lines": [
+        {
+          "centerY": 356.5598982134458,
+          "slope": 0.0013942527320773787,
+          "intercept": 355.70103853048613,
+          "angleDegrees": 0.07988474535890953,
+          "supportPixels": 341
+        },
+        {
+          "centerY": 713.8611429746262,
+          "slope": 0.00024393621739294934,
+          "intercept": 713.7108782647122,
+          "angleDegrees": 0.013976515449778132,
+          "supportPixels": 352
+        },
+        {
+          "centerY": 1070.8144882444224,
+          "slope": 0.0007746153933929735,
+          "intercept": 1070.3373251620924,
+          "angleDegrees": 0.04438218391041883,
+          "supportPixels": 232
+        },
+        {
+          "centerY": 1427.3578091362467,
+          "slope": 0.0011049973760743313,
+          "intercept": 1426.6771307525848,
+          "angleDegrees": 0.06331166025384684,
+          "supportPixels": 392
+        }
+      ],
+      "pitchPixels": [
+        357.3012447611804,
+        356.95334526979616,
+        356.54332089182435
+      ],
+      "pitchErrorPixels": 0.5012447611803736,
+      "straightnessDegrees": 0.07988474535890953,
+      "edgeLuminanceDiscontinuityFraction": 0.010315798199083702,
+      "passes": true
+    },
+    "panel335": {
+      "probeX": [
+        447,
+        803
+      ],
+      "lines": [
+        {
+          "centerY": 356.63559935975314,
+          "slope": -0.0014675416978934496,
+          "intercept": 357.55281292093656,
+          "angleDegrees": 0.08408388518556986,
+          "supportPixels": 272
+        },
+        {
+          "centerY": 713.663927672981,
+          "slope": 0.00035090830347846066,
+          "intercept": 713.4446099833069,
+          "angleDegrees": 0.02010556396016784,
+          "supportPixels": 338
+        },
+        {
+          "centerY": 1070.305948663635,
+          "slope": 0.0005203344984314057,
+          "intercept": 1069.9807396021154,
+          "angleDegrees": 0.029812968004575908,
+          "supportPixels": 301
+        },
+        {
+          "centerY": 1427.4716505539977,
+          "slope": 0.0013966260315702657,
+          "intercept": 1426.5987592842664,
+          "angleDegrees": 0.08002072513858567,
+          "supportPixels": 295
+        }
+      ],
+      "pitchPixels": [
+        357.02832831322786,
+        356.64202099065403,
+        357.1657018903627
+      ],
+      "pitchErrorPixels": 0.3657018903626863,
+      "straightnessDegrees": 0.08408388518556986,
+      "edgeLuminanceDiscontinuityFraction": 0.010605543798818692,
+      "passes": true
+    },
+    "brick": {
+      "probeX": [
+        772,
+        853
+      ],
+      "lines": [
+        {
+          "centerY": 50.33355977293754,
+          "slope": -0.0016361093422552642,
+          "intercept": 51.66289861351994,
+          "angleDegrees": 0.09374207648860088,
+          "supportPixels": 81
+        },
+        {
+          "centerY": 406.619572123842,
+          "slope": 0.002782425752046344,
+          "intercept": 404.35885120030434,
+          "angleDegrees": 0.1594208409952511,
+          "supportPixels": 71
+        },
+        {
+          "centerY": 763.5984195663151,
+          "slope": 0.0009096943476608774,
+          "intercept": 762.8592929088406,
+          "angleDegrees": 0.052121632390233374,
+          "supportPixels": 81
+        },
+        {
+          "centerY": 1120.3277480496854,
+          "slope": -0.0010357825874890941,
+          "intercept": 1121.1693214020204,
+          "angleDegrees": 0.05934594953325812,
+          "supportPixels": 81
+        },
+        {
+          "centerY": 1477.4289031964495,
+          "slope": 0.0002867926378185903,
+          "intercept": 1477.1958841782218,
+          "angleDegrees": 0.016432007291918273,
+          "supportPixels": 81
+        }
+      ],
+      "pitchPixels": [
+        356.28601235090446,
+        356.9788474424731,
+        356.7293284833703,
+        357.1011551467641
+      ],
+      "pitchErrorPixels": 0.5139876490955544,
+      "straightnessDegrees": 0.1594208409952511,
+      "edgeLuminanceDiscontinuityFraction": 0.010691379100440303,
+      "passes": true
+    }
+  },
+  "cars": {
+    "cream": {
+      "edgePixels": 11364,
+      "colourDistanceOver40Fraction": 0.0,
+      "passes": true
+    },
+    "red": {
+      "edgePixels": 8816,
+      "colourDistanceOver40Fraction": 0.0,
+      "passes": true
+    }
+  },
+  "passes": true
+}

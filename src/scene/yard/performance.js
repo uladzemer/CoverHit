@@ -20,7 +20,7 @@ export function optimizeYard(yard) {
    center.setFromMatrixPosition(world);
    // Distant houses, garages and trees contribute no CSM caster geometry.
    const role=mesh.userData.fallbackEntries?.[i]?.role||mesh.parent?.userData.stockRole;
-   const casts=mesh.castShadow&&['rack','bench','clothesline'].includes(role)&&Math.hypot(center.x,center.z)<12;
+   const casts=mesh.castShadow&&(role==='photo-car-proxy'||['rack','bench','clothesline'].includes(role)&&Math.hypot(center.x,center.z)<12);
    const facadeWindows=role?.startsWith('photo-window-')?role.slice('photo-window-'.length):null;
    const groupKey=key+':'+casts+':'+(facadeWindows||'');let group=groups.get(groupKey);
    if(!group)groups.set(groupKey,group={casts,facadeWindows,geometries:[]});
@@ -46,6 +46,13 @@ export function optimizeYard(yard) {
   geometry.computeBoundingSphere();geometry.computeBoundingBox();
   const mesh=new THREE.Mesh(geometry,material);mesh.name='yard-static-batch';
   mesh.castShadow=casts;mesh.receiveShadow=true;mesh.userData.performanceCastShadow=casts;
+  if(material.userData.shadowOnly){
+   // Zero camera/depth triangles; restore the physical proxy only while the
+   // shadow renderer draws it. It never becomes a visible or AO silhouette.
+   geometry.setDrawRange(0,0);
+   mesh.onBeforeShadow=()=>geometry.setDrawRange(0,Infinity);
+   mesh.onAfterShadow=()=>geometry.setDrawRange(0,0);
+  }
   if(facadeWindows){
    mesh.userData.facadeWindows=facadeWindows;
    yard.root.traverse(o=>{if(o.material?.userData.photoSeries===facadeWindows)mesh.userData.facadeMaterial=o.material;});

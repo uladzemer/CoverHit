@@ -1,0 +1,138 @@
+[
+  {
+    "id": 4,
+    "title": "Domo en strato Fabriĉnaja 17 (Tjumeno).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Domo_en_strato_Fabri%C4%89naja_17_(Tjumeno).jpg",
+    "width": 4608,
+    "height": 2592,
+    "car": false,
+    "license": "CC BY-SA 4.0",
+    "author": "RG72",
+    "chosen": false,
+    "screen": {
+      "greenFraction": 0.02725429389312977,
+      "laplacianVariance": 3146.5087071579305,
+      "horizontalVanishingAngleDegrees": 10.669782804496677,
+      "score": 6.020149756850305
+    }
+  },
+  {
+    "id": 9,
+    "title": "Russia, Ust-Ilimsk Fortepan 88963.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Russia,_Ust-Ilimsk_Fortepan_88963.jpg",
+    "width": 3296,
+    "height": 2072,
+    "car": false,
+    "license": "CC BY-SA 3.0",
+    "author": "Urbán Tamás / Fortepan",
+    "chosen": false,
+    "screen": {
+      "greenFraction": 0.0,
+      "laplacianVariance": 7463.740637567158,
+      "horizontalVanishingAngleDegrees": 5.906141113770502,
+      "score": 7.972963387371006
+    }
+  },
+  {
+    "id": 20,
+    "title": "Klumava Street social housing.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Klumava_Street_social_housing.jpg",
+    "width": 3072,
+    "height": 2304,
+    "car": false,
+    "license": "CC BY-SA 4.0",
+    "author": "Homoatrox",
+    "chosen": true,
+    "screen": {
+      "greenFraction": 0.08993861607142857,
+      "laplacianVariance": 3222.5543014726913,
+      "horizontalVanishingAngleDegrees": 7.913951302299765,
+      "score": 5.732744248884752
+    }
+  },
+  {
+    "id": 49,
+    "title": "Байконур, Янгеля 15.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D0%B9%D0%BA%D0%BE%D0%BD%D1%83%D1%80,_%D0%AF%D0%BD%D0%B3%D0%B5%D0%BB%D1%8F_15.jpg",
+    "width": 5472,
+    "height": 3078,
+    "car": false,
+    "license": "CC BY-SA 4.0",
+    "author": "Nikolai Bulykin",
+    "chosen": false,
+    "screen": {
+      "greenFraction": 0.022080749045801526,
+      "laplacianVariance": 4178.29457049867,
+      "horizontalVanishingAngleDegrees": 1.1344216309770019,
+      "score": 7.891421298732183
+    }
+  },
+  {
+    "id": 51,
+    "title": "Байконур, Янгеля 18.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D0%B9%D0%BA%D0%BE%D0%BD%D1%83%D1%80,_%D0%AF%D0%BD%D0%B3%D0%B5%D0%BB%D1%8F_18.jpg",
+    "width": 5472,
+    "height": 3648,
+    "car": false,
+    "license": "CC BY-SA 4.0",
+    "author": "Nikolai Bulykin",
+    "chosen": false,
+    "screen": {
+      "greenFraction": 0.001425592845659164,
+      "laplacianVariance": 5174.646584889972,
+      "horizontalVanishingAngleDegrees": 3.0574302207120994,
+      "score": 8.045423604806972
+    }
+  },
+  {
+    "id": 77,
+    "title": "Фото Озёрска 03.06.2022.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE_%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B0_03.06.2022.jpg",
+    "width": 4000,
+    "height": 3000,
+    "car": false,
+    "license": "CC0",
+    "author": "Artyom Vasilyev",
+    "chosen": true,
+    "screen": {
+      "greenFraction": 0.07912946428571428,
+      "laplacianVariance": 2721.6621208142337,
+      "horizontalVanishingAngleDegrees": 7.305759533310834,
+      "score": 5.79089030478431
+    }
+  },
+  {
+    "id": 94,
+    "title": "Arzamas, Nizhny Novgorod Oblast, Russia - panoramio (341).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Arzamas,_Nizhny_Novgorod_Oblast,_Russia_-_panoramio_(341).jpg",
+    "width": 4000,
+    "height": 3000,
+    "car": false,
+    "license": "CC BY 3.0",
+    "author": "Arzamassky",
+    "chosen": true,
+    "screen": {
+      "greenFraction": 0.0150390625,
+      "laplacianVariance": 3635.11098731951,
+      "horizontalVanishingAngleDegrees": 9.198728862193633,
+      "score": 6.546404611445845
+    }
+  },
+  {
+    "id": 166,
+    "title": "Vyshnevolotsky District Vyshny Volochyok 2012-05 1337507929.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Vyshnevolotsky_District_Vyshny_Volochyok_2012-05_1337507929.JPG",
+    "width": 3072,
+    "height": 2048,
+    "car": false,
+    "license": "CC BY-SA 4.0",
+    "author": "Artyom Svetlov",
+    "chosen": false,
+    "screen": {
+      "greenFraction": 0.26543031551446944,
+      "laplacianVariance": 6264.024321490315,
+      "horizontalVanishingAngleDegrees": 3.0447784441939802,
+      "score": 5.070409412199323
+    }
+  }
+]

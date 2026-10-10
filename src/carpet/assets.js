@@ -68,7 +68,7 @@ export function createCarpetAssets(manifest, loadTexture) {
       if(!map) continue;
       cursor=(index+1)%entries.length;
       const physicalType=carpetEntryType(entry,typeId ?? entry.type);
-      const type=entry.easy ? {...physicalType,mass:2,dirtAmount:.95} : physicalType;
+      const type=entry.easy ? {...physicalType,dirtAmount:.95} : physicalType;
       return {entry,map,type:{...type,size:fitCarpetSize(type,entry.aspect)}};
     }
     throw new Error('No rug scan could be loaded. Retry when images are available.');

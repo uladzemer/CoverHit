@@ -233,3 +233,22 @@ oracle p99 remains about 13.9 mm including outside the collar; the final 30 Hz
 contact audit measures +1.003 ms/frame against +1 ms. Contact retains exit 1.
 tests/flipAmplitude.test.js supplements the mock-based tests with packaged Ammo
 WASM physics running in Node without a DOM.
+
+Heavy courtyard tuning (2026-10-10): ground wind averages 0.5-1.0 m/s,
+with calm spells near 0.2 m/s and seeded 1.5-3 s gusts spaced 6-15 s apart,
+capped at 2.2 m/s. Consumer response gains live in scene/wind.js; vegetation
+uses integration hooks without changing the protected yard modules. Carpet
+mass follows actual scan area: wool 3.25, palas 1.5 and runner 2 kg/m2.
+Resting swing uses explicitly artistic effective gravity; throws retain full
+gravity, their original damping, velocity-driven controls and the 9 m/s cap.
+Local structural damping suppresses flutter while broad swings decay over
+4-6 s. Dust uses slower capped advection, longer lifetimes and slow twinkle.
+The frame loop catches up through 250 ms hitches with fixed 60 Hz solves,
+interleaving input/game clocks so throw poses progress between catch-up steps;
+wind and FX use elapsed seconds. The former two-step/drop-time policy described
+above is superseded. Catch-up is bounded at 0.5 s / 30 solves for longer pauses.
+Run node scripts/verify-time-scale.mjs, node scripts/verify-heavy-feel.mjs
+and node scripts/verify-heavy-regressions.mjs. See [heavy QA](qa/heavy/README.md)
+for wall-clock evidence, before/after metrics, ignored eight-frame strips,
+the artistic gravity decision and explicit runner-crest / mass-normalized
+energy threshold changes. The polar-contact oracle WIP remains outside this pass.

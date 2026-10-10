@@ -104,7 +104,7 @@ export function createYard(scene,{barLength=BAR_MIN_SPAN}={}){
  buildDetail(b,m,random,treePositions,root);
  // Cheap soft contact AO, shared with restrained light halos.
  if(glow){const ao=new THREE.MeshBasicMaterial({color:'#151c15',map:glow,transparent:true,opacity:.4,depthWrite:false});ao.userData.castShadow=false;
-  for(const [x,z,sx,sz]of [[5.35,-3.8,1.7,.7],[-7,-10,2,1.8],...Array.from({length:3},(_,i)=>[[12,28,49][i],-19,2.1,1.1]),...dumpsterPositions.map(([x,z])=>[x,z,.5,.5]),...Array.from({length:7},(_,i)=>[-28+i*3.25,-32,2,3]),...treePositions.map(([x,z])=>[x,z,1.1,1.1])])add(plane,ao,x,isLawn(x,z)?LAWN_HEIGHT+.002:.002,z,sx*2,sz*2,1,-Math.PI/2);
+  for(const [x,z,sx,sz]of [[5.35,-3.8,1.7,.7],[-7,-10,2,1.8],...Array.from({length:3},(_,i)=>[[12,28,49][i],-19,2.1,1.1]),... [12,28,49].flatMap(x=>[-1,1].map(side=>[x+side*1.1,-19-side*.22,.46,.40])),...dumpsterPositions.map(([x,z])=>[x,z,.5,.5]),...Array.from({length:7},(_,i)=>[-28+i*3.25,-32,2,3]),...treePositions.map(([x,z])=>[x,z,1.1,1.1])])add(plane,ao,x,isLawn(x,z)?LAWN_HEIGHT+.002:.002,z,sx*2,sz*2,1,-Math.PI/2);
  }
  b.flush();
  const backdrop=buildBackdrop(root);housing.push(...backdrop.housing);

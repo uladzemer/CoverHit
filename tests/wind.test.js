@@ -3,7 +3,7 @@ import {Vector3} from 'three';
 import {createWind,wind} from '../src/scene/wind.js';
 it('replays deterministically with bounded, finite gusts and unit direction',()=>{
  const a=createWind(464),b=createWind(464),v=new Vector3();
- for(let i=0;i<1800;i++){a.update(1/30);b.update(1/30);expect(a.strength()).toBe(b.strength());expect(a.strength()).toBeGreaterThanOrEqual(0);expect(a.strength()).toBeLessThanOrEqual(1);expect(a.direction.length()).toBeCloseTo(1);expect(a.velocity(v,i,3,-i)).toBe(v);expect(v.length()).toBeLessThan(6.01);expect(v.toArray().every(Number.isFinite)).toBe(true);}
+ for(let i=0;i<1800;i++){a.update(1/30);b.update(1/30);expect(a.strength()).toBe(b.strength());expect(a.strength()).toBeGreaterThanOrEqual(0);expect(a.strength()).toBeLessThanOrEqual(1);expect(a.direction.length()).toBeCloseTo(1);expect(a.velocity(v,i,3,-i)).toBe(v);expect(v.length()).toBeLessThan(2.201);expect(v.toArray().every(Number.isFinite)).toBe(true);}
  expect(a.uniforms.uWindTime.value).toBe(a.time);expect(a.uniforms.uWindDir.value).toBe(a.direction);expect(wind.velocity(v,NaN,Infinity,-Infinity).toArray().every(Number.isFinite)).toBe(true);
 });
 it('varies with height, travelling fronts and seed, ignoring invalid dt',()=>{

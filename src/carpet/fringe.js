@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {wind as sharedWind} from '../scene/wind.js';
+import {wind as sharedWind,WIND_RESPONSE} from '../scene/wind.js';
 import {seededRandom} from './random.js';
 import {BAR_HEIGHT,BAR_CONTACT_RADIUS} from './barGeometry.js';
 
@@ -59,19 +59,23 @@ export function createFringe(cloth,{seed='fringe',type='wool',map}={}) {
  const breeze=new THREE.Vector3();
  let previousTime=cloth.time,initialized=false;
  function update() {
-  const elapsed=cloth.time-previousTime,dt=Number.isFinite(elapsed)?Math.min(.033,Math.max(0,elapsed)):0;previousTime=cloth.time;
+  const elapsed=cloth.time-previousTime,dt=Number.isFinite(elapsed)?Math.min(.5,Math.max(0,elapsed)):0;previousTime=cloth.time;
   sharedWind.velocity(breeze,0,BAR_HEIGHT,0);
+  breeze.multiplyScalar(WIND_RESPONSE.fringe);
   for(const [i,t] of tassels.entries()) {
    root.fromArray(cloth.positions,t.a*3).lerp(delta.fromArray(cloth.positions,t.b*3),t.t);
    t.root.copy(root);
-   if(!initialized || elapsed>.15 || elapsed<0){t.swing.set(0,0);t.velocity.set(0,0);t.previous.copy(root);}
+   if(!initialized || elapsed>.5 || elapsed<0){t.swing.set(0,0);t.velocity.set(0,0);t.previous.copy(root);}
    if(dt>0) {
     delta.copy(root).sub(t.previous).divideScalar(Math.max(dt,1e-5)).clampLength(0,8);
     const wind=Number.isFinite(cloth.wind)?cloth.wind:0;
-    t.velocity.x+=(-90*t.swing.x-9*t.velocity.x-delta.x*6+wind*breeze.x*.2)*dt;
-    t.velocity.y+=(-90*t.swing.y-9*t.velocity.y-delta.z*6+wind*breeze.z*.4)*dt;
-    t.velocity.clampLength(0,15);
-    t.swing.addScaledVector(t.velocity,dt).clampLength(0,.85);
+    const steps=Math.max(1,Math.ceil(dt*120)),h=dt/steps;
+    for(let step=0;step<steps;step++){
+     t.velocity.x+=(-90*t.swing.x-9*t.velocity.x-delta.x*6+wind*breeze.x*.2)*h;
+     t.velocity.y+=(-90*t.swing.y-9*t.velocity.y-delta.z*6+wind*breeze.z*.4)*h;
+     t.velocity.clampLength(0,15);
+     t.swing.addScaledVector(t.velocity,h).clampLength(0,.85);
+    }
    }
    t.previous.copy(root);
    direction.set(t.swing.x,-1,t.swing.y).normalize();

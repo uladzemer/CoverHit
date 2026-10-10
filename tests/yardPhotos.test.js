@@ -9,12 +9,12 @@ it('inventories every delivered photo file and includes all required credits',as
  const dir='public/yard/photos',sources=readFileSync('public/yard/SOURCES.md','utf8'),manifest=JSON.parse(readFileSync(`${dir}/manifest.json`)),credits=JSON.parse(readFileSync(`${dir}/credits.json`));
  let bytes=0;for(const file of readdirSync(dir)){expect(sources).toContain(`photos/${file}`);bytes+=statSync(`${dir}/${file}`).size;if(file.endsWith('.webp')||file.endsWith('.png')){const info=await sharp(`${dir}/${file}`).metadata();expect(Math.max(info.width,info.height)).toBeLessThanOrEqual(2048);}}
  expect(bytes).toBeLessThan(15_000_000);
- for(const c of credits){expect(Object.keys(c).sort()).toEqual(['author','license','title','url']);expect(c.author.length).toBeGreaterThan(0);expect(c.url).toMatch(/^https:\/\/commons\.wikimedia\.org\//);expect(c.license).toMatch(/^CC BY/);}
+ for(const c of credits){expect(Object.keys(c).sort()).toEqual(['author','license','title','url']);expect(c.author.length).toBeGreaterThan(0);expect(c.url).toMatch(/^https:\/\/commons\.wikimedia\.org\//);expect(c.license).toMatch(/^(CC BY|CC0|Public domain)/);}
  for(const s of manifest.sources.filter(s=>s.license.startsWith('CC BY')))expect(credits.some(c=>c.title===s.title&&c.license===s.license)).toBe(true);
  expect(manifest.files.filter(f=>f.file.endsWith('-albedo.webp'))).toHaveLength(10);
 });
 it('maps facade bays and floors in metres independently of block size',()=>{
- for(const series of Object.keys(FACADE_SERIES)){const s=FACADE_SERIES[series];expect(facadeUV(s.bay,2.7,series)).toEqual([.25,1/3]);const g=facadeBox(60,27,12,series,3),uv=g.attributes.uv;expect(uv.getX(1)-uv.getX(0)).toBeCloseTo(.25,4);expect(g.attributes.facadeUv.count).toBe(uv.count);g.dispose();}
+ for(const series of Object.keys(FACADE_SERIES)){const s=FACADE_SERIES[series];expect(facadeUV(s.bay,2.7,series)).toEqual([.25,1/3]);const g=facadeBox(60,27,12,series,3),uv=g.attributes.uv,sections=Math.round(60/(s.sectionWidth||15.5));expect(uv.getX(1)-uv.getX(0)).toBeCloseTo(facadeUV(60/sections,0,series)[0],4);expect(g.attributes.facadeUv.count).toBe(uv.count);g.dispose();}
 });
 it('detects glass rectangles but rejects panel joints and isolated dark noise',()=>{
  const w=80,h=60,rgb=new Uint8Array(w*h*3).fill(190);

@@ -69,6 +69,6 @@ it('bounds hitch catch-up and preserves elapsed input/game clocks',()=>{
   const game={update:vi.fn()},beater={update:vi.fn(),beforePhysics(){},afterPhysics(){}},cloth={integrate:vi.fn(),refreshGeometry(){}};
   const context={game,beater,cloth};
   const remainder=advanceGameplayFrame(context,.25,1/120);
-  expect(cloth.integrate).toHaveBeenCalledTimes(MAX_SUBSTEPS);expect(remainder).toBe(0);
-  expect(game.update).toHaveBeenCalledWith(.25);expect(beater.update).toHaveBeenCalledWith(.25);
+  expect(cloth.integrate).toHaveBeenCalledTimes(15);expect(remainder).toBeCloseTo(1/120);expect(MAX_SUBSTEPS).toBeGreaterThanOrEqual(15);
+  expect(game.update.mock.calls.reduce((s,[dt])=>s+dt,0)).toBeCloseTo(.25);expect(beater.update.mock.calls.reduce((s,[dt])=>s+dt,0)).toBeCloseTo(.25);
 });

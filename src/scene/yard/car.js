@@ -22,22 +22,13 @@ export function carBodyGeometry(){
  const cabin=new THREE.ExtrudeGeometry(cabinShape,{depth:1.33,steps:1,bevelEnabled:true,bevelSize:.035,bevelThickness:.035,bevelSegments:3});cabin.translate(0,0,-.665);cabin.rotateY(Math.PI/2);parts.push(cabin);
  const g=mergeGeometries(parts);parts.forEach(p=>p.dispose());g.computeBoundingBox();g.scale(1,1,4.17/(g.boundingBox.max.z-g.boundingBox.min.z));g.computeBoundingBox();return g;
 }
-// Every photographic vertex belongs to a flat plane. End cards and circular
-// rims share the side atlas and one material/draw after batching.
-export function carPhotoGeometry(){
- const parts=[];
- function card(g,rect,x,y,z,angle){
-  const uv=g.attributes.uv;
-  for(let i=0;i<uv.count;i++)uv.setXY(i,(rect[0]+.5+uv.getX(i)*(rect[2]-1))/1024,1-(rect[1]+.5+(1-uv.getY(i))*(rect[3]-1))/512);
-  g.rotateY(angle);g.translate(x,y,z);parts.push(g.toNonIndexed());g.dispose();
- }
- for(const side of [-1,1]){
-  card(new THREE.PlaneGeometry(4.17,1.4),[0,0,768,256],side*.818,.7,0,Math.PI/2);
-  for(const z of [-1.21,1.21])card(new THREE.CircleGeometry(.195,20),[768,256,128,128],side*.819,.31,z,Math.PI/2);
- }
- card(new THREE.PlaneGeometry(1.61,.60),[768,0,128,256],0,.64,2.091,0);
- card(new THREE.PlaneGeometry(1.61,.60),[896,0,128,256],0,.64,-2.091,Math.PI);
- const result=mergeGeometries(parts);parts.forEach(p=>p.dispose());result.computeBoundingBox();return result;
+// A complete car photograph belongs to one flat, fixed-yaw plane.
+export function carPhotoGeometry(width=4.17,height=1.62){
+ const g=new THREE.PlaneGeometry(width,height);
+ // Existing placements are longitudinal Z with a +PI/2 yaw. This fixed
+ // billboard faces the yard cameras, with ample coverage at both aim limits.
+ g.rotateY(-Math.PI/2-.20);g.translate(0,height/2+.012,0);
+ g.computeBoundingBox();return g;
 }
 export function carTrimGeometry(){
  const parts=[];
@@ -55,31 +46,30 @@ export function carTrimGeometry(){
  for(const z of [-2.102,2.102])add(new THREE.BoxGeometry(.42,.09,.009),0,.49,z,'#cccbbd');
  const result=mergeGeometries(parts);parts.forEach(p=>p.dispose());return result;
 }
-function visibility(root,role,visible){
- root.traverse(mesh=>{const entries=mesh.userData.fallbackEntries;if(!entries?.some(e=>e.role===role))return;entries.forEach((e,i)=>{if(e.role===role){e.hidden=!visible;mesh.setMatrixAt(i,visible?e.matrix:new THREE.Matrix4().makeScale(0,0,0));}});mesh.instanceMatrix.needsUpdate=true;mesh.visible=!entries.every(e=>e.hidden);});
+function visibility(root,role,visible,positions=null){
+ root.traverse(mesh=>{const entries=mesh.userData.fallbackEntries;if(!entries?.some(e=>e.role===role))return;entries.forEach((e,i)=>{if(e.role===role&&(!positions||positions.some(x=>Math.abs(e.matrix.elements[12]-x)<3))){e.hidden=!visible;mesh.setMatrixAt(i,visible?e.matrix:new THREE.Matrix4().makeScale(0,0,0));}});mesh.instanceMatrix.needsUpdate=true;mesh.visible=!entries.every(e=>e.hidden);});
 }
 export function createCar(b,root,transforms,buildFallback){
  buildFallback();
  if(typeof document==='undefined')return;
- const body=carBodyGeometry(),trim=carTrimGeometry(),cards=carPhotoGeometry();
- const paint=new THREE.MeshPhysicalMaterial({color:'#a3a5a0',roughness:.48,metalness:.12,clearcoat:.25});
- paint.userData.castShadow=false;
- paint.onBeforeCompile=shader=>{
-  shader.vertexShader='varying vec3 paintPosition;\n'+shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\npaintPosition=position;');
-  shader.fragmentShader='varying vec3 paintPosition;\n'+shader.fragmentShader.replace('#include <color_fragment>','#include <color_fragment>\ndiffuseColor.rgb*=1.0+.008*sin(paintPosition.y*145.0+paintPosition.z*211.0)*sin(paintPosition.x*173.0);');
- };paint.customProgramCacheKey=()=> 'paint-volume-subtle-noise-v1';
- const photo=new THREE.MeshStandardMaterial({color:'#ffffff',roughness:.48,metalness:.12,transparent:true,depthWrite:true,side:THREE.DoubleSide});
- photo.userData.castShadow=false;
- const hardware=new THREE.MeshStandardMaterial({vertexColors:true,roughness:.48,metalness:.45});hardware.userData.castShadow=false;
- const glass=new THREE.MeshPhysicalMaterial({color:'#263536',roughness:.16,metalness:.35});glass.userData.castShadow=false;
- b.setRole('photo-car');b.withTransforms(transforms,()=>{
-  b.add(body,paint,0,0,0,1,1,1);b.add(trim,hardware,0,0,0,1,1,1);b.add(cards,photo,0,0,0,1,1,1);
-  // Dark reflective glasshouse, with the photographed windows on its flat sides.
-  b.cube(glass,0,1.16,-.08,1.405,.28,1.15);
- });b.setRole('');
- queueMicrotask(()=>visibility(root,'photo-car',false));
- photo.userData.photoReady=loadPhotoTexture('car-flat-atlas.webp',true).then(map=>{
-  photo.map=map;photo.needsUpdate=true;photo.userData.photoLoaded=true;
-  visibility(root,'car',false);visibility(root,'photo-car',true);return true;
- }).catch(()=>false);
+ const proxy=new THREE.MeshBasicMaterial({colorWrite:false,depthWrite:false});
+ proxy.userData.castShadow=true;proxy.userData.shadowOnly=true;
+ // The camera sees only the complete photographs; the physical body and tyres
+ // remain in the light's depth pass. Soft ground contact AO is shared in yard.js.
+ b.setRole('photo-car-proxy');b.withTransforms(transforms,()=>{
+  b.add(carBodyGeometry(),proxy,0,0,0,1,1,1);
+  b.add(carTrimGeometry(),proxy,0,0,0,1,1,1);
+ });
+ for(const [name,indices,width,height]of [['red',[0,2],4.17,1.62],['cream',[1],4.17,1.72]]){
+  const photo=new THREE.MeshStandardMaterial({color:'#eee7dd',roughness:1,metalness:0,transparent:true,alphaTest:.025,depthWrite:true,side:THREE.DoubleSide});
+  photo.userData.castShadow=false;
+  photo.forceSinglePass=true;
+  b.setRole('photo-car-'+name);b.withTransforms(indices.map(i=>transforms[i]),()=>b.add(carPhotoGeometry(width,height),photo,0,0,0,1,1,1));
+  queueMicrotask(()=>visibility(root,'photo-car-'+name,false));
+  photo.userData.photoReady=loadPhotoTexture('car-'+name+'-cutout.webp',true).then(map=>{
+   photo.map=map;photo.needsUpdate=true;photo.userData.photoLoaded=true;
+   visibility(root,'car',false,indices.map(i=>transforms[i].elements[12]));visibility(root,'photo-car-'+name,true);return true;
+  }).catch(()=>false);
+ }
+ b.setRole('');
 }

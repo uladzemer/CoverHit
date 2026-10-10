@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { wind } from '../scene/wind.js';
+import { wind,WIND_RESPONSE } from '../scene/wind.js';
 import { emissionProfile, particleBudget } from './dust/emission.js';
 import { dustVertex, dustFragment } from './dust/shaders.js';
 
@@ -63,14 +63,14 @@ export class DustSystem {
     if(this.disposed || !point || !normal || !Number.isFinite(point.x+point.y+point.z+normal.x+normal.y+normal.z)) return;
     const p=emissionProfile(amount); if(!p.total) return;
     this.normal.copy(normal); if(this.normal.lengthSq()<1e-8) this.normal.set(0,0,1); this.normal.normalize();
-    const spawn=(count,type,origin=point)=>{
+    const spawn=(count,type,origin=point,haze=false)=>{
       const pool=this.pools[type];
       for(let j=0;j<count;j++) {
         let slot=-1;
         for(let k=0;k<pool.count;k++) { const i=pool.start+pool.cursor; pool.cursor=(pool.cursor+1)%pool.count; if(this.expiry[i]<=this.time) {slot=i;break;} }
         if(slot<0) break;
         const r=this.random, seed=r()*1000;
-        const duration=type===0?2.5+r()*2.5:type===1?6+r()*6:2.5+r()*2;
+        const duration=haze?8+r()*4:type===0?6+r():type===1?8+r()*4:4+r()*2;
         const size=type===0?(0.075+r()*0.08)*p.size:type===1?0.002+r()*0.003:0.008+r()*0.008;
         const speed=type===0?0.9+r()*1.1:0.15+r()*0.35;
         const spread=type===0?0.22:0.3;
@@ -78,13 +78,13 @@ export class DustSystem {
         a.origin.setXYZ(slot,origin.x+this.normal.x*.05+(r()-.5)*spread,origin.y+this.normal.y*.05+(r()-.5)*spread,origin.z+this.normal.z*.05);
         a.velocity.setXYZ(slot,this.normal.x*speed+(r()-.5)*.6,this.normal.y*speed+(r()-.25)*.6,this.normal.z*speed+(r()-.5)*.6);
         a.life.setXYZW(slot,this.time,duration,size,seed);
-        a.shape.setXYZW(slot,type,r()*Math.PI*2,r()*15,type===0?.095:type===1?.65:.5);
+        a.shape.setXYZW(slot,type,r()*Math.PI*2,r()*15,haze?.12:type===0?.24:type===1?.65:.5);
         a.flowStart.setXYZ(slot,this.flow.x,this.flow.y,this.flow.z);
         a.plane.setXYZW(slot,this.normal.x,this.normal.y,this.normal.z,this.normal.dot(origin));
         this.expiry[slot]=this.time+duration;
       }
     };
-    spawn(p.cloud+p.haze,0); spawn(p.specks,1); spawn(Math.ceil(p.specks*.025),2);
+    spawn(p.cloud,0);spawn(p.haze,0,point,true);spawn(p.specks,1); spawn(Math.ceil(p.specks*.025),2);
     // Strong blows shake the lower fringe: read deformed boundary only at emission.
     let root=this.points; while(root.parent) root=root.parent;
     const carpet=root.getObjectByName('carpet'), pos=carpet?.geometry?.attributes.position, uv=carpet?.geometry?.attributes.uv;
@@ -103,7 +103,7 @@ export class DustSystem {
   update(dt) {
     if(this.disposed || !Number.isFinite(dt) || dt<=0) return;
     this.time+=dt;
-    wind.velocity(this.sample,0,1.3,0); this.flow.addScaledVector(this.sample,dt);
+    wind.velocity(this.sample,0,1.3,0); this.sample.multiplyScalar(WIND_RESPONSE.dust).clampLength(0,.4);this.flow.addScaledVector(this.sample,dt);
     this.material.uniforms.time.value=this.time;
   }
   dispose() {

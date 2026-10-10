@@ -5,6 +5,8 @@ import {CAR_PROFILE} from '../src/scene/yard/car.js';
 // The exposure-cleaned atlas remains the source; never run decal cleanup on
 // this transparency atlas (its alpha is coverage, not the old paint mask).
 export async function buildCarPlanes(){
+ const revision=JSON.parse(await readFile('public/yard/photos/manifest.json'));
+ if(revision.version>=4){const {buildNaturalPhotos}=await import('./build-natural-photos.mjs');return buildNaturalPhotos();}
  const {data}=await sharp('public/yard/photos/car-atlas.webp').ensureAlpha().raw().toBuffer({resolveWithObject:true});
  const out=Buffer.alloc(1024*512*4);
  const inside=(x,y)=>{let hit=false;for(let i=0,j=CAR_PROFILE.length-1;i<CAR_PROFILE.length;j=i++){const a=CAR_PROFILE[i],b=CAR_PROFILE[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])hit=!hit;}return hit;};

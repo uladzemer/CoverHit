@@ -8,6 +8,7 @@ import {bakeFacadeImpostors} from './bake-facade-impostors.mjs';
 export async function buildFacadeModules(){
  await mkdir('artifacts/facades2',{recursive:true});
  const manifest=JSON.parse(await readFile('public/yard/photos/manifest.json'));
+ if(manifest.version>=4){const {buildNaturalPhotos}=await import('./build-natural-photos.mjs');return buildNaturalPhotos();}
  for(const s of manifest.sources.filter(s=>s.series)){
   const file=`artifacts/facades2/${s.index}.source`;
   try{await readFile(file);}catch{

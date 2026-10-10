@@ -1,0 +1,9 @@
+{
+    "record":  "Summary retained from the failed-run tool output; full metrics were replaced by the isolated repeat.",
+    "variant":  "60",
+    "outsideZoneContactMs":  0.50448807869184908,
+    "limitMs":  0.5,
+    "passed":  false,
+    "physicalConstraintsPassed":  true,
+    "isolatedRepeatMs":  0.409677419513673
+}

@@ -25,7 +25,7 @@ try {
     const original=c.selfContact[method].bind(c.selfContact);
     c.selfContact[method]=(...args)=>{const before=c.selfContact.metrics.contacts,t=performance.now();const r=original(...args);stepContactMs+=performance.now()-t;stepContacts+=method==='project'?c.selfContact.metrics.contacts:Math.max(0,c.selfContact.metrics.contacts-before);return r;};
    }
-   const baseline=[],flipCpu=[],baselineFrame=[],flipFrame=[],flips=[],frames=[];
+   const baseline=[],flipCpu=[],baselineFrame=[],flipFrame=[],flips=[],frames=[];let sampleCrossings=null;
    const integrate=c.integrate.bind(c);
    c.integrate=dt=>{
     const active=!!c.flip,t=performance.now();stepContactMs=0;stepContacts=0;integrate(dt);if(active&&!stepContacts)outsideZoneCosts.push(stepContactMs);const cpu=performance.now()-t;
@@ -39,6 +39,7 @@ try {
      if(n.get_m_im()>0)energy+=.5*speed*speed/n.get_m_im();
     }
     maxEnergy=Math.max(maxEnergy,energy);
+    sampleCrossings?.();
    };
    function measureFrame(game,elapsed) {
     const active=!!c.flip,t=performance.now();
@@ -56,8 +57,8 @@ try {
     const times=new Array(cols+1).fill(null),hemTimes=new Array(cols+1).fill(null),columnTimes=new Array(cols+1).fill(null);
     const hem=Array.from({length:cols+1},(_,column)=>c.foldAxis==='u'?column*(c.cols+1)+(gesture.from===0?0:c.cols):(gesture.from===0?0:c.rows)*(c.cols+1)+column);
     let nextFrame=0;
-    while(c.flip) {
-     step();const f=c.flip??c.lastFlip;
+    sampleCrossings=()=>{
+     const f=c.flip??c.lastFlip;
      for(let column=0;column<=cols;column++) {
       const p=c.nodes.at(indices[column]).get_m_x();
       if(times[column]===null&&(p.z()-c.barAxis.z)*(gesture.from===0?-1:1)<-.004)times[column]=f.age;
@@ -71,10 +72,14 @@ try {
       const h=c.nodes.at(hem[column]).get_m_x();
       if(hemTimes[column]===null&&(h.z()-c.barAxis.z)*(gesture.from===0?-1:1)<-.004)hemTimes[column]=f.age;
      }
+    };
+    while(c.flip) {
+     step();const f=c.flip??c.lastFlip;
      if(j<2&&nextFrame<9&&f.age>=nextFrame*1.65/8) {
       frames.push({style,age:f.age,side:c.visibleSide,positions:Array.from(c.positions)});nextFrame++;
      }
     }
+    sampleCrossings=null;
     const ordered=gesture.leading===0?times:times.slice().reverse();
     const complete=ordered.every(v=>v!==null),monotonic=complete&&ordered.every((v,i)=>i===0||v>=ordered[i-1]-1e-8);
     const spread=complete?Math.max(...ordered)-Math.min(...ordered):0;
@@ -96,22 +101,25 @@ try {
    for(let j=0;j<20;j++) {
     c.startFlip=opts=>startFlip({...opts,style:j%2?'corner':'both',seed:`external-${j}`});
     a.game.flip();let spreadTimes=new Array(c.cols+1).fill(null);
-    while(a.game.flipping) {
-     const elapsed=variant==='144'?1/144:variant==='30'?1/30:variant==='hitch'&&frame%120===119?.25:1/60;frame++;
-     measureFrame(a.game,elapsed);
+    sampleCrossings=()=>{
      const f=c.flip??c.lastFlip;
      for(let x=0;x<=c.cols;x++) {
       const i=(c.rows/2-1)*(c.cols+1)+x,p=c.nodes.at(i).get_m_x();
-      if(spreadTimes[x]===null&&(p.z()-c.barAxis.z)*(f.from===0?-1:1)<-.004)spreadTimes[x]=1.65-a.game.flipRemaining;
+      if(spreadTimes[x]===null&&(p.z()-c.barAxis.z)*(f.from===0?-1:1)<-.004)spreadTimes[x]=f.age;
      }
+    };
+    while(a.game.flipping) {
+     const elapsed=variant==='144'?1/144:variant==='30'?1/30:variant==='hitch'&&frame%120===119?.25:1/60;frame++;
+     measureFrame(a.game,elapsed);
      if(a.game.flipping&&a.game.onHit({strength:1})!==0)throw Error('Hit accepted during flip');
     }
+    sampleCrossings=null;
     gameFlips.push({style:j%2?'corner':'both',spread:Math.max(...spreadTimes)-Math.min(...spreadTimes),complete:spreadTimes.every(v=>v!==null),side:a.game.visibleSide,clothSide:c.visibleSide});
     if(a.game.flipping)throw Error('Flip did not finish');
    }
    advance(2);
    c.startFlip=startFlip;
-   return {variant,outsideZoneContactMs:outsideZoneCosts.length?mean(outsideZoneCosts)*(variant==='144'?60/144:variant==='30'?2:1):0,outsideZoneSteps:outsideZoneCosts.length,gameFlips,width:c.width,height:c.height,cols:c.cols,rows:c.rows,foldAxis:c.foldAxis,axis:c.barAxis,nodeCount:c.nodes.size(),steps,minClearance,maxSpeed,maxEnergy,maxExtent,recoveries:c.watchdogRecoveries??0,baselineMs:mean(baseline),flipMs:mean(flipCpu),addedMs:mean(flipCpu)-mean(baseline),baselineFrameMs:mean(baselineFrame),flipFrameMs:mean(flipFrame),addedFrameMs:mean(flipFrame)-mean(baselineFrame),flips,frames};
+   return {variant,mass:c.mass,specificEnergy:maxEnergy/c.mass,outsideZoneContactMs:outsideZoneCosts.length?mean(outsideZoneCosts)*(variant==='144'?60/144:variant==='30'?2:1):0,outsideZoneSteps:outsideZoneCosts.length,gameFlips,width:c.width,height:c.height,cols:c.cols,rows:c.rows,foldAxis:c.foldAxis,axis:c.barAxis,nodeCount:c.nodes.size(),steps,minClearance,maxSpeed,maxEnergy,maxExtent,recoveries:c.watchdogRecoveries??0,baselineMs:mean(baseline),flipMs:mean(flipCpu),addedMs:mean(flipCpu)-mean(baseline),baselineFrameMs:mean(baselineFrame),flipFrameMs:mean(flipFrame),addedFrameMs:mean(flipFrame)-mean(baselineFrame),flips,frames};
   },variant);
   const {frames,...metrics}=result;
   if(variant==='60'&&!process.argv.includes('--no-images')) {
@@ -155,6 +163,6 @@ try {
   }
   results.push(metrics);console.log(JSON.stringify({variant:metrics.variant,monotonicThrows:metrics.flips.filter(f=>f.monotonic).length,outsideZoneContactMs:metrics.outsideZoneContactMs,minClearance:metrics.minClearance,maxSpeed:metrics.maxSpeed,maxEnergy:metrics.maxEnergy,recoveries:metrics.recoveries,addedMs:metrics.addedMs,addedFrameMs:metrics.addedFrameMs,waveSpread:metrics.flips.map(f=>f.spread),gameFlips:metrics.gameFlips}));await page.close();
  }
- const passed=errors.length===0&&results.every(r=>r.minClearance>=-1e-6&&r.maxSpeed<=9.00001&&r.maxEnergy<100&&r.maxExtent<3&&!r.recoveries&&r.addedFrameMs<=3&&r.outsideZoneContactMs*(r.variant==='144'?144/60:r.variant==='30'?.5:1)<=.5&&r.gameFlips.every(f=>f.complete&&f.side===f.clothSide)&&r.flips.every(f=>f.monotonic&&f.spread>=(f.style==='corner'?.2:.12)&&f.restRms<.15&&f.crownError<.01&&f.halfDifference<.035));
+ const passed=errors.length===0&&results.every(r=>r.minClearance>=-1e-6&&r.maxSpeed<=9.00001&&r.specificEnergy<100/6&&r.maxExtent<3&&!r.recoveries&&r.addedFrameMs<=3&&r.outsideZoneContactMs*(r.variant==='144'?144/60:r.variant==='30'?.5:1)<=.5&&r.gameFlips.every(f=>f.complete&&f.side===f.clothSide)&&r.flips.every(f=>f.monotonic&&f.spread>=(f.style==='corner'?.2:.12)&&f.restRms<.15&&f.crownError<.01&&f.halfDifference<.035));
  await writeFile(`${out}/metrics.json`,JSON.stringify({sourceHash,passed,errors,results},null,2));if(!passed)process.exitCode=1;
 }finally{await browser.close();await server.close();}

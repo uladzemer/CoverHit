@@ -1,0 +1,59 @@
+{
+  "assets": {
+    "straightnessDegrees": 0.1594208409952511,
+    "pitchErrorPixels": 0.5139876490955544,
+    "edgeLuminanceDiscontinuityFraction": 0.010691379100440303,
+    "carHaloFraction": 0,
+    "passes": true
+  },
+  "runtime": {
+    "draws": 128,
+    "drawDelta": 4,
+    "deltaMs": {
+      "frameMs": -4.468958331396182,
+      "renderMs": -1.094166669373711,
+      "gpuMs": -1.2435440666666668
+    },
+    "exposureChanges": {
+      "pad": 0.15062693004916938,
+      "lawn": 0.0157858938454134,
+      "facade": 0.1442364829865912
+    },
+    "clippedPercent": 0,
+    "errors": [],
+    "proceduralPersistence": "procedural",
+    "missingFallbackDraws": 150
+  },
+  "colour": [
+    {
+      "id": "01",
+      "hueShift": 0.21173500947071489,
+      "saturationRatio": 0.9827591713725434,
+      "textileExposureRatio": 0.9472965256168742,
+      "clippedPercent": 0,
+      "bloomMaxChannelDelta": 0
+    },
+    {
+      "id": "03",
+      "hueShift": 0.2744508770430798,
+      "saturationRatio": 0.9990836181523922,
+      "textileExposureRatio": 0.9293387428993028,
+      "clippedPercent": 0,
+      "bloomMaxChannelDelta": 0
+    },
+    {
+      "id": "09",
+      "hueShift": 0.6200746597446596,
+      "saturationRatio": 0.9900552419744897,
+      "textileExposureRatio": 0.9469996339368825,
+      "clippedPercent": 0,
+      "bloomMaxChannelDelta": 0
+    }
+  ],
+  "tests": {
+    "filesPassed": 49,
+    "testsPassed": 335,
+    "skipped": 7
+  },
+  "build": "passed"
+}
