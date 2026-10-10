@@ -1,0 +1,22 @@
+{
+  "errors": [],
+  "desktop": {
+    "profile": "full",
+    "composer": true,
+    "panel": false
+  },
+  "downgrade": {
+    "sameCloth": true,
+    "profile": "lite",
+    "composer": false,
+    "panel": false
+  },
+  "mobileFlip": {
+    "cols": 22,
+    "rows": 26,
+    "side": 1,
+    "finite": true,
+    "recoveries": 0,
+    "textureMB": 132.1
+  }
+}

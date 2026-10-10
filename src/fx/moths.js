@@ -24,7 +24,7 @@ function wingTexture() {
 /** Two instanced visible batches + one shadow, capped at 30; picks remain individual meshes. */
 export class MothSystem {
   constructor(scene, opts={}) {
-    this.scene=scene;this.opts={...opts,lights:opts.lights || lampPositions.map(([x,z])=>({x,y:3.8,z}))};this.moths=new Map();this.capacity=30;this.time=0;
+    this.scene=scene;this.opts={...opts,lights:opts.lights || lampPositions.map(([x,z])=>({x,y:3.8,z}))};this.moths=new Map();this.capacity=opts.mobile?15:30;this.time=0;
     this.sample=new THREE.Vector3();this.dummy=new THREE.Object3D();this.zero=new THREE.Matrix4().makeScale(0,0,0);
     this.texture=wingTexture();
     this.wingGeometry=new THREE.PlaneGeometry(.028,.033,4,3);this.wingGeometry.translate(.014,0,0);
@@ -57,7 +57,7 @@ export class MothSystem {
     this.shadows.renderOrder=2;
     this.pickGeometry=new THREE.SphereGeometry(.13,8,6);this.pickMaterial=new THREE.MeshBasicMaterial({visible:false});
     this.root=new THREE.Group();this.root.name='moths';this.root.add(this.wings,this.bodies,this.shadows);scene.add(this.root);
-    this.scales=new DustSystem(scene,{capacity:240});this.scales.points.name='moth-scales';
+    this.scales=new DustSystem(scene,{capacity:opts.mobile?120:240});this.scales.points.name='moth-scales';
     this.#sync();
   }
   spawn({id},point) {

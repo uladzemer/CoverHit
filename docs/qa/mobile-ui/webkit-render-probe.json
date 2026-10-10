@@ -1,0 +1,20 @@
+{
+  "perf": {
+    "drawCalls": 92,
+    "frameMs": 25,
+    "intervalMs": 75,
+    "triangles": 349736,
+    "physicsMs": 21,
+    "renderMs": 2,
+    "gpuMs": null
+  },
+  "audioAvailable": false,
+  "failedPrograms": 0,
+  "position": [
+    0.19720189765362944,
+    1.8286262038346943,
+    2.9
+  ],
+  "quality": "low",
+  "consoleErrors": []
+}

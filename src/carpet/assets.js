@@ -1,3 +1,4 @@
+import { activeProfile, mobileDevice, loadProfileTexture } from '../boot/mobileAssets.js';
 ﻿import * as THREE from 'three';
 import {carpetType} from './types.js';
 
@@ -59,7 +60,7 @@ export function createCarpetAssets(manifest, loadTexture) {
     return null;
   };
   let cursor=0;
-  return {manifest,entries,reset(){cursor=0;},async next(typeId,assetId) {
+  return {manifest,entries,preload(){return load(entries[0]);},reset(){cursor=0;},async next(typeId,assetId) {
     const requested=assetId ? entries.findIndex(c=>c.id===assetId) : typeId ? entries.findIndex(c=>c.type===typeId) : -1;
     const start=requested>=0 ? requested : cursor%entries.length;
     for(let offset=0;offset<entries.length;offset++) {
@@ -74,10 +75,11 @@ export function createCarpetAssets(manifest, loadTexture) {
     throw new Error('No rug scan could be loaded. Retry when images are available.');
   },dispose(){for(const map of cache.values()) map.dispose();cache.clear();}};
 }
-export async function loadCarpetManifest(base, fetchManifest=fetch) {
+export async function loadCarpetManifest(base, fetchManifest=fetch, includeStock=true) {
   const response=await fetchManifest(`${base}manifest.json`);
   if(!response.ok) throw new Error('Unable to load carpet manifest');
   const manifest=await response.json();
+  if (!includeStock) return manifest.filter(entry=>!entry.id.startsWith('envato-'));
   try {
     const local=await fetchManifest(`${base}manifest.local.json`);
     if(!local.ok || !local.headers.get('content-type')?.toLowerCase().includes('json')) return manifest;
@@ -93,12 +95,12 @@ export async function loadCarpetManifest(base, fetchManifest=fetch) {
 }
 export async function loadCarpetAssets(renderer) {
   const base=`${import.meta.env.BASE_URL}carpets/`;
-  const manifest=await loadCarpetManifest(base);
+  const manifest=await loadCarpetManifest(base, fetch, activeProfile === 'full' && !mobileDevice);
   const loader=new THREE.TextureLoader();
   return createCarpetAssets(manifest,async entry=>{
-    const map=await loader.loadAsync(base+entry.file);
+    const map=await loadProfileTexture(loader,base+entry.file);
     map.colorSpace=THREE.SRGBColorSpace;
-    map.anisotropy=renderer.capabilities.getMaxAnisotropy();
+    map.anisotropy=activeProfile==='full'?renderer.capabilities.getMaxAnisotropy():2;
     map.generateMipmaps=true;
     map.minFilter=THREE.LinearMipmapLinearFilter;
     return map;

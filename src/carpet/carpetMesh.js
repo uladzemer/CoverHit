@@ -11,7 +11,12 @@ import { createFringe } from './fringe.js';
 
 export function createCarpet(seed, clothOptions = {}) {
   if (!clothOptions.map) throw new Error("A loaded rug scan is required");
-  const cloth = new Cloth({seed,...clothOptions, ...carpetGeometry(clothOptions, clothOptions.aspect)});
+  const grid = carpetGeometry(clothOptions, clothOptions.aspect);
+  if (clothOptions.mobile) {
+    grid.cols = Math.max(12, Math.round(grid.cols * .75 / 2) * 2);
+    grid.rows = Math.max(12, Math.round(grid.rows * .75 / 2) * 2);
+  }
+  const cloth = new Cloth({seed,...clothOptions, ...grid});
   const dirt = new DirtMap({ dirtAmount: clothOptions.dirtAmount, foldAxis: cloth.foldAxis, width: cloth.width, height: cloth.height });
   const map = clothOptions.map;
   map.colorSpace = THREE.SRGBColorSpace;

@@ -1,3 +1,5 @@
+import { activeProfile, mobileDevice, loadProfileTexture } from '../../boot/mobileAssets.js';
+import {diagnostics,setBootStep} from '../../boot/bootGuard.js';
 import * as THREE from 'three';
 import {HDRLoader} from 'three/addons/loaders/HDRLoader.js';
 import {loadYardStock} from './stock.js';
@@ -8,13 +10,14 @@ const base=()=>`${import.meta.env?.BASE_URL||'/'}yard/`;
 // Each request is optional and bounded: a stalled CDN must not block the menu.
 async function optional(load,fail){let timer;try{return await Promise.race([load(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('yard asset timeout')),12000);})]);}catch(e){fail(e);return null;}finally{clearTimeout(timer);}}
 export async function loadYardAssets(yard,renderer,onProgress=()=>{}){
- const stockPromise=loadYardStock(yard);
- let done=0;const total=22, failures=[];const textures=[];
+ const mobile=activeProfile!=='full';
+ const stockPromise=mobile||mobileDevice?Promise.resolve({dispose(){}}):loadYardStock(yard);
+ let done=0;const total=mobile?21:22, failures=[];const textures=[];
  const failed=e=>failures.push(e?.message||'Yard texture could not be loaded');
  const progress=()=>onProgress(++done,total);
  const loader=new THREE.TextureLoader();
  await Promise.all(Object.entries(surfaceIds).flatMap(([key,id])=>['color','normal','arm'].map(async type=>{
-  const t=await optional(()=>loader.loadAsync(`${base()}${id}_${type}.webp`),failed);progress();if(!t)return;
+  const t=await optional(()=>loadProfileTexture(loader,`${base()}${id}_${type}.webp`),failed);progress();if(!t)return;
   textures.push(t);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());
   if(type==='color')t.colorSpace=THREE.SRGBColorSpace;
   const m=yard.materials[key];
@@ -24,7 +27,7 @@ export async function loadYardAssets(yard,renderer,onProgress=()=>{}){
   m.needsUpdate=true;
  })));
  yard.configureGround();
- const [hdr]=await Promise.all([
+ const [hdr]=mobile?[null]:await Promise.all([
   optional(()=>new HDRLoader().setDataType(THREE.FloatType).loadAsync(`${base()}sunset.hdr`),failed).then(r=>{progress();return r;}),
  ]);
  let environment;
@@ -38,11 +41,18 @@ export async function loadYardAssets(yard,renderer,onProgress=()=>{}){
   const u=(index%width+.5)/width;
   const phi=(u-.5)*Math.PI*2;
   const desired=Math.atan2(-.8,-.6),rotation=phi-desired;
-  sceneEnvironment();
+  try { sceneEnvironment(); }
+  catch(error) {
+   environment?.dispose(); environment=null;yard.scene.environment=null;
+   yard.renderFallback=true;diagnostics.reasons.push(`IBL failed: ${error.message}`);setBootStep('IBL failed: direct-render fallback');
+  }
   function sceneEnvironment(){
    const scene=yard.scene;scene.background=null;scene.backgroundRotation.y=rotation;scene.environmentRotation.y=rotation;
    scene.backgroundIntensity=.42;scene.backgroundBlurriness=.06;
-   const pmrem=new THREE.PMREMGenerator(renderer);environment=pmrem.fromEquirectangular(hdr);pmrem.dispose();scene.environment=environment.texture;scene.environmentIntensity=.75;
+   const pmrem=new THREE.PMREMGenerator(renderer);
+   try { environment=pmrem.fromEquirectangular(hdr); } finally { pmrem.dispose(); }
+   if(renderer.getContext().getError()!==renderer.getContext().NO_ERROR)throw Error('PMREM framebuffer error');
+   scene.environment=environment.texture;scene.environmentIntensity=.75;
    // Retain the low direct-light position from createYard regardless of HDR latitude.
    yard.sun.color.set('#ffbd86');yard.sun.intensity=2.1;
    // Horizon radiance, excluding the solar disc, sets the atmospheric tint.
@@ -53,5 +63,9 @@ export async function loadYardAssets(yard,renderer,onProgress=()=>{}){
  }
  yard.assetStatus={loaded:total-failures.length,total,failures};
  const stock=await stockPromise;
- return {dispose(){stock.dispose();textures.forEach(t=>t.dispose());hdr?.dispose();environment?.dispose();}};
+ function releaseEnvironment(){
+  yard.scene.environment=null;hdr?.dispose();if(hdr)hdr.image=null;
+  yard.hdrTexture=null;environment?.dispose();environment=null;
+ }
+ return {releaseEnvironment,dispose(){stock.dispose();textures.forEach(t=>t.dispose());releaseEnvironment();}};
 }

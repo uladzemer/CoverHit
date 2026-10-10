@@ -10,33 +10,67 @@ export function installModal(hud, options) {
   }});
   hud.nodes.title = hud.modal.title; hud.nodes.description = hud.modal.description; hud.nodes.action = hud.modal.primary;
   hud.menuReopen = document.createElement('button'); hud.menuReopen.className = 'ch-secondary ch-menu-reopen'; hud.menuReopen.textContent = 'Меню · Esc'; hud.menuReopen.hidden = true;
-  hud.menuReopen.onclick = () => hud.openMenu(); hud.root.append(hud.menuReopen);
+  hud.menuReopen.onclick = () => hud.openMenu(hud.game?.state === 'playing'); hud.root.append(hud.menuReopen);
   hud.creditsEntries = [...(options.credits || []), ...(options.yardCredits || []), ...(options.stockCredits || []).map(e => ({...e, credit: 'Envato Elements', license: 'Личная лицензия'}))];
   hud.instructions = element('ch-instructions', `<ol class="ch-step-cards"><li><span>↓</span><b>Зажми — замах</b></li><li><span>✦</span><b>Отпусти — удар</b></li><li><kbd>F</kbd><b>Перекинь ковёр</b></li></ol><div class="ch-guide-columns"><table class="ch-controls"><caption>Управление</caption><tbody><tr><th>Мышь</th><td>Зажать / отпустить</td></tr><tr><th>F</th><td>Сменить сторону</td></tr><tr><th>R</th><td>Размер прицела</td></tr><tr><th>M</th><td>Звук</td></tr><tr><th>Esc</th><td>Меню / назад</td></tr></tbody></table><div class="ch-rule-rows"><p>♫ <b>Ритм:</b> ровные удары растят комбо.</p><p>★ <b>Чистота:</b> доведи обе стороны до 90%.</p><p>⌂ <b>Соседи:</b> после двух предупреждений — штраф.</p><p>✦ <b>Моль:</b> попади в полёте, получи +300.</p></div></div>`);
+  const desktopInstructions = hud.instructions.innerHTML;
+  hud.rulesHTML = hud.instructions.querySelector('.ch-rule-rows').outerHTML;
+  hud.updateTouchHints = () => {
+    hud.menuReopen.textContent = hud.touchMode ? '☰ Меню / пауза' : 'Меню · Esc';
+    hud.instructions.innerHTML = desktopInstructions;
+    if (hud.touchMode) {
+      hud.instructions.querySelector('.ch-step-cards').innerHTML = '<li><span>↓</span><b>Зажми палец — замах</b></li><li><span>✦</span><b>Отпусти — удар</b></li><li><span>↻</span><b>Кнопка «Перекинуть»</b></li>';
+      const labels = ['Палец', '↻', '◎', '♪', '☰'];
+      const words = ['Веди по ковру — прицел выше пальца', 'Кнопка «Перекинуть»', 'Размер прицела', 'Звук', 'Меню / пауза'];
+      hud.instructions.querySelectorAll('tr').forEach((row, i) => { row.querySelector('th').textContent = labels[i]; row.querySelector('td').textContent = words[i]; });
+    }
+    if (hud.blocking && hud.modalFlow === 'menu' && hud.phoneLayout.matches) {
+      const guide = hud.modal.pages[0].content;
+      guide.innerHTML = hud.instructions.innerHTML;
+      guide.querySelector('.ch-rule-rows')?.remove();
+    }
+  };
+  hud.phoneLayout = window.matchMedia('(max-width: 600px), (max-height: 500px)');
+  hud.layoutChanged = () => { if (hud.blocking && hud.modalFlow === 'menu') { const i = hud.modal.index; hud.openMenu(hud.pausedMenu); hud.modal.go(i, false); } };
+  hud.phoneLayout.addEventListener('change', hud.layoutChanged);
   hud.settings = element('ch-settings', `<label>Графика<select data-setting-quality><option value="high">Высокая</option><option value="medium">Средняя</option><option value="low">Низкая</option></select></label><label>Прицел<select data-setting-reticle><option value="normal">Обычный</option><option value="large">Крупный</option></select></label><label>Громкость<input data-setting-volume type="range" min="0" max="1" step="0.05" value="0.8"></label><label class="ch-motion-label"><input data-setting-motion type="checkbox"> Меньше движения</label><p>Ковры сменяются по очереди. Качество графики не меняет правила игры.</p>`);
+  hud.setting = selector => hud.settings.querySelector(selector) || hud.settingPages?.map(p => p.querySelector(selector)).find(Boolean);
   hud.qualityChanged = event => {
-    if (['high','medium','low'].includes(event.detail?.level)) hud.settings.querySelector('[data-setting-quality]').value = event.detail.level;
+    if (['high','medium','low'].includes(event.detail?.level)) hud.setting('[data-setting-quality]').value = event.detail.level;
   };
   window.addEventListener('coverhit-quality', hud.qualityChanged);
-  hud.settings.querySelector('[data-setting-quality]').onchange = e => window.__coverhit?.setQuality?.(e.target.value);
+  hud.setting('[data-setting-quality]').onchange = e => window.__coverhit?.setQuality?.(e.target.value);
   const facadeLabel=document.createElement('label');facadeLabel.innerHTML='Фасады: <select data-setting-facades><option value="photo">фото</option><option value="procedural">рисованные</option></select>';
-  hud.settings.querySelector('[data-setting-quality]').closest('label').after(facadeLabel);
-  hud.settings.querySelector('[data-setting-facades]').onchange=e=>window.__coverhit?.setFacades?.(e.target.value);
-  hud.facadesChanged=event=>{hud.settings.querySelector('[data-setting-facades]').value=event.detail.mode;};
+  hud.setting('[data-setting-quality]').closest('label').after(facadeLabel);
+  hud.setting('[data-setting-facades]').onchange=e=>window.__coverhit?.setFacades?.(e.target.value);
+  hud.facadesChanged=event=>{hud.setting('[data-setting-facades]').value=event.detail.mode;};
   window.addEventListener('coverhit-facades',hud.facadesChanged);
-  hud.settings.querySelector('[data-setting-reticle]').onchange = e => { if (e.target.value !== hud.reticleSize) hud.cycleReticle(); };
+  hud.setting('[data-setting-reticle]').onchange = e => { if (e.target.value !== hud.reticleSize) hud.cycleReticle(); };
   hud.volume = 0.8;
-  hud.settings.querySelector('[data-setting-volume]').oninput = e => { hud.volume = Number(e.target.value); options.onVolume?.(hud.volume); };
-  hud.settings.querySelector('[data-setting-motion]').onchange = e => { hud.reduceMotion = e.target.checked; hud.root.dataset.reducedMotion = String(hud.reduceMotion); if(hud.reduceMotion) hud.motionChanged(); };
+  hud.setting('[data-setting-volume]').oninput = e => { hud.volume = Number(e.target.value); options.onVolume?.(hud.volume); };
+  hud.setting('[data-setting-motion]').onchange = e => { hud.reduceMotion = e.target.checked; hud.root.dataset.reducedMotion = String(hud.reduceMotion); if(hud.reduceMotion) hud.motionChanged(); };
   hud.openMenu = (paused = false) => {
+    for (const page of hud.settingPages || []) hud.settings.append(...page.querySelectorAll('label'));
+    hud.settingPages = null;
     hud.modalFlow = 'menu';
     hud.pausedMenu = paused; hud.menuReopen.hidden = true;
-    hud.settings.querySelector('[data-setting-quality]').value = window.__coverhit?.quality || 'high';
-    hud.settings.querySelector('[data-setting-facades]').value = window.__coverhit?.facades || 'photo';
-    hud.settings.querySelector('[data-setting-reticle]').value = hud.reticleSize;
-    hud.settings.querySelector('[data-setting-volume]').value = hud.muted ? 0 : hud.volume;
+    hud.setting('[data-setting-quality]').value = window.__coverhit?.quality || 'high';
+    hud.setting('[data-setting-facades]').value = window.__coverhit?.facades || 'photo';
+    hud.setting('[data-setting-reticle]').value = hud.reticleSize;
+    hud.setting('[data-setting-volume]').value = hud.muted ? 0 : hud.volume;
     const pages = [{title:'Как играть',content:hud.instructions}, {title:'Выбивалка',description:'Выбери инструмент. Новые откроются за чистые ковры.',content:hud.nodes.selector || element('', 'Выбивалка готова к работе.')}, {title:'Ковёр и графика',content:hud.settings}];
-    for (const [index, entries] of paginate(hud.creditsEntries, 4).entries()) {
+    if (hud.phoneLayout.matches) {
+      const guide = hud.instructions.cloneNode(true); guide.querySelector('.ch-rule-rows')?.remove();
+      pages[0].content = guide;
+      pages.splice(1, 0, {title:'Правила двора',content:element('', hud.rulesHTML)});
+      const labels = [...hud.settings.querySelectorAll('label')];
+      const settingPages = [element('ch-settings'), element('ch-settings')];
+      labels.forEach((label, i) => settingPages[i < 3 ? 0 : 1].append(label));
+      pages[3].content = settingPages[0];
+      pages.splice(4, 0, {title:'Звук и движение',content:settingPages[1]});
+      hud.settingPages = settingPages;
+    }
+    for (const [index, entries] of paginate(hud.creditsEntries, hud.phoneLayout.matches ? 2 : 4).entries()) {
       const grid = element('ch-credit-grid');
       for (const entry of entries) {
         const card = element('ch-credit-card'); const link = document.createElement('a'); link.href = entry.sourceUrl || '#'; link.target='_blank'; link.rel='noopener noreferrer'; link.textContent=entry.title || entry.name || 'Источник';
@@ -50,7 +84,7 @@ export function installModal(hud, options) {
   hud.showState = state => {
     hud.clearScorePops(); hud.root.dataset.state = state; hud.menuReopen.hidden=true;
     hud.modal.close(false); hud.setSide(hud.game?.visibleSide,hud.game?.flipping);
-    if(state === 'playing') return;
+    if(state === 'playing') { hud.menuReopen.hidden=false; return; }
     if(state === 'menu') { hud.openMenu(); return; }
     hud.modalFlow = 'result';
     const done = state === 'carpetDone';

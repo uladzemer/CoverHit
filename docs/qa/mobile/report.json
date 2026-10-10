@@ -1,0 +1,4572 @@
+{
+  "url": "http://127.0.0.1:5323/CoverHit/",
+  "at": "2026-10-10T19:59:44.886Z",
+  "notes": [
+    "Desktop GPU emulation cannot reproduce physical iOS tab memory kills.",
+    "Pixel uses 4x CPU and Fast 3G (1.6 Mbps down, 750 Kbps up, 150ms RTT)."
+  ],
+  "results": [
+    {
+      "device": "iPhone 14 Pro",
+      "orientation": "portrait",
+      "scenario": "auto",
+      "ttiMs": 6726,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 192
+        },
+        {
+          "step": "ammo ready",
+          "t": 277
+        },
+        {
+          "step": "renderer created",
+          "t": 538
+        },
+        {
+          "step": "carpets manifest",
+          "t": 557
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 771
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 774
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 774
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 774
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 774
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 774
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 802
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 802
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 802
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 802
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 802
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 802
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 803
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 803
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 803
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 803
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 803
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 803
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 803
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 803
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 803
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 815
+        },
+        {
+          "step": "pipeline created",
+          "t": 815
+        },
+        {
+          "step": "hud ready",
+          "t": 1682
+        },
+        {
+          "step": "first frame rendered",
+          "t": 6523
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 36.87,
+      "bodyPercent": 0.49,
+      "carpetSkyDeltaE": 44.04,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "orientation": "portrait",
+      "scenario": "lite",
+      "ttiMs": 2930,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 93
+        },
+        {
+          "step": "ammo ready",
+          "t": 148
+        },
+        {
+          "step": "renderer created",
+          "t": 157
+        },
+        {
+          "step": "carpets manifest",
+          "t": 179
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 281
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 281
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 281
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 281
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 281
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 281
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 281
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 281
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 281
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 282
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 282
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 282
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 282
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 282
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 282
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 289
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 289
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 289
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 289
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 289
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 289
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 291
+        },
+        {
+          "step": "pipeline created",
+          "t": 292
+        },
+        {
+          "step": "hud ready",
+          "t": 605
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2808
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 37.09,
+      "bodyPercent": 0.52,
+      "carpetSkyDeltaE": 44.06,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "orientation": "portrait",
+      "scenario": "hidden",
+      "ttiMs": 2731,
+      "profile": "minimal",
+      "panel": false,
+      "dpr": 0.75,
+      "outputDpr": 0.75,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [],
+        "rgba16f": false,
+        "rgba32f": false
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 91
+        },
+        {
+          "step": "ammo ready",
+          "t": 148
+        },
+        {
+          "step": "renderer created",
+          "t": 155
+        },
+        {
+          "step": "carpets manifest",
+          "t": 165
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 247
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 247
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 247
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 247
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 247
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 247
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 248
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 248
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 248
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 248
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 248
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 248
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 248
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 258
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 258
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 258
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 258
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 258
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 258
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 258
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 258
+        },
+        {
+          "step": "quality minimal: device profile",
+          "t": 260
+        },
+        {
+          "step": "pipeline created",
+          "t": 260
+        },
+        {
+          "step": "hud ready",
+          "t": 548
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2625
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 38.64,
+      "bodyPercent": 0.97,
+      "carpetSkyDeltaE": 44.03,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "orientation": "portrait",
+      "scenario": "loss",
+      "ttiMs": 2817,
+      "profile": "lite",
+      "panel": true,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 82
+        },
+        {
+          "step": "ammo ready",
+          "t": 138
+        },
+        {
+          "step": "renderer created",
+          "t": 147
+        },
+        {
+          "step": "carpets manifest",
+          "t": 156
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 253
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 253
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 253
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 253
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 253
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 253
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 253
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 254
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 254
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 256
+        },
+        {
+          "step": "pipeline created",
+          "t": 256
+        },
+        {
+          "step": "hud ready",
+          "t": 591
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2700
+        },
+        {
+          "step": "WebGL context lost",
+          "t": 5254
+        }
+      ],
+      "reasons": [
+        "device profile",
+        "WebGL context lost"
+      ],
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "orientation": "portrait",
+      "scenario": "404",
+      "ttiMs": 3209,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 91
+        },
+        {
+          "step": "ammo ready",
+          "t": 145
+        },
+        {
+          "step": "renderer created",
+          "t": 153
+        },
+        {
+          "step": "carpets manifest",
+          "t": 176
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 665
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 665
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 665
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 665
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 665
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 666
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 666
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 666
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 675
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 675
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 675
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 675
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 675
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 675
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 675
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 675
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 675
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 675
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 676
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 676
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 676
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 678
+        },
+        {
+          "step": "pipeline created",
+          "t": 678
+        },
+        {
+          "step": "hud ready",
+          "t": 949
+        },
+        {
+          "step": "first frame rendered",
+          "t": 3092
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 37.09,
+      "bodyPercent": 0.52,
+      "carpetSkyDeltaE": 44.09,
+      "greenPercent": 0,
+      "transferredMB": 12.73,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "orientation": "landscape",
+      "scenario": "auto",
+      "ttiMs": 2896,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 132.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 84
+        },
+        {
+          "step": "ammo ready",
+          "t": 141
+        },
+        {
+          "step": "renderer created",
+          "t": 150
+        },
+        {
+          "step": "carpets manifest",
+          "t": 161
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 251
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 252
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 265
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 265
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 265
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 265
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 265
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 265
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 265
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 265
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 267
+        },
+        {
+          "step": "pipeline created",
+          "t": 267
+        },
+        {
+          "step": "hud ready",
+          "t": 554
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2744
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 28.14,
+      "bodyPercent": 0.33,
+      "carpetSkyDeltaE": 40.55,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "orientation": "landscape",
+      "scenario": "lite",
+      "ttiMs": 2770,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 80
+        },
+        {
+          "step": "ammo ready",
+          "t": 135
+        },
+        {
+          "step": "renderer created",
+          "t": 145
+        },
+        {
+          "step": "carpets manifest",
+          "t": 153
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 239
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 240
+        },
+        {
+          "step": "pipeline created",
+          "t": 241
+        },
+        {
+          "step": "hud ready",
+          "t": 516
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2613
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 28.14,
+      "bodyPercent": 0.33,
+      "carpetSkyDeltaE": 40.58,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "orientation": "landscape",
+      "scenario": "hidden",
+      "ttiMs": 2855,
+      "profile": "minimal",
+      "panel": false,
+      "dpr": 0.75,
+      "outputDpr": 0.75,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [],
+        "rgba16f": false,
+        "rgba32f": false
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 76
+        },
+        {
+          "step": "ammo ready",
+          "t": 132
+        },
+        {
+          "step": "renderer created",
+          "t": 139
+        },
+        {
+          "step": "carpets manifest",
+          "t": 149
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 262
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 263
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 263
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 263
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 263
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 263
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 263
+        },
+        {
+          "step": "quality minimal: device profile",
+          "t": 265
+        },
+        {
+          "step": "pipeline created",
+          "t": 265
+        },
+        {
+          "step": "hud ready",
+          "t": 543
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2706
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 29.13,
+      "bodyPercent": 0.56,
+      "carpetSkyDeltaE": 40.48,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "orientation": "landscape",
+      "scenario": "loss",
+      "ttiMs": 2798,
+      "profile": "lite",
+      "panel": true,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 132.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 85
+        },
+        {
+          "step": "ammo ready",
+          "t": 127
+        },
+        {
+          "step": "renderer created",
+          "t": 136
+        },
+        {
+          "step": "carpets manifest",
+          "t": 143
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 233
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 234
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 234
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 236
+        },
+        {
+          "step": "pipeline created",
+          "t": 236
+        },
+        {
+          "step": "hud ready",
+          "t": 518
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2647
+        },
+        {
+          "step": "WebGL context lost",
+          "t": 5254
+        }
+      ],
+      "reasons": [
+        "device profile",
+        "WebGL context lost"
+      ],
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "orientation": "landscape",
+      "scenario": "404",
+      "ttiMs": 3271,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 88
+        },
+        {
+          "step": "ammo ready",
+          "t": 138
+        },
+        {
+          "step": "renderer created",
+          "t": 146
+        },
+        {
+          "step": "carpets manifest",
+          "t": 156
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 526
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 526
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 652
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 652
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 654
+        },
+        {
+          "step": "pipeline created",
+          "t": 654
+        },
+        {
+          "step": "hud ready",
+          "t": 903
+        },
+        {
+          "step": "first frame rendered",
+          "t": 3114
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 28.13,
+      "bodyPercent": 0.32,
+      "carpetSkyDeltaE": 40.49,
+      "greenPercent": 0,
+      "transferredMB": 12.73,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone SE",
+      "orientation": "portrait",
+      "scenario": "auto",
+      "ttiMs": 2889,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 87
+        },
+        {
+          "step": "ammo ready",
+          "t": 142
+        },
+        {
+          "step": "renderer created",
+          "t": 322
+        },
+        {
+          "step": "carpets manifest",
+          "t": 332
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 422
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 423
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 423
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 426
+        },
+        {
+          "step": "pipeline created",
+          "t": 426
+        },
+        {
+          "step": "hud ready",
+          "t": 729
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2842
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 37.08,
+      "bodyPercent": 0.47,
+      "carpetSkyDeltaE": 44.2,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone SE",
+      "orientation": "portrait",
+      "scenario": "lite",
+      "ttiMs": 2633,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 85
+        },
+        {
+          "step": "ammo ready",
+          "t": 142
+        },
+        {
+          "step": "renderer created",
+          "t": 150
+        },
+        {
+          "step": "carpets manifest",
+          "t": 159
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 242
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 243
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 243
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 243
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 243
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 243
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 243
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 243
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 245
+        },
+        {
+          "step": "pipeline created",
+          "t": 245
+        },
+        {
+          "step": "hud ready",
+          "t": 539
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2579
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 37.07,
+      "bodyPercent": 0.48,
+      "carpetSkyDeltaE": 44.2,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone SE",
+      "orientation": "portrait",
+      "scenario": "hidden",
+      "ttiMs": 2702,
+      "profile": "minimal",
+      "panel": false,
+      "dpr": 0.75,
+      "outputDpr": 0.75,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [],
+        "rgba16f": false,
+        "rgba32f": false
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 83
+        },
+        {
+          "step": "ammo ready",
+          "t": 136
+        },
+        {
+          "step": "renderer created",
+          "t": 144
+        },
+        {
+          "step": "carpets manifest",
+          "t": 153
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 241
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 241
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 241
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 241
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 241
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 241
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 241
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 241
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 241
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 241
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 241
+        },
+        {
+          "step": "quality minimal: device profile",
+          "t": 243
+        },
+        {
+          "step": "pipeline created",
+          "t": 243
+        },
+        {
+          "step": "hud ready",
+          "t": 546
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2632
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 38.65,
+      "bodyPercent": 0.9,
+      "carpetSkyDeltaE": 44.17,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone SE",
+      "orientation": "portrait",
+      "scenario": "loss",
+      "ttiMs": 2606,
+      "profile": "lite",
+      "panel": true,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 82
+        },
+        {
+          "step": "ammo ready",
+          "t": 136
+        },
+        {
+          "step": "renderer created",
+          "t": 144
+        },
+        {
+          "step": "carpets manifest",
+          "t": 153
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 237
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 238
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 238
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 240
+        },
+        {
+          "step": "pipeline created",
+          "t": 240
+        },
+        {
+          "step": "hud ready",
+          "t": 517
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2539
+        },
+        {
+          "step": "WebGL context lost",
+          "t": 5234
+        }
+      ],
+      "reasons": [
+        "device profile",
+        "WebGL context lost"
+      ],
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone SE",
+      "orientation": "portrait",
+      "scenario": "404",
+      "ttiMs": 3159,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 99
+        },
+        {
+          "step": "ammo ready",
+          "t": 154
+        },
+        {
+          "step": "renderer created",
+          "t": 162
+        },
+        {
+          "step": "carpets manifest",
+          "t": 172
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 583
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 667
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 677
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 678
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 678
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 680
+        },
+        {
+          "step": "pipeline created",
+          "t": 680
+        },
+        {
+          "step": "hud ready",
+          "t": 927
+        },
+        {
+          "step": "first frame rendered",
+          "t": 3089
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 37.06,
+      "bodyPercent": 0.47,
+      "carpetSkyDeltaE": 44.23,
+      "greenPercent": 0,
+      "transferredMB": 12.73,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone SE",
+      "orientation": "landscape",
+      "scenario": "auto",
+      "ttiMs": 2814,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 76
+        },
+        {
+          "step": "ammo ready",
+          "t": 132
+        },
+        {
+          "step": "renderer created",
+          "t": 140
+        },
+        {
+          "step": "carpets manifest",
+          "t": 148
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 231
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 231
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 231
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 231
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 231
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 231
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 231
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 232
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 232
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 232
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 240
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 241
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 241
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 243
+        },
+        {
+          "step": "pipeline created",
+          "t": 243
+        },
+        {
+          "step": "hud ready",
+          "t": 555
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2760
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 28.39,
+      "bodyPercent": 0.3,
+      "carpetSkyDeltaE": 39.87,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone SE",
+      "orientation": "landscape",
+      "scenario": "lite",
+      "ttiMs": 2803,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 87
+        },
+        {
+          "step": "ammo ready",
+          "t": 144
+        },
+        {
+          "step": "renderer created",
+          "t": 154
+        },
+        {
+          "step": "carpets manifest",
+          "t": 162
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 250
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 250
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 252
+        },
+        {
+          "step": "pipeline created",
+          "t": 252
+        },
+        {
+          "step": "hud ready",
+          "t": 544
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2757
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 28.39,
+      "bodyPercent": 0.3,
+      "carpetSkyDeltaE": 39.87,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone SE",
+      "orientation": "landscape",
+      "scenario": "hidden",
+      "ttiMs": 2978,
+      "profile": "minimal",
+      "panel": false,
+      "dpr": 0.75,
+      "outputDpr": 0.75,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [],
+        "rgba16f": false,
+        "rgba32f": false
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 92
+        },
+        {
+          "step": "ammo ready",
+          "t": 147
+        },
+        {
+          "step": "renderer created",
+          "t": 157
+        },
+        {
+          "step": "carpets manifest",
+          "t": 166
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 261
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 261
+        },
+        {
+          "step": "quality minimal: device profile",
+          "t": 264
+        },
+        {
+          "step": "pipeline created",
+          "t": 264
+        },
+        {
+          "step": "hud ready",
+          "t": 563
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2921
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 28.76,
+      "bodyPercent": 0.51,
+      "carpetSkyDeltaE": 39.84,
+      "greenPercent": 0,
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone SE",
+      "orientation": "landscape",
+      "scenario": "loss",
+      "ttiMs": 2882,
+      "profile": "lite",
+      "panel": true,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 88
+        },
+        {
+          "step": "ammo ready",
+          "t": 144
+        },
+        {
+          "step": "renderer created",
+          "t": 152
+        },
+        {
+          "step": "carpets manifest",
+          "t": 161
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 248
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 248
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 249
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 249
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 251
+        },
+        {
+          "step": "pipeline created",
+          "t": 251
+        },
+        {
+          "step": "hud ready",
+          "t": 540
+        },
+        {
+          "step": "first frame rendered",
+          "t": 2833
+        },
+        {
+          "step": "WebGL context lost",
+          "t": 5259
+        }
+      ],
+      "reasons": [
+        "device profile",
+        "WebGL context lost"
+      ],
+      "transferredMB": 4.99,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "iPhone SE",
+      "orientation": "landscape",
+      "scenario": "404",
+      "ttiMs": 3290,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": null,
+      "textureMB": 130.1,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 78
+        },
+        {
+          "step": "ammo ready",
+          "t": 132
+        },
+        {
+          "step": "renderer created",
+          "t": 141
+        },
+        {
+          "step": "carpets manifest",
+          "t": 150
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 526
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 527
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 661
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 661
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 661
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 661
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 661
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 661
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 662
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 662
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 664
+        },
+        {
+          "step": "pipeline created",
+          "t": 664
+        },
+        {
+          "step": "hud ready",
+          "t": 918
+        },
+        {
+          "step": "first frame rendered",
+          "t": 3220
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 28.43,
+      "bodyPercent": 0.31,
+      "carpetSkyDeltaE": 39.87,
+      "greenPercent": 0,
+      "transferredMB": 12.73,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "Pixel 7",
+      "orientation": "portrait",
+      "scenario": "auto",
+      "ttiMs": 23046,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": 58,
+      "textureMB": 51.8,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float",
+          "EXT_disjoint_timer_query_webgl2"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 2772,
+          "mem": 5047845
+        },
+        {
+          "step": "ammo ready",
+          "t": 6763,
+          "mem": 6920111
+        },
+        {
+          "step": "renderer created",
+          "t": 6797,
+          "mem": 6920111
+        },
+        {
+          "step": "carpets manifest",
+          "t": 6987,
+          "mem": 7895962
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 13312,
+          "mem": 12734420
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 14206,
+          "mem": 12750890
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 14236,
+          "mem": 12750890
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 14266,
+          "mem": 12754546
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 14359,
+          "mem": 12755554
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 18486,
+          "mem": 12774786
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 18777,
+          "mem": 12775962
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 19248,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 19249,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 19249,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 19249,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 19249,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 19249,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 19249,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 19249,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 19249,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 19249,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 19249,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 19249,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 19250,
+          "mem": 12781330
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 19250,
+          "mem": 12781330
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 19261,
+          "mem": 12781330
+        },
+        {
+          "step": "pipeline created",
+          "t": 19262,
+          "mem": 12781330
+        },
+        {
+          "step": "hud ready",
+          "t": 20762,
+          "mem": 58978811
+        },
+        {
+          "step": "first frame rendered",
+          "t": 23013,
+          "mem": 63180068
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 37.74,
+      "bodyPercent": 0.47,
+      "carpetSkyDeltaE": 44.44,
+      "greenPercent": 0,
+      "transferredMB": 5,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "Pixel 7",
+      "orientation": "portrait",
+      "scenario": "lite",
+      "ttiMs": 22899,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": 58,
+      "textureMB": 51.8,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float",
+          "EXT_disjoint_timer_query_webgl2"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 2788,
+          "mem": 5049685
+        },
+        {
+          "step": "ammo ready",
+          "t": 6777,
+          "mem": 6920431
+        },
+        {
+          "step": "renderer created",
+          "t": 6811,
+          "mem": 6920431
+        },
+        {
+          "step": "carpets manifest",
+          "t": 6998,
+          "mem": 7895966
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 13338,
+          "mem": 12725024
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 14221,
+          "mem": 12746122
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 14267,
+          "mem": 12746122
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 14315,
+          "mem": 12749870
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 14411,
+          "mem": 12750918
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 18496,
+          "mem": 12763154
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 18840,
+          "mem": 12764358
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 19283,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 19284,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 19284,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 19284,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 19284,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 19284,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 19284,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 19284,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 19284,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 19285,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 19285,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 19285,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 19285,
+          "mem": 12775650
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 19285,
+          "mem": 12775650
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 19296,
+          "mem": 12775650
+        },
+        {
+          "step": "pipeline created",
+          "t": 19297,
+          "mem": 12775650
+        },
+        {
+          "step": "hud ready",
+          "t": 21376,
+          "mem": 58494726
+        },
+        {
+          "step": "first frame rendered",
+          "t": 22860,
+          "mem": 61383163
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 37.76,
+      "bodyPercent": 0.46,
+      "carpetSkyDeltaE": 44.42,
+      "greenPercent": 0,
+      "transferredMB": 5,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "Pixel 7",
+      "orientation": "portrait",
+      "scenario": "hidden",
+      "ttiMs": 27704,
+      "profile": "minimal",
+      "panel": false,
+      "dpr": 0.75,
+      "outputDpr": 0.75,
+      "composer": false,
+      "heapMB": 57,
+      "textureMB": 51.8,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [],
+        "rgba16f": false,
+        "rgba32f": false
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 2842,
+          "mem": 5704865
+        },
+        {
+          "step": "ammo ready",
+          "t": 6899,
+          "mem": 7055831
+        },
+        {
+          "step": "renderer created",
+          "t": 6940,
+          "mem": 7055831
+        },
+        {
+          "step": "carpets manifest",
+          "t": 7128,
+          "mem": 7592514
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 13623,
+          "mem": 12735104
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 14526,
+          "mem": 12751694
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 14541,
+          "mem": 12751694
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 14577,
+          "mem": 12755362
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 14671,
+          "mem": 12756370
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 18793,
+          "mem": 12775326
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 19073,
+          "mem": 12776262
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 19561,
+          "mem": 12781606
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 19562,
+          "mem": 12781606
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 19567,
+          "mem": 12781606
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 19571,
+          "mem": 12781606
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 19578,
+          "mem": 12781606
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 19578,
+          "mem": 12781606
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 19631,
+          "mem": 12791798
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 19656,
+          "mem": 12791798
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 19656,
+          "mem": 12791798
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 19656,
+          "mem": 12791798
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 19656,
+          "mem": 12791798
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 19657,
+          "mem": 12791798
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 19657,
+          "mem": 12791798
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 19657,
+          "mem": 12791798
+        },
+        {
+          "step": "quality minimal: device profile",
+          "t": 19675,
+          "mem": 12791798
+        },
+        {
+          "step": "pipeline created",
+          "t": 19675,
+          "mem": 12791798
+        },
+        {
+          "step": "hud ready",
+          "t": 25139,
+          "mem": 62608007
+        },
+        {
+          "step": "first frame rendered",
+          "t": 27648,
+          "mem": 66091396
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 38.42,
+      "bodyPercent": 0.73,
+      "carpetSkyDeltaE": 44.42,
+      "greenPercent": 0,
+      "transferredMB": 5,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "Pixel 7",
+      "orientation": "portrait",
+      "scenario": "loss",
+      "ttiMs": 12045,
+      "profile": "lite",
+      "panel": true,
+      "composer": false,
+      "heapMB": 12,
+      "textureMB": null,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float",
+          "EXT_disjoint_timer_query_webgl2"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 2871,
+          "mem": 5057099
+        },
+        {
+          "step": "ammo ready",
+          "t": 6954,
+          "mem": 6923929
+        },
+        {
+          "step": "renderer created",
+          "t": 7006,
+          "mem": 7833971
+        },
+        {
+          "step": "carpets manifest",
+          "t": 7185,
+          "mem": 7898594
+        },
+        {
+          "step": "WebGL context lost",
+          "t": 12028,
+          "mem": 12545166
+        }
+      ],
+      "reasons": [
+        "WebGL context lost"
+      ],
+      "transferredMB": 5,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "Pixel 7",
+      "orientation": "portrait",
+      "scenario": "404",
+      "ttiMs": 21860,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": 68,
+      "textureMB": 22.2,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float",
+          "EXT_disjoint_timer_query_webgl2"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 2798,
+          "mem": 5049685
+        },
+        {
+          "step": "ammo ready",
+          "t": 6787,
+          "mem": 6920295
+        },
+        {
+          "step": "renderer created",
+          "t": 6818,
+          "mem": 6920295
+        },
+        {
+          "step": "carpets manifest",
+          "t": 6998,
+          "mem": 7895890
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 19249,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 19250,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 19250,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 19250,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 19250,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 19250,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 19251,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 19251,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 19252,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 19252,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 19252,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 19252,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 19252,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 19252,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 19252,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 19252,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 19252,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 19253,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 19253,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 19253,
+          "mem": 12562112
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 19253,
+          "mem": 12562112
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 19274,
+          "mem": 12562112
+        },
+        {
+          "step": "pipeline created",
+          "t": 19274,
+          "mem": 12562112
+        },
+        {
+          "step": "hud ready",
+          "t": 21129,
+          "mem": 59666570
+        },
+        {
+          "step": "first frame rendered",
+          "t": 21831,
+          "mem": 64634459
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 41.41,
+      "bodyPercent": 0.5,
+      "carpetSkyDeltaE": 44.49,
+      "greenPercent": 0,
+      "transferredMB": 12.73,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "Pixel 7",
+      "orientation": "landscape",
+      "scenario": "auto",
+      "ttiMs": 22002,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": 58,
+      "textureMB": 51.8,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float",
+          "EXT_disjoint_timer_query_webgl2"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 2857,
+          "mem": 5049685
+        },
+        {
+          "step": "ammo ready",
+          "t": 6925,
+          "mem": 5998360
+        },
+        {
+          "step": "renderer created",
+          "t": 6960,
+          "mem": 5998360
+        },
+        {
+          "step": "carpets manifest",
+          "t": 7145,
+          "mem": 6976330
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 13459,
+          "mem": 12738972
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 14369,
+          "mem": 12755590
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 14384,
+          "mem": 12755590
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 14431,
+          "mem": 12759298
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 14527,
+          "mem": 12760306
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 18609,
+          "mem": 12779422
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 18938,
+          "mem": 12780650
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 19402,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 19403,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 19404,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 19404,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 19404,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 19404,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 19404,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 19404,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 19404,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 19405,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 19405,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 19405,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 19405,
+          "mem": 12786042
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 19405,
+          "mem": 12786042
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 19415,
+          "mem": 12786042
+        },
+        {
+          "step": "pipeline created",
+          "t": 19416,
+          "mem": 12786042
+        },
+        {
+          "step": "hud ready",
+          "t": 20841,
+          "mem": 64191491
+        },
+        {
+          "step": "first frame rendered",
+          "t": 21974,
+          "mem": 61343077
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 30.03,
+      "bodyPercent": 0.26,
+      "carpetSkyDeltaE": 38.3,
+      "greenPercent": 0,
+      "transferredMB": 5,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "Pixel 7",
+      "orientation": "landscape",
+      "scenario": "lite",
+      "ttiMs": 23290,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": 58,
+      "textureMB": 51.8,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float",
+          "EXT_disjoint_timer_query_webgl2"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 3091,
+          "mem": 5049685
+        },
+        {
+          "step": "ammo ready",
+          "t": 7579,
+          "mem": 5996308
+        },
+        {
+          "step": "renderer created",
+          "t": 7686,
+          "mem": 6911704
+        },
+        {
+          "step": "carpets manifest",
+          "t": 7879,
+          "mem": 6976314
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 14685,
+          "mem": 13350348
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 15575,
+          "mem": 13371210
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 15605,
+          "mem": 13371210
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 15638,
+          "mem": 13374906
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 15715,
+          "mem": 13375874
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 19865,
+          "mem": 13388334
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 20145,
+          "mem": 13389482
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 20597,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 20597,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 20597,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 20597,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 20600,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 20600,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 20600,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 20600,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 20600,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 20600,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 20600,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 20600,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 20600,
+          "mem": 13400710
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 20600,
+          "mem": 13400710
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 20610,
+          "mem": 13400710
+        },
+        {
+          "step": "pipeline created",
+          "t": 20611,
+          "mem": 13400710
+        },
+        {
+          "step": "hud ready",
+          "t": 22084,
+          "mem": 67145418
+        },
+        {
+          "step": "first frame rendered",
+          "t": 23263,
+          "mem": 70239708
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 29.98,
+      "bodyPercent": 0.27,
+      "carpetSkyDeltaE": 38.21,
+      "greenPercent": 0,
+      "transferredMB": 5,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "Pixel 7",
+      "orientation": "landscape",
+      "scenario": "hidden",
+      "ttiMs": 21881,
+      "profile": "minimal",
+      "panel": false,
+      "dpr": 0.75,
+      "outputDpr": 0.75,
+      "composer": false,
+      "heapMB": 58,
+      "textureMB": 51.8,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [],
+        "rgba16f": false,
+        "rgba32f": false
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 2779,
+          "mem": 5483237
+        },
+        {
+          "step": "ammo ready",
+          "t": 6780,
+          "mem": 6134312
+        },
+        {
+          "step": "renderer created",
+          "t": 6809,
+          "mem": 6134312
+        },
+        {
+          "step": "carpets manifest",
+          "t": 6998,
+          "mem": 6672730
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 13319,
+          "mem": 12738936
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 14207,
+          "mem": 12755482
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 14254,
+          "mem": 12755482
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 14285,
+          "mem": 12759178
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 14364,
+          "mem": 12767046
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 18460,
+          "mem": 12779322
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 18787,
+          "mem": 12780550
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 19256,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 19256,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 19257,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 19257,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 19257,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 19257,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 19257,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 19258,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 19258,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 19258,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 19258,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 19258,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 19258,
+          "mem": 12785882
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 19258,
+          "mem": 12785882
+        },
+        {
+          "step": "quality minimal: device profile",
+          "t": 19268,
+          "mem": 12785882
+        },
+        {
+          "step": "pipeline created",
+          "t": 19268,
+          "mem": 12785882
+        },
+        {
+          "step": "hud ready",
+          "t": 20726,
+          "mem": 61931467
+        },
+        {
+          "step": "first frame rendered",
+          "t": 21855,
+          "mem": 73865881
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 30.29,
+      "bodyPercent": 0.46,
+      "carpetSkyDeltaE": 38.23,
+      "greenPercent": 0,
+      "transferredMB": 5,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "Pixel 7",
+      "orientation": "landscape",
+      "scenario": "loss",
+      "ttiMs": 11838,
+      "profile": "lite",
+      "panel": true,
+      "composer": false,
+      "heapMB": 12,
+      "textureMB": null,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float",
+          "EXT_disjoint_timer_query_webgl2"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 2779,
+          "mem": 5057154
+        },
+        {
+          "step": "ammo ready",
+          "t": 6768,
+          "mem": 6001945
+        },
+        {
+          "step": "renderer created",
+          "t": 6800,
+          "mem": 6001945
+        },
+        {
+          "step": "carpets manifest",
+          "t": 6987,
+          "mem": 6979105
+        },
+        {
+          "step": "WebGL context lost",
+          "t": 11820,
+          "mem": 12549841
+        }
+      ],
+      "reasons": [
+        "WebGL context lost"
+      ],
+      "transferredMB": 5,
+      "pass": true,
+      "errors": []
+    },
+    {
+      "device": "Pixel 7",
+      "orientation": "landscape",
+      "scenario": "404",
+      "ttiMs": 21571,
+      "profile": "lite",
+      "panel": false,
+      "dpr": 1,
+      "outputDpr": 1,
+      "composer": false,
+      "heapMB": 64,
+      "textureMB": 22.2,
+      "caps": {
+        "maxTextureSize": 16384,
+        "maxSamples": 8,
+        "extensions": [
+          "EXT_color_buffer_float",
+          "EXT_color_buffer_half_float",
+          "EXT_disjoint_timer_query_webgl2"
+        ],
+        "rgba16f": true,
+        "rgba32f": true
+      },
+      "steps": [
+        {
+          "step": "modules loaded",
+          "t": 2790,
+          "mem": 5049740
+        },
+        {
+          "step": "ammo ready",
+          "t": 6785,
+          "mem": 5998679
+        },
+        {
+          "step": "renderer created",
+          "t": 6821,
+          "mem": 5998679
+        },
+        {
+          "step": "carpets manifest",
+          "t": 7006,
+          "mem": 6976345
+        },
+        {
+          "step": "yard assets 1/21",
+          "t": 19263,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 2/21",
+          "t": 19264,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 3/21",
+          "t": 19264,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 4/21",
+          "t": 19264,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 5/21",
+          "t": 19264,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 6/21",
+          "t": 19264,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 7/21",
+          "t": 19264,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 8/21",
+          "t": 19265,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 9/21",
+          "t": 19265,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 10/21",
+          "t": 19265,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 11/21",
+          "t": 19265,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 12/21",
+          "t": 19265,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 13/21",
+          "t": 19265,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 14/21",
+          "t": 19265,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 15/21",
+          "t": 19265,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 16/21",
+          "t": 19265,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 17/21",
+          "t": 19265,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 18/21",
+          "t": 19266,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 19/21",
+          "t": 19266,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 20/21",
+          "t": 19266,
+          "mem": 13684007
+        },
+        {
+          "step": "yard assets 21/21",
+          "t": 19266,
+          "mem": 13684007
+        },
+        {
+          "step": "quality lite: device profile",
+          "t": 19287,
+          "mem": 13684007
+        },
+        {
+          "step": "pipeline created",
+          "t": 19288,
+          "mem": 13684007
+        },
+        {
+          "step": "hud ready",
+          "t": 20947,
+          "mem": 65398957
+        },
+        {
+          "step": "first frame rendered",
+          "t": 21549,
+          "mem": 74318509
+        }
+      ],
+      "reasons": [
+        "device profile"
+      ],
+      "luminanceSD": 30.56,
+      "bodyPercent": 0.27,
+      "carpetSkyDeltaE": 37.82,
+      "greenPercent": 0,
+      "transferredMB": 12.73,
+      "pass": true,
+      "errors": []
+    }
+  ]
+}

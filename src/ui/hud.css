@@ -195,3 +195,81 @@
 .ch-carpet-info small { font-size:12px; }
 
 .ch-toast { left:50%; right:auto; transform:translateX(-50%); }
+
+/* Phone layout: top status, bottom thumb controls, a clear carpet centre. */
+.ch-page-count { display:none; text-align:center; font-weight:700; }
+@media (max-width:600px), (max-height:500px) {
+ .coverhit-hud { --ch-safe:8px; --ch-type-label:14px; --ch-type-caption:14px; font-size:14px; }
+ .coverhit-hud button, .ch-settings input, .ch-settings select { min-width:48px; min-height:48px; }
+ .ch-modal { padding:8px; padding-top:max(8px,env(safe-area-inset-top)); padding-bottom:max(8px,env(safe-area-inset-bottom)); }
+ .ch-modal-card { min-width:0; width:min(920px,calc(100vw - 16px - env(safe-area-inset-left) - env(safe-area-inset-right))); max-height:calc(var(--vh,1vh) * 100 - 16px - env(safe-area-inset-top) - env(safe-area-inset-bottom)); padding:12px; gap:8px; box-shadow:3px 3px 0 var(--ch-ink); }
+ .ch-modal-card h1 { font-size:clamp(22px,6vw,28px); }
+ .ch-modal-header { gap:8px; font-size:14px; letter-spacing:0; }
+ .ch-modal-header button { flex-shrink:0; }
+ .ch-modal-body { min-width:0; font-size:14px; line-height:1.25; overflow-wrap:anywhere; }
+ .ch-modal-dots { display:none; }
+ .ch-page-count { display:block; }
+ .ch-modal-actions { flex-wrap:wrap; gap:6px; }
+ .ch-modal-actions button { padding:6px 8px; flex:1; }
+ .ch-modal-actions .ch-primary { min-width:0; font-size:16px; margin-left:0; flex:2; }
+ .ch-step-cards { grid-template-columns:1fr; gap:4px; margin-bottom:8px; }
+ .ch-step-cards li { padding:4px; gap:8px; }
+ .ch-step-cards span,.ch-step-cards kbd { flex-basis:28px; height:28px; font-size:20px; }
+ .ch-guide-columns { grid-template-columns:1fr; gap:8px; }
+ .ch-controls tbody { display:grid; gap:4px; }
+ .ch-controls tr { display:grid; grid-template-columns:56px 1fr; border:1px solid var(--ch-muted); }
+ .ch-controls th,.ch-controls td { padding:4px; border:0; }
+ .ch-controls caption { margin-bottom:4px; }
+ .ch-rule-rows { gap:12px; }
+ .ch-settings { grid-template-columns:1fr; gap:8px; }
+ .ch-settings label { gap:4px; }
+ .ch-credit-grid { grid-template-columns:1fr; gap:6px; }
+ .ch-credit-card { padding:6px; }
+ .ch-credit-card a { min-height:48px; }
+ .ch-modal-body .ch-selector { grid-template-columns:1fr; gap:4px; text-align:center; }
+ .ch-modal-body .ch-carousel { grid-row:auto; }
+ .ch-modal-body .ch-carousel canvas { width:112px!important; height:100px!important; }
+ .ch-modal-body .ch-selector>strong { font-size:18px; }
+ .ch-modal-body .ch-results { grid-template-columns:1fr; gap:4px; }
+ .ch-zone { padding:4px; }
+ .ch-top-left { gap:8px; min-width:0; }
+ .ch-score>span,.ch-combo-block>span,.ch-clock>span { font-size:14px; letter-spacing:0; }
+ .ch-combo-block>span,.ch-clock>span,.ch-clock small { display:none; }
+ .ch-score strong,.ch-clock strong,.ch-combo { font-size:22px; }
+ .ch-combo-track { width:28px; }
+ .ch-top-right { gap:4px; }
+ .ch-toggles { gap:2px; }
+ .ch-toggles button { width:48px; min-width:48px; min-height:48px; }
+ .ch-bottom-right { display:none; }
+ .ch-bottom-left { width:calc(100% - 16px - env(safe-area-inset-left) - env(safe-area-inset-right)); bottom:calc(72px + env(safe-area-inset-bottom)); padding:6px; font-size:14px; }
+ .ch-carpet-info { border:0; padding:0; margin:0 0 4px; font-size:14px; }
+ .ch-clean label { font-size:14px; }
+ .ch-carpet-info small,.ch-clean-footer small { display:none; }
+ .ch-clean-footer { margin:0; height:0; }
+ .ch-clean-footer .ch-flip { position:fixed; bottom:calc(8px + env(safe-area-inset-bottom)); right:calc(8px + env(safe-area-inset-right)); min-width:156px; min-height:56px; font-size:16px; }
+ .ch-menu-reopen { bottom:calc(8px + env(safe-area-inset-bottom)); left:calc(8px + env(safe-area-inset-left)); min-height:56px; max-width:140px; padding:4px 8px!important; }
+ .ch-toast { top:calc(76px + env(safe-area-inset-top)); max-width:calc(100% - 24px); }
+ .coverhit-hud[data-modal=true] .ch-menu-reopen { visibility:hidden; }
+}
+@media (max-height:500px) and (orientation:landscape) {
+ .ch-top-right { width:calc(20% - 16px - env(safe-area-inset-right)); flex-direction:column; align-items:flex-end; }
+ .ch-top-right .ch-toggles { flex-wrap:wrap; justify-content:flex-end; }
+ .ch-modal-card { padding:8px 12px; gap:4px; }
+ .ch-modal-header { padding-bottom:2px; }
+ .ch-modal-card h1 { font-size:22px; }
+ .ch-modal-footer { padding-top:4px; gap:2px; }
+ .ch-modal-footer { grid-template-columns:40px 1fr; align-items:center; }
+ .ch-step-cards { grid-template-columns:repeat(3,1fr); }
+ .ch-controls tbody { grid-template-columns:1fr 1fr; }
+ .ch-settings { grid-template-columns:repeat(3,1fr); }
+ .ch-credit-grid { grid-template-columns:1fr 1fr; }
+ .ch-modal-body .ch-selector { grid-template-columns:220px 1fr; gap:4px 12px; text-align:left; }
+ .ch-modal-body .ch-carousel { grid-row:1/5; }
+ .ch-modal-body .ch-results { grid-template-columns:1fr 1fr; }
+ .ch-bottom-left { width:calc(20% - 16px - env(safe-area-inset-left)); left:calc(8px + env(safe-area-inset-left)); bottom:calc(76px + env(safe-area-inset-bottom)); }
+ .ch-carpet-info { font-size:14px; }
+ .ch-clean label { flex-wrap:wrap; }
+ .ch-clean label span { font-size:14px; }
+ .ch-clean-footer .ch-flip { min-width:136px; }
+ .ch-toast { top:8px; max-width:36%; }
+}

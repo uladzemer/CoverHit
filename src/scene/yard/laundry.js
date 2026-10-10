@@ -1,3 +1,4 @@
+import { activeProfile } from '../../boot/mobileAssets.js';
 import * as THREE from 'three';
 import {wind} from '../wind.js';
 import {laundry,laundryHeight} from './layout.js';
@@ -101,7 +102,7 @@ export function createLaundry(root,baseMaterial){
  laundry.lines.forEach((x,i)=>{obj.position.set(x,2.74,(laundry.from+laundry.to)/2);obj.rotation.set(0,Math.PI/2,0);obj.scale.set(laundry.to-laundry.from,1,.1);obj.updateMatrix();rope.setMatrixAt(i,obj.matrix);});group.add(rope);
  const api={group,uniforms,status:'fallback',placements,dispose(){api.disposed=true;api.controller?.abort();group.removeFromParent();g.dispose();rg.dispose();material.dispose();depth.dispose();fabrics.map?.dispose();fabrics.bumpMap?.dispose();uniforms.laundryVAT.value.dispose();}};
  root.userData.laundry=api;
- if(typeof window!=='undefined')api.ready=loadLaundry(api);
+ if(typeof window!=='undefined' && activeProfile==='full')api.ready=loadLaundry(api);
  return api;
 }
 export async function loadLaundry(api){

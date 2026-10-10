@@ -1,0 +1,321 @@
+{
+  "files": [
+    {
+      "file": "public/lite/yard/asphalt_02_arm.webp",
+      "bytes": 145672
+    },
+    {
+      "file": "public/lite/yard/asphalt_02_color.webp",
+      "bytes": 310080
+    },
+    {
+      "file": "public/lite/yard/asphalt_02_normal.webp",
+      "bytes": 249214
+    },
+    {
+      "file": "public/lite/yard/brick_wall_13_arm.webp",
+      "bytes": 8056
+    },
+    {
+      "file": "public/lite/yard/brick_wall_13_color.webp",
+      "bytes": 24528
+    },
+    {
+      "file": "public/lite/yard/brick_wall_13_normal.webp",
+      "bytes": 159934
+    },
+    {
+      "file": "public/lite/yard/concrete_wall_008_arm.webp",
+      "bytes": 27800
+    },
+    {
+      "file": "public/lite/yard/concrete_wall_008_color.webp",
+      "bytes": 56284
+    },
+    {
+      "file": "public/lite/yard/concrete_wall_008_normal.webp",
+      "bytes": 11002
+    },
+    {
+      "file": "public/lite/yard/leafy_grass_arm.webp",
+      "bytes": 125604
+    },
+    {
+      "file": "public/lite/yard/leafy_grass_color.webp",
+      "bytes": 254054
+    },
+    {
+      "file": "public/lite/yard/leafy_grass_normal.webp",
+      "bytes": 365796
+    },
+    {
+      "file": "public/lite/yard/photos/brick-albedo.webp",
+      "bytes": 117406
+    },
+    {
+      "file": "public/lite/yard/photos/brick-impostor-albedo.webp",
+      "bytes": 183282
+    },
+    {
+      "file": "public/lite/yard/photos/brick-impostor-windows.webp",
+      "bytes": 66
+    },
+    {
+      "file": "public/lite/yard/photos/brick-normal.webp",
+      "bytes": 1408
+    },
+    {
+      "file": "public/lite/yard/photos/brick-roughness.webp",
+      "bytes": 1356
+    },
+    {
+      "file": "public/lite/yard/photos/brick-windows.webp",
+      "bytes": 66
+    },
+    {
+      "file": "public/lite/yard/photos/car-atlas.webp",
+      "bytes": 23908
+    },
+    {
+      "file": "public/lite/yard/photos/car-beige.webp",
+      "bytes": 31004
+    },
+    {
+      "file": "public/lite/yard/photos/car-cream-cutout.webp",
+      "bytes": 35052
+    },
+    {
+      "file": "public/lite/yard/photos/car-detail.webp",
+      "bytes": 36578
+    },
+    {
+      "file": "public/lite/yard/photos/car-flat-atlas.webp",
+      "bytes": 16044
+    },
+    {
+      "file": "public/lite/yard/photos/car-front.webp",
+      "bytes": 25800
+    },
+    {
+      "file": "public/lite/yard/photos/car-rear.webp",
+      "bytes": 32692
+    },
+    {
+      "file": "public/lite/yard/photos/car-red-cutout.webp",
+      "bytes": 35974
+    },
+    {
+      "file": "public/lite/yard/photos/car-side.webp",
+      "bytes": 12112
+    },
+    {
+      "file": "public/lite/yard/photos/concrete-detail-normal.webp",
+      "bytes": 1990
+    },
+    {
+      "file": "public/lite/yard/photos/nine-albedo.webp",
+      "bytes": 138350
+    },
+    {
+      "file": "public/lite/yard/photos/nine-impostor-albedo.webp",
+      "bytes": 223432
+    },
+    {
+      "file": "public/lite/yard/photos/nine-impostor-windows.webp",
+      "bytes": 66
+    },
+    {
+      "file": "public/lite/yard/photos/nine-normal.webp",
+      "bytes": 3720
+    },
+    {
+      "file": "public/lite/yard/photos/nine-roughness.webp",
+      "bytes": 4470
+    },
+    {
+      "file": "public/lite/yard/photos/nine-windows.webp",
+      "bytes": 66
+    },
+    {
+      "file": "public/lite/yard/photos/panel-albedo.webp",
+      "bytes": 139026
+    },
+    {
+      "file": "public/lite/yard/photos/panel-impostor-albedo.webp",
+      "bytes": 205066
+    },
+    {
+      "file": "public/lite/yard/photos/panel-impostor-windows.webp",
+      "bytes": 66
+    },
+    {
+      "file": "public/lite/yard/photos/panel-normal.webp",
+      "bytes": 820
+    },
+    {
+      "file": "public/lite/yard/photos/panel-roughness.webp",
+      "bytes": 3106
+    },
+    {
+      "file": "public/lite/yard/photos/panel-windows.webp",
+      "bytes": 66
+    },
+    {
+      "file": "public/lite/yard/photos/panel335-albedo.webp",
+      "bytes": 92316
+    },
+    {
+      "file": "public/lite/yard/photos/panel335-impostor-albedo.webp",
+      "bytes": 138140
+    },
+    {
+      "file": "public/lite/yard/photos/panel335-impostor-windows.webp",
+      "bytes": 66
+    },
+    {
+      "file": "public/lite/yard/photos/panel335-normal.webp",
+      "bytes": 886
+    },
+    {
+      "file": "public/lite/yard/photos/panel335-roughness.webp",
+      "bytes": 678
+    },
+    {
+      "file": "public/lite/yard/photos/panel335-windows.webp",
+      "bytes": 66
+    },
+    {
+      "file": "public/lite/yard/photos/tower-albedo.webp",
+      "bytes": 138350
+    },
+    {
+      "file": "public/lite/yard/photos/tower-impostor-albedo.webp",
+      "bytes": 229262
+    },
+    {
+      "file": "public/lite/yard/photos/tower-impostor-windows.webp",
+      "bytes": 66
+    },
+    {
+      "file": "public/lite/yard/photos/tower-normal.webp",
+      "bytes": 1392
+    },
+    {
+      "file": "public/lite/yard/photos/tower-roughness.webp",
+      "bytes": 662
+    },
+    {
+      "file": "public/lite/yard/photos/tower-windows.webp",
+      "bytes": 66
+    },
+    {
+      "file": "public/lite/yard/playground_sand_arm.webp",
+      "bytes": 16410
+    },
+    {
+      "file": "public/lite/yard/playground_sand_color.webp",
+      "bytes": 156676
+    },
+    {
+      "file": "public/lite/yard/playground_sand_normal.webp",
+      "bytes": 290416
+    },
+    {
+      "file": "public/lite/yard/rusty_painted_metal_arm.webp",
+      "bytes": 12456
+    },
+    {
+      "file": "public/lite/yard/rusty_painted_metal_color.webp",
+      "bytes": 23976
+    },
+    {
+      "file": "public/lite/yard/rusty_painted_metal_normal.webp",
+      "bytes": 14742
+    },
+    {
+      "file": "public/lite/yard/wood_planks_grey_arm.webp",
+      "bytes": 32958
+    },
+    {
+      "file": "public/lite/yard/wood_planks_grey_color.webp",
+      "bytes": 109412
+    },
+    {
+      "file": "public/lite/yard/wood_planks_grey_normal.webp",
+      "bytes": 43142
+    },
+    {
+      "file": "public/lite/carpets/01.thumb.webp",
+      "bytes": 6406
+    },
+    {
+      "file": "public/lite/carpets/01.webp",
+      "bytes": 125686
+    },
+    {
+      "file": "public/lite/carpets/03.thumb.webp",
+      "bytes": 13780
+    },
+    {
+      "file": "public/lite/carpets/03.webp",
+      "bytes": 148310
+    },
+    {
+      "file": "public/lite/carpets/04.thumb.webp",
+      "bytes": 16092
+    },
+    {
+      "file": "public/lite/carpets/04.webp",
+      "bytes": 154568
+    },
+    {
+      "file": "public/lite/carpets/05.thumb.webp",
+      "bytes": 10976
+    },
+    {
+      "file": "public/lite/carpets/05.webp",
+      "bytes": 115544
+    },
+    {
+      "file": "public/lite/carpets/06.thumb.webp",
+      "bytes": 12180
+    },
+    {
+      "file": "public/lite/carpets/06.webp",
+      "bytes": 115646
+    },
+    {
+      "file": "public/lite/carpets/07.thumb.webp",
+      "bytes": 15932
+    },
+    {
+      "file": "public/lite/carpets/07.webp",
+      "bytes": 149784
+    },
+    {
+      "file": "public/lite/carpets/08.thumb.webp",
+      "bytes": 10686
+    },
+    {
+      "file": "public/lite/carpets/08.webp",
+      "bytes": 113494
+    },
+    {
+      "file": "public/lite/carpets/09.thumb.webp",
+      "bytes": 16320
+    },
+    {
+      "file": "public/lite/carpets/09.webp",
+      "bytes": 119486
+    },
+    {
+      "file": "public/lite/carpets/10.thumb.webp",
+      "bytes": 5662
+    },
+    {
+      "file": "public/lite/carpets/10.webp",
+      "bytes": 90490
+    }
+  ],
+  "bytes": 5554196
+}

@@ -1,3 +1,4 @@
+import { activeProfile, loadProfileTexture } from '../../boot/mobileAssets.js';
 import * as THREE from 'three';
 
 export const FACADE_SERIES={panel:{file:'panel',bays:4,floors:3,bay:3.1,sectionWidth:15.5},panel335:{file:'panel335',bays:4,floors:3,bay:3.1,sectionWidth:15.5},brick:{file:'brick',bays:4,floors:3,bay:3,sectionWidth:15},nine:{file:'nine',bays:4,floors:3,bay:3.2},tower:{file:'tower',bays:4,floors:3,bay:3.2},school:{file:'panel',bays:4,floors:3,bay:3.1}};
@@ -6,7 +7,7 @@ export async function loadPhotoTexture(file,color=false){
  const key=`${file}:${color}`;
  if(!photoCache.has(key))photoCache.set(key,(async()=>{
   let timer,expired=false;
-  const request=new THREE.TextureLoader().loadAsync(`${import.meta.env?.BASE_URL||'/'}yard/photos/${file}`).then(t=>{if(expired){t.dispose();throw Error('Photo texture timed out');}t.wrapS=t.wrapT=file==='concrete-detail-normal.webp'?THREE.RepeatWrapping:THREE.ClampToEdgeWrapping;t.anisotropy=16;t.generateMipmaps=true;t.minFilter=THREE.LinearMipmapLinearFilter;if(color)t.colorSpace=THREE.SRGBColorSpace;t.addEventListener('dispose',()=>photoCache.delete(key));return t;});
+  const request=loadProfileTexture(new THREE.TextureLoader(),`${import.meta.env?.BASE_URL||'/'}yard/photos/${file}`).then(t=>{if(expired){t.dispose();throw Error('Photo texture timed out');}t.wrapS=t.wrapT=file==='concrete-detail-normal.webp'?THREE.RepeatWrapping:THREE.ClampToEdgeWrapping;t.anisotropy=activeProfile==='full'?16:2;t.generateMipmaps=true;t.minFilter=THREE.LinearMipmapLinearFilter;if(color)t.colorSpace=THREE.SRGBColorSpace;t.addEventListener('dispose',()=>photoCache.delete(key));return t;});
   try{return await Promise.race([request,new Promise((_,reject)=>{timer=setTimeout(()=>{expired=true;reject(Error('Photo texture timed out'));},8000);})]);}finally{clearTimeout(timer);}
  })().catch(error=>{photoCache.delete(key);throw error;}));
  return photoCache.get(key);

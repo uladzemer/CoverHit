@@ -20,7 +20,7 @@ export class Modal {
     this.host = host; this.onChange = onChange; this.index = 0;
     const id = `ch-modal-title-${++sequence}`;
     host.className = 'ch-screen ch-modal'; host.hidden = true;
-    host.innerHTML = `<section class="ch-modal-card" role="dialog" aria-modal="true" aria-labelledby="${id}" tabindex="-1"><header class="ch-modal-header"><span>ДВОРОВАЯ АРКАДА · COVERHIT</span><button class="ch-secondary" data-modal-close aria-label="Закрыть / назад">×</button></header><h1 id="${id}" data-title></h1><p data-description></p><div class="ch-modal-body"></div><footer class="ch-modal-footer"><nav class="ch-modal-dots" aria-label="Страницы"></nav><div class="ch-modal-actions"><button class="ch-secondary" data-modal-back>Назад</button><button class="ch-secondary" data-modal-next>Дальше</button><button class="ch-primary" data-action>Начать</button></div></footer></section>`;
+    host.innerHTML = `<section class="ch-modal-card" role="dialog" aria-modal="true" aria-labelledby="${id}" tabindex="-1"><header class="ch-modal-header"><span>ДВОРОВАЯ АРКАДА · COVERHIT</span><button class="ch-secondary" data-modal-close aria-label="Закрыть / назад">×</button></header><h1 id="${id}" data-title></h1><p data-description></p><div class="ch-modal-body"></div><footer class="ch-modal-footer"><span class="ch-page-count" aria-live="polite"></span><nav class="ch-modal-dots" aria-label="Страницы"></nav><div class="ch-modal-actions"><button class="ch-secondary" data-modal-back>Назад</button><button class="ch-secondary" data-modal-next>Дальше</button><button class="ch-primary" data-action>Начать</button></div></footer></section>`;
     this.card = host.firstElementChild; this.body = host.querySelector('.ch-modal-body');
     this.title = host.querySelector('[data-title]'); this.description = host.querySelector('[data-description]');
     this.primary = host.querySelector('[data-action]'); this.back = host.querySelector('[data-modal-back]'); this.next = host.querySelector('[data-modal-next]'); this.dots = host.querySelector('nav');
@@ -62,6 +62,7 @@ export class Modal {
     this.title.textContent = page.title; this.description.textContent = page.description || ''; this.description.hidden = !page.description;
     this.body.replaceChildren(page.content); this.back.hidden = this.pages.length < 2; this.back.disabled = this.index === 0;
     this.next.hidden = this.pages.length < 2; this.next.disabled = this.index === this.pages.length - 1;
+    this.host.querySelector('.ch-page-count').textContent = `${this.index + 1}/${this.pages.length}`;
     this.dots.replaceChildren(...this.pages.map((p, i) => {
       const dot = document.createElement('button'); dot.type = 'button'; dot.className = 'ch-secondary';
       dot.textContent = String(i + 1); dot.setAttribute('aria-label', p.title); dot.setAttribute('aria-current', i === this.index ? 'step' : 'false');

@@ -1,5 +1,38 @@
 # Core integration
 
+Mobile profiles, recovery diagnostics, phone asset budgets and QA: see
+[Mobile startup and rendering](qa/mobile/README.md). The first main.js import is
+bootGuard; the parallel HTML agent owns the pre-module inline guard, and the UI
+agent owns the CSS vignette and coverhit:quality toast.
+
+
+Phone presentation regression: WebKit loses the composited canvas when an
+already presented drawing buffer changes size during a quality downgrade.
+An isolated DPR 1 -> .75 mutation produced 99.01% body-colour pixels and 99.59%
+green-background leakage while the GL image remained valid. State resets,
+shadow/tone/alpha changes, extra rAF draws and flushes did not restore it.
+Lite/minimal now render into a depth-backed RGBA8 target and present with a small
+fullscreen shader that forces alpha to 1. Their output drawing buffer stays
+fixed after the first frame; DPR (1/.75), orientation and viewport changes resize
+the scene target and update camera framing instead. A full-to-lite downgrade
+retains the existing output buffer. This adds one colour target and one copy
+draw, without changing the desktop composer. Wool's alpha mask stays offscreen.
+Lite also restores colour/depth autoClear after composer disposal.
+`renderPipeline.renderPixelRatio` reports scene resolution; renderer DPR reports
+the retained output buffer. On rotation, the fixed output buffer can soften the
+image along the axis that grows, while gameplay framing remains correct.
+
+`?minimal=1` joins `?lite=1`, `?full=1` and automatic phone selection.
+Run `npm run verify:canvas-presented` and `npm run verify:mobile` with `MOBILE_URL`
+pointing at the built preview (set `COVERHIT_BASE=/CoverHit/` for both build and
+preview). The former checks WebKit iPhone 14 Pro/SE for all four choices after
+15 seconds, live full -> lite -> minimal, adaptive downgrade, rotation and touch
+buttons. Both measure CSS-scale composited screenshots with HUD hidden:
+central 60% luminance SD > 12, >60% of pixels differing from body #b58d7b by
+CIE76 Delta E >= 8, carpet/sky Delta E > 8, and <5% green leakage after changing
+the page background to #00ff00. A deliberately hidden canvas must fail. Reports
+are in `docs/qa/mobile-presented/report.json` and `docs/qa/mobile/report.json`.
+
 Optional personal Envato 3D assets: run `npm run yard:stock` before starting Vite.
 In a `.claude/worktrees/` checkout, the importer also finds the owner's main
 checkout sources; `-- --source=D:/path/to/zips` overrides that location.
@@ -28,7 +61,7 @@ Dirt covers the full UV sheet, with half-specific cleanliness and clipped cleani
 
 F or the HUD button starts a seeded hand throw lasting up to 1.65 s. Two three-node grip patches on the back hem are the default; 30% of gestures use one corner patch. The hands scoop down/back, then above the pipe and forward. The remaining hanging nodes stay dynamic, with a bounded travelling launch pulse. Crown anchor influence releases progressively, and the supported collar peels along the bar with 0.20 s (two hands) or 0.32 s (corner) delay from end to end. The supported crown retains its positional contact envelope; it is not an extra hand or native body. Bar projection remains active throughout, with crown passage and a 4 mm hysteresis band determining per-node bar sides. During throws, polar and below-pipe graph contacts follow current geometry; the rest separator returns at completion. `flipThrow` fires at hand release (0.95 s), with crown dust proportional to thrown-side dirt; `flipEnd` retains the landing sound. The visible game half changes when the centre crown node passes, but hits stay gated until release and speed below 0.6 m/s (after the 1.4 s minimum gesture), or the 0.7 s release timeout. A half automatically flips once when it first reaches the threshold. Manual flips work both ways at any time during play. Dirt and scoring ignore hits during the pull; physics resumes afterward, and the camera stays in place. Moths and late-round hints use only the visible half. Raycasting also selects only that half, even when the panels swing across each other.
 
-Hold mouse/touch to wind up, release to strike. Charge reaches full strength in 0.6 s, with a subtle cursor arc; quick clicks are 0.25-strength taps. The 85 ms accelerating strike and 280 ms total recovery preserve a roughly 0.5 s moderate-charge rhythm. The hit ray is captured on release. Moth interception occurs once at impact before carpet scoring. `game/state.js` timing windows are unchanged. `window.__coverhit.strikeLog` records game-time intervals, wall times, UVs, misses and multipliers. Browser QA at 400 ms hold + 250 ms gap reaches ?3 at strike 9 and retains it through strike 12.
+Hold mouse/touch to wind up, release to strike. On phones, drag one held finger to aim; the reticle and strike ray sit 48 CSS px above the finger (configurable with Beater touchAimOffset). Additional carpet touches are ignored; cancellation/leave cancels the charge. A guarded vibration tick signals a strong charge. Bottom buttons flip the carpet and open the pause menu; top icons toggle sound and reticle size. Desktop F/R/M/Esc controls remain available on hybrid devices, with hints following the latest pointer type. Audio resumes directly on pointerdown, including touch. Phone pages use compact counters and short paged content without scrolling. Safe-area insets protect controls; visualViewport resize/orientation updates layout without restarting the game. Charge reaches full strength in 0.6 s, with a subtle cursor arc; quick clicks are 0.25-strength taps. The 85 ms accelerating strike and 280 ms total recovery preserve a roughly 0.5 s moderate-charge rhythm. The hit ray is captured on release. Moth interception occurs once at impact before carpet scoring. `game/state.js` timing windows are unchanged. `window.__coverhit.strikeLog` records game-time intervals, wall times, UVs, misses and multipliers. Browser QA at 400 ms hold + 250 ms gap reaches ?3 at strike 9 and retains it through strike 12.
 
 Recovery accepts the next hold after impact, so a 350 ms hold plus 250 ms gap builds combo. The browser debug `setCarpetType(id)` now returns a promise; `setCarpet(id)` selects a museum image by ID, and `carpetEntry` exposes its manifest entry. The regular sequence starts with Kazak stars (09), then Tekke (03), then the forest tapestry (11), and includes every image before repeating. The first carpet's dirt/duration use the existing easy difficulty curve.
 

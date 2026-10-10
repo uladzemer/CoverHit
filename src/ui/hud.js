@@ -1,3 +1,4 @@
+import { installTouchEnvironment } from '../input/touch.js';
 import { installModal } from './modalFlow.js';
 import './tokens.css';
 import './hud.css';
@@ -66,6 +67,7 @@ export class Hud {
     this.updateReticleLabel = () => {
       this.nodes.reticle.textContent = `\u041f\u0440\u0438\u0446\u0435\u043b: ${this.reticleSize === 'large' ? '\u043a\u0440\u0443\u043f\u043d\u044b\u0439' : '\u043e\u0431\u044b\u0447\u043d\u044b\u0439'} \u00b7 R`;
       this.nodes.reticle.setAttribute('aria-label', '\u041a\u0440\u0443\u043f\u043d\u044b\u0439 \u043f\u0440\u0438\u0446\u0435\u043b (R)');
+      if (this.touchMode) { this.nodes.reticle.textContent = this.nodes.reticle.textContent.replace(' · R', ''); this.nodes.reticle.setAttribute('aria-label', 'Размер прицела'); }
       this.nodes.reticle.setAttribute('aria-pressed', String(this.reticleSize === 'large'));
       this.nodes.reticle.dataset.icon = '◎';
       this.nodes.reticle.title = this.nodes.reticle.textContent;
@@ -111,6 +113,11 @@ export class Hud {
       this.refreshBeater();
     }
     installModal(this, options);
+    this.disposeTouch = installTouchEnvironment(mode => {
+      this.touchMode = mode === 'touch'; this.root.dataset.input = mode;
+      this.setMuted(this.muted); this.updateReticleLabel(); this.setSide(this.game?.visibleSide, this.game?.flipping);
+      this.updateTouchHints();
+    });
   }
 
   bind(game) {
@@ -218,6 +225,7 @@ export class Hud {
     this.nodes.mute.textContent = `Звук: ${muted ? 'выкл' : 'вкл'} · M`;
     this.nodes.mute.setAttribute('aria-pressed', String(muted));
     this.nodes.mute.setAttribute('aria-label', `${muted ? 'Включить' : 'Выключить'} звук (M)`);
+    if (this.touchMode) { this.nodes.mute.textContent = this.nodes.mute.textContent.replace(' · M', ''); this.nodes.mute.setAttribute('aria-label', `${muted ? 'Включить' : 'Выключить'} звук`); }
     this.nodes.mute.dataset.icon = muted ? '♪×' : '♪';
     this.nodes.mute.title = this.nodes.mute.textContent;
   }
@@ -234,7 +242,7 @@ export class Hud {
   setSide(side,flipping=false) {
     this.nodes.side.textContent=`Сторона ${side === 1 ? 2 : 1}/2 · Чистота`;
     this.nodes.flip.disabled=flipping||this.game?.state!=='playing';
-    this.nodes.flip.textContent=flipping ? 'Перекидываем…' : 'Перекинуть · F';
+    this.nodes.flip.textContent=flipping ? 'Перекидываем…' : this.touchMode ? 'Перекинуть' : 'Перекинуть · F';
   }
   setCleanliness(value) {
     const raw = Math.min(1, Math.max(0, Number(value) || 0)) * 100;
@@ -268,6 +276,8 @@ export class Hud {
     this.timeouts.add(node.hideTimeout);
   }
   dispose() {
+    this.disposeTouch?.();
+    this.phoneLayout?.removeEventListener('change', this.layoutChanged);
     this.creditsAbort?.abort();
     this.modal?.dispose();
     window.removeEventListener('keydown', this.menuKey);

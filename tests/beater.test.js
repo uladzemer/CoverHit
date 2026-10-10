@@ -171,3 +171,20 @@ it.each(BEATERS)('$id has uniform world scale at idle, full wind-up and strike',
     for (const seconds of [.025, .04, .02, .06, .135]) { beater.update(seconds); check(); }
   } finally { dispose(); }
 });
+
+it('tracks only the held touch, drags its offset aim, and cancels on leave', () => {
+ const {beater,event,step,dispose}=setup();
+ try {
+  const touch={...event,pointerType:'touch'};
+  beater.down(touch); step(30);
+  const aim=beater.pointer.clone(),charge=beater.charge;
+  beater.down({...touch,pointerId:2,clientX:600});
+  beater.move({...touch,pointerId:2,clientX:600});
+  beater.up({...touch,pointerId:2}); beater.cancel({...touch,pointerId:2});
+  expect(beater.pointer.equals(aim)).toBe(true); expect(beater.charge).toBe(charge); expect(beater.phase).toBe('charging');
+  beater.move({...touch,clientX:420}); expect(beater.pointer.x).toBeCloseTo(.05); expect(beater.pointer.y).toBeCloseTo(.16);
+  beater.cancel(touch); beater.up(touch); expect(beater.phase).toBe('idle'); expect(beater.charge).toBe(0);
+  beater.down(touch); beater.move({...touch,clientX:801});
+  expect(beater.phase).toBe('idle'); expect(beater.activePointer).toBe(null);
+ } finally {dispose();}
+});

@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { pointerAim, TOUCH_AIM_OFFSET } from "./touch.js";
 import { BEATERS, createBeaterModel } from "./beaters/index.js";
 
 export function createLegacyModel() {
@@ -128,7 +129,8 @@ export function swingArc(seconds, charge) {
 }
 
 export class Beater {
-  constructor(camera, dom, carpetMeshGetter) {
+  constructor(camera, dom, carpetMeshGetter, { touchAimOffset = TOUCH_AIM_OFFSET } = {}) {
+    this.touchAimOffset = touchAimOffset; this.activePointer = null; this.touchInput = false;
     this.camera = camera; this.dom = dom; this.carpetMeshGetter = carpetMeshGetter;
     this.group = new THREE.Group(); this.callbacks = new Set();
     this.pointer = new THREE.Vector2(0.38, -0.2); this.swingPointer = this.pointer.clone();
@@ -140,15 +142,27 @@ export class Beater {
     this.indicator = document.createElement('div'); this.indicator.className = 'beater-charge';
     document.body.append(this.indicator);
     this.setBeater(BEATERS[0].id);
-    this.move = e => this.readPointer(e);
+    this.move = e => {
+      if (this.activePointer !== null && e.pointerId !== this.activePointer) return;
+      if (e.pointerType === 'touch' && e.pointerId !== this.activePointer) return;
+      if (this.activePointer !== null) {
+        const r = dom.getBoundingClientRect();
+        if (e.clientX < r.left || e.clientX > r.left + r.width || e.clientY < r.top || e.clientY > r.top + r.height) {
+          this.cancel(e); return;
+        }
+      }
+      this.readPointer(e);
+    };
     this.down = e => {
       // After impact, a new hold can interrupt recovery; a 250 ms gap must not drop every second hit.
-      if (!this.enabled || e.button !== 0 || (this.phase === 'strike' && (!this.didHit || this.contactPending))) return;
-      this.readPointer(e); this.phase = 'charging'; this.chargeTime = 0; this.charge = 0;
+      if (this.activePointer !== null || !this.enabled || e.button !== 0 || (this.phase === 'strike' && (!this.didHit || this.contactPending))) return;
+      this.activePointer = e.pointerId; this.touchInput = e.pointerType === 'touch'; this.hapticTick = false;
+      if (this.touchInput) e.preventDefault?.(); this.readPointer(e); this.phase = 'charging'; this.chargeTime = 0; this.charge = 0;
       if (e.isTrusted) dom.setPointerCapture?.(e.pointerId);
     };
     this.up = e => {
-      if (!this.enabled || this.phase !== 'charging') return;
+      if (e.pointerId !== this.activePointer || !this.enabled || this.phase !== 'charging') return;
+      this.activePointer = null; if (this.touchInput) e.preventDefault?.();
       this.readPointer(e); this.swingPointer.copy(this.pointer);
       const contact = this.aim(this.swingPointer);
       this.lockedHit = null;
@@ -162,8 +176,9 @@ export class Beater {
       this.lockedTarget = this.target.clone(); this.phase = 'strike'; this.swingTime = 0;
       this.didHit = false; this.contactPending = false;
     };
-    this.cancel = () => { this.phase = 'idle'; this.contactPending = false; this.indicator.style.opacity = 0; };
+    this.cancel = e => { if (e?.pointerId != null && e.pointerId !== this.activePointer) return; this.activePointer = null; this.charge = 0; this.chargeTime = 0; this.phase = 'idle'; this.contactPending = false; this.indicator.style.opacity = 0; };
     dom.addEventListener('pointermove', this.move); dom.addEventListener('pointerdown', this.down);
+    dom.addEventListener('pointerleave', this.cancel); dom.addEventListener('lostpointercapture', this.cancelHold = e => { if (this.phase === 'charging') this.cancel(e); });
     dom.addEventListener('pointerup', this.up); dom.addEventListener('pointercancel', this.cancel);
     window.addEventListener('blur', this.cancel); this.update(0);
   }
@@ -188,8 +203,9 @@ export class Beater {
   }
   readPointer(e) {
     const r = this.dom.getBoundingClientRect(); if (!r.width || !r.height) return;
-    this.pointer.set((e.clientX-r.left)/r.width*2-1, -(e.clientY-r.top)/r.height*2+1);
-    this.indicator.style.left = `${e.clientX}px`; this.indicator.style.top = `${e.clientY}px`;
+    const aim = pointerAim(e, r, this.touchAimOffset);
+    this.pointer.set(aim.nx, aim.ny);
+    this.indicator.style.left = `${aim.x}px`; this.indicator.style.top = `${aim.y}px`;
   }
   onHit(cb) { this.callbacks.add(cb); return () => this.callbacks.delete(cb); }
   aim(pointer) {
@@ -201,6 +217,9 @@ export class Beater {
   }
   update(dt) {
     if (this.phase === 'charging') { this.chargeTime += dt; this.charge = chargeAt(this.chargeTime, this.entry.feel.swingMass); }
+    if (this.touchInput && this.phase === 'charging' && this.charge >= 0.75 && !this.hapticTick) {
+      this.hapticTick = true; try { globalThis.navigator?.vibrate?.(8); } catch {}
+    }
     if (this.phase === 'strike') this.swingTime += dt;
     this.aim(this.phase === 'strike' ? this.swingPointer : this.pointer);
     const cameraRotation = this.camera.getWorldQuaternion(new THREE.Quaternion());
@@ -214,6 +233,11 @@ export class Beater {
       .applyQuaternion(cameraRotation).add(this.camera.position);
     const windRotation = cameraRotation.clone().multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(-0.35-0.9*q, 0.20+0.35*q, -0.7-0.6*q)));
     if (q > 0.9 && this.phase === 'charging') windHead.x += Math.sin(this.chargeTime*65)*0.016*(q-0.9)*10;
+    if (this.touchInput) {
+      this.followTarget ??= this.target.clone(); this.followTarget.lerp(this.target, 1 - Math.exp(-dt * 14));
+      const follow = this.followTarget.clone().sub(idleHead).multiplyScalar(0.35);
+      idleHead.add(follow); windHead.add(follow);
+    }
     let head = idleHead.clone(), rotation = idleRotation.clone();
     if (this.phase === 'charging') { head.copy(windHead); rotation.copy(windRotation); }
     if (this.phase === 'strike') {
@@ -280,7 +304,7 @@ export class Beater {
   }
   dispose() {
     for (const ghost of this.ghosts || []) ghost.traverse(o=>o.material?.dispose());
-    for (const [name, fn] of [['pointermove',this.move],['pointerdown',this.down],['pointerup',this.up],['pointercancel',this.cancel]]) this.dom.removeEventListener(name,fn);
+    for (const [name, fn] of [['pointermove',this.move],['pointerdown',this.down],['pointerup',this.up],['pointercancel',this.cancel],['pointerleave',this.cancel],['lostpointercapture',this.cancelHold]]) this.dom.removeEventListener(name,fn);
     window.removeEventListener('blur',this.cancel); this.indicator.remove(); this.model.dispose(); this.callbacks.clear();
   }
 }

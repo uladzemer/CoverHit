@@ -1,0 +1,30 @@
+import { createRequire } from 'node:module';
+const require = createRequire('D:/github/CoverHit/package.json');
+const { webkit, devices } = require('playwright');
+const sharp = require('sharp');
+const browser = await webkit.launch({ headless: true });
+const ctx = await browser.newContext({ ...devices['iPhone 14 Pro'] });
+const page = await ctx.newPage();
+await page.goto(process.argv[2] + '?lite=1', { waitUntil: 'load', timeout: 60000 });
+await page.waitForTimeout(15000);
+const start = page.locator('button.ch-primary:visible').first();
+if (await start.count()) await start.click().catch(() => {});
+await page.waitForTimeout(1200);
+let k = 0;
+const shot = async (name) => {
+  const p = process.argv[3] + 'z' + (k++) + '.png'; await page.screenshot({ path: p, scale: 'css' });
+  const { data, info } = await sharp(p).raw().toBuffer({ resolveWithObject: true });
+  const at = (x, y) => { const i = (y * info.width + x) * info.channels; return [data[i], data[i + 1], data[i + 2]].join(','); };
+  console.log(name.padEnd(40), `${info.width}x${info.height}`, 'centre', at(196, 330), 'probe-area', at(60, 200), 'bottom', at(196, 600));
+};
+await shot('lite as is');
+await page.evaluate(() => {
+  const c = document.createElement('canvas'); c.width = 64; c.height = 64;
+  Object.assign(c.style, { position: 'fixed', left: '30px', top: '180px', width: '120px', height: '120px', zIndex: 9999 });
+  document.body.appendChild(c); const g = c.getContext('webgl2'); const f = () => { g.clearColor(1, 0, 1, 1); g.clear(g.COLOR_BUFFER_BIT); requestAnimationFrame(f); }; f();
+  const d = document.createElement('div'); Object.assign(d.style, { position: 'fixed', left: '200px', top: '180px', width: '120px', height: '120px', zIndex: 10000, background: '#0f0' }); document.body.appendChild(d);
+});
+await page.waitForTimeout(700);
+await shot('after adding WebGL(magenta)@60,200 DIV(green)@260,240');
+const p = process.argv[3] + 'z1.png'; console.log(p);
+await browser.close();

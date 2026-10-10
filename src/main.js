@@ -1,4 +1,9 @@
-﻿import * as THREE from "three";
+import { setBootStep, setAssetProgress, showBootError, diagnostics } from './boot/bootGuard.js';
+import { detectDeviceProfile, probeWebGL } from './boot/deviceProfile.js';
+import { setAssetProfile } from './boot/mobileAssets.js';
+import { cameraFraming } from './boot/framing.js';
+import { reduceMobileScene } from './scene/mobileScene.js';
+import * as THREE from "three";
 import {wind} from "./scene/wind.js";
 import {bindYardWindResponses} from './scene/windResponses.js';
 import { createCarpet } from "./carpet/carpetMesh.js";
@@ -28,6 +33,7 @@ import { optimizeYard } from './scene/yard/performance.js';
 import { createLightingState } from './scene/lighting.js';
 import {setFacadeMode} from './scene/yard/facade.js';
 
+setBootStep('modules loaded');
 async function boot() {
   const container = document.querySelector("#app");
   const loading = document.createElement("div");
@@ -39,13 +45,29 @@ async function boot() {
   let ammo;
   try {
     ammo = await loadAmmo();
+    setBootStep('ammo ready');
   } catch (error) {
     loading.textContent =
       "\u041d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0444\u0438\u0437\u0438\u043a\u0443. \u041e\u0431\u043d\u043e\u0432\u0438\u0442\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443.";
     throw error;
   }
-  const renderer = new THREE.WebGLRenderer({ antialias: false });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  // All pipelines present an opaque final pass; wool's alpha mask stays offscreen.
+  // Request an opaque context as well, avoiding browser blending of the game.
+  const canvas = document.createElement("canvas");
+  const glContext = canvas.getContext("webgl2", {
+    alpha: false, antialias: false, stencil: false, powerPreference: "high-performance", failIfMajorPerformanceCaveat: false,
+  });
+  const renderer = new THREE.WebGLRenderer(
+    glContext
+      ? { canvas, context: glContext, antialias: false, alpha: false }
+      : { antialias: false, alpha: false, powerPreference: "high-performance", failIfMajorPerformanceCaveat: false },
+  );
+  const device = detectDeviceProfile(renderer.getContext());
+  setAssetProfile(device.name, device.mobile);
+  diagnostics.caps = probeWebGL(renderer.getContext()); diagnostics.profile = device.name;
+  window.__coverhitLiteVignette = device.name !== 'full';
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, device.dpr));
+  setBootStep('renderer created');
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.NoToneMapping;
   renderer.toneMappingExposure = 0.9;
@@ -55,28 +77,33 @@ async function boot() {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(48, 1, 0.1, 600);
   const assets = await loadCarpetAssets(renderer);
+  setBootStep('carpets manifest');
+  if (device.name !== 'full') void assets.preload();
   const barLength = rackSpan(assets.manifest.map(c => foldLayout(fitCarpetSize(carpetEntryType(c), c.aspect)).span));
   const yard = createYard(scene, {barLength});
   bindYardWindResponses(yard.root);
   const yardAssets = await loadYardAssets(yard, renderer, (done, total) => {
+    setAssetProgress(done,total); setBootStep(`yard assets ${done}/${total}`);
     loading.textContent = `Загрузка двора… ${done}/${total}`;
   });
   const baseCamera = new THREE.Vector3();
   const lookTarget = new THREE.Vector3();
+  if (yard.renderFallback) { device.name = 'lite'; setAssetProfile('lite'); }
   // Soft courtyard bounce lights the front; the pipeline cascades own sun shadows.
   const fill = new THREE.DirectionalLight("#d4dce1", 0.35);
   fill.position.set(1, 4, 6);
   fill.target.position.copy(yard.barPosition).add(new THREE.Vector3(0, -1, 0));
-  scene.add(fill, fill.target);
-  const lighting = createLightingState(scene, yard.sun, fill, yard);
-  const pipeline = createRenderPipeline(renderer, scene, camera, yard.sun, lighting);
+  if (device.name === 'full') scene.add(fill, fill.target);
+  const lighting = device.name === 'full' ? createLightingState(scene, yard.sun, fill, yard) : undefined;
+  const pipeline = createRenderPipeline(renderer, scene, camera, yard.sun, lighting, device);
+  setBootStep('pipeline created');
   const yardPerformance=optimizeYard(yard);
-  yardPerformance.apply();
+  yardPerformance.apply(); reduceMobileScene(yard, pipeline.profile);
   let yardQuality=pipeline.quality;
-  const dust = new DustSystem();
+  const dust = new DustSystem({capacity:device.name==='full'?2760:1380});
   scene.add(dust.points);
   const dirtyHints = new DirtyHints(); scene.add(dirtyHints.points);
-  const moths = new MothSystem(scene);
+  const moths = new MothSystem(scene, { mobile: pipeline.profile !== 'full' });
   const sfx = new Sfx();
   let carpet,
     shake = 0,
@@ -104,6 +131,7 @@ async function boot() {
     currentType = type;
     carpet = createCarpet(seed, {
       ammo,
+      mobile: pipeline.profile !== 'full',
       map: selected.map,
       aspect: selected.entry.aspect,
       ...type,
@@ -145,6 +173,7 @@ async function boot() {
     onSelectBeater: (id) => setBeater(id),
   });
   hud.bind(game);
+  setBootStep('hud ready');
   hud.setCarpetType(currentType.nameRu, currentEntry.title);
 
   function unlock() {
@@ -298,13 +327,9 @@ async function boot() {
   }
   function resize() {
     camera.aspect = window.innerWidth / window.innerHeight;
-    const distance = Math.max(
-      2.9,
-      carpet.cloth.drop / (Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * 1.08),
-      (yard.barLength + 0.25) / 2 /
-        (Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect),
-    );
-    baseCamera.set(0.2, BAR_HEIGHT - .33, distance);
+    const framing = cameraFraming(camera.aspect, yard.barLength, carpet.cloth.drop);
+    camera.fov = framing.fov;
+    baseCamera.set(framing.x, framing.y, framing.distance);
     camera.position.copy(baseCamera);
     camera.lookAt(lookTarget);
     camera.updateProjectionMatrix();
@@ -312,10 +337,12 @@ async function boot() {
     camera.updateMatrixWorld();
     if (dust.points.material.uniforms?.scale)
       dust.points.material.uniforms.scale.value =
-        renderer.domElement.height /
+        pipeline.renderHeight /
         (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)));
   }
   window.addEventListener("resize", resize);
+  window.addEventListener("orientationchange", resize);
+  window.visualViewport?.addEventListener("resize", resize);
   resize();
   const beater = new Beater(camera, renderer.domElement, () => carpet.mesh);
   beater.setBeater(progression.selected);
@@ -342,7 +369,7 @@ async function boot() {
     yard, renderer, scene, wind,
     setFacades: mode => {const changed=setFacadeMode(yard.root,mode);if(changed)window.dispatchEvent(new CustomEvent('coverhit-facades',{detail:{mode}}));return changed;},
     get facades(){return yard.root.userData.facadeMode||'photo';},
-    setQuality: level => { const changed = pipeline.setQuality(level); if (changed) {yardPerformance.apply();yardQuality=pipeline.quality;resize();} return changed; },
+    setQuality: level => { const changed = pipeline.setQuality(level); if (changed) {yardPerformance.apply(); reduceMobileScene(yard, pipeline.profile);yardQuality=pipeline.quality;resize();} return changed; },
     get quality() { return pipeline.quality; },
     renderPipeline: pipeline,
     camera, lookTarget, baseCamera,
@@ -370,8 +397,10 @@ async function boot() {
   };
   let previous = null,
     accumulator = 0,
-    frameId;
+    frameId, firstFrame = false, lastDraw = -Infinity;
   function frame(now) {
+    if (pipeline.profile !== 'full' && now-lastDraw < 1000/30-1) { frameId=requestAnimationFrame(frame); return; }
+    lastDraw=now;
     const elapsedDt = previous===null?0:(now - previous) / 1000;
     const dt = Math.max(0,elapsedDt);
     previous = now;
@@ -399,7 +428,7 @@ async function boot() {
     if (carpet.mesh.material.userData.dirtyHint)
       carpet.mesh.material.userData.dirtyHint.value = game.state === 'playing' && carpet.dirt.halfCleanliness(game.visibleSide) >= .85 ? 1 : 0;
     yard.update(dt);
-    if(yardQuality!==pipeline.quality){yardPerformance.apply();yardQuality=pipeline.quality;}
+    if(yardQuality!==pipeline.quality){yardPerformance.apply(); reduceMobileScene(yard, pipeline.profile);if(pipeline.profile!=='full')yardAssets.releaseEnvironment();yardQuality=pipeline.quality;}
     hud.setCleanliness(game.state === "menu" ? 0 : carpet.dirt.halfCleanliness(game.visibleSide));
     hud.setSide(game.visibleSide,game.flipping);
     hud.update(dt);
@@ -411,6 +440,7 @@ async function boot() {
     } });
     const renderStart = performance.now();
     window.__coverhit.performance.gpuMs = pipeline.render(dt);
+    if (!firstFrame) { firstFrame=true; setBootStep('first frame rendered'); }
     window.__coverhit.performance.renderMs = performance.now() - renderStart;
     window.__coverhit.performance.drawCalls = renderer.info.render.calls;
     window.__coverhit.performance.frameMs = performance.now() - frameStart;
@@ -429,6 +459,8 @@ async function boot() {
     import.meta.hot.dispose(() => {
       cancelAnimationFrame(frameId);
       window.removeEventListener("resize", resize);
+      window.removeEventListener("orientationchange", resize);
+      window.visualViewport?.removeEventListener("resize", resize);
       window.removeEventListener("pointerdown", unlock, { capture: true });
       window.removeEventListener("keydown", keydown);
       document.removeEventListener("visibilitychange", resetClock);
@@ -464,10 +496,4 @@ async function boot() {
       delete window.__coverhit;
     });
 }
-void boot().catch(error => {
-  const loading=document.querySelector('.physics-loading');
-  loading?.remove();
-  const failureHud = new Hud({ container: document.querySelector('#app') });
-  failureHud.toast('Проверьте соединение и повторите загрузку игры.', () => window.location.reload());
-  console.error(error);
-});
+void boot().catch(error => { showBootError(error); console.error(error); });

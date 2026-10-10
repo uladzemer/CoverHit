@@ -1,0 +1,145 @@
+{
+  "url": "http://127.0.0.1:5323/CoverHit/",
+  "results": [
+    {
+      "device": "iPhone 14 Pro",
+      "requested": "full",
+      "actual": "full",
+      "luminanceSD": 37.47,
+      "bodyPercent": 0,
+      "carpetSkyDeltaE": 36.65,
+      "greenPercent": 0,
+      "transitions": [
+        {
+          "profile": "lite",
+          "luminanceSD": 37.62,
+          "bodyPercent": 0.01,
+          "carpetSkyDeltaE": 36.65,
+          "greenPercent": 0
+        },
+        {
+          "profile": "minimal",
+          "luminanceSD": 36.02,
+          "bodyPercent": 0,
+          "carpetSkyDeltaE": 44.01,
+          "greenPercent": 0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "requested": "lite",
+      "actual": "lite",
+      "luminanceSD": 37.12,
+      "bodyPercent": 0.51,
+      "carpetSkyDeltaE": 44.02,
+      "greenPercent": 0,
+      "touchUI": "mute, flip, menu: PASS",
+      "blankRejected": true,
+      "pass": true
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "requested": "minimal",
+      "actual": "minimal",
+      "luminanceSD": 38.61,
+      "bodyPercent": 0.96,
+      "carpetSkyDeltaE": 44,
+      "greenPercent": 0,
+      "pass": true
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "requested": "auto",
+      "actual": "lite",
+      "luminanceSD": 37.12,
+      "bodyPercent": 0.51,
+      "carpetSkyDeltaE": 44.01,
+      "greenPercent": 0,
+      "adaptive": {
+        "luminanceSD": 38.62,
+        "bodyPercent": 1.01,
+        "carpetSkyDeltaE": 44.04,
+        "greenPercent": 0
+      },
+      "rotated": {
+        "luminanceSD": 28.94,
+        "bodyPercent": 0.53,
+        "carpetSkyDeltaE": 40.51,
+        "greenPercent": 0
+      },
+      "pass": true
+    },
+    {
+      "device": "iPhone SE",
+      "requested": "full",
+      "actual": "full",
+      "luminanceSD": 36.78,
+      "bodyPercent": 0,
+      "carpetSkyDeltaE": 36.69,
+      "greenPercent": 0,
+      "transitions": [
+        {
+          "profile": "lite",
+          "luminanceSD": 36.83,
+          "bodyPercent": 0,
+          "carpetSkyDeltaE": 36.69,
+          "greenPercent": 0
+        },
+        {
+          "profile": "minimal",
+          "luminanceSD": 36,
+          "bodyPercent": 0,
+          "carpetSkyDeltaE": 44.18,
+          "greenPercent": 0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "device": "iPhone SE",
+      "requested": "lite",
+      "actual": "lite",
+      "luminanceSD": 37.22,
+      "bodyPercent": 0.48,
+      "carpetSkyDeltaE": 44.17,
+      "greenPercent": 0,
+      "touchUI": "mute, flip, menu: PASS",
+      "blankRejected": true,
+      "pass": true
+    },
+    {
+      "device": "iPhone SE",
+      "requested": "minimal",
+      "actual": "minimal",
+      "luminanceSD": 38.64,
+      "bodyPercent": 0.91,
+      "carpetSkyDeltaE": 44.16,
+      "greenPercent": 0,
+      "pass": true
+    },
+    {
+      "device": "iPhone SE",
+      "requested": "auto",
+      "actual": "lite",
+      "luminanceSD": 37.24,
+      "bodyPercent": 0.48,
+      "carpetSkyDeltaE": 44.17,
+      "greenPercent": 0,
+      "adaptive": {
+        "luminanceSD": 38.57,
+        "bodyPercent": 0.95,
+        "carpetSkyDeltaE": 44.22,
+        "greenPercent": 0
+      },
+      "rotated": {
+        "luminanceSD": 28.58,
+        "bodyPercent": 0.49,
+        "carpetSkyDeltaE": 39.41,
+        "greenPercent": 0
+      },
+      "pass": true
+    }
+  ]
+}

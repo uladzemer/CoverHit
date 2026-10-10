@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/build-carpets.mjs && vite build",
+    "build": "node scripts/build-carpets.mjs && node scripts/build-lite-assets.mjs && vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "carpets": "node scripts/build-carpets.mjs",
     "carpets:new": "node scripts/new-carpets.mjs",
-    "yard:stock": "node scripts/import-yard-stock.mjs"
+    "yard:stock": "node scripts/import-yard-stock.mjs",
+    "assets:lite": "node scripts/build-lite-assets.mjs",
+    "verify:mobile": "node scripts/verify-mobile.mjs",
+    "verify:canvas-presented": "node scripts/verify-canvas-presented.mjs"
   },
   "dependencies": {
     "gsap": "3.15.0",
