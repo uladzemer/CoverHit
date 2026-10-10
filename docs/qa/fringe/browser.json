@@ -1,0 +1,35 @@
+{
+  "metrics": [
+    {
+      "id": "envato-RBFEDY2",
+      "instances": 594,
+      "finite": true,
+      "maxAttachmentError": 5.962753170535635e-8,
+      "hitMotion": 0.43978953070472926,
+      "dustAmount": 0.03345455764630856,
+      "castShadow": true,
+      "foldAxis": "v"
+    },
+    {
+      "id": "03",
+      "instances": 660,
+      "finite": true,
+      "maxAttachmentError": 5.957064153227119e-8,
+      "hitMotion": 0.45771627785870805,
+      "dustAmount": 0.03345455764630856,
+      "castShadow": true,
+      "foldAxis": "v"
+    },
+    {
+      "id": "09",
+      "instances": 544,
+      "finite": true,
+      "maxAttachmentError": 5.9525994483060075e-8,
+      "hitMotion": 0.46619904576800764,
+      "dustAmount": 0.03485614816011662,
+      "castShadow": true,
+      "foldAxis": "v"
+    }
+  ],
+  "errors": []
+}

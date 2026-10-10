@@ -1,0 +1,779 @@
+{
+  "10": {
+    "beforeCorners": [
+      [
+        30,
+        60
+      ],
+      [
+        1106,
+        50
+      ],
+      [
+        1106,
+        1900
+      ],
+      [
+        50,
+        1930
+      ]
+    ],
+    "fieldCorners": [
+      [
+        242.7379283190714,
+        179.57082310947933
+      ],
+      [
+        900.4256301623996,
+        172.639788018019
+      ],
+      [
+        903.72496955705,
+        1785.4950408888521
+      ],
+      [
+        256.68517693343097,
+        1803.0745725216716
+      ]
+    ],
+    "note": "Intact outer border: both opposing pairs already within 2%.",
+    "expectedWidths": {
+      "left": 208.08505997818975,
+      "right": 209.24754634678297,
+      "top": 122.0625,
+      "bottom": 122.0625
+    },
+    "maxMismatch": {
+      "lr": 0.010571030640668439,
+      "tb": 0.005
+    }
+  },
+  "01": {
+    "beforeCorners": [
+      [
+        25,
+        15
+      ],
+      [
+        1031,
+        15
+      ],
+      [
+        1046,
+        1980
+      ],
+      [
+        10,
+        1945
+      ]
+    ],
+    "fieldCorners": [
+      [
+        242.40240540764597,
+        222.65155133709362
+      ],
+      [
+        807.5328971022163,
+        224.697391644818
+      ],
+      [
+        814.109286068453,
+        1791.252889456887
+      ],
+      [
+        235.53410905388057,
+        1773.5132310428387
+      ]
+    ],
+    "note": "Intact outer woven border. The original lower end frame is narrower than the upper frame; retain the handmade design.",
+    "expectedWidths": {
+      "left": 229.9988081048868,
+      "right": 227.56495828367105,
+      "top": 217.9325,
+      "bottom": 180.19
+    },
+    "maxMismatch": {
+      "lr": 0.015638297872340477,
+      "tb": 0.19460244648318045
+    }
+  },
+  "02": {
+    "beforeCorners": [
+      [
+        103,
+        110
+      ],
+      [
+        1340,
+        115
+      ],
+      [
+        1340,
+        1925
+      ],
+      [
+        103,
+        1925
+      ]
+    ],
+    "fieldCorners": [
+      [
+        369.53138329445216,
+        379.5378849578289
+      ],
+      [
+        1105.494721755189,
+        382.07240704500987
+      ],
+      [
+        1105.4947217551887,
+        1649.7359223836168
+      ],
+      [
+        369.53138329445216,
+        1649.283754123932
+      ]
+    ],
+    "note": "Displayed worn rug: side frames differ in the photograph. Bottom display-mat sliver removed; woven borders retained.",
+    "expectedWidths": {
+      "left": 268.5222524977293,
+      "right": 237.06357856494094,
+      "top": 270.673125,
+      "bottom": 261.688125
+    },
+    "maxMismatch": {
+      "lr": 0.12944444444444445,
+      "tb": 0.03875527426160342
+    }
+  },
+  "03": {
+    "beforeCorners": [
+      [
+        86,
+        98
+      ],
+      [
+        1265,
+        73
+      ],
+      [
+        1280,
+        1903
+      ],
+      [
+        98,
+        1902
+      ]
+    ],
+    "fieldCorners": [
+      [
+        239.04012280647697,
+        338.28219695129604
+      ],
+      [
+        1111.778946189768,
+        322.369289940023
+      ],
+      [
+        1122.8761287805607,
+        1710.6670483631242
+      ],
+      [
+        248.45009087156967,
+        1711.9558330237815
+      ]
+    ],
+    "note": "Plain kilim extensions removed at both ends. The photographed patterned end frames themselves differ in width; side symmetry is 1.95%.",
+    "expectedWidths": {
+      "left": 152,
+      "right": 155,
+      "top": 90,
+      "bottom": 56
+    },
+    "maxMismatch": {
+      "lr": 0.024543973941368077,
+      "tb": 0.4707534246575342
+    }
+  },
+  "04": {
+    "beforeCorners": [
+      [
+        49,
+        23
+      ],
+      [
+        1353,
+        53
+      ],
+      [
+        1359,
+        1918
+      ],
+      [
+        21,
+        1968
+      ]
+    ],
+    "fieldCorners": [
+      [
+        203.25752624971395,
+        130.46170895340504
+      ],
+      [
+        1227.5253652252072,
+        150.70459292203378
+      ],
+      [
+        1229.7552633458643,
+        1616.841077631247
+      ],
+      [
+        184.6300705365862,
+        1645.5862335793754
+      ]
+    ],
+    "note": "Plain kilim extensions removed. The upper patterned frame is nearly absent in this worn asymmetric original; its lower frame survives. Equality would require deleting intact lower motifs.",
+    "expectedWidths": {
+      "left": 152.65998457979956,
+      "right": 133.3230531996916,
+      "top": 15.271875,
+      "bottom": 113.01187499999999
+    },
+    "maxMismatch": {
+      "lr": 0.14023131672597874,
+      "tb": 1.5288095238095236
+    }
+  },
+  "05": {
+    "beforeCorners": [
+      [
+        80,
+        90
+      ],
+      [
+        1447,
+        105
+      ],
+      [
+        1477,
+        1860
+      ],
+      [
+        50,
+        1870
+      ]
+    ],
+    "fieldCorners": [
+      [
+        171.96571867493586,
+        147.29828311293585
+      ],
+      [
+        1353.3606215213633,
+        159.58920080317148
+      ],
+      [
+        1377.8019219697987,
+        1816.7361127195352
+      ],
+      [
+        147.5598102120809,
+        1824.8036767875467
+      ]
+    ],
+    "note": "Intact outer border. Original end frames are narrower than side frames, with wear and small top/bottom differences.",
+    "expectedWidths": {
+      "left": 96.15427215189874,
+      "right": 89.52294303797468,
+      "top": 51.935,
+      "bottom": 39.78
+    },
+    "maxMismatch": {
+      "lr": 0.07642857142857146,
+      "tb": 0.27006024096385545
+    }
+  },
+  "06": {
+    "beforeCorners": [
+      [
+        20,
+        35
+      ],
+      [
+        1265,
+        20
+      ],
+      [
+        1265,
+        1890
+      ],
+      [
+        40,
+        1930
+      ]
+    ],
+    "fieldCorners": [
+      [
+        207.77010018685098,
+        184.40267824102932
+      ],
+      [
+        1083.1006380278345,
+        172.41056931485736
+      ],
+      [
+        1085.5903152749072,
+        1785.1130725337457
+      ],
+      [
+        222.3778889500617,
+        1812.2483334348115
+      ]
+    ],
+    "note": "Intact outer border. The original upper patterned end frame is deeper than the lower one.",
+    "expectedWidths": {
+      "left": 175.419447092469,
+      "right": 173.06482364156338,
+      "top": 148.28625,
+      "bottom": 107.095625
+    },
+    "maxMismatch": {
+      "lr": 0.01851351351351349,
+      "tb": 0.3275806451612903
+    }
+  },
+  "07": {
+    "beforeCorners": [
+      [
+        50,
+        80
+      ],
+      [
+        1890,
+        55
+      ],
+      [
+        1885,
+        1384
+      ],
+      [
+        90,
+        1364
+      ]
+    ],
+    "fieldCorners": [
+      [
+        273.1910135263344,
+        411.949533779534
+      ],
+      [
+        1700.094793610767,
+        401.7317474057512
+      ],
+      [
+        1699.9954281130329,
+        1017.8721888595678
+      ],
+      [
+        289.43820936387186,
+        1011.7446705978405
+      ]
+    ],
+    "note": "Intact outer border and selvedge. Original side frame widths differ; field is off-centre in the weaving.",
+    "expectedWidths": {
+      "left": 223.84125,
+      "right": 178.39124999999999,
+      "top": 330.72782608695655,
+      "bottom": 360.2773913043478
+    },
+    "maxMismatch": {
+      "lr": 0.23098870056497187,
+      "tb": 0.09052631578947357
+    }
+  },
+  "08": {
+    "beforeCorners": [
+      [
+        95,
+        25
+      ],
+      [
+        1218,
+        35
+      ],
+      [
+        1213,
+        1970
+      ],
+      [
+        55,
+        1970
+      ]
+    ],
+    "fieldCorners": [
+      [
+        244.74809304052343,
+        166.15697161741127
+      ],
+      [
+        1066.373197194019,
+        172.94698967099356
+      ],
+      [
+        1058.0845629596681,
+        1830.5566589806665
+      ],
+      [
+        214.58755951960202,
+        1830.0157787470703
+      ]
+    ],
+    "note": "Intact outer border. Small residual differences reflect non-straight woven edges and wear.",
+    "expectedWidths": {
+      "left": 153.99256110520722,
+      "right": 150.35494155154092,
+      "top": 137.01250000000002,
+      "bottom": 133.375
+    },
+    "maxMismatch": {
+      "lr": 0.028904382470119425,
+      "tb": 0.03190582959641268
+    }
+  },
+  "09": {
+    "beforeCorners": [
+      [
+        45,
+        50
+      ],
+      [
+        1642,
+        40
+      ],
+      [
+        1697,
+        1910
+      ],
+      [
+        55,
+        1925
+      ]
+    ],
+    "fieldCorners": [
+      [
+        284.3434845112717,
+        328.57625331482984
+      ],
+      [
+        1429.3737590114417,
+        320.9147462831648
+      ],
+      [
+        1465.4912452721444,
+        1704.9639310788268
+      ],
+      [
+        296.69050070341615,
+        1715.2693203823917
+      ]
+    ],
+    "note": "Intact outer border. Upper woven edge bows downward in the middle; a four-corner crop retains that edge and some background rather than deleting its corners.",
+    "expectedWidths": {
+      "left": 241.1271676300578,
+      "right": 229.42196531791907,
+      "top": 291.48562499999997,
+      "bottom": 203.68875
+    },
+    "maxMismatch": {
+      "lr": 0.05475124378109456,
+      "tb": 0.3596099290780141
+    }
+  },
+  "envato-2K7L5EB": {
+    "beforeCorners": [
+      [
+        93,
+        77
+      ],
+      [
+        1888,
+        72
+      ],
+      [
+        1914,
+        1977
+      ],
+      [
+        82,
+        1971
+      ]
+    ],
+    "note": "Disabled fragment: no complete enclosing border exists in source."
+  },
+  "envato-6325SWE": {
+    "beforeCorners": [
+      [
+        0,
+        0
+      ],
+      [
+        4688,
+        0
+      ],
+      [
+        4688,
+        3561
+      ],
+      [
+        0,
+        3561
+      ]
+    ],
+    "fieldCorners": [
+      [
+        515.6800000000001,
+        683.712
+      ],
+      [
+        4261.392000000001,
+        683.712
+      ],
+      [
+        4261.392000000001,
+        2891.532
+      ],
+      [
+        515.6800000000001,
+        2891.532
+      ]
+    ],
+    "note": "Frame fills source. Left and right patterned border widths already differ in the photograph; cropping the left edge would delete intact outer motifs.",
+    "expectedWidths": {
+      "left": 518.61,
+      "right": 442.42999999999995,
+      "top": 682.8913580246914,
+      "bottom": 665.3061728395062
+    },
+    "maxMismatch": {
+      "lr": 0.1635365853658538,
+      "tb": 0.031086956521739144
+    }
+  },
+  "envato-B7PV8QR": {
+    "beforeCorners": [
+      [
+        62,
+        49
+      ],
+      [
+        4846,
+        49
+      ],
+      [
+        4859,
+        2952
+      ],
+      [
+        98,
+        2965
+      ]
+    ],
+    "fieldCorners": [
+      [
+        456.3819664819304,
+        499.729121678982
+      ],
+      [
+        4467.150123642712,
+        498.0357722101452
+      ],
+      [
+        4477.468036477213,
+        2519.1999677558492
+      ],
+      [
+        480.1301125620033,
+        2528.4841848310107
+      ]
+    ],
+    "note": "Reviewed quad retains original outer frame. Small residual border differences exist in the photographed design.",
+    "expectedWidths": {
+      "left": 387.80625000000003,
+      "right": 369.9075,
+      "top": 441.723076923077,
+      "bottom": 423.81538461538463
+    },
+    "maxMismatch": {
+      "lr": 0.05224409448818899,
+      "tb": 0.04637931034482766
+    }
+  },
+  "envato-EPRJ58X": {
+    "beforeCorners": [
+      [
+        0,
+        0
+      ],
+      [
+        6239,
+        0
+      ],
+      [
+        6239,
+        4159
+      ],
+      [
+        0,
+        4159
+      ]
+    ],
+    "fieldCorners": [
+      [
+        686.29,
+        748.6199999999999
+      ],
+      [
+        5552.71,
+        748.6199999999999
+      ],
+      [
+        5552.71,
+        3489.4009999999994
+      ],
+      [
+        686.29,
+        3489.4009999999994
+      ]
+    ],
+    "note": "Frame fills source. Original upper and lower blue floral bands differ in depth; no unused margin can be cropped to equalize them.",
+    "expectedWidths": {
+      "left": 670.6925,
+      "right": 690.1893749999999,
+      "top": 744.4882849109653,
+      "bottom": 650.9400187441424
+    },
+    "maxMismatch": {
+      "lr": 0.03365329512893973,
+      "tb": 0.13907821229050274
+    }
+  },
+  "envato-QSMGCAP": {
+    "beforeCorners": [
+      [
+        0,
+        2850
+      ],
+      [
+        3985,
+        2925
+      ],
+      [
+        3985,
+        4740
+      ],
+      [
+        0,
+        4680
+      ]
+    ],
+    "note": "Disabled fragment: no complete enclosing border exists in source."
+  },
+  "envato-RBFEDY2": {
+    "beforeCorners": [
+      [
+        0,
+        0
+      ],
+      [
+        2047,
+        0
+      ],
+      [
+        2047,
+        3071
+      ],
+      [
+        0,
+        3071
+      ]
+    ],
+    "fieldCorners": [
+      [
+        262.0160000000001,
+        322.455
+      ],
+      [
+        1678.5399999999997,
+        322.4549999999999
+      ],
+      [
+        1678.5399999999997,
+        2594.995
+      ],
+      [
+        262.0160000000001,
+        2594.9950000000003
+      ]
+    ],
+    "note": "Retained complete inner frame meets 2% on both opposing pairs. The source clips the original outer motif frame at left/top, so preserving that entire frame is impossible.",
+    "expectedWidths": {
+      "left": 178.7750677506775,
+      "right": 180.37127371273712,
+      "top": 137.2775,
+      "bottom": 137.2775
+    },
+    "maxMismatch": {
+      "lr": 0.01388888888888893,
+      "tb": 0.005
+    }
+  },
+  "envato-T834FYR": {
+    "beforeCorners": [
+      [
+        470,
+        500
+      ],
+      [
+        4850,
+        500
+      ],
+      [
+        4850,
+        3090
+      ],
+      [
+        470,
+        3090
+      ]
+    ],
+    "fieldCorners": [
+      [
+        798.5,
+        1157.86
+      ],
+      [
+        4477.7,
+        1157.86
+      ],
+      [
+        4477.7,
+        2437.3199999999997
+      ],
+      [
+        798.5,
+        2437.3199999999997
+      ]
+    ],
+    "note": "Reviewed studio crop follows inner envelope of bowed woven edges, avoiding white slivers. The original left/right kilim side bands differ in width.",
+    "expectedWidths": {
+      "left": 317.55,
+      "right": 366.82500000000005,
+      "top": 665.2959830866808,
+      "bottom": 643.3932346723045
+    },
+    "maxMismatch": {
+      "lr": 0.1490000000000001,
+      "tb": 0.03847280334728035
+    }
+  }
+}

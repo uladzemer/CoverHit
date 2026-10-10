@@ -1,0 +1,208 @@
+{
+  "viewport": [
+    1440,
+    900
+  ],
+  "browserArgs": [
+    "--enable-unsafe-swiftshader",
+    "--disable-frame-rate-limit",
+    "--disable-gpu-vsync"
+  ],
+  "normal": {
+    "drawCalls": {
+      "mean": 82,
+      "p95": 82,
+      "max": 82
+    },
+    "cpuFrameMs": {
+      "mean": 3.492477302208794,
+      "p95": 11.700000002980232,
+      "max": 19.200000002980232
+    },
+    "physicsMs": {
+      "mean": 2.557457846909491,
+      "p95": 10.600000008940697,
+      "max": 17.600000008940697
+    },
+    "renderSubmitMs": {
+      "mean": 0.8012970167413914,
+      "p95": 1.2999999970197678,
+      "max": 2.7999999970197678
+    },
+    "frameIntervalMs": {
+      "mean": 3.8939040207522697,
+      "p95": 12.399999999999636,
+      "max": 20.199999999999818
+    },
+    "triangles": {
+      "mean": 511214,
+      "p95": 511214,
+      "max": 511214
+    },
+    "assets": {
+      "loaded": 20,
+      "total": 20,
+      "failures": []
+    },
+    "renderer": {
+      "geometries": 16,
+      "textures": 40
+    },
+    "environment": true,
+    "backgroundMapping": 303,
+    "sun": [
+      -34.173145742628684,
+      1.7253054168098712,
+      29.227032543037705
+    ],
+    "sunColor": [
+      1,
+      0.1258741257812168,
+      0
+    ],
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "wide": {
+    "drawCalls": {
+      "mean": 81,
+      "p95": 81,
+      "max": 81
+    },
+    "cpuFrameMs": {
+      "mean": 3.1281871346179506,
+      "p95": 11.200000002980232,
+      "max": 20.100000008940697
+    },
+    "physicsMs": {
+      "mean": 2.237894737005931,
+      "p95": 10.100000008940697,
+      "max": 17.30000001192093
+    },
+    "renderSubmitMs": {
+      "mean": 0.7577777779938882,
+      "p95": 1.0999999940395355,
+      "max": 2.5
+    },
+    "frameIntervalMs": {
+      "mean": 3.5099415204678364,
+      "p95": 11.700000000000728,
+      "max": 22.299999999999272
+    },
+    "triangles": {
+      "mean": 488454,
+      "p95": 488454,
+      "max": 488454
+    },
+    "assets": {
+      "loaded": 20,
+      "total": 20,
+      "failures": []
+    },
+    "renderer": {
+      "geometries": 16,
+      "textures": 40
+    },
+    "environment": true,
+    "backgroundMapping": 303,
+    "sun": [
+      -34.173145742628684,
+      1.7253054168098712,
+      29.227032543037705
+    ],
+    "sunColor": [
+      1,
+      0.1258741257812168,
+      0
+    ],
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "garages": {
+    "drawCalls": {
+      "mean": 78,
+      "p95": 78,
+      "max": 78
+    },
+    "cpuFrameMs": {
+      "mean": 3.820199146570047,
+      "p95": 12.299999997019768,
+      "max": 19.899999991059303
+    },
+    "physicsMs": {
+      "mean": 2.8391180654423334,
+      "p95": 11.100000008940697,
+      "max": 18
+    },
+    "renderSubmitMs": {
+      "mean": 0.8423897582894538,
+      "p95": 1.3999999910593033,
+      "max": 2.2000000029802322
+    },
+    "frameIntervalMs": {
+      "mean": 4.289473684210524,
+      "p95": 13.300000000001091,
+      "max": 20.399999999999636
+    },
+    "triangles": {
+      "mean": 506694,
+      "p95": 506694,
+      "max": 506694
+    },
+    "assets": {
+      "loaded": 20,
+      "total": 20,
+      "failures": []
+    },
+    "renderer": {
+      "geometries": 16,
+      "textures": 40
+    },
+    "environment": true,
+    "backgroundMapping": 303,
+    "sun": [
+      -34.173145742628684,
+      1.7253054168098712,
+      29.227032543037705
+    ],
+    "sunColor": [
+      1,
+      0.1258741257812168,
+      0
+    ],
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "fallback": {
+    "state": "playing",
+    "assets": {
+      "loaded": 0,
+      "total": 20,
+      "failures": [
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Yard texture could not be loaded",
+        "Failed to fetch",
+        "Failed to fetch"
+      ]
+    },
+    "bar": [
+      0,
+      3.15,
+      0
+    ]
+  },
+  "errors": []
+}

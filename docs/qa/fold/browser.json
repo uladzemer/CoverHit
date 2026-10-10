@@ -1,0 +1,441 @@
+{
+  "geometry": {
+    "id": "09",
+    "width": 2.0758142018152697,
+    "height": 2.4,
+    "foldAxis": "v",
+    "drop": 1.2,
+    "span": 2.0758142018152697,
+    "frontBottom": -0.9932642668485642,
+    "backBottom": -0.9938238948583603,
+    "relativeDifference": 0.00046635667483011883,
+    "finite": true,
+    "uvRange": [
+      0,
+      1
+    ]
+  },
+  "mid": {
+    "flipping": true,
+    "remaining": 0.4185000000000001,
+    "side": 0
+  },
+  "ignored": {
+    "result": 0,
+    "scoreUnchanged": true,
+    "dirtUnchanged": true
+  },
+  "sideCamera": [
+    4,
+    1.6,
+    0
+  ],
+  "hiddenPosts": 6,
+  "combo": {
+    "impacts": [
+      {
+        "time": 11.812599999999994,
+        "wall": 12.84129999999702,
+        "interval": null,
+        "wallInterval": null,
+        "multiplier": 1,
+        "uv": [
+          0.47371666603171586,
+          0.2727395197555888
+        ]
+      },
+      {
+        "time": 12.437299999999992,
+        "wall": 13.4335,
+        "interval": 0.6246999999999971,
+        "wallInterval": 0.5922000000029808,
+        "multiplier": 1,
+        "uv": [
+          0.47640829617204083,
+          0.26465369266561173
+        ]
+      },
+      {
+        "time": 13.156299999999987,
+        "wall": 14.15129999999702,
+        "interval": 0.7189999999999959,
+        "wallInterval": 0.7177999999970197,
+        "multiplier": 1,
+        "uv": [
+          0.47054034487964014,
+          0.2970211748490166
+        ]
+      },
+      {
+        "time": 13.84359999999999,
+        "wall": 14.83820000000298,
+        "interval": 0.6873000000000022,
+        "wallInterval": 0.6869000000059593,
+        "multiplier": 1,
+        "uv": [
+          0.4677763313597948,
+          0.28717809040818265
+        ]
+      },
+      {
+        "time": 14.53109999999999,
+        "wall": 15.526599999994039,
+        "interval": 0.6875,
+        "wallInterval": 0.6883999999910593,
+        "multiplier": 2,
+        "uv": [
+          0.4783626987969316,
+          0.26214985040567074
+        ]
+      },
+      {
+        "time": 15.250199999999989,
+        "wall": 16.24529999999702,
+        "interval": 0.7190999999999992,
+        "wallInterval": 0.7187000000029808,
+        "multiplier": 2,
+        "uv": [
+          0.475023334381499,
+          0.26692545844167825
+        ]
+      },
+      {
+        "time": 15.937599999999987,
+        "wall": 16.93259999999404,
+        "interval": 0.6873999999999985,
+        "wallInterval": 0.6872999999970197,
+        "multiplier": 2,
+        "uv": [
+          0.4737015012792356,
+          0.27713393072592213
+        ]
+      },
+      {
+        "time": 16.624899999999982,
+        "wall": 17.61929999999702,
+        "interval": 0.6872999999999951,
+        "wallInterval": 0.686700000002979,
+        "multiplier": 2,
+        "uv": [
+          0.4781495851413307,
+          0.26385465655119195
+        ]
+      },
+      {
+        "time": 17.312499999999982,
+        "wall": 18.30720000000298,
+        "interval": 0.6875999999999998,
+        "wallInterval": 0.6879000000059605,
+        "multiplier": 3,
+        "uv": [
+          0.4777002142381055,
+          0.26634756276951166
+        ]
+      },
+      {
+        "time": 17.99999999999999,
+        "wall": 18.9945,
+        "interval": 0.6875000000000071,
+        "wallInterval": 0.6872999999970197,
+        "multiplier": 3,
+        "uv": [
+          0.47346277768980694,
+          0.2809107618259785
+        ]
+      },
+      {
+        "time": 18.687599999999996,
+        "wall": 19.68209999999404,
+        "interval": 0.6876000000000069,
+        "wallInterval": 0.6875999999940419,
+        "multiplier": 3,
+        "uv": [
+          0.4714570786959512,
+          0.2865546344258142
+        ]
+      },
+      {
+        "time": 19.374799999999993,
+        "wall": 20.36970000000298,
+        "interval": 0.6871999999999971,
+        "wallInterval": 0.6876000000089384,
+        "multiplier": 3,
+        "uv": [
+          0.4764094202334703,
+          0.2665170768720771
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "name": "pointerdown",
+        "wall": 12.2425,
+        "time": 11.250299999999994,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 12.6515,
+        "time": 11.656099999999995,
+        "phase": "charging"
+      },
+      {
+        "name": "pointerdown",
+        "wall": 12.93739999999106,
+        "time": 11.937399999999993,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 13.35120000000298,
+        "time": 12.343599999999993,
+        "phase": "charging"
+      },
+      {
+        "name": "pointerdown",
+        "wall": 13.65220000000298,
+        "time": 12.656499999999992,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 14.0655,
+        "time": 13.06239999999999,
+        "phase": "charging"
+      },
+      {
+        "name": "pointerdown",
+        "wall": 14.3395,
+        "time": 13.343899999999989,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 14.747,
+        "time": 13.750199999999989,
+        "phase": "charging"
+      },
+      {
+        "name": "pointerdown",
+        "wall": 15.02739999999106,
+        "time": 14.031199999999988,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 15.44059999999404,
+        "time": 14.437699999999989,
+        "phase": "charging"
+      },
+      {
+        "name": "pointerdown",
+        "wall": 15.744799999997019,
+        "time": 14.74999999999999,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 16.15309999999404,
+        "time": 15.15619999999999,
+        "phase": "charging"
+      },
+      {
+        "name": "pointerdown",
+        "wall": 16.43320000000298,
+        "time": 15.437699999999989,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 16.84089999999106,
+        "time": 15.843899999999987,
+        "phase": "charging"
+      },
+      {
+        "name": "pointerdown",
+        "wall": 17.12079999999702,
+        "time": 16.124999999999986,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 17.53289999999106,
+        "time": 16.531299999999987,
+        "phase": "charging"
+      },
+      {
+        "name": "pointerdown",
+        "wall": 17.80779999999702,
+        "time": 16.812699999999978,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 18.21559999999404,
+        "time": 17.218899999999984,
+        "phase": "charging"
+      },
+      {
+        "name": "pointerdown",
+        "wall": 18.49470000000298,
+        "time": 17.499899999999986,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 18.9025,
+        "time": 17.906499999999987,
+        "phase": "charging"
+      },
+      {
+        "name": "pointerdown",
+        "wall": 19.182899999991058,
+        "time": 18.187799999999992,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 19.59639999999106,
+        "time": 18.593999999999994,
+        "phase": "charging"
+      },
+      {
+        "name": "pointerdown",
+        "wall": 19.86989999999106,
+        "time": 18.875099999999996,
+        "phase": "idle"
+      },
+      {
+        "name": "pointerup",
+        "wall": 20.279,
+        "time": 19.28149999999999,
+        "phase": "charging"
+      }
+    ],
+    "multiplier": 3,
+    "frameMs": 8.399999991059303
+  },
+  "metrics": [
+    {
+      "id": "09",
+      "aspect": 0.8649225840896957,
+      "physicalAspect": 0.8649225840896957,
+      "foldAxis": "v",
+      "drop": 1.2,
+      "span": 2.0758142018152697,
+      "finite": true,
+      "mothOnVisibleHalf": true
+    },
+    {
+      "id": "03",
+      "aspect": 0.6499724821133737,
+      "physicalAspect": 0.6499724821133737,
+      "foldAxis": "v",
+      "drop": 1.25,
+      "span": 1.6249312052834342,
+      "finite": true,
+      "mothOnVisibleHalf": true
+    },
+    {
+      "id": "01",
+      "aspect": 0.5241273100616016,
+      "physicalAspect": 0.5241273100616016,
+      "foldAxis": "v",
+      "drop": 1.4,
+      "span": 1.4675564681724844,
+      "finite": true,
+      "mothOnVisibleHalf": true
+    },
+    {
+      "id": "06",
+      "aspect": 0.6558682952734998,
+      "physicalAspect": 0.6558682952734998,
+      "foldAxis": "v",
+      "drop": 1.2,
+      "span": 1.5740839086563994,
+      "finite": true,
+      "mothOnVisibleHalf": true
+    },
+    {
+      "id": "02",
+      "aspect": 0.6822945394373966,
+      "physicalAspect": 0.6822945394373966,
+      "foldAxis": "v",
+      "drop": 1.25,
+      "span": 1.7057363485934915,
+      "finite": true,
+      "mothOnVisibleHalf": true
+    },
+    {
+      "id": "04",
+      "aspect": 0.6939632545931759,
+      "physicalAspect": 0.6939632545931759,
+      "foldAxis": "v",
+      "drop": 1.25,
+      "span": 1.7349081364829397,
+      "finite": true,
+      "mothOnVisibleHalf": true
+    },
+    {
+      "id": "07",
+      "aspect": 1.3909716908951797,
+      "physicalAspect": 1.3909716908951797,
+      "foldAxis": "u",
+      "drop": 1.6,
+      "span": 2.300550055005501,
+      "finite": true,
+      "mothOnVisibleHalf": true
+    },
+    {
+      "id": "05",
+      "aspect": 0.790158371040724,
+      "physicalAspect": 0.790158371040724,
+      "foldAxis": "v",
+      "drop": 1.25,
+      "span": 1.9753959276018098,
+      "finite": true,
+      "mothOnVisibleHalf": true
+    },
+    {
+      "id": "08",
+      "aspect": 0.5881443298969072,
+      "physicalAspect": 0.5881443298969072,
+      "foldAxis": "v",
+      "drop": 1.25,
+      "span": 1.4703608247422681,
+      "finite": true,
+      "mothOnVisibleHalf": true
+    },
+    {
+      "id": "10",
+      "aspect": 0.5731182795698925,
+      "physicalAspect": 0.5731182795698925,
+      "foldAxis": "v",
+      "drop": 1.25,
+      "span": 1.4327956989247312,
+      "finite": true,
+      "mothOnVisibleHalf": true
+    }
+  ],
+  "cleaning": [
+    {
+      "hits": 19,
+      "state": "playing",
+      "flipping": true,
+      "halves": [
+        0.918381489369308,
+        0
+      ]
+    },
+    {
+      "hits": 19,
+      "state": "carpetDone",
+      "flipping": false,
+      "halves": [
+        0.918381489369308,
+        0.918381489369308
+      ]
+    }
+  ],
+  "errors": []
+}

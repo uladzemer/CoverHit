@@ -1,0 +1,331 @@
+{
+  "steps": 1927,
+  "inside": 0,
+  "wrongSide": 0,
+  "hits": 40,
+  "misses": 0,
+  "log": [
+    {
+      "uv": [
+        0.3555528791217712,
+        0.438083536497661
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.42231672704949663,
+        0.4381322496357948
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.48900211271429284,
+        0.4381128175980664
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.5553684579942259,
+        0.4381910550536269
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.6554081474316213,
+        0.438143667310229
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.35542347260791285,
+        0.43818288586446397
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.4221420001111083,
+        0.43817511118399455
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.4887494141638068,
+        0.43816911962215394
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.5553949284613812,
+        0.43819198814297733
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.6554313882692968,
+        0.43816682030253795
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.35537675477381536,
+        0.4381169026263512
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.4220678479278267,
+        0.43815461340899775
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.48860712073695367,
+        0.4381867920391012
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.555432603213571,
+        0.43813998266406795
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.6554703513679156,
+        0.43814078607133145
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.3554529916324256,
+        0.43817049546836395
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.42205421118178754,
+        0.4382569996602726
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.48869195257494846,
+        0.43816772044085645
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.5554120286734632,
+        0.43815435834589533
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.6554033712751994,
+        0.438155599209105
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.3555098427293028,
+        0.43810588112048066
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.4220894232186311,
+        0.4382380568521532
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.48866323808355083,
+        0.438159268632964
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.5554228324157532,
+        0.4381751661064733
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.6554166640495649,
+        0.43816561412196786
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.355527464091961,
+        0.43811709962372763
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.4220637531476152,
+        0.43819885218989413
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.488705694216884,
+        0.43817378904885496
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.5553789798895578,
+        0.4381741115277712
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.6553921498572398,
+        0.43816793323701064
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.35546826403048937,
+        0.43816506312994785
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.42207922080488114,
+        0.43818514944661296
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.48879214084284894,
+        0.4381530983051011
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.5554110931091281,
+        0.4381433318164454
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.6553792543211656,
+        0.43815527042333147
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.3554292986579366,
+        0.4381140500261396
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.4220728527111397,
+        0.438183183073378
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.4887770291352735,
+        0.43817833983189614
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.5553913756763595,
+        0.4381466106036306
+      ],
+      "strength": 1,
+      "physicalContact": false
+    },
+    {
+      "uv": [
+        0.6553937876440773,
+        0.43817460812489945
+      ],
+      "strength": 1,
+      "physicalContact": false
+    }
+  ],
+  "side": 0,
+  "flipping": false
+}

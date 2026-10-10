@@ -1,0 +1,49 @@
+{
+  "result": [
+    {
+      "clusterSelfCollision": false,
+      "foldAxis": "v",
+      "hits": 30,
+      "steps": 1250,
+      "violations": 0,
+      "barViolations": 0,
+      "maxBackDisplacement": 0.2893666885793209,
+      "meanStepMs": 4.123200000429153,
+      "p95StepMs": 5.0999999940395355
+    },
+    {
+      "clusterSelfCollision": true,
+      "foldAxis": "v",
+      "hits": 30,
+      "steps": 1250,
+      "violations": 0,
+      "barViolations": 0,
+      "maxBackDisplacement": 0.2893666885793209,
+      "meanStepMs": 4.235999999976158,
+      "p95StepMs": 5.300000011920929
+    },
+    {
+      "clusterSelfCollision": false,
+      "foldAxis": "u",
+      "hits": 30,
+      "steps": 1250,
+      "violations": 0,
+      "barViolations": 0,
+      "maxBackDisplacement": 0.29902926646173,
+      "meanStepMs": 4.434640000247955,
+      "p95StepMs": 5.5
+    },
+    {
+      "clusterSelfCollision": true,
+      "foldAxis": "u",
+      "hits": 30,
+      "steps": 1250,
+      "violations": 0,
+      "barViolations": 0,
+      "maxBackDisplacement": 0.2957950755953789,
+      "meanStepMs": 4.504560000014305,
+      "p95StepMs": 5.5
+    }
+  ],
+  "errors": []
+}

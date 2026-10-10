@@ -1,0 +1,227 @@
+{
+  "viewport": [
+    1468,
+    986
+  ],
+  "qualities": {
+    "high": {
+      "drawCalls": {
+        "mean": 308.31111111111113,
+        "p95": 310
+      },
+      "gpuMs": {
+        "mean": 14.220564088888889,
+        "p95": 14.905344
+      },
+      "cpuMs": {
+        "mean": 24.84555555532376,
+        "p95": 36.29999998211861
+      },
+      "physicsMs": {
+        "mean": 17.30388888898823,
+        "p95": 29.30000001192093
+      },
+      "renderSubmitMs": {
+        "mean": 6.4211111100183595,
+        "p95": 5.4000000059604645
+      },
+      "intervalMs": {
+        "mean": 34.20222222222223,
+        "p95": 31.699999999997093
+      },
+      "triangles": {
+        "mean": 1050232.7555555555,
+        "p95": 1050263
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "quality": "high",
+      "ao": true,
+      "halfRes": false,
+      "multisampling": 0
+    },
+    "medium": {
+      "drawCalls": {
+        "mean": 306,
+        "p95": 306
+      },
+      "gpuMs": {
+        "mean": 10.09718151111111,
+        "p95": 15.697408
+      },
+      "cpuMs": {
+        "mean": 24.90388888782925,
+        "p95": 39.900000005960464
+      },
+      "physicsMs": {
+        "mean": 19.59166666633553,
+        "p95": 32.099999994039536
+      },
+      "renderSubmitMs": {
+        "mean": 3.993333332737287,
+        "p95": 6.5
+      },
+      "intervalMs": {
+        "mean": 31.249444444444453,
+        "p95": 31.600000000002183
+      },
+      "triangles": {
+        "mean": 1050176,
+        "p95": 1050176
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "quality": "medium",
+      "ao": true,
+      "halfRes": true,
+      "multisampling": 0
+    },
+    "low": {
+      "drawCalls": {
+        "mean": 162.81666666666666,
+        "p95": 164
+      },
+      "gpuMs": {
+        "mean": 11.522059911111114,
+        "p95": 16.643616
+      },
+      "cpuMs": {
+        "mean": 24.565000000099342,
+        "p95": 42.400000005960464
+      },
+      "physicsMs": {
+        "mean": 18.91555555578735,
+        "p95": 36.400000005960464
+      },
+      "renderSubmitMs": {
+        "mean": 4.447777779069212,
+        "p95": 4.699999988079071
+      },
+      "intervalMs": {
+        "mean": 33.6811111111111,
+        "p95": 31.599999999998545
+      },
+      "triangles": {
+        "mean": 606176,
+        "p95": 606197
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "quality": "low",
+      "ao": false,
+      "halfRes": true,
+      "multisampling": 0
+    }
+  },
+  "errors": [],
+  "autoQuality": "medium",
+  "beaters": [
+    {
+      "id": "soviet",
+      "requestedPhase": "idle",
+      "phase": "idle",
+      "uniform": true
+    },
+    {
+      "id": "soviet",
+      "requestedPhase": "charging",
+      "phase": "charging",
+      "uniform": true
+    },
+    {
+      "id": "soviet",
+      "requestedPhase": "strike",
+      "phase": "strike",
+      "uniform": true
+    },
+    {
+      "id": "plastic",
+      "requestedPhase": "idle",
+      "phase": "idle",
+      "uniform": true
+    },
+    {
+      "id": "plastic",
+      "requestedPhase": "charging",
+      "phase": "charging",
+      "uniform": true
+    },
+    {
+      "id": "plastic",
+      "requestedPhase": "strike",
+      "phase": "strike",
+      "uniform": true
+    },
+    {
+      "id": "rattan",
+      "requestedPhase": "idle",
+      "phase": "idle",
+      "uniform": true
+    },
+    {
+      "id": "rattan",
+      "requestedPhase": "charging",
+      "phase": "charging",
+      "uniform": true
+    },
+    {
+      "id": "rattan",
+      "requestedPhase": "strike",
+      "phase": "strike",
+      "uniform": true
+    },
+    {
+      "id": "sonne",
+      "requestedPhase": "idle",
+      "phase": "idle",
+      "uniform": true
+    },
+    {
+      "id": "sonne",
+      "requestedPhase": "charging",
+      "phase": "charging",
+      "uniform": true
+    },
+    {
+      "id": "sonne",
+      "requestedPhase": "strike",
+      "phase": "strike",
+      "uniform": true
+    },
+    {
+      "id": "victorian",
+      "requestedPhase": "idle",
+      "phase": "idle",
+      "uniform": true
+    },
+    {
+      "id": "victorian",
+      "requestedPhase": "charging",
+      "phase": "charging",
+      "uniform": true
+    },
+    {
+      "id": "victorian",
+      "requestedPhase": "strike",
+      "phase": "strike",
+      "uniform": true
+    },
+    {
+      "id": "bamboo",
+      "requestedPhase": "idle",
+      "phase": "idle",
+      "uniform": true
+    },
+    {
+      "id": "bamboo",
+      "requestedPhase": "charging",
+      "phase": "charging",
+      "uniform": true
+    },
+    {
+      "id": "bamboo",
+      "requestedPhase": "strike",
+      "phase": "strike",
+      "uniform": true
+    }
+  ],
+  "persistedQuality": "high",
+  "previewModels": 6
+}

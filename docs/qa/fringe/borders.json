@@ -1,0 +1,372 @@
+[
+  {
+    "id": "01",
+    "before": {
+      "left": 229.9988081048868,
+      "right": 227.56495828367105,
+      "top": 217.9325,
+      "bottom": 180.19,
+      "lr": 0.010638297872340476,
+      "tb": 0.18960244648318045,
+      "width": 1021,
+      "height": 1948
+    },
+    "after": {
+      "left": 229.9988081048868,
+      "right": 227.56495828367105,
+      "top": 217.9325,
+      "bottom": 180.19,
+      "lr": 0.010638297872340476,
+      "tb": 0.18960244648318045,
+      "width": 1021,
+      "height": 1948
+    },
+    "note": "Intact outer woven border. The original lower end frame is narrower than the upper frame; retain the handmade design."
+  },
+  {
+    "id": "02",
+    "before": {
+      "left": 267.3369963369963,
+      "right": 237.88461538461536,
+      "top": 270.816875,
+      "bottom": 274.21625,
+      "lr": 0.11659192825112114,
+      "tb": 0.012474012474012551,
+      "width": 1237,
+      "height": 1813
+    },
+    "after": {
+      "left": 268.5222524977293,
+      "right": 237.06357856494094,
+      "top": 270.673125,
+      "bottom": 261.688125,
+      "lr": 0.12444444444444444,
+      "tb": 0.03375527426160342,
+      "width": 1237,
+      "height": 1797
+    },
+    "note": "Displayed worn rug: side frames differ in the photograph. Bottom display-mat sliver removed; woven borders retained."
+  },
+  {
+    "id": "03",
+    "before": {
+      "left": 149.89615384615385,
+      "right": 157.8451923076923,
+      "top": 240.7525,
+      "bottom": 186.2425,
+      "lr": 0.05166051660516588,
+      "tb": 0.2553191489361702,
+      "width": 1181,
+      "height": 1817
+    },
+    "after": {
+      "left": 152,
+      "right": 155,
+      "top": 90,
+      "bottom": 56,
+      "lr": 0.019543973941368076,
+      "tb": 0.4657534246575342,
+      "width": 1181,
+      "height": 1535
+    },
+    "note": "Plain kilim extensions removed at both ends. The photographed patterned end frames themselves differ in width; side symmetry is 1.95%."
+  },
+  {
+    "id": "04",
+    "before": {
+      "left": 154.82882882882882,
+      "right": 133.39099099099099,
+      "top": 100.0125,
+      "bottom": 302.41875,
+      "lr": 0.14876033057851237,
+      "tb": 1.0059171597633136,
+      "width": 1322,
+      "height": 1905
+    },
+    "after": {
+      "left": 152.65998457979956,
+      "right": 133.3230531996916,
+      "top": 15.271875,
+      "bottom": 113.01187499999999,
+      "lr": 0.13523131672597874,
+      "tb": 1.5238095238095237,
+      "width": 1320,
+      "height": 1629
+    },
+    "note": "Plain kilim extensions removed. The upper patterned frame is nearly absent in this worn asymmetric original; its lower frame survives. Equality would require deleting intact lower motifs."
+  },
+  {
+    "id": "05",
+    "before": {
+      "left": 96.15427215189874,
+      "right": 89.52294303797468,
+      "top": 51.935,
+      "bottom": 39.78,
+      "lr": 0.07142857142857145,
+      "tb": 0.26506024096385544,
+      "width": 1397,
+      "height": 1768
+    },
+    "after": {
+      "left": 96.15427215189874,
+      "right": 89.52294303797468,
+      "top": 51.935,
+      "bottom": 39.78,
+      "lr": 0.07142857142857145,
+      "tb": 0.26506024096385544,
+      "width": 1397,
+      "height": 1768
+    },
+    "note": "Intact outer border. Original end frames are narrower than side frames, with wear and small top/bottom differences."
+  },
+  {
+    "id": "06",
+    "before": {
+      "left": 175.419447092469,
+      "right": 173.06482364156338,
+      "top": 148.28625,
+      "bottom": 107.095625,
+      "lr": 0.013513513513513492,
+      "tb": 0.3225806451612903,
+      "width": 1235,
+      "height": 1883
+    },
+    "after": {
+      "left": 175.419447092469,
+      "right": 173.06482364156338,
+      "top": 148.28625,
+      "bottom": 107.095625,
+      "lr": 0.013513513513513492,
+      "tb": 0.3225806451612903,
+      "width": 1235,
+      "height": 1883
+    },
+    "note": "Intact outer border. The original upper patterned end frame is deeper than the lower one."
+  },
+  {
+    "id": "07",
+    "before": {
+      "left": 223.84125,
+      "right": 178.39124999999999,
+      "top": 330.72782608695655,
+      "bottom": 360.2773913043478,
+      "lr": 0.22598870056497186,
+      "tb": 0.08552631578947356,
+      "width": 1818,
+      "height": 1307
+    },
+    "after": {
+      "left": 223.84125,
+      "right": 178.39124999999999,
+      "top": 330.72782608695655,
+      "bottom": 360.2773913043478,
+      "lr": 0.22598870056497186,
+      "tb": 0.08552631578947356,
+      "width": 1818,
+      "height": 1307
+    },
+    "note": "Intact outer border and selvedge. Original side frame widths differ; field is off-centre in the weaving."
+  },
+  {
+    "id": "08",
+    "before": {
+      "left": 153.99256110520722,
+      "right": 150.35494155154092,
+      "top": 137.01250000000002,
+      "bottom": 133.375,
+      "lr": 0.023904382470119424,
+      "tb": 0.02690582959641268,
+      "width": 1141,
+      "height": 1940
+    },
+    "after": {
+      "left": 153.99256110520722,
+      "right": 150.35494155154092,
+      "top": 137.01250000000002,
+      "bottom": 133.375,
+      "lr": 0.023904382470119424,
+      "tb": 0.02690582959641268,
+      "width": 1141,
+      "height": 1940
+    },
+    "note": "Intact outer border. Small residual differences reflect non-straight woven edges and wear."
+  },
+  {
+    "id": "09",
+    "before": {
+      "left": 241.1271676300578,
+      "right": 229.42196531791907,
+      "top": 291.48562499999997,
+      "bottom": 203.68875,
+      "lr": 0.049751243781094565,
+      "tb": 0.3546099290780141,
+      "width": 1620,
+      "height": 1873
+    },
+    "after": {
+      "left": 241.1271676300578,
+      "right": 229.42196531791907,
+      "top": 291.48562499999997,
+      "bottom": 203.68875,
+      "lr": 0.049751243781094565,
+      "tb": 0.3546099290780141,
+      "width": 1620,
+      "height": 1873
+    },
+    "note": "Intact outer border. Upper woven edge bows downward in the middle; a four-corner crop retains that edge and some background rather than deleting its corners."
+  },
+  {
+    "id": "10",
+    "before": {
+      "left": 208.08505997818975,
+      "right": 209.24754634678297,
+      "top": 122.0625,
+      "bottom": 122.0625,
+      "lr": 0.005571030640668439,
+      "tb": 0,
+      "width": 1066,
+      "height": 1860
+    },
+    "after": {
+      "left": 208.08505997818975,
+      "right": 209.24754634678297,
+      "top": 122.0625,
+      "bottom": 122.0625,
+      "lr": 0.005571030640668439,
+      "tb": 0,
+      "width": 1066,
+      "height": 1860
+    },
+    "note": "Intact outer border: both opposing pairs already within 2%."
+  },
+  {
+    "id": "envato-2K7L5EB",
+    "status": "disabled fragment",
+    "note": "Disabled fragment: no complete enclosing border exists in source."
+  },
+  {
+    "id": "envato-6325SWE",
+    "before": {
+      "left": 518.61,
+      "right": 442.42999999999995,
+      "top": 682.8913580246914,
+      "bottom": 665.3061728395062,
+      "lr": 0.1585365853658538,
+      "tb": 0.026086956521739143,
+      "width": 4688,
+      "height": 3561
+    },
+    "after": {
+      "left": 518.61,
+      "right": 442.42999999999995,
+      "top": 682.8913580246914,
+      "bottom": 665.3061728395062,
+      "lr": 0.1585365853658538,
+      "tb": 0.026086956521739143,
+      "width": 4688,
+      "height": 3561
+    },
+    "note": "Frame fills source. Left and right patterned border widths already differ in the photograph; cropping the left edge would delete intact outer motifs."
+  },
+  {
+    "id": "envato-B7PV8QR",
+    "before": {
+      "left": 387.80625000000003,
+      "right": 369.9075,
+      "top": 441.723076923077,
+      "bottom": 423.81538461538463,
+      "lr": 0.04724409448818899,
+      "tb": 0.04137931034482766,
+      "width": 4773,
+      "height": 2910
+    },
+    "after": {
+      "left": 387.80625000000003,
+      "right": 369.9075,
+      "top": 441.723076923077,
+      "bottom": 423.81538461538463,
+      "lr": 0.04724409448818899,
+      "tb": 0.04137931034482766,
+      "width": 4773,
+      "height": 2910
+    },
+    "note": "Reviewed quad retains original outer frame. Small residual border differences exist in the photographed design."
+  },
+  {
+    "id": "envato-EPRJ58X",
+    "before": {
+      "left": 670.6925,
+      "right": 690.1893749999999,
+      "top": 744.4882849109653,
+      "bottom": 650.9400187441424,
+      "lr": 0.028653295128939726,
+      "tb": 0.13407821229050274,
+      "width": 6239,
+      "height": 4159
+    },
+    "after": {
+      "left": 670.6925,
+      "right": 690.1893749999999,
+      "top": 744.4882849109653,
+      "bottom": 650.9400187441424,
+      "lr": 0.028653295128939726,
+      "tb": 0.13407821229050274,
+      "width": 6239,
+      "height": 4159
+    },
+    "note": "Frame fills source. Original upper and lower blue floral bands differ in depth; no unused margin can be cropped to equalize them."
+  },
+  {
+    "id": "envato-QSMGCAP",
+    "status": "disabled fragment",
+    "note": "Disabled fragment: no complete enclosing border exists in source."
+  },
+  {
+    "id": "envato-RBFEDY2",
+    "before": {
+      "left": 259.2354596622889,
+      "right": 364.8499061913696,
+      "top": 316.69687500000003,
+      "bottom": 468.32750000000004,
+      "lr": 0.33846153846153854,
+      "tb": 0.3863080684596577,
+      "width": 2047,
+      "height": 3071
+    },
+    "after": {
+      "left": 178.7750677506775,
+      "right": 180.37127371273712,
+      "top": 137.2775,
+      "bottom": 137.2775,
+      "lr": 0.00888888888888893,
+      "tb": 0,
+      "width": 1767,
+      "height": 2554
+    },
+    "note": "Retained complete inner frame meets 2% on both opposing pairs. The source clips the original outer motif frame at left/top, so preserving that entire frame is impossible."
+  },
+  {
+    "id": "envato-T834FYR",
+    "before": {
+      "left": 317.55,
+      "right": 366.82500000000005,
+      "top": 665.2959830866808,
+      "bottom": 643.3932346723045,
+      "lr": 0.1440000000000001,
+      "tb": 0.03347280334728035,
+      "width": 4380,
+      "height": 2590
+    },
+    "after": {
+      "left": 317.55,
+      "right": 366.82500000000005,
+      "top": 665.2959830866808,
+      "bottom": 643.3932346723045,
+      "lr": 0.1440000000000001,
+      "tb": 0.03347280334728035,
+      "width": 4380,
+      "height": 2590
+    },
+    "note": "Reviewed studio crop follows inner envelope of bowed woven edges, avoiding white slivers. The original left/right kilim side bands differ in width."
+  }
+]

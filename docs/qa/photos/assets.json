@@ -1,0 +1,20 @@
+{
+  "compressedBytes": 1072800,
+  "vramBytesIncludingMipmaps": 22020095.999999996,
+  "carTriangles": 2312,
+  "carProfilePoints": 62,
+  "carBodyBounds": {
+    "min": [
+      -0.8050000071525574,
+      0.3400000035762787,
+      -2.0850000381469727
+    ],
+    "max": [
+      0.8050000071525574,
+      1.399999976158142,
+      2.0850000381469727
+    ]
+  },
+  "carDraws": 2,
+  "notes": "Shared textures, three parked cars; geometry draw count before scene passes."
+}

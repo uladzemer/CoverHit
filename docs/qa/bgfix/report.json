@@ -1,0 +1,1382 @@
+{
+  "browser": "155.0.8059.39",
+  "views": [
+    {
+      "mode": "stock",
+      "width": 800,
+      "height": 700,
+      "assets": {
+        "stock": {
+          "requested": 8,
+          "loaded": [
+            "birch",
+            "garage",
+            "dumpster",
+            "bench",
+            "lamp",
+            "deciduous"
+          ],
+          "substitutions": [
+            {
+              "id": "balcony-block",
+              "reason": "Missing facade colour texture or UVs"
+            },
+            {
+              "id": "panel-block",
+              "reason": "Missing facade colour texture or UVs"
+            }
+          ],
+          "failures": []
+        },
+        "surfaces": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        },
+        "exposure": 1.02,
+        "replacements": [
+          {
+            "name": "yard-procedural-balcony-block",
+            "windowMap": 1000
+          },
+          {
+            "name": "yard-procedural-panel-block",
+            "windowMap": 1000
+          }
+        ]
+      },
+      "panels": [
+        {
+          "open": false,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 608.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 790,
+                "bottom": 69.984375,
+                "left": 608.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 571,
+                "width": 360,
+                "height": 119,
+                "top": 571,
+                "right": 370,
+                "bottom": 690,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 530,
+                "y": 640,
+                "width": 260,
+                "height": 50,
+                "top": 640,
+                "right": 790,
+                "bottom": 690,
+                "left": 530
+              }
+            }
+          ]
+        },
+        {
+          "open": true,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 608.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 790,
+                "bottom": 69.984375,
+                "left": 608.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 571,
+                "width": 360,
+                "height": 119,
+                "top": 571,
+                "right": 370,
+                "bottom": 690,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 530,
+                "y": 560,
+                "width": 260,
+                "height": 130,
+                "top": 560,
+                "right": 790,
+                "bottom": 690,
+                "left": 530
+              }
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "stock",
+      "width": 1024,
+      "height": 640,
+      "assets": {
+        "stock": {
+          "requested": 8,
+          "loaded": [
+            "birch",
+            "garage",
+            "dumpster",
+            "bench",
+            "lamp",
+            "deciduous"
+          ],
+          "substitutions": [
+            {
+              "id": "balcony-block",
+              "reason": "Missing facade colour texture or UVs"
+            },
+            {
+              "id": "panel-block",
+              "reason": "Missing facade colour texture or UVs"
+            }
+          ],
+          "failures": []
+        },
+        "surfaces": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        },
+        "exposure": 1.02,
+        "replacements": [
+          {
+            "name": "yard-procedural-balcony-block",
+            "windowMap": 1000
+          },
+          {
+            "name": "yard-procedural-panel-block",
+            "windowMap": 1000
+          }
+        ]
+      },
+      "panels": [
+        {
+          "open": false,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 832.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 1014,
+                "bottom": 69.984375,
+                "left": 832.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 512,
+                "width": 360,
+                "height": 118,
+                "top": 512,
+                "right": 370,
+                "bottom": 630,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 754,
+                "y": 580,
+                "width": 260,
+                "height": 50,
+                "top": 580,
+                "right": 1014,
+                "bottom": 630,
+                "left": 754
+              }
+            }
+          ]
+        },
+        {
+          "open": true,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 832.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 1014,
+                "bottom": 69.984375,
+                "left": 832.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 512,
+                "width": 360,
+                "height": 118,
+                "top": 512,
+                "right": 370,
+                "bottom": 630,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 754,
+                "y": 512,
+                "width": 260,
+                "height": 118,
+                "top": 512,
+                "right": 1014,
+                "bottom": 630,
+                "left": 754
+              }
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "stock",
+      "width": 1440,
+      "height": 900,
+      "assets": {
+        "stock": {
+          "requested": 8,
+          "loaded": [
+            "birch",
+            "garage",
+            "bench",
+            "dumpster",
+            "lamp",
+            "deciduous"
+          ],
+          "substitutions": [
+            {
+              "id": "balcony-block",
+              "reason": "Missing facade colour texture or UVs"
+            },
+            {
+              "id": "panel-block",
+              "reason": "Missing facade colour texture or UVs"
+            }
+          ],
+          "failures": []
+        },
+        "surfaces": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        },
+        "exposure": 1.02,
+        "replacements": [
+          {
+            "name": "yard-procedural-balcony-block",
+            "windowMap": 1000
+          },
+          {
+            "name": "yard-procedural-panel-block",
+            "windowMap": 1000
+          }
+        ]
+      },
+      "panels": [
+        {
+          "open": false,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 24,
+                "width": 264,
+                "height": 97.1875,
+                "top": 24,
+                "right": 288,
+                "bottom": 121.1875,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 1103.21875,
+                "y": 24,
+                "width": 312.78125,
+                "height": 122,
+                "top": 24,
+                "right": 1416,
+                "bottom": 146,
+                "left": 1103.21875
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 720.203125,
+                "width": 360,
+                "height": 155.796875,
+                "top": 720.203125,
+                "right": 384,
+                "bottom": 876,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 1136,
+                "y": 810,
+                "width": 280,
+                "height": 66,
+                "top": 810,
+                "right": 1416,
+                "bottom": 876,
+                "left": 1136
+              }
+            }
+          ]
+        },
+        {
+          "open": true,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 24,
+                "width": 264,
+                "height": 97.1875,
+                "top": 24,
+                "right": 288,
+                "bottom": 121.1875,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 1103.21875,
+                "y": 24,
+                "width": 312.78125,
+                "height": 122,
+                "top": 24,
+                "right": 1416,
+                "bottom": 146,
+                "left": 1103.21875
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 720.203125,
+                "width": 360,
+                "height": 155.796875,
+                "top": 720.203125,
+                "right": 384,
+                "bottom": 876,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 1136,
+                "y": 720,
+                "width": 280,
+                "height": 156,
+                "top": 720,
+                "right": 1416,
+                "bottom": 876,
+                "left": 1136
+              }
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "procedural",
+      "width": 800,
+      "height": 700,
+      "assets": {
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "substitutions": [],
+          "failures": []
+        },
+        "surfaces": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        },
+        "exposure": 1.02,
+        "replacements": []
+      },
+      "panels": [
+        {
+          "open": false,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 608.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 790,
+                "bottom": 69.984375,
+                "left": 608.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 571,
+                "width": 360,
+                "height": 119,
+                "top": 571,
+                "right": 370,
+                "bottom": 690,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 530,
+                "y": 640,
+                "width": 260,
+                "height": 50,
+                "top": 640,
+                "right": 790,
+                "bottom": 690,
+                "left": 530
+              }
+            }
+          ]
+        },
+        {
+          "open": true,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 608.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 790,
+                "bottom": 69.984375,
+                "left": 608.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 571,
+                "width": 360,
+                "height": 119,
+                "top": 571,
+                "right": 370,
+                "bottom": 690,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 530,
+                "y": 560,
+                "width": 260,
+                "height": 130,
+                "top": 560,
+                "right": 790,
+                "bottom": 690,
+                "left": 530
+              }
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "procedural",
+      "width": 1024,
+      "height": 640,
+      "assets": {
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "substitutions": [],
+          "failures": []
+        },
+        "surfaces": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        },
+        "exposure": 1.02,
+        "replacements": []
+      },
+      "panels": [
+        {
+          "open": false,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 832.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 1014,
+                "bottom": 69.984375,
+                "left": 832.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 512,
+                "width": 360,
+                "height": 118,
+                "top": 512,
+                "right": 370,
+                "bottom": 630,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 754,
+                "y": 580,
+                "width": 260,
+                "height": 50,
+                "top": 580,
+                "right": 1014,
+                "bottom": 630,
+                "left": 754
+              }
+            }
+          ]
+        },
+        {
+          "open": true,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 832.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 1014,
+                "bottom": 69.984375,
+                "left": 832.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 512,
+                "width": 360,
+                "height": 118,
+                "top": 512,
+                "right": 370,
+                "bottom": 630,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 754,
+                "y": 512,
+                "width": 260,
+                "height": 118,
+                "top": 512,
+                "right": 1014,
+                "bottom": 630,
+                "left": 754
+              }
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "procedural",
+      "width": 1440,
+      "height": 900,
+      "assets": {
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "substitutions": [],
+          "failures": []
+        },
+        "surfaces": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        },
+        "exposure": 1.02,
+        "replacements": []
+      },
+      "panels": [
+        {
+          "open": false,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 24,
+                "width": 264,
+                "height": 97.1875,
+                "top": 24,
+                "right": 288,
+                "bottom": 121.1875,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 1103.21875,
+                "y": 24,
+                "width": 312.78125,
+                "height": 122,
+                "top": 24,
+                "right": 1416,
+                "bottom": 146,
+                "left": 1103.21875
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 720.203125,
+                "width": 360,
+                "height": 155.796875,
+                "top": 720.203125,
+                "right": 384,
+                "bottom": 876,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 1136,
+                "y": 810,
+                "width": 280,
+                "height": 66,
+                "top": 810,
+                "right": 1416,
+                "bottom": 876,
+                "left": 1136
+              }
+            }
+          ]
+        },
+        {
+          "open": true,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 24,
+                "width": 264,
+                "height": 97.1875,
+                "top": 24,
+                "right": 288,
+                "bottom": 121.1875,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 1103.21875,
+                "y": 24,
+                "width": 312.78125,
+                "height": 122,
+                "top": 24,
+                "right": 1416,
+                "bottom": 146,
+                "left": 1103.21875
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 720.203125,
+                "width": 360,
+                "height": 155.796875,
+                "top": 720.203125,
+                "right": 384,
+                "bottom": 876,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 1136,
+                "y": 720,
+                "width": 280,
+                "height": 156,
+                "top": 720,
+                "right": 1416,
+                "bottom": 876,
+                "left": 1136
+              }
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "no-assets",
+      "width": 800,
+      "height": 700,
+      "assets": {
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "substitutions": [],
+          "failures": []
+        },
+        "surfaces": {
+          "loaded": 0,
+          "total": 22,
+          "failures": [
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "fetch for \"http://127.0.0.1:5178/yard/sunset.hdr\" responded with 404: Not Found"
+          ]
+        },
+        "exposure": 1.02,
+        "replacements": []
+      },
+      "panels": [
+        {
+          "open": false,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 608.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 790,
+                "bottom": 69.984375,
+                "left": 608.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 571,
+                "width": 360,
+                "height": 119,
+                "top": 571,
+                "right": 370,
+                "bottom": 690,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 530,
+                "y": 640,
+                "width": 260,
+                "height": 50,
+                "top": 640,
+                "right": 790,
+                "bottom": 690,
+                "left": 530
+              }
+            }
+          ]
+        },
+        {
+          "open": true,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 608.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 790,
+                "bottom": 69.984375,
+                "left": 608.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 571,
+                "width": 360,
+                "height": 119,
+                "top": 571,
+                "right": 370,
+                "bottom": 690,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 530,
+                "y": 560,
+                "width": 260,
+                "height": 130,
+                "top": 560,
+                "right": 790,
+                "bottom": 690,
+                "left": 530
+              }
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "no-assets",
+      "width": 1024,
+      "height": 640,
+      "assets": {
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "substitutions": [],
+          "failures": []
+        },
+        "surfaces": {
+          "loaded": 0,
+          "total": 22,
+          "failures": [
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "fetch for \"http://127.0.0.1:5178/yard/sunset.hdr\" responded with 404: Not Found"
+          ]
+        },
+        "exposure": 1.02,
+        "replacements": []
+      },
+      "panels": [
+        {
+          "open": false,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 832.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 1014,
+                "bottom": 69.984375,
+                "left": 832.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 512,
+                "width": 360,
+                "height": 118,
+                "top": 512,
+                "right": 370,
+                "bottom": 630,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 754,
+                "y": 580,
+                "width": 260,
+                "height": 50,
+                "top": 580,
+                "right": 1014,
+                "bottom": 630,
+                "left": 754
+              }
+            }
+          ]
+        },
+        {
+          "open": true,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 10,
+                "width": 128.265625,
+                "height": 66.78125,
+                "top": 10,
+                "right": 138.265625,
+                "bottom": 76.78125,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 832.9375,
+                "y": 10,
+                "width": 181.0625,
+                "height": 59.984375,
+                "top": 10,
+                "right": 1014,
+                "bottom": 69.984375,
+                "left": 832.9375
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 10,
+                "y": 512,
+                "width": 360,
+                "height": 118,
+                "top": 512,
+                "right": 370,
+                "bottom": 630,
+                "left": 10
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 754,
+                "y": 512,
+                "width": 260,
+                "height": 118,
+                "top": 512,
+                "right": 1014,
+                "bottom": 630,
+                "left": 754
+              }
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "no-assets",
+      "width": 1440,
+      "height": 900,
+      "assets": {
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "substitutions": [],
+          "failures": []
+        },
+        "surfaces": {
+          "loaded": 0,
+          "total": 22,
+          "failures": [
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "fetch for \"http://127.0.0.1:5178/yard/sunset.hdr\" responded with 404: Not Found"
+          ]
+        },
+        "exposure": 1.02,
+        "replacements": []
+      },
+      "panels": [
+        {
+          "open": false,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 24,
+                "width": 264,
+                "height": 97.1875,
+                "top": 24,
+                "right": 288,
+                "bottom": 121.1875,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 1103.21875,
+                "y": 24,
+                "width": 312.78125,
+                "height": 122,
+                "top": 24,
+                "right": 1416,
+                "bottom": 146,
+                "left": 1103.21875
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 720.203125,
+                "width": 360,
+                "height": 155.796875,
+                "top": 720.203125,
+                "right": 384,
+                "bottom": 876,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 1136,
+                "y": 810,
+                "width": 280,
+                "height": 66,
+                "top": 810,
+                "right": 1416,
+                "bottom": 876,
+                "left": 1136
+              }
+            }
+          ]
+        },
+        {
+          "open": true,
+          "rects": [
+            {
+              "class": "ch-zone ch-top-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 24,
+                "width": 264,
+                "height": 97.1875,
+                "top": 24,
+                "right": 288,
+                "bottom": 121.1875,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-top-right ch-panel",
+              "rect": {
+                "x": 1103.21875,
+                "y": 24,
+                "width": 312.78125,
+                "height": 122,
+                "top": 24,
+                "right": 1416,
+                "bottom": 146,
+                "left": 1103.21875
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-left ch-panel",
+              "rect": {
+                "x": 24,
+                "y": 720.203125,
+                "width": 360,
+                "height": 155.796875,
+                "top": 720.203125,
+                "right": 384,
+                "bottom": 876,
+                "left": 24
+              }
+            },
+            {
+              "class": "ch-zone ch-bottom-right ch-panel",
+              "rect": {
+                "x": 1136,
+                "y": 720,
+                "width": 280,
+                "height": 156,
+                "top": 720,
+                "right": 1416,
+                "bottom": 876,
+                "left": 1136
+              }
+            }
+          ]
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "version": 1,
+  "seed": 464,
+  "format": "rgba8-bounds",
+  "file": "positions.bin",
+  "width": 192,
+  "height": 1812,
+  "cols": 12,
+  "rows": 16,
+  "frames": 151,
+  "fps": 30,
+  "duration": 5,
+  "bounds": {
+    "min": [
+      -0.8,
+      -1.4,
+      -0.8
+    ],
+    "max": [
+      0.8,
+      0.2,
+      1.4
+    ]
+  },
+  "templates": [
+    "sheet",
+    "shirt",
+    "trousers",
+    "rope"
+  ],
+  "clips": [
+    "calm",
+    "breeze",
+    "strong"
+  ],
+  "items": [
+    {
+      "name": "bed-sheet",
+      "width": 0.44,
+      "height": 1.15,
+      "template": 0,
+      "line": 0,
+      "slot": 0,
+      "phase": 0,
+      "pins": [
+        0,
+        11
+      ],
+      "restTransform": {
+        "position": [
+          -2.15,
+          2.644320987654321,
+          -2.55
+        ],
+        "rotationY": 1.5707963267948966,
+        "scale": [
+          0.44,
+          1.15,
+          0.32
+        ]
+      }
+    },
+    {
+      "name": "duvet-cover",
+      "width": 0.44,
+      "height": 1.25,
+      "template": 0,
+      "line": 1,
+      "slot": 0,
+      "phase": 0.371,
+      "pins": [
+        0,
+        11
+      ],
+      "restTransform": {
+        "position": [
+          -1.65,
+          2.644320987654321,
+          -2.55
+        ],
+        "rotationY": 1.5707963267948966,
+        "scale": [
+          0.44,
+          1.25,
+          0.32
+        ]
+      }
+    },
+    {
+      "name": "towel-blue",
+      "width": 0.3,
+      "height": 0.72,
+      "template": 0,
+      "line": 0,
+      "slot": 1,
+      "phase": 0.742,
+      "pins": [
+        0,
+        11
+      ],
+      "restTransform": {
+        "position": [
+          -2.15,
+          2.5660802469135806,
+          -2.2249999999999996
+        ],
+        "rotationY": 1.5707963267948966,
+        "scale": [
+          0.3,
+          0.72,
+          0.32
+        ]
+      }
+    },
+    {
+      "name": "towel-cream",
+      "width": 0.3,
+      "height": 0.8,
+      "template": 0,
+      "line": 1,
+      "slot": 1,
+      "phase": 1.113,
+      "pins": [
+        0,
+        11
+      ],
+      "restTransform": {
+        "position": [
+          -1.65,
+          2.5660802469135806,
+          -2.2249999999999996
+        ],
+        "rotationY": 1.5707963267948966,
+        "scale": [
+          0.3,
+          0.8,
+          0.32
+        ]
+      }
+    },
+    {
+      "name": "shirt",
+      "width": 0.4,
+      "height": 0.67,
+      "template": 1,
+      "line": 0,
+      "slot": 2,
+      "phase": 1.484,
+      "pins": [
+        0,
+        11
+      ],
+      "restTransform": {
+        "position": [
+          -2.15,
+          2.54,
+          -1.9
+        ],
+        "rotationY": 1.5707963267948966,
+        "scale": [
+          0.4,
+          0.67,
+          0.32
+        ]
+      }
+    },
+    {
+      "name": "trousers",
+      "width": 0.32,
+      "height": 0.97,
+      "template": 2,
+      "line": 1,
+      "slot": 2,
+      "phase": 1.855,
+      "pins": [
+        0,
+        11
+      ],
+      "restTransform": {
+        "position": [
+          -1.65,
+          2.54,
+          -1.9
+        ],
+        "rotationY": 1.5707963267948966,
+        "scale": [
+          0.32,
+          0.97,
+          0.32
+        ]
+      }
+    },
+    {
+      "name": "pyjama-top",
+      "width": 0.4,
+      "height": 0.7,
+      "template": 1,
+      "line": 0,
+      "slot": 3,
+      "phase": 2.226,
+      "pins": [
+        0,
+        11
+      ],
+      "restTransform": {
+        "position": [
+          -2.15,
+          2.5660802469135806,
+          -1.575
+        ],
+        "rotationY": 1.5707963267948966,
+        "scale": [
+          0.4,
+          0.7,
+          0.32
+        ]
+      }
+    },
+    {
+      "name": "sock-left",
+      "width": 0.13,
+      "height": 0.28,
+      "template": 0,
+      "line": 1,
+      "slot": 3,
+      "phase": 2.597,
+      "pins": [
+        0,
+        11
+      ],
+      "restTransform": {
+        "position": [
+          -1.65,
+          2.5660802469135806,
+          -1.575
+        ],
+        "rotationY": 1.5707963267948966,
+        "scale": [
+          0.13,
+          0.28,
+          0.32
+        ]
+      }
+    },
+    {
+      "name": "sock-right",
+      "width": 0.13,
+      "height": 0.28,
+      "template": 0,
+      "line": 0,
+      "slot": 4,
+      "phase": 2.968,
+      "pins": [
+        0,
+        11
+      ],
+      "restTransform": {
+        "position": [
+          -2.15,
+          2.644320987654321,
+          -1.25
+        ],
+        "rotationY": 1.5707963267948966,
+        "scale": [
+          0.13,
+          0.28,
+          0.32
+        ]
+      }
+    },
+    {
+      "name": "pillowcase",
+      "width": 0.3,
+      "height": 0.48,
+      "template": 0,
+      "line": 1,
+      "slot": 4,
+      "phase": 3.339,
+      "pins": [
+        0,
+        11
+      ],
+      "restTransform": {
+        "position": [
+          -1.65,
+          2.644320987654321,
+          -1.25
+        ],
+        "rotationY": 1.5707963267948966,
+        "scale": [
+          0.3,
+          0.48,
+          0.32
+        ]
+      }
+    }
+  ]
+}

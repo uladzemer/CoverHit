@@ -1,0 +1,212 @@
+{
+  "panel": [
+    {
+      "horizontalMedianDeviationDegrees": 0.22088623046875,
+      "horizontalDegrees": 0.00025071005802601576,
+      "horizontalSegments": 21,
+      "verticalMedianDeviationDegrees": 0.49970245361328125,
+      "verticalDegrees": -0.07280419021844864,
+      "verticalSegments": 22,
+      "laplacianVariance": 110.74173930099641,
+      "blurEdgeFraction": 0.6869392395019531
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.502349853515625,
+      "horizontalDegrees": 0.058215729892253876,
+      "horizontalSegments": 21,
+      "verticalMedianDeviationDegrees": 1.2000198364257812,
+      "verticalDegrees": 0.20523571968078613,
+      "verticalSegments": 15,
+      "laplacianVariance": 83.17334556112473,
+      "blurEdgeFraction": 0.6108779907226562
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.2428131103515625,
+      "horizontalDegrees": -0.0019064840162172914,
+      "horizontalSegments": 17,
+      "verticalMedianDeviationDegrees": 1.071075439453125,
+      "verticalDegrees": 0.0762321874499321,
+      "verticalSegments": 17,
+      "laplacianVariance": 70.1081709228456,
+      "blurEdgeFraction": 0.5054740905761719
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.191009521484375,
+      "horizontalDegrees": 0.09941092133522034,
+      "horizontalSegments": 18,
+      "verticalMedianDeviationDegrees": 0.33397674560546875,
+      "verticalDegrees": -0.0017044374253600836,
+      "verticalSegments": 17,
+      "laplacianVariance": 58.00273063167697,
+      "blurEdgeFraction": 0.5830497741699219
+    }
+  ],
+  "panel335": [
+    {
+      "horizontalMedianDeviationDegrees": 0.236175537109375,
+      "horizontalDegrees": 0.1007690355181694,
+      "horizontalSegments": 16,
+      "verticalMedianDeviationDegrees": 1.070098876953125,
+      "verticalDegrees": -0.016148878261446953,
+      "verticalSegments": 16,
+      "laplacianVariance": 71.57267084385967,
+      "blurEdgeFraction": 0.5058937072753906
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.2714020907878876,
+      "horizontalDegrees": 0.03485884517431259,
+      "horizontalSegments": 21,
+      "verticalMedianDeviationDegrees": 0.413848876953125,
+      "verticalDegrees": -0.12164496630430222,
+      "verticalSegments": 22,
+      "laplacianVariance": 110.76193213496299,
+      "blurEdgeFraction": 0.6867523193359375
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.269622802734375,
+      "horizontalDegrees": -0.001161340158432722,
+      "horizontalSegments": 19,
+      "verticalMedianDeviationDegrees": 0.38538360595703125,
+      "verticalDegrees": 0.03734767064452171,
+      "verticalSegments": 17,
+      "laplacianVariance": 56.627070769071,
+      "blurEdgeFraction": 0.5802078247070312
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.5101165771484375,
+      "horizontalDegrees": 0.026050634682178497,
+      "horizontalSegments": 20,
+      "verticalMedianDeviationDegrees": 1.4356613159179688,
+      "verticalDegrees": -0.06615253537893295,
+      "verticalSegments": 13,
+      "laplacianVariance": 83.09930576010083,
+      "blurEdgeFraction": 0.6111183166503906
+    }
+  ],
+  "brick": [
+    {
+      "horizontalMedianDeviationDegrees": 0.5987396836280823,
+      "horizontalDegrees": -0.06572429835796356,
+      "horizontalSegments": 140,
+      "verticalMedianDeviationDegrees": 0.466064453125,
+      "verticalDegrees": -0.2040885090827942,
+      "verticalSegments": 17,
+      "laplacianVariance": 114.03108413424343,
+      "blurEdgeFraction": 0.5906295776367188
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.563201904296875,
+      "horizontalDegrees": -0.014206020161509514,
+      "horizontalSegments": 206,
+      "verticalMedianDeviationDegrees": 1.194061279296875,
+      "verticalDegrees": 0.23452748358249664,
+      "verticalSegments": 19,
+      "laplacianVariance": 129.80147655027395,
+      "blurEdgeFraction": 0.6014022827148438
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.544677734375,
+      "horizontalDegrees": -0.034441251307725906,
+      "horizontalSegments": 147,
+      "verticalMedianDeviationDegrees": 0.6828079223632812,
+      "verticalDegrees": 0.0844833254814148,
+      "verticalSegments": 18,
+      "laplacianVariance": 95.32826370092516,
+      "blurEdgeFraction": 0.5533294677734375
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.4411468505859375,
+      "horizontalDegrees": -0.004332818556576967,
+      "horizontalSegments": 244,
+      "verticalMedianDeviationDegrees": 0.48822784423828125,
+      "verticalDegrees": 0.2671026885509491,
+      "verticalSegments": 15,
+      "laplacianVariance": 160.7619249959098,
+      "blurEdgeFraction": 0.6703948974609375
+    }
+  ],
+  "nine": [
+    {
+      "horizontalMedianDeviationDegrees": 0.4652557373046875,
+      "horizontalDegrees": 0.0426749624311924,
+      "horizontalSegments": 70,
+      "verticalMedianDeviationDegrees": 0.31748199462890625,
+      "verticalDegrees": -0.055575743317604065,
+      "verticalSegments": 57,
+      "laplacianVariance": 93.75944957671163,
+      "blurEdgeFraction": 0.6462059020996094
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.5075111389160156,
+      "horizontalDegrees": 0.02839227207005024,
+      "horizontalSegments": 78,
+      "verticalMedianDeviationDegrees": 0.75335693359375,
+      "verticalDegrees": 0.043262239545583725,
+      "verticalSegments": 106,
+      "laplacianVariance": 99.22283506713575,
+      "blurEdgeFraction": 0.6633796691894531
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.5528959035873413,
+      "horizontalDegrees": 0.05580602586269379,
+      "horizontalSegments": 42,
+      "verticalMedianDeviationDegrees": 0.32704925537109375,
+      "verticalDegrees": 0.025828499346971512,
+      "verticalSegments": 98,
+      "laplacianVariance": 85.99201484251535,
+      "blurEdgeFraction": 0.5867424011230469
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.5167083740234375,
+      "horizontalDegrees": -0.025597762316465378,
+      "horizontalSegments": 53,
+      "verticalMedianDeviationDegrees": 0.614990234375,
+      "verticalDegrees": 0.061145033687353134,
+      "verticalSegments": 51,
+      "laplacianVariance": 119.87806237999757,
+      "blurEdgeFraction": 0.7038955688476562
+    }
+  ],
+  "tower": [
+    {
+      "horizontalMedianDeviationDegrees": 0.4652557373046875,
+      "horizontalDegrees": 0.0426749624311924,
+      "horizontalSegments": 70,
+      "verticalMedianDeviationDegrees": 0.31748199462890625,
+      "verticalDegrees": -0.055575743317604065,
+      "verticalSegments": 57,
+      "laplacianVariance": 93.75944957671163,
+      "blurEdgeFraction": 0.6462059020996094
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.5075111389160156,
+      "horizontalDegrees": 0.02839227207005024,
+      "horizontalSegments": 78,
+      "verticalMedianDeviationDegrees": 0.75335693359375,
+      "verticalDegrees": 0.043262239545583725,
+      "verticalSegments": 106,
+      "laplacianVariance": 99.22283506713575,
+      "blurEdgeFraction": 0.6633796691894531
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.5528959035873413,
+      "horizontalDegrees": 0.05580602586269379,
+      "horizontalSegments": 42,
+      "verticalMedianDeviationDegrees": 0.32704925537109375,
+      "verticalDegrees": 0.025828499346971512,
+      "verticalSegments": 98,
+      "laplacianVariance": 85.99201484251535,
+      "blurEdgeFraction": 0.5867424011230469
+    },
+    {
+      "horizontalMedianDeviationDegrees": 0.5167083740234375,
+      "horizontalDegrees": -0.025597762316465378,
+      "horizontalSegments": 53,
+      "verticalMedianDeviationDegrees": 0.614990234375,
+      "verticalDegrees": 0.061145033687353134,
+      "verticalSegments": 51,
+      "laplacianVariance": 119.87806237999757,
+      "blurEdgeFraction": 0.7038955688476562
+    }
+  ]
+}

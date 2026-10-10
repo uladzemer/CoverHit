@@ -1,0 +1,1009 @@
+{
+  "version": 1,
+  "carpets": [
+    {
+      "id": "01",
+      "method": "automatic line fit",
+      "corners": [
+        [
+          29.947758313283934,
+          9.955899854141991
+        ],
+        [
+          1030.8122404934115,
+          14.086215864361101
+        ],
+        [
+          1031.938570386219,
+          1987.3114604198192
+        ],
+        [
+          15.927073376803342,
+          1989.8329519684962
+        ]
+      ],
+      "insets": [
+        6,
+        15,
+        11,
+        13
+      ],
+      "symmetryInsets": [
+        0,
+        11,
+        0,
+        4
+      ],
+      "borders": {
+        "left": 209.35294117647058,
+        "right": 208.58823529411765,
+        "top": 215.176875,
+        "bottom": 195.34937499999998,
+        "lr": 0.0036593947923996544,
+        "tb": 0.0965955283005655
+      },
+      "clusters": [
+        {
+          "lab": [
+            68.39894667814353,
+            0.28894361374984595,
+            -0.39344264982945476
+          ],
+          "fraction": 0.7271619975639464
+        },
+        {
+          "lab": [
+            71.0517955591574,
+            0.5457669340526379,
+            -0.5508105999380003
+          ],
+          "fraction": 0.21762078765732845
+        }
+      ],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 23456,
+        "nextPixels": 46528,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 23456,
+        "nextPixels": 46528,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 980,
+        "height": 1960,
+        "straightnessResidual": 0.0021592965828368107,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85"
+    },
+    {
+      "id": "02",
+      "status": "disabled",
+      "reason": "Disabled: uneven worn boundary against beige display mat cannot satisfy literal colour-only DeltaE<12 leakage without deleting woven border; wooden photo frame also confounds automatic segmentation."
+    },
+    {
+      "id": "03",
+      "method": "fit sides / reviewed woven ends",
+      "corners": [
+        [
+          56.49748313692334,
+          249.67265940495332
+        ],
+        [
+          1262.6112527365283,
+          223.0747306436389
+        ],
+        [
+          1293.4222851061918,
+          1769.9877984051554
+        ],
+        [
+          85.65584260799008,
+          1771.0095974258816
+        ]
+      ],
+      "insets": [
+        11,
+        6,
+        10,
+        16
+      ],
+      "symmetryInsets": [
+        0,
+        0,
+        0,
+        6
+      ],
+      "borders": {
+        "left": 156,
+        "right": 156,
+        "top": 78,
+        "bottom": 45,
+        "lr": 0,
+        "tb": 0.5365853658536586
+      },
+      "clusters": [
+        {
+          "lab": [
+            67.47139440371397,
+            0.18266472126442265,
+            -1.359462727552944
+          ],
+          "fraction": 0.3757942201270752
+        },
+        {
+          "lab": [
+            69.73785193791302,
+            -0.0066025471272921805,
+            -0.26952948823256573
+          ],
+          "fraction": 0.2806927649108424
+        },
+        {
+          "lab": [
+            69.2824366523423,
+            0.4163315292345229,
+            -2.320224482228858
+          ],
+          "fraction": 0.3435130149620824
+        }
+      ],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 21520,
+        "nextPixels": 42656,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 21520,
+        "nextPixels": 42656,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 1185,
+        "height": 1513,
+        "straightnessResidual": 0.0012105839459871813,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Keep reviewed patterned woven ends; reject plain kilim bands and fringe."
+    },
+    {
+      "id": "04",
+      "method": "fit sides / reviewed woven ends",
+      "corners": [
+        [
+          34.24960841688362,
+          107.71550913965966
+        ],
+        [
+          1363.6433206112833,
+          135.2202066333369
+        ],
+        [
+          1341.1378043516293,
+          1726.606735675504
+        ],
+        [
+          20.193418035157215,
+          1774.136968466501
+        ]
+      ],
+      "insets": [
+        5,
+        7,
+        5,
+        6
+      ],
+      "clusters": [
+        {
+          "lab": [
+            87.21424720805379,
+            2.4068078146190737,
+            -3.3751028431185865
+          ],
+          "fraction": 0.15662871832537642
+        },
+        {
+          "lab": [
+            99.73546890435259,
+            -0.013590133745250754,
+            0.0251548494432272
+          ],
+          "fraction": 0.8141755416819684
+        }
+      ],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 23392,
+        "nextPixels": 46400,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 23392,
+        "nextPixels": 46400,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 1313,
+        "height": 1619,
+        "straightnessResidual": 0.001264384684663883,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Keep reviewed patterned woven ends; reject plain kilim bands and fringe."
+    },
+    {
+      "id": "05",
+      "method": "manual inward envelope",
+      "corners": [
+        [
+          114.55556729083932,
+          101.95704036319881
+        ],
+        [
+          1425.9392084138,
+          116.19332301855732
+        ],
+        [
+          1454.693161936617,
+          1851.8631722897526
+        ],
+        [
+          86.4215724978473,
+          1861.3353682953264
+        ]
+      ],
+      "insets": [
+        6,
+        5,
+        6,
+        5
+      ],
+      "clusters": [
+        {
+          "lab": [
+            69.264586769439,
+            0.00017730236934548126,
+            -0.000130434649930133
+          ],
+          "fraction": 0.2441474419000596
+        },
+        {
+          "lab": [
+            70.31279848902211,
+            -0.00012973037561470898,
+            -0.0002371095593167247
+          ],
+          "fraction": 0.49101898357027324
+        },
+        {
+          "lab": [
+            71.64943981940324,
+            -0.000012593309470966858,
+            0.000005037323779357919
+          ],
+          "fraction": 0.26483357452966716
+        }
+      ],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 24464,
+        "nextPixels": 48544,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 24464,
+        "nextPixels": 48544,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 1330,
+        "height": 1736,
+        "straightnessResidual": 0.0016130675866184538,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior."
+    },
+    {
+      "id": "06",
+      "method": "manual inward envelope",
+      "corners": [
+        [
+          41.844131816542486,
+          70.53928305482144
+        ],
+        [
+          1253.0588744065547,
+          55.4748707137135
+        ],
+        [
+          1253.243163679862,
+          1875.7120246561685
+        ],
+        [
+          60.969250818044266,
+          1914.450694725763
+        ]
+      ],
+      "insets": [
+        11,
+        11,
+        13,
+        5
+      ],
+      "symmetryInsets": [
+        5,
+        7,
+        7,
+        1
+      ],
+      "borders": {
+        "left": 150.68761904761905,
+        "right": 150.41142857142856,
+        "top": 102.35499999999999,
+        "bottom": 78.6,
+        "lr": 0.0018345489856210432,
+        "tb": 0.2625514630709292
+      },
+      "clusters": [
+        {
+          "lab": [
+            56.98519068137866,
+            0.03513278169222079,
+            0.03934929912380257
+          ],
+          "fraction": 0.1575819324163695
+        },
+        {
+          "lab": [
+            63.309064493473365,
+            -0.034659351320808024,
+            0.3010193922133983
+          ],
+          "fraction": 0.1445067074206147
+        },
+        {
+          "lab": [
+            63.61829693597995,
+            0.007999159822560744,
+            -0.042017672128637204
+          ],
+          "fraction": 0.6979113601630158
+        }
+      ],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0.00004220121539500338,
+        "outerPixels": 23888,
+        "nextPixels": 47392,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 2
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0.00008440243079000676,
+        "outerPixels": 23888,
+        "nextPixels": 47392,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 4,
+        "width": 1186,
+        "height": 1808,
+        "straightnessResidual": 0.0016743248002922249,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior."
+    },
+    {
+      "id": "07",
+      "method": "manual inward envelope",
+      "corners": [
+        [
+          75.62568381016628,
+          85.70290370116197
+        ],
+        [
+          1881.590294903401,
+          61.37577717522199
+        ],
+        [
+          1876.8464508839959,
+          1377.9573633026025
+        ],
+        [
+          114.66252496363886,
+          1358.5181970482824
+        ]
+      ],
+      "insets": [
+        10,
+        6,
+        11,
+        6
+      ],
+      "symmetryInsets": [
+        6,
+        0,
+        7,
+        0
+      ],
+      "borders": {
+        "left": 191.355,
+        "right": 164.595,
+        "top": 314.5865633074936,
+        "bottom": 342.5874246339363,
+        "lr": 0.15035819637589545,
+        "tb": 0.08521597580012025
+      },
+      "clusters": [
+        {
+          "lab": [
+            70.28579183038359,
+            -0.9794472104230608,
+            -2.670127858858361
+          ],
+          "fraction": 0.923681031010874
+        }
+      ],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 24304,
+        "nextPixels": 48224,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 24304,
+        "nextPixels": 48224,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 1772,
+        "height": 1274,
+        "straightnessResidual": 0.0017162871413255465,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior."
+    },
+    {
+      "id": "08",
+      "method": "manual inward envelope",
+      "corners": [
+        [
+          100.46281780427007,
+          48.408186575688546
+        ],
+        [
+          1212.057463083311,
+          58.1877414044535
+        ],
+        [
+          1207.006259205943,
+          1944.2882797520613
+        ],
+        [
+          61.656146790308945,
+          1944.1527649609684
+        ]
+      ],
+      "insets": [
+        24,
+        19,
+        22,
+        24
+      ],
+      "symmetryInsets": [
+        18,
+        15,
+        16,
+        20
+      ],
+      "borders": {
+        "left": 124.98113207547169,
+        "right": 124.06918238993711,
+        "top": 89.46,
+        "bottom": 86.73249999999999,
+        "lr": 0.007323417258011477,
+        "tb": 0.030960455183960796
+      },
+      "clusters": [
+        {
+          "lab": [
+            68.71905693856026,
+            0.1752367747448177,
+            -0.42429398069113217
+          ],
+          "fraction": 0.7208363374188896
+        },
+        {
+          "lab": [
+            72.06729719961093,
+            0.1007967618170269,
+            -0.26986373706609773
+          ],
+          "fraction": 0.27498197548666187
+        }
+      ],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0.00004313319530710835,
+        "outerPixels": 23376,
+        "nextPixels": 46368,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 2
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0.000021566597653554176,
+        "outerPixels": 23376,
+        "nextPixels": 46368,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 1,
+        "width": 1085,
+        "height": 1845,
+        "straightnessResidual": 0.001811373014368453,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior."
+    },
+    {
+      "id": "09",
+      "method": "manual inward envelope",
+      "corners": [
+        [
+          59.17293041554423,
+          109.38355974520714
+        ],
+        [
+          1636.8504208822192,
+          99.36076344287031
+        ],
+        [
+          1689.677553385107,
+          1901.84882433105
+        ],
+        [
+          69.18874070746185,
+          1916.6318558373512
+        ]
+      ],
+      "insets": [
+        6,
+        5,
+        6,
+        10
+      ],
+      "symmetryInsets": [
+        0,
+        0,
+        0,
+        5
+      ],
+      "borders": {
+        "left": 216.8165137614679,
+        "right": 217.30275229357798,
+        "top": 224.13750000000002,
+        "bottom": 190.29375000000002,
+        "lr": 0.0022401149643906317,
+        "tb": 0.16332624530606704
+      },
+      "clusters": [
+        {
+          "lab": [
+            69.35577130821966,
+            -0.010130255991311048,
+            -0.011795876136744269
+          ],
+          "fraction": 0.2917942134886936
+        },
+        {
+          "lab": [
+            70.32751605933666,
+            0.4344522104929176,
+            -2.243524891422326
+          ],
+          "fraction": 0.6927026760146144
+        }
+      ],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 26952,
+        "nextPixels": 53520,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 26952,
+        "nextPixels": 53520,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 1584,
+        "height": 1793,
+        "straightnessResidual": 0.0012680825623133365,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior."
+    },
+    {
+      "id": "10",
+      "method": "manual inward envelope",
+      "corners": [
+        [
+          68.88843489946322,
+          67.83522768910015
+        ],
+        [
+          1085.0135344489381,
+          58.306539531772394
+        ],
+        [
+          1085.3961976866076,
+          1892.7681653046607
+        ],
+        [
+          87.9937773118987,
+          1921.0229161816965
+        ]
+      ],
+      "insets": [
+        28,
+        22,
+        29,
+        4
+      ],
+      "symmetryInsets": [
+        22,
+        18,
+        23,
+        0
+      ],
+      "borders": {
+        "left": 165.3695652173913,
+        "right": 165.80434782608694,
+        "top": 86.0975,
+        "bottom": 86.25,
+        "lr": 0.0026257056583955446,
+        "tb": 0.0017696804421300386
+      },
+      "clusters": [
+        {
+          "lab": [
+            75.38161827369662,
+            0.012838815736169334,
+            -1.1136658702659057
+          ],
+          "fraction": 0.5124209575429087
+        },
+        {
+          "lab": [
+            75.601781908528,
+            -0.7410950278455868,
+            0.24676318011437817
+          ],
+          "fraction": 0.24141824751580848
+        }
+      ],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 22080,
+        "nextPixels": 43776,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 22080,
+        "nextPixels": 43776,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 981,
+        "height": 1787,
+        "straightnessResidual": 0.002131680453604072,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior."
+    },
+    {
+      "id": "envato-2K7L5EB",
+      "status": "disabled",
+      "reason": "Fragment without complete outer rug border; excluded from whole-rug rotation."
+    },
+    {
+      "id": "envato-6325SWE",
+      "method": "full-bleed prior (no visible background)",
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          4688,
+          0
+        ],
+        [
+          4688,
+          3561
+        ],
+        [
+          0,
+          3561
+        ]
+      ],
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "clusters": [],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 28768,
+        "nextPixels": 57152,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 28768,
+        "nextPixels": 57152,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 2048,
+        "height": 1556,
+        "straightnessResidual": 0,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame."
+    },
+    {
+      "id": "envato-B7PV8QR",
+      "method": "full-bleed prior (no visible background)",
+      "corners": [
+        [
+          62,
+          49
+        ],
+        [
+          4846,
+          49
+        ],
+        [
+          4859,
+          2952
+        ],
+        [
+          98,
+          2965
+        ]
+      ],
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "clusters": [],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 26312,
+        "nextPixels": 52240,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 26312,
+        "nextPixels": 52240,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 2048,
+        "height": 1249,
+        "straightnessResidual": 0,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame."
+    },
+    {
+      "id": "envato-EPRJ58X",
+      "method": "full-bleed prior (no visible background)",
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          6239,
+          0
+        ],
+        [
+          6239,
+          4159
+        ],
+        [
+          0,
+          4159
+        ]
+      ],
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "clusters": [],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 27240,
+        "nextPixels": 54096,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 27240,
+        "nextPixels": 54096,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 2048,
+        "height": 1365,
+        "straightnessResidual": 0,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame."
+    },
+    {
+      "id": "envato-QSMGCAP",
+      "status": "disabled",
+      "reason": "Fragment without complete outer rug border; excluded from whole-rug rotation."
+    },
+    {
+      "id": "envato-RBFEDY2",
+      "method": "full-bleed prior (no visible background)",
+      "corners": [
+        [
+          75,
+          173
+        ],
+        [
+          1848,
+          190
+        ],
+        [
+          1843,
+          2712
+        ],
+        [
+          83,
+          2758
+        ]
+      ],
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "clusters": [],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 27656,
+        "nextPixels": 54928,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 27656,
+        "nextPixels": 54928,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 1417,
+        "height": 2048,
+        "straightnessResidual": 0,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame."
+    },
+    {
+      "id": "envato-T834FYR",
+      "method": "manual prior",
+      "corners": [
+        [
+          470,
+          500
+        ],
+        [
+          4850,
+          500
+        ],
+        [
+          4850,
+          3090
+        ],
+        [
+          470,
+          3090
+        ]
+      ],
+      "insets": [
+        4,
+        7,
+        4,
+        7
+      ],
+      "clusters": [
+        {
+          "lab": [
+            100.00000386665222,
+            -0.000016666666158296486,
+            0.000006666666463317367
+          ],
+          "fraction": 1
+        }
+      ],
+      "unpolished": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 25832,
+        "nextPixels": 51280,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0
+      },
+      "after": {
+        "outerLeakage": 0,
+        "nextLeakage": 0,
+        "outerPixels": 25832,
+        "nextPixels": 51280,
+        "outerLeakPixels": 0,
+        "nextLeakPixels": 0,
+        "width": 2034,
+        "height": 1203,
+        "straightnessResidual": 0.0019103983050756017,
+        "cornerAngleError": 0
+      },
+      "encoding": "quality 85",
+      "reason": "Reviewed inward envelope preserves the kilim border and already removes the studio white; automatic fit moves outward into bowed edges."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "phase": "before",
+  "viewport": [
+    800,
+    700
+  ],
+  "qualities": {
+    "high": {
+      "gpuMs": {
+        "mean": 9.851322666666665,
+        "p95": 10.862624
+      },
+      "cpuMs": {
+        "mean": 16.27666666582227,
+        "p95": 21
+      },
+      "drawCalls": {
+        "mean": 307.54583333333335,
+        "p95": 308
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "shadowType": 1
+    },
+    "medium": {
+      "gpuMs": {
+        "mean": 8.763738266666666,
+        "p95": 9.382528
+      },
+      "cpuMs": {
+        "mean": 16.39291666659216,
+        "p95": 21.19999998807907
+      },
+      "drawCalls": {
+        "mean": 308.4166666666667,
+        "p95": 309
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "shadowType": 1
+    },
+    "low": {
+      "gpuMs": {
+        "mean": 7.621617733333334,
+        "p95": 8.941376
+      },
+      "cpuMs": {
+        "mean": 17.235833333432673,
+        "p95": 28.400000005960464
+      },
+      "drawCalls": {
+        "mean": 164.41666666666666,
+        "p95": 165
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "shadowType": 1
+    }
+  },
+  "errors": []
+}

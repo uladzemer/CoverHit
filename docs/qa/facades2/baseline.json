@@ -1,0 +1,107 @@
+{
+  "browser": "155.0.8059.39",
+  "viewport": [
+    1440,
+    900
+  ],
+  "seed": "colour-1986",
+  "modes": {
+    "baseline": {
+      "default": {
+        "performance": {
+          "drawCalls": {
+            "mean": 118,
+            "p95": 118,
+            "max": 118
+          },
+          "triangles": {
+            "mean": 324506,
+            "p95": 324506,
+            "max": 324506
+          },
+          "frameMs": {
+            "mean": 6.93249999868373,
+            "p95": 8,
+            "max": 10.800000011920929
+          },
+          "renderMs": {
+            "mean": 1.395833332836628,
+            "p95": 1.600000023841858,
+            "max": 2.899999976158142
+          },
+          "gpuMs": {
+            "mean": 7.757829199999995,
+            "p95": 10.792864,
+            "max": 13.049824
+          },
+          "intervalMs": {
+            "mean": 16.666666666666668,
+            "p95": 16.80000000000109,
+            "max": 16.899999999999636
+          }
+        },
+        "exposure": {
+          "regions": {
+            "pad": 0.24876505931247755,
+            "lawn": 0.20539045051556865,
+            "facade": 0.26595604738732825
+          },
+          "clippedPercent": 0
+        }
+      }
+    }
+  },
+  "errors": [],
+  "facades": [
+    {
+      "series": "panel",
+      "loaded": true,
+      "anisotropy": 2
+    },
+    {
+      "series": "brick",
+      "loaded": true,
+      "anisotropy": 2
+    },
+    {
+      "series": "panel335",
+      "loaded": true,
+      "anisotropy": 2
+    },
+    {
+      "series": "brick",
+      "loaded": true,
+      "anisotropy": 2
+    },
+    {
+      "series": "panel",
+      "loaded": true,
+      "anisotropy": 2
+    },
+    {
+      "series": "nine",
+      "loaded": true,
+      "anisotropy": 2
+    },
+    {
+      "series": "brick",
+      "loaded": true,
+      "anisotropy": 2
+    },
+    {
+      "series": "panel",
+      "loaded": true,
+      "anisotropy": 2
+    },
+    {
+      "series": "tower",
+      "loaded": true,
+      "anisotropy": 2
+    },
+    {
+      "series": "school",
+      "loaded": true,
+      "anisotropy": 2
+    }
+  ]
+}

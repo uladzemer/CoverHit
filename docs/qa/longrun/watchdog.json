@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "extent",
+    "samePose": true,
+    "visibleSide": 1,
+    "dirtPreserved": true,
+    "recoveries": 1,
+    "stableAfter": true
+  },
+  {
+    "kind": "speed",
+    "samePose": true,
+    "visibleSide": 1,
+    "dirtPreserved": true,
+    "recoveries": 2,
+    "stableAfter": true
+  },
+  {
+    "kind": "non-finite",
+    "samePose": true,
+    "visibleSide": 1,
+    "dirtPreserved": true,
+    "recoveries": 3,
+    "stableAfter": true
+  }
+]

@@ -1,0 +1,753 @@
+[
+  {
+    "id": "01",
+    "before": {
+      "outerLeakage": 0.5762411347517731,
+      "nextLeakage": 0.2158878106911815,
+      "outerPixels": 23688,
+      "nextPixels": 46992,
+      "outerLeakPixels": 13650,
+      "nextLeakPixels": 10145,
+      "width": 1021,
+      "height": 1948,
+      "straightnessResidual": 0.018410169136705724,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 229.9988081048868,
+      "right": 228.78188319427892,
+      "top": 219.15,
+      "bottom": 178.9725,
+      "lr": 0.005305039787798433,
+      "tb": 0.20183486238532114,
+      "width": 1021,
+      "height": 1948
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 23456,
+      "nextPixels": 46528,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 980,
+      "height": 1960,
+      "straightnessResidual": 0.0021592965828368107,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 209.26125,
+      "right": 208.0375,
+      "top": 214.265625,
+      "bottom": 194.675625,
+      "lr": 0.005865102639296166,
+      "tb": 0.09580838323353295
+    },
+    "status": "shipped",
+    "method": "automatic line fit",
+    "sourceBoundaryFit": 0.0021592965828368107
+  },
+  {
+    "id": "02",
+    "before": {
+      "outerLeakage": 0.4188284864507601,
+      "nextLeakage": 0.3453739173884077,
+      "outerPixels": 24208,
+      "nextPixels": 48032,
+      "outerLeakPixels": 10139,
+      "nextLeakPixels": 16589,
+      "width": 1237,
+      "height": 1797,
+      "straightnessResidual": 0,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 267.3987284287012,
+      "right": 237.06357856494094,
+      "top": 270.673125,
+      "bottom": 260.565,
+      "lr": 0.12026726057906471,
+      "tb": 0.03805496828752653,
+      "width": 1237,
+      "height": 1797
+    },
+    "borderAfter": null,
+    "status": "disabled",
+    "reason": "Disabled: uneven worn boundary against beige display mat cannot satisfy literal colour-only DeltaE<12 leakage without deleting woven border; wooden photo frame also confounds automatic segmentation."
+  },
+  {
+    "id": "03",
+    "before": {
+      "outerLeakage": 0.01024741506646972,
+      "nextLeakage": 0.00020957526080476901,
+      "outerPixels": 21664,
+      "nextPixels": 42944,
+      "outerLeakPixels": 222,
+      "nextLeakPixels": 9,
+      "width": 1181,
+      "height": 1535,
+      "straightnessResidual": 0.01428300316168444,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 152,
+      "right": 155,
+      "top": 90,
+      "bottom": 56,
+      "lr": 0.019543973941368076,
+      "tb": 0.4657534246575342,
+      "width": 1181,
+      "height": 1535
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 21520,
+      "nextPixels": 42656,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 1185,
+      "height": 1513,
+      "straightnessResidual": 0.0012105839459871813,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 155,
+      "right": 156,
+      "top": 78,
+      "bottom": 45,
+      "lr": 0.006430868167202572,
+      "tb": 0.5365853658536586
+    },
+    "status": "shipped",
+    "method": "fit sides / reviewed woven ends",
+    "reason": "Keep reviewed patterned woven ends; reject plain kilim bands and fringe.",
+    "sourceBoundaryFit": 0.0012105839459871813
+  },
+  {
+    "id": "04",
+    "before": {
+      "outerLeakage": 0.12610506630397825,
+      "nextLeakage": 0.09071820363387041,
+      "outerPixels": 23528,
+      "nextPixels": 46672,
+      "outerLeakPixels": 2967,
+      "nextLeakPixels": 4234,
+      "width": 1320,
+      "height": 1629,
+      "straightnessResidual": 0.005701613922330123,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 152.65998457979956,
+      "right": 133.3230531996916,
+      "top": 16.29,
+      "bottom": 113.01187499999999,
+      "lr": 0.13523131672597874,
+      "tb": 1.496062992125984,
+      "width": 1320,
+      "height": 1629
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 23392,
+      "nextPixels": 46400,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 1313,
+      "height": 1619,
+      "straightnessResidual": 0.001264384684663883,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 155.781033153431,
+      "right": 123.41094834232845,
+      "top": 10.1125,
+      "bottom": 111.2375,
+      "lr": 0.23188405797101447,
+      "tb": 1.6666666666666667
+    },
+    "status": "shipped",
+    "method": "fit sides / reviewed woven ends",
+    "reason": "Keep reviewed patterned woven ends; reject plain kilim bands and fringe.",
+    "sourceBoundaryFit": 0.001264384684663883
+  },
+  {
+    "id": "05",
+    "before": {
+      "outerLeakage": 0.5806145074437757,
+      "nextLeakage": 0.4362432173635493,
+      "outerPixels": 25256,
+      "nextPixels": 50128,
+      "outerLeakPixels": 14664,
+      "nextLeakPixels": 21868,
+      "width": 1397,
+      "height": 1768,
+      "straightnessResidual": 0.016345278436158146,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 96.15427215189874,
+      "right": 89.52294303797468,
+      "top": 51.935,
+      "bottom": 40.885,
+      "lr": 0.07142857142857145,
+      "tb": 0.2380952380952382,
+      "width": 1397,
+      "height": 1768
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 24464,
+      "nextPixels": 48544,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 1330,
+      "height": 1736,
+      "straightnessResidual": 0.0016130675866184538,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 56.368678629690045,
+      "right": 62.872756933115824,
+      "top": 33.615625,
+      "bottom": 27.109375,
+      "lr": 0.10909090909090917,
+      "tb": 0.21428571428571433
+    },
+    "status": "shipped",
+    "method": "manual inward envelope",
+    "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior.",
+    "sourceBoundaryFit": 0.0016130675866184538
+  },
+  {
+    "id": "06",
+    "before": {
+      "outerLeakage": 0.48344051446945335,
+      "nextLeakage": 0.23568130265716136,
+      "outerPixels": 24880,
+      "nextPixels": 49376,
+      "outerLeakPixels": 12028,
+      "nextLeakPixels": 11637,
+      "width": 1235,
+      "height": 1883,
+      "straightnessResidual": 0.021563220844362154,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 176.59675881792182,
+      "right": 174.2421353670162,
+      "top": 148.28625,
+      "bottom": 107.095625,
+      "lr": 0.013422818791946288,
+      "tb": 0.3225806451612903,
+      "width": 1235,
+      "height": 1883
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0.00008440243079000676,
+      "outerPixels": 23888,
+      "nextPixels": 47392,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 4,
+      "width": 1186,
+      "height": 1808,
+      "straightnessResidual": 0.0016743248002922249,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 150.24308865586272,
+      "right": 150.24308865586272,
+      "top": 102.77312500000001,
+      "bottom": 79.05625,
+      "lr": 0,
+      "tb": 0.2608695652173913
+    },
+    "status": "shipped",
+    "method": "manual inward envelope",
+    "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior.",
+    "sourceBoundaryFit": 0.0016743248002922249
+  },
+  {
+    "id": "07",
+    "before": {
+      "outerLeakage": 0.1980269489894129,
+      "nextLeakage": 0.12894034917555772,
+      "outerPixels": 24936,
+      "nextPixels": 49488,
+      "outerLeakPixels": 4938,
+      "nextLeakPixels": 6381,
+      "width": 1818,
+      "height": 1307,
+      "straightnessResidual": 0.01866208776339978,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 224.9775,
+      "right": 178.39124999999999,
+      "top": 330.72782608695655,
+      "bottom": 360.2773913043478,
+      "lr": 0.2309859154929578,
+      "tb": 0.08552631578947356,
+      "width": 1818,
+      "height": 1307
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 24304,
+      "nextPixels": 48224,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 1772,
+      "height": 1274,
+      "straightnessResidual": 0.0017162871413255465,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 192.59625,
+      "right": 163.8175,
+      "top": 314.37565217391307,
+      "bottom": 343.1565217391304,
+      "lr": 0.1614906832298137,
+      "tb": 0.08754208754208744
+    },
+    "status": "shipped",
+    "method": "manual inward envelope",
+    "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior.",
+    "sourceBoundaryFit": 0.0017162871413255465
+  },
+  {
+    "id": "08",
+    "before": {
+      "outerLeakage": 0.3425398633257403,
+      "nextLeakage": 0.2649024270252542,
+      "outerPixels": 24584,
+      "nextPixels": 48784,
+      "outerLeakPixels": 8421,
+      "nextLeakPixels": 12923,
+      "width": 1141,
+      "height": 1940,
+      "straightnessResidual": 0.014398849302299,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 153.99256110520722,
+      "right": 150.35494155154092,
+      "top": 137.01250000000002,
+      "bottom": 133.375,
+      "lr": 0.023904382470119424,
+      "tb": 0.02690582959641268,
+      "width": 1141,
+      "height": 1940
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0.000021566597653554176,
+      "outerPixels": 23376,
+      "nextPixels": 46368,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 1,
+      "width": 1085,
+      "height": 1845,
+      "straightnessResidual": 0.001811373014368453,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 124.41232731137089,
+      "right": 127.8682252922423,
+      "top": 88.74249999999999,
+      "bottom": 86.4375,
+      "lr": 0.027397260273972598,
+      "tb": 0.026315789473684126
+    },
+    "status": "shipped",
+    "method": "manual inward envelope",
+    "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior.",
+    "sourceBoundaryFit": 0.001811373014368453
+  },
+  {
+    "id": "09",
+    "before": {
+      "outerLeakage": 0.2564921090387374,
+      "nextLeakage": 0.2041859289222768,
+      "outerPixels": 27880,
+      "nextPixels": 55376,
+      "outerLeakPixels": 7151,
+      "nextLeakPixels": 11307,
+      "width": 1620,
+      "height": 1873,
+      "straightnessResidual": 0.019096088347641673,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 241.1271676300578,
+      "right": 229.42196531791907,
+      "top": 291.48562499999997,
+      "bottom": 204.859375,
+      "lr": 0.049751243781094565,
+      "tb": 0.34905660377358483,
+      "width": 1620,
+      "height": 1873
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 26952,
+      "nextPixels": 53520,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 1584,
+      "height": 1793,
+      "straightnessResidual": 0.0012680825623133365,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 216.22009907997167,
+      "right": 213.97947629157818,
+      "top": 224,
+      "bottom": 190.39999999999998,
+      "lr": 0.010416666666666694,
+      "tb": 0.16216216216216228
+    },
+    "status": "shipped",
+    "method": "manual inward envelope",
+    "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior.",
+    "sourceBoundaryFit": 0.0012680825623133365
+  },
+  {
+    "id": "10",
+    "before": {
+      "outerLeakage": 0.6226867717614805,
+      "nextLeakage": 0.5514426399447132,
+      "outerPixels": 23344,
+      "nextPixels": 46304,
+      "outerLeakPixels": 14536,
+      "nextLeakPixels": 25534,
+      "width": 1066,
+      "height": 1860,
+      "straightnessResidual": 0.02195295125767772,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 208.08505997818975,
+      "right": 209.24754634678297,
+      "top": 120.89999999999999,
+      "bottom": 122.0625,
+      "lr": 0.005571030640668439,
+      "tb": 0.009569377990430693,
+      "width": 1066,
+      "height": 1860
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 22080,
+      "nextPixels": 43776,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 981,
+      "height": 1787,
+      "straightnessResidual": 0.002131680453604072,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 165.19362186788155,
+      "right": 165.19362186788155,
+      "top": 85.95125,
+      "bottom": 85.95125,
+      "lr": 0,
+      "tb": 0
+    },
+    "status": "shipped",
+    "method": "manual inward envelope",
+    "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior.",
+    "sourceBoundaryFit": 0.002131680453604072
+  },
+  {
+    "id": "envato-2K7L5EB",
+    "before": {
+      "outerLeakage": 0.6788316243928764,
+      "nextLeakage": 0.6492395437262357,
+      "outerPixels": 29648,
+      "nextPixels": 58912,
+      "outerLeakPixels": 20126,
+      "nextLeakPixels": 38248,
+      "width": 1814,
+      "height": 1900,
+      "straightnessResidual": 0.015205104180325927,
+      "cornerAngleError": 0
+    },
+    "borderBefore": null,
+    "borderAfter": null,
+    "status": "disabled",
+    "reason": "Fragment without complete outer rug border; excluded from whole-rug rotation."
+  },
+  {
+    "id": "envato-6325SWE",
+    "before": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 28768,
+      "nextPixels": 57152,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 2048,
+      "height": 1556,
+      "straightnessResidual": 0,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 515.68,
+      "right": 442.42999999999995,
+      "top": 682.8913580246914,
+      "bottom": 665.3061728395062,
+      "lr": 0.15290519877675843,
+      "tb": 0.026086956521739143,
+      "width": 4688,
+      "height": 3561
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 28768,
+      "nextPixels": 57152,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 2048,
+      "height": 1556,
+      "straightnessResidual": 0,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 512.4996337890625,
+      "right": 442.21396972656254,
+      "top": 685.381462439303,
+      "bottom": 664.8785981782983,
+      "lr": 0.1472392638036809,
+      "tb": 0.030368763557483726
+    },
+    "status": "shipped",
+    "method": "full-bleed prior (no visible background)",
+    "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame.",
+    "sourceBoundaryFit": 0
+  },
+  {
+    "id": "envato-B7PV8QR",
+    "before": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 26312,
+      "nextPixels": 52240,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 2048,
+      "height": 1249,
+      "straightnessResidual": 0,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 390.789375,
+      "right": 378.856875,
+      "top": 444.70769230769235,
+      "bottom": 423.81538461538463,
+      "lr": 0.031007751937984506,
+      "tb": 0.0481099656357389,
+      "width": 4773,
+      "height": 2910
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 26312,
+      "nextPixels": 52240,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 2048,
+      "height": 1249,
+      "straightnessResidual": 0,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 384.63522308349616,
+      "right": 372.7085494995117,
+      "top": 444.3516413130505,
+      "bottom": 423.47606084867897,
+      "lr": 0.03149606299212615,
+      "tb": 0.04810996563573889
+    },
+    "status": "shipped",
+    "method": "full-bleed prior (no visible background)",
+    "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame.",
+    "sourceBoundaryFit": 0
+  },
+  {
+    "id": "envato-EPRJ58X",
+    "before": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 27240,
+      "nextPixels": 54096,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 2048,
+      "height": 1365,
+      "straightnessResidual": 0,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 674.591875,
+      "right": 686.29,
+      "top": 752.2839737582005,
+      "bottom": 654.83786316776,
+      "lr": 0.017191977077363904,
+      "tb": 0.1385041551246538,
+      "width": 6239,
+      "height": 4159
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 27240,
+      "nextPixels": 54096,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 2048,
+      "height": 1365,
+      "straightnessResidual": 0,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 674.2624844360352,
+      "right": 693.7498394775391,
+      "top": 752.4380402586781,
+      "bottom": 654.9719728676577,
+      "lr": 0.02849002849002859,
+      "tb": 0.13850415512465375
+    },
+    "status": "shipped",
+    "method": "full-bleed prior (no visible background)",
+    "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame.",
+    "sourceBoundaryFit": 0
+  },
+  {
+    "id": "envato-QSMGCAP",
+    "before": {
+      "outerLeakage": 0.29249244205576086,
+      "nextLeakage": 0.28796986115814427,
+      "outerPixels": 23816,
+      "nextPixels": 47248,
+      "outerLeakPixels": 6966,
+      "nextLeakPixels": 13606,
+      "width": 2048,
+      "height": 937,
+      "straightnessResidual": 0.01091164254587303,
+      "cornerAngleError": 0
+    },
+    "borderBefore": null,
+    "borderAfter": null,
+    "status": "disabled",
+    "reason": "Fragment without complete outer rug border; excluded from whole-rug rotation."
+  },
+  {
+    "id": "envato-RBFEDY2",
+    "before": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 27656,
+      "nextPixels": 54928,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 1417,
+      "height": 2048,
+      "straightnessResidual": 0,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 178.7750677506775,
+      "right": 180.37127371273712,
+      "top": 137.2775,
+      "bottom": 137.2775,
+      "lr": 0.00888888888888893,
+      "tb": 0,
+      "width": 1767,
+      "height": 2554
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 27656,
+      "nextPixels": 54928,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 1417,
+      "height": 2048,
+      "straightnessResidual": 0,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 178.64890327096637,
+      "right": 180.24398276445714,
+      "top": 137.21046997070314,
+      "bottom": 137.21046997070314,
+      "lr": 0.008888888888888892,
+      "tb": 0
+    },
+    "status": "shipped",
+    "method": "full-bleed prior (no visible background)",
+    "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame.",
+    "sourceBoundaryFit": 0
+  },
+  {
+    "id": "envato-T834FYR",
+    "before": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 26008,
+      "nextPixels": 51632,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 2048,
+      "height": 1211,
+      "straightnessResidual": 0.019143262580363363,
+      "cornerAngleError": 0
+    },
+    "borderBefore": {
+      "left": 317.55,
+      "right": 366.82500000000005,
+      "top": 665.2959830866808,
+      "bottom": 643.3932346723045,
+      "lr": 0.1440000000000001,
+      "tb": 0.03347280334728035,
+      "width": 4380,
+      "height": 2590
+    },
+    "after": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 25832,
+      "nextPixels": 51280,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 2034,
+      "height": 1203,
+      "straightnessResidual": 0.0019103983050756017,
+      "cornerAngleError": 0
+    },
+    "borderAfter": {
+      "left": 298.91949462890625,
+      "right": 353.26849365234375,
+      "top": 652.1990981192487,
+      "bottom": 630.4591281819404,
+      "lr": 0.16666666666666666,
+      "tb": 0.033898305084745735
+    },
+    "status": "shipped",
+    "method": "manual prior",
+    "reason": "Reviewed inward envelope preserves the kilim border and already removes the studio white; automatic fit moves outward into bowed edges.",
+    "sourceBoundaryFit": 0.0019103983050756017
+  }
+]

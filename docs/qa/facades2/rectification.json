@@ -1,0 +1,1433 @@
+{
+  "method": "LSD horizontal/vertical families; robust projective least squares; Lanczos4; mild unsharp; upright joint-aligned modules",
+  "photos": {
+    "panel": {
+      "source": 7,
+      "atlas": [
+        2048,
+        2048
+      ],
+      "module": [
+        1024,
+        1024
+      ],
+      "texelsPerMetre": [
+        325.1612903225806,
+        352.4475524475525
+      ],
+      "modules": [
+        {
+          "slot": 0,
+          "type": "ground",
+          "nativeSize": [
+            257,
+            368
+          ],
+          "lineFit": [
+            -0.0026345595478678096,
+            0.04150963553628586,
+            0.008858704892696844,
+            0.039292346196757096
+          ],
+          "corners": [
+            [
+              3505.919921875,
+              1294.0799560546875
+            ],
+            [
+              3759.35986328125,
+              1340.159912109375
+            ],
+            [
+              3767.039794921875,
+              1689.5999755859375
+            ],
+            [
+              3517.43994140625,
+              1662.719970703125
+            ]
+          ],
+          "homography": [
+            [
+              1.6850651576308002,
+              -0.057321443196737355,
+              -5832.092504803089
+            ],
+            [
+              -0.14519224596376223,
+              1.2017751100295304,
+              -1046.6486844288709
+            ],
+            [
+              -0.00010539535563748321,
+              4.289644691615627e-05,
+              0.8928871655664478
+            ]
+          ],
+          "detectedSegments": 38,
+          "horizontalMedianDeviationDegrees": 0.2013462334871292,
+          "horizontalDegrees": 0.09107797592878342,
+          "horizontalSegments": 22,
+          "verticalMedianDeviationDegrees": 0.435546875,
+          "verticalDegrees": 0.18536803126335144,
+          "verticalSegments": 20,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.242706298828125,
+            "horizontalDegrees": 0.08208277076482773,
+            "horizontalSegments": 22,
+            "verticalMedianDeviationDegrees": 0.411529541015625,
+            "verticalDegrees": -0.020442061126232147,
+            "verticalSegments": 22,
+            "laplacianVariance": 109.55253084118885,
+            "blurEdgeFraction": 0.6894645690917969
+          }
+        },
+        {
+          "slot": 1,
+          "type": "typical-a",
+          "nativeSize": [
+            254,
+            380
+          ],
+          "lineFit": [
+            -0.09966884015264212,
+            0.039040557484062606,
+            0.017839656433290926,
+            -0.13464455995398394
+          ],
+          "corners": [
+            [
+              3498.239990234375,
+              913.9199829101562
+            ],
+            [
+              3747.83984375,
+              963.8399658203125
+            ],
+            [
+              3759.35986328125,
+              1340.159912109375
+            ],
+            [
+              3505.919921875,
+              1294.0799560546875
+            ]
+          ],
+          "homography": [
+            [
+              2.3580210934813666,
+              -0.21855440792570294,
+              -7983.146417655196
+            ],
+            [
+              -0.21146686980051493,
+              1.5098200465013976,
+              -640.4856275368309
+            ],
+            [
+              7.468386736280856e-05,
+              -0.00027583870601574726,
+              0.8538755136233498
+            ]
+          ],
+          "detectedSegments": 29,
+          "horizontalMedianDeviationDegrees": 0.3031158447265625,
+          "horizontalDegrees": 0.08441304415464401,
+          "horizontalSegments": 16,
+          "verticalMedianDeviationDegrees": 1.627593994140625,
+          "verticalDegrees": -0.05365969240665436,
+          "verticalSegments": 16,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.4972686767578125,
+            "horizontalDegrees": 0.0552663616836071,
+            "horizontalSegments": 19,
+            "verticalMedianDeviationDegrees": 0.64703369140625,
+            "verticalDegrees": 0.10101505368947983,
+            "verticalSegments": 11,
+            "laplacianVariance": 82.09471134928754,
+            "blurEdgeFraction": 0.6130905151367188
+          }
+        },
+        {
+          "slot": 2,
+          "type": "typical-b",
+          "nativeSize": [
+            259,
+            376
+          ],
+          "lineFit": [
+            -0.07733860644408137,
+            0.037390531329625824,
+            -0.0326368761200614,
+            -0.04285191408140445
+          ],
+          "corners": [
+            [
+              3747.83984375,
+              963.8399658203125
+            ],
+            [
+              4001.280029296875,
+              1021.4400024414062
+            ],
+            [
+              4012.7998046875,
+              1393.919921875
+            ],
+            [
+              3759.35986328125,
+              1340.159912109375
+            ]
+          ],
+          "homography": [
+            [
+              2.375588198923276,
+              -0.21035082213299647,
+              -8650.344744781298
+            ],
+            [
+              -0.2722368854170365,
+              1.5883292059744394,
+              -510.82980375921727
+            ],
+            [
+              -0.00012449451768618974,
+              -9.402938026293724e-05,
+              1.4255712648997287
+            ]
+          ],
+          "detectedSegments": 35,
+          "horizontalMedianDeviationDegrees": 0.2446311116218567,
+          "horizontalDegrees": 0.07635581493377686,
+          "horizontalSegments": 14,
+          "verticalMedianDeviationDegrees": 1.08380126953125,
+          "verticalDegrees": 0.27697136998176575,
+          "verticalSegments": 14,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.2639007568359375,
+            "horizontalDegrees": 0.051835790276527405,
+            "horizontalSegments": 16,
+            "verticalMedianDeviationDegrees": 1.0358657836914062,
+            "verticalDegrees": -0.0067532178945839405,
+            "verticalSegments": 18,
+            "laplacianVariance": 69.51342151028803,
+            "blurEdgeFraction": 0.5082511901855469
+          }
+        },
+        {
+          "slot": 3,
+          "type": "top",
+          "nativeSize": [
+            247,
+            349
+          ],
+          "lineFit": [
+            -0.05227847918061993,
+            -0.01575737507454615,
+            -0.04385795892680309,
+            -0.04176789029805144
+          ],
+          "corners": [
+            [
+              3494.39990234375,
+              564.47998046875
+            ],
+            [
+              3736.31982421875,
+              614.3999633789062
+            ],
+            [
+              3747.83984375,
+              963.8399658203125
+            ],
+            [
+              3498.239990234375,
+              913.9199829101562
+            ]
+          ],
+          "homography": [
+            [
+              2.6854559278709296,
+              -0.13690167164384634,
+              -9270.3317422272
+            ],
+            [
+              -0.43904821669463356,
+              1.929451229997197,
+              455.40471760818684
+            ],
+            [
+              -0.00017862462729633475,
+              -2.760870870237959e-05,
+              1.5673985031614757
+            ]
+          ],
+          "detectedSegments": 35,
+          "horizontalMedianDeviationDegrees": 0.2820090055465698,
+          "horizontalDegrees": 0.09866376966238022,
+          "horizontalSegments": 19,
+          "verticalMedianDeviationDegrees": 0.34996795654296875,
+          "verticalDegrees": 0.11385128647089005,
+          "verticalSegments": 16,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.18206787109375,
+            "horizontalDegrees": 0.08559943735599518,
+            "horizontalSegments": 18,
+            "verticalMedianDeviationDegrees": 0.349761962890625,
+            "verticalDegrees": -0.046890225261449814,
+            "verticalSegments": 16,
+            "laplacianVariance": 56.68992199211789,
+            "blurEdgeFraction": 0.5844955444335938
+          }
+        }
+      ]
+    },
+    "panel335": {
+      "source": 7,
+      "atlas": [
+        2048,
+        2048
+      ],
+      "module": [
+        1024,
+        1024
+      ],
+      "texelsPerMetre": [
+        325.1612903225806,
+        352.4475524475525
+      ],
+      "modules": [
+        {
+          "slot": 0,
+          "type": "ground",
+          "nativeSize": [
+            259,
+            376
+          ],
+          "lineFit": [
+            -0.07733860644408137,
+            0.037390531329625824,
+            -0.0326368761200614,
+            -0.04285191408140445
+          ],
+          "corners": [
+            [
+              3747.83984375,
+              963.8399658203125
+            ],
+            [
+              4001.280029296875,
+              1021.4400024414062
+            ],
+            [
+              4012.7998046875,
+              1393.919921875
+            ],
+            [
+              3759.35986328125,
+              1340.159912109375
+            ]
+          ],
+          "homography": [
+            [
+              2.375588198923276,
+              -0.21035082213299647,
+              -8650.344744781298
+            ],
+            [
+              -0.2722368854170365,
+              1.5883292059744394,
+              -510.82980375921727
+            ],
+            [
+              -0.00012449451768618974,
+              -9.402938026293724e-05,
+              1.4255712648997287
+            ]
+          ],
+          "detectedSegments": 35,
+          "horizontalMedianDeviationDegrees": 0.2446311116218567,
+          "horizontalDegrees": 0.07635581493377686,
+          "horizontalSegments": 14,
+          "verticalMedianDeviationDegrees": 1.08380126953125,
+          "verticalDegrees": 0.27697136998176575,
+          "verticalSegments": 14,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.264434814453125,
+            "horizontalDegrees": 0.05269111692905426,
+            "horizontalSegments": 16,
+            "verticalMedianDeviationDegrees": 1.0358657836914062,
+            "verticalDegrees": 0.06376297026872635,
+            "verticalSegments": 18,
+            "laplacianVariance": 70.9741072402685,
+            "blurEdgeFraction": 0.5088577270507812
+          }
+        },
+        {
+          "slot": 1,
+          "type": "typical-a",
+          "nativeSize": [
+            257,
+            368
+          ],
+          "lineFit": [
+            -0.0026345595478678096,
+            0.04150963553628586,
+            0.008858704892696844,
+            0.039292346196757096
+          ],
+          "corners": [
+            [
+              3505.919921875,
+              1294.0799560546875
+            ],
+            [
+              3759.35986328125,
+              1340.159912109375
+            ],
+            [
+              3767.039794921875,
+              1689.5999755859375
+            ],
+            [
+              3517.43994140625,
+              1662.719970703125
+            ]
+          ],
+          "homography": [
+            [
+              1.6850651576308002,
+              -0.057321443196737355,
+              -5832.092504803089
+            ],
+            [
+              -0.14519224596376223,
+              1.2017751100295304,
+              -1046.6486844288709
+            ],
+            [
+              -0.00010539535563748321,
+              4.289644691615627e-05,
+              0.8928871655664478
+            ]
+          ],
+          "detectedSegments": 38,
+          "horizontalMedianDeviationDegrees": 0.2013462334871292,
+          "horizontalDegrees": 0.09107797592878342,
+          "horizontalSegments": 22,
+          "verticalMedianDeviationDegrees": 0.435546875,
+          "verticalDegrees": 0.18536803126335144,
+          "verticalSegments": 20,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.242706298828125,
+            "horizontalDegrees": 0.08208277076482773,
+            "horizontalSegments": 22,
+            "verticalMedianDeviationDegrees": 0.411529541015625,
+            "verticalDegrees": -0.020442061126232147,
+            "verticalSegments": 22,
+            "laplacianVariance": 109.55253084118885,
+            "blurEdgeFraction": 0.6894645690917969
+          }
+        },
+        {
+          "slot": 2,
+          "type": "typical-b",
+          "nativeSize": [
+            247,
+            349
+          ],
+          "lineFit": [
+            -0.05227847918061993,
+            -0.01575737507454615,
+            -0.04385795892680309,
+            -0.04176789029805144
+          ],
+          "corners": [
+            [
+              3494.39990234375,
+              564.47998046875
+            ],
+            [
+              3736.31982421875,
+              614.3999633789062
+            ],
+            [
+              3747.83984375,
+              963.8399658203125
+            ],
+            [
+              3498.239990234375,
+              913.9199829101562
+            ]
+          ],
+          "homography": [
+            [
+              2.6854559278709296,
+              -0.13690167164384634,
+              -9270.3317422272
+            ],
+            [
+              -0.43904821669463356,
+              1.929451229997197,
+              455.40471760818684
+            ],
+            [
+              -0.00017862462729633475,
+              -2.760870870237959e-05,
+              1.5673985031614757
+            ]
+          ],
+          "detectedSegments": 35,
+          "horizontalMedianDeviationDegrees": 0.2820090055465698,
+          "horizontalDegrees": 0.09866376966238022,
+          "horizontalSegments": 19,
+          "verticalMedianDeviationDegrees": 0.34996795654296875,
+          "verticalDegrees": 0.11385128647089005,
+          "verticalSegments": 16,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.2445220947265625,
+            "horizontalDegrees": 0.10460304468870163,
+            "horizontalSegments": 20,
+            "verticalMedianDeviationDegrees": 0.373687744140625,
+            "verticalDegrees": 0.010740462690591812,
+            "verticalSegments": 16,
+            "laplacianVariance": 55.33808483391476,
+            "blurEdgeFraction": 0.581329345703125
+          }
+        },
+        {
+          "slot": 3,
+          "type": "top",
+          "nativeSize": [
+            254,
+            380
+          ],
+          "lineFit": [
+            -0.09966884015264212,
+            0.039040557484062606,
+            0.017839656433290926,
+            -0.13464455995398394
+          ],
+          "corners": [
+            [
+              3498.239990234375,
+              913.9199829101562
+            ],
+            [
+              3747.83984375,
+              963.8399658203125
+            ],
+            [
+              3759.35986328125,
+              1340.159912109375
+            ],
+            [
+              3505.919921875,
+              1294.0799560546875
+            ]
+          ],
+          "homography": [
+            [
+              2.3580210934813666,
+              -0.21855440792570294,
+              -7983.146417655196
+            ],
+            [
+              -0.21146686980051493,
+              1.5098200465013976,
+              -640.4856275368309
+            ],
+            [
+              7.468386736280856e-05,
+              -0.00027583870601574726,
+              0.8538755136233498
+            ]
+          ],
+          "detectedSegments": 29,
+          "horizontalMedianDeviationDegrees": 0.3031158447265625,
+          "horizontalDegrees": 0.08441304415464401,
+          "horizontalSegments": 16,
+          "verticalMedianDeviationDegrees": 1.627593994140625,
+          "verticalDegrees": -0.05365969240665436,
+          "verticalSegments": 16,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.4972686767578125,
+            "horizontalDegrees": 0.0552663616836071,
+            "horizontalSegments": 19,
+            "verticalMedianDeviationDegrees": 0.64703369140625,
+            "verticalDegrees": 0.10101505368947983,
+            "verticalSegments": 11,
+            "laplacianVariance": 82.09471134928754,
+            "blurEdgeFraction": 0.6130905151367188
+          }
+        }
+      ]
+    },
+    "brick": {
+      "source": 8,
+      "atlas": [
+        2048,
+        2048
+      ],
+      "module": [
+        1024,
+        1024
+      ],
+      "texelsPerMetre": [
+        336.0,
+        352.4475524475525
+      ],
+      "modules": [
+        {
+          "slot": 0,
+          "type": "ground",
+          "nativeSize": [
+            237,
+            313
+          ],
+          "lineFit": [
+            0.05000912442806571,
+            -0.08957351906123887,
+            -0.0033251804155207754,
+            0.12657763031600427
+          ],
+          "corners": [
+            [
+              1262.22216796875,
+              1370.7733154296875
+            ],
+            [
+              1476.7999267578125,
+              1269.7955322265625
+            ],
+            [
+              1484.373291015625,
+              1623.2176513671875
+            ],
+            [
+              1262.22216796875,
+              1683.8043212890625
+            ]
+          ],
+          "homography": [
+            [
+              518.8057143493861,
+              15.91245424681477,
+              -676660.4411851877
+            ],
+            [
+              114.32125010427428,
+              331.1920379591148,
+              -589375.784172291
+            ],
+            [
+              0.10819280853969586,
+              0.06509639364795643,
+              -99.57709569867806
+            ]
+          ],
+          "detectedSegments": 114,
+          "horizontalMedianDeviationDegrees": 0.47576904296875,
+          "horizontalDegrees": -0.000994423171505332,
+          "horizontalSegments": 123,
+          "verticalMedianDeviationDegrees": 0.25067138671875,
+          "verticalDegrees": -0.15509915351867676,
+          "verticalSegments": 9,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.6070404052734375,
+            "horizontalDegrees": -0.11332578957080841,
+            "horizontalSegments": 135,
+            "verticalMedianDeviationDegrees": 0.2919158935546875,
+            "verticalDegrees": -0.03557007387280464,
+            "verticalSegments": 17,
+            "laplacianVariance": 113.12980216369033,
+            "blurEdgeFraction": 0.5914077758789062
+          }
+        },
+        {
+          "slot": 1,
+          "type": "typical-a",
+          "nativeSize": [
+            256,
+            363
+          ],
+          "lineFit": [
+            0.06368746798819,
+            0.12588003627906771,
+            0.13597815738952992,
+            0.29999999999999993
+          ],
+          "corners": [
+            [
+              1247.0755615234375,
+              638.6844482421875
+            ],
+            [
+              1464.177734375,
+              502.3644104003906
+            ],
+            [
+              1474.2755126953125,
+              883.5555419921875
+            ],
+            [
+              1254.6488037109375,
+              1002.2044067382812
+            ]
+          ],
+          "homography": [
+            [
+              6.3591504108555394,
+              0.12872191421077187,
+              -8017.71936761257
+            ],
+            [
+              3.3804171162415138,
+              3.9671944291833934,
+              -6749.675803940402
+            ],
+            [
+              0.0021049589179845556,
+              0.0012308260136263513,
+              -1.9265226698541644
+            ]
+          ],
+          "detectedSegments": 180,
+          "horizontalMedianDeviationDegrees": 0.5390167236328125,
+          "horizontalDegrees": 0.05696742236614227,
+          "horizontalSegments": 191,
+          "verticalMedianDeviationDegrees": 1.0792465209960938,
+          "verticalDegrees": 0.23316238820552826,
+          "verticalSegments": 14,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.6008380055427551,
+            "horizontalDegrees": -0.0036223374772816896,
+            "horizontalSegments": 206,
+            "verticalMedianDeviationDegrees": 1.1047515869140625,
+            "verticalDegrees": 0.06720183789730072,
+            "verticalSegments": 18,
+            "laplacianVariance": 130.3409549461212,
+            "blurEdgeFraction": 0.6027412414550781
+          }
+        },
+        {
+          "slot": 2,
+          "type": "typical-b",
+          "nativeSize": [
+            249,
+            368
+          ],
+          "lineFit": [
+            0.040007861314816436,
+            0.024722272173288377,
+            0.10313396702446809,
+            0.13605897038362258
+          ],
+          "corners": [
+            [
+              1254.6488037109375,
+              1002.2044067382812
+            ],
+            [
+              1474.2755126953125,
+              883.5555419921875
+            ],
+            [
+              1476.7999267578125,
+              1269.7955322265625
+            ],
+            [
+              1262.22216796875,
+              1370.7733154296875
+            ]
+          ],
+          "homography": [
+            [
+              4.57547098631627,
+              -0.006885757651918706,
+              -5731.044279347765
+            ],
+            [
+              1.5303898869456145,
+              2.6038303935100737,
+              -4530.404507151774
+            ],
+            [
+              0.0009430354239710458,
+              0.0003191087821329174,
+              -0.36303489564952196
+            ]
+          ],
+          "detectedSegments": 128,
+          "horizontalMedianDeviationDegrees": 0.4526214599609375,
+          "horizontalDegrees": 0.12721511721611023,
+          "horizontalSegments": 118,
+          "verticalMedianDeviationDegrees": 0.41422271728515625,
+          "verticalDegrees": 0.1017250046133995,
+          "verticalSegments": 11,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.561126708984375,
+            "horizontalDegrees": -0.046845193952322006,
+            "horizontalSegments": 151,
+            "verticalMedianDeviationDegrees": 0.5732498168945312,
+            "verticalDegrees": 0.022938739508390427,
+            "verticalSegments": 17,
+            "laplacianVariance": 94.88703028432792,
+            "blurEdgeFraction": 0.5544853210449219
+          }
+        },
+        {
+          "slot": 3,
+          "type": "top",
+          "nativeSize": [
+            288,
+            378
+          ],
+          "lineFit": [
+            0.025390746877538357,
+            0.12109589640107593,
+            0.03515386679812321,
+            0.17029934118809661
+          ],
+          "corners": [
+            [
+              1236.977783203125,
+              260.01776123046875
+            ],
+            [
+              1456.6043701171875,
+              73.2088851928711
+            ],
+            [
+              1464.177734375,
+              502.3644104003906
+            ],
+            [
+              1247.0755615234375,
+              638.6844482421875
+            ]
+          ],
+          "homography": [
+            [
+              11.285302712968154,
+              -0.18880738331753277,
+              -13903.795329399927
+            ],
+            [
+              6.421057737170461,
+              5.855637597931307,
+              -9465.293120067445
+            ],
+            [
+              0.003021558707791083,
+              0.00104876736692828,
+              -1.203667173168617
+            ]
+          ],
+          "detectedSegments": 186,
+          "horizontalMedianDeviationDegrees": 0.446044921875,
+          "horizontalDegrees": 0.03889373317360878,
+          "horizontalSegments": 216,
+          "verticalMedianDeviationDegrees": 0.32688140869140625,
+          "verticalDegrees": 0.04676709324121475,
+          "verticalSegments": 10,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.44476318359375,
+            "horizontalDegrees": 0.0015614203875884414,
+            "horizontalSegments": 240,
+            "verticalMedianDeviationDegrees": 0.5610427856445312,
+            "verticalDegrees": 0.013289125636219978,
+            "verticalSegments": 14,
+            "laplacianVariance": 161.906856068279,
+            "blurEdgeFraction": 0.6716156005859375
+          }
+        }
+      ]
+    },
+    "nine": {
+      "source": 6,
+      "atlas": [
+        2048,
+        2048
+      ],
+      "module": [
+        1024,
+        1024
+      ],
+      "texelsPerMetre": [
+        315.0,
+        352.4475524475525
+      ],
+      "modules": [
+        {
+          "slot": 0,
+          "type": "ground",
+          "nativeSize": [
+            251,
+            199
+          ],
+          "lineFit": [
+            0.0029589957019228,
+            -0.05466531766265132,
+            0.025874445282653362,
+            0.005672915571341114
+          ],
+          "corners": [
+            [
+              2143.9599609375,
+              1212.3067626953125
+            ],
+            [
+              2375.4267578125,
+              1113.933349609375
+            ],
+            [
+              2372.533447265625,
+              1325.146728515625
+            ],
+            [
+              2143.9599609375,
+              1411.94677734375
+            ]
+          ],
+          "homography": [
+            [
+              5.600044075474267,
+              0.0139068243804021,
+              -12022.740001010077
+            ],
+            [
+              2.1597244155615725,
+              5.6636898290070326,
+              -11437.296842701971
+            ],
+            [
+              0.0005167778243075511,
+              -4.910788729537001e-05,
+              0.5130432601631761
+            ]
+          ],
+          "detectedSegments": 90,
+          "horizontalMedianDeviationDegrees": 0.5560150146484375,
+          "horizontalDegrees": 0.11129453033208847,
+          "horizontalSegments": 58,
+          "verticalMedianDeviationDegrees": 0.32518768310546875,
+          "verticalDegrees": -0.031805895268917084,
+          "verticalSegments": 45,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.473175048828125,
+            "horizontalDegrees": 0.09061387926340103,
+            "horizontalSegments": 68,
+            "verticalMedianDeviationDegrees": 0.3121337890625,
+            "verticalDegrees": -0.0404343344271183,
+            "verticalSegments": 55,
+            "laplacianVariance": 92.27879142388701,
+            "blurEdgeFraction": 0.6468124389648438
+          }
+        },
+        {
+          "slot": 1,
+          "type": "typical-a",
+          "nativeSize": [
+            260,
+            243
+          ],
+          "lineFit": [
+            -0.0002065603095306483,
+            -0.0091474945940452,
+            0.029798334117815347,
+            -0.01662545365058369
+          ],
+          "corners": [
+            [
+              2143.9599609375,
+              760.9467163085938
+            ],
+            [
+              2372.533447265625,
+              636.5333251953125
+            ],
+            [
+              2375.4267578125,
+              888.2533569335938
+            ],
+            [
+              2143.9599609375,
+              1003.9866943359375
+            ]
+          ],
+          "homography": [
+            [
+              6.914053164025214,
+              -0.0013113492739213906,
+              -14822.136574240001
+            ],
+            [
+              3.252425713734979,
+              6.079622629742651,
+              -11586.371199246858
+            ],
+            [
+              0.000599816616119127,
+              -3.756244437543695e-05,
+              0.6925621156887989
+            ]
+          ],
+          "detectedSegments": 163,
+          "horizontalMedianDeviationDegrees": 0.7071990966796875,
+          "horizontalDegrees": 0.004150286316871643,
+          "horizontalSegments": 72,
+          "verticalMedianDeviationDegrees": 0.6924057006835938,
+          "verticalDegrees": 0.158952996134758,
+          "verticalSegments": 99,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.48945799469947815,
+            "horizontalDegrees": 0.009551925584673882,
+            "horizontalSegments": 80,
+            "verticalMedianDeviationDegrees": 0.6685867309570312,
+            "verticalDegrees": 0.033580929040908813,
+            "verticalSegments": 103,
+            "laplacianVariance": 98.19435172900558,
+            "blurEdgeFraction": 0.6637458801269531
+          }
+        },
+        {
+          "slot": 2,
+          "type": "typical-b",
+          "nativeSize": [
+            258,
+            208
+          ],
+          "lineFit": [
+            0.0025702760851110105,
+            -0.05040282991283425,
+            0.010983880390880312,
+            -0.008012694662681086
+          ],
+          "corners": [
+            [
+              2143.9599609375,
+              1003.9866943359375
+            ],
+            [
+              2375.4267578125,
+              888.2533569335938
+            ],
+            [
+              2375.4267578125,
+              1113.933349609375
+            ],
+            [
+              2143.9599609375,
+              1212.3067626953125
+            ]
+          ],
+          "homography": [
+            [
+              15.787303799194849,
+              0.05116209452068899,
+              -33899.66869506204
+            ],
+            [
+              7.025159072544016,
+              15.269792139049894,
+              -30242.132146611166
+            ],
+            [
+              0.0017191902736494503,
+              -0.0001686036066304255,
+              0.8668841675443364
+            ]
+          ],
+          "detectedSegments": 127,
+          "horizontalMedianDeviationDegrees": 1.0826252698898315,
+          "horizontalDegrees": 0.06405426561832428,
+          "horizontalSegments": 35,
+          "verticalMedianDeviationDegrees": 0.29924774169921875,
+          "verticalDegrees": 0.08195051550865173,
+          "verticalSegments": 100,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.6315765380859375,
+            "horizontalDegrees": 0.0435350127518177,
+            "horizontalSegments": 42,
+            "verticalMedianDeviationDegrees": 0.34368133544921875,
+            "verticalDegrees": 0.04516458511352539,
+            "verticalSegments": 100,
+            "laplacianVariance": 84.62487077595142,
+            "blurEdgeFraction": 0.5858650207519531
+          }
+        },
+        {
+          "slot": 3,
+          "type": "top",
+          "nativeSize": [
+            268,
+            248
+          ],
+          "lineFit": [
+            0.00904354892908886,
+            0.020992920335210254,
+            0.04287780989382196,
+            -0.008714218328020974
+          ],
+          "corners": [
+            [
+              2143.9599609375,
+              512.1199951171875
+            ],
+            [
+              2372.533447265625,
+              370.3466796875
+            ],
+            [
+              2372.533447265625,
+              636.5333251953125
+            ],
+            [
+              2143.9599609375,
+              760.9467163085938
+            ]
+          ],
+          "homography": [
+            [
+              10.733616519888896,
+              0.122374070078679,
+              -23080.062331672456
+            ],
+            [
+              5.7346913705201,
+              8.853232724097806,
+              -16831.839421177458
+            ],
+            [
+              0.0014009800687899503,
+              -0.00010133378070153375,
+              -0.05825451732386777
+            ]
+          ],
+          "detectedSegments": 77,
+          "horizontalMedianDeviationDegrees": 0.575347900390625,
+          "horizontalDegrees": -0.06768357008695602,
+          "horizontalSegments": 29,
+          "verticalMedianDeviationDegrees": 0.44075775146484375,
+          "verticalDegrees": -0.04086846485733986,
+          "verticalSegments": 44,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.4621734619140625,
+            "horizontalDegrees": 0.09386832267045975,
+            "horizontalSegments": 46,
+            "verticalMedianDeviationDegrees": 0.636016845703125,
+            "verticalDegrees": -0.07832416146993637,
+            "verticalSegments": 49,
+            "laplacianVariance": 118.62691601259576,
+            "blurEdgeFraction": 0.7040138244628906
+          }
+        }
+      ]
+    },
+    "tower": {
+      "source": 6,
+      "atlas": [
+        2048,
+        2048
+      ],
+      "module": [
+        1024,
+        1024
+      ],
+      "texelsPerMetre": [
+        315.0,
+        352.4475524475525
+      ],
+      "modules": [
+        {
+          "slot": 0,
+          "type": "ground",
+          "nativeSize": [
+            251,
+            199
+          ],
+          "lineFit": [
+            0.0029589957019228,
+            -0.05466531766265132,
+            0.025874445282653362,
+            0.005672915571341114
+          ],
+          "corners": [
+            [
+              2143.9599609375,
+              1212.3067626953125
+            ],
+            [
+              2375.4267578125,
+              1113.933349609375
+            ],
+            [
+              2372.533447265625,
+              1325.146728515625
+            ],
+            [
+              2143.9599609375,
+              1411.94677734375
+            ]
+          ],
+          "homography": [
+            [
+              5.600044075474267,
+              0.0139068243804021,
+              -12022.740001010077
+            ],
+            [
+              2.1597244155615725,
+              5.6636898290070326,
+              -11437.296842701971
+            ],
+            [
+              0.0005167778243075511,
+              -4.910788729537001e-05,
+              0.5130432601631761
+            ]
+          ],
+          "detectedSegments": 90,
+          "horizontalMedianDeviationDegrees": 0.5560150146484375,
+          "horizontalDegrees": 0.11129453033208847,
+          "horizontalSegments": 58,
+          "verticalMedianDeviationDegrees": 0.32518768310546875,
+          "verticalDegrees": -0.031805895268917084,
+          "verticalSegments": 45,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.473175048828125,
+            "horizontalDegrees": 0.09061387926340103,
+            "horizontalSegments": 68,
+            "verticalMedianDeviationDegrees": 0.3121337890625,
+            "verticalDegrees": -0.0404343344271183,
+            "verticalSegments": 55,
+            "laplacianVariance": 92.27879142388701,
+            "blurEdgeFraction": 0.6468124389648438
+          }
+        },
+        {
+          "slot": 1,
+          "type": "typical-a",
+          "nativeSize": [
+            260,
+            243
+          ],
+          "lineFit": [
+            -0.0002065603095306483,
+            -0.0091474945940452,
+            0.029798334117815347,
+            -0.01662545365058369
+          ],
+          "corners": [
+            [
+              2143.9599609375,
+              760.9467163085938
+            ],
+            [
+              2372.533447265625,
+              636.5333251953125
+            ],
+            [
+              2375.4267578125,
+              888.2533569335938
+            ],
+            [
+              2143.9599609375,
+              1003.9866943359375
+            ]
+          ],
+          "homography": [
+            [
+              6.914053164025214,
+              -0.0013113492739213906,
+              -14822.136574240001
+            ],
+            [
+              3.252425713734979,
+              6.079622629742651,
+              -11586.371199246858
+            ],
+            [
+              0.000599816616119127,
+              -3.756244437543695e-05,
+              0.6925621156887989
+            ]
+          ],
+          "detectedSegments": 163,
+          "horizontalMedianDeviationDegrees": 0.7071990966796875,
+          "horizontalDegrees": 0.004150286316871643,
+          "horizontalSegments": 72,
+          "verticalMedianDeviationDegrees": 0.6924057006835938,
+          "verticalDegrees": 0.158952996134758,
+          "verticalSegments": 99,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.48945799469947815,
+            "horizontalDegrees": 0.009551925584673882,
+            "horizontalSegments": 80,
+            "verticalMedianDeviationDegrees": 0.6685867309570312,
+            "verticalDegrees": 0.033580929040908813,
+            "verticalSegments": 103,
+            "laplacianVariance": 98.19435172900558,
+            "blurEdgeFraction": 0.6637458801269531
+          }
+        },
+        {
+          "slot": 2,
+          "type": "typical-b",
+          "nativeSize": [
+            258,
+            208
+          ],
+          "lineFit": [
+            0.0025702760851110105,
+            -0.05040282991283425,
+            0.010983880390880312,
+            -0.008012694662681086
+          ],
+          "corners": [
+            [
+              2143.9599609375,
+              1003.9866943359375
+            ],
+            [
+              2375.4267578125,
+              888.2533569335938
+            ],
+            [
+              2375.4267578125,
+              1113.933349609375
+            ],
+            [
+              2143.9599609375,
+              1212.3067626953125
+            ]
+          ],
+          "homography": [
+            [
+              15.787303799194849,
+              0.05116209452068899,
+              -33899.66869506204
+            ],
+            [
+              7.025159072544016,
+              15.269792139049894,
+              -30242.132146611166
+            ],
+            [
+              0.0017191902736494503,
+              -0.0001686036066304255,
+              0.8668841675443364
+            ]
+          ],
+          "detectedSegments": 127,
+          "horizontalMedianDeviationDegrees": 1.0826252698898315,
+          "horizontalDegrees": 0.06405426561832428,
+          "horizontalSegments": 35,
+          "verticalMedianDeviationDegrees": 0.29924774169921875,
+          "verticalDegrees": 0.08195051550865173,
+          "verticalSegments": 100,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.6315765380859375,
+            "horizontalDegrees": 0.0435350127518177,
+            "horizontalSegments": 42,
+            "verticalMedianDeviationDegrees": 0.34368133544921875,
+            "verticalDegrees": 0.04516458511352539,
+            "verticalSegments": 100,
+            "laplacianVariance": 84.62487077595142,
+            "blurEdgeFraction": 0.5858650207519531
+          }
+        },
+        {
+          "slot": 3,
+          "type": "top",
+          "nativeSize": [
+            268,
+            248
+          ],
+          "lineFit": [
+            0.00904354892908886,
+            0.020992920335210254,
+            0.04287780989382196,
+            -0.008714218328020974
+          ],
+          "corners": [
+            [
+              2143.9599609375,
+              512.1199951171875
+            ],
+            [
+              2372.533447265625,
+              370.3466796875
+            ],
+            [
+              2372.533447265625,
+              636.5333251953125
+            ],
+            [
+              2143.9599609375,
+              760.9467163085938
+            ]
+          ],
+          "homography": [
+            [
+              10.733616519888896,
+              0.122374070078679,
+              -23080.062331672456
+            ],
+            [
+              5.7346913705201,
+              8.853232724097806,
+              -16831.839421177458
+            ],
+            [
+              0.0014009800687899503,
+              -0.00010133378070153375,
+              -0.05825451732386777
+            ]
+          ],
+          "detectedSegments": 77,
+          "horizontalMedianDeviationDegrees": 0.575347900390625,
+          "horizontalDegrees": -0.06768357008695602,
+          "horizontalSegments": 29,
+          "verticalMedianDeviationDegrees": 0.44075775146484375,
+          "verticalDegrees": -0.04086846485733986,
+          "verticalSegments": 44,
+          "shipped": {
+            "horizontalMedianDeviationDegrees": 0.4621734619140625,
+            "horizontalDegrees": 0.09386832267045975,
+            "horizontalSegments": 46,
+            "verticalMedianDeviationDegrees": 0.636016845703125,
+            "verticalDegrees": -0.07832416146993637,
+            "verticalSegments": 49,
+            "laplacianVariance": 118.62691601259576,
+            "blurEdgeFraction": 0.7040138244628906
+          }
+        }
+      ]
+    }
+  },
+  "thresholds": {
+    "lineDegrees": 0.3,
+    "laplacianVariance": 8,
+    "blurEdgeFraction": 0.025
+  },
+  "rejected": [
+    {
+      "source": 11,
+      "reason": "Valday: Laplacian variance 3.46\u201314.97 at 512px, blur and foliage; alternate sharp Tyumen bays used"
+    },
+    {
+      "source": 10,
+      "reason": "Kantemitovskaya: soft highlights, unstable floor-line fit; sharp loggia family used for tower impostors"
+    },
+    {
+      "source": 9,
+      "reason": "Gastello: tree/wire occlusion through loggias; sharper unobstructed Pavlovsky Posad used"
+    },
+    {
+      "source": "previous 1024x512 atlases",
+      "reason": "wrong aspect, hand picks without line fitting, baked reflection; rebuilt from originals"
+    }
+  ]
+}

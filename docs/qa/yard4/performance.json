@@ -1,0 +1,2564 @@
+{
+  "viewport": [
+    1468,
+    986
+  ],
+  "browser": "155.0.8059.39",
+  "modes": {
+    "stock": {
+      "views": {
+        "default": {
+          "drawCalls": {
+            "mean": 120,
+            "p95": 120,
+            "max": 120
+          },
+          "triangles": {
+            "mean": 551433,
+            "p95": 551433,
+            "max": 551433
+          },
+          "cpuFrameMs": {
+            "mean": 20.48416666612029,
+            "p95": 30.900000005960464,
+            "max": 35.80000001192093
+          },
+          "physicsMs": {
+            "mean": 17.73500000027319,
+            "p95": 27.700000002980232,
+            "max": 31.200000002980232
+          },
+          "renderSubmitMs": {
+            "mean": 1.681666666145126,
+            "p95": 2.7000000029802322,
+            "max": 3.1000000089406967
+          },
+          "frameIntervalMs": {
+            "mean": 31.249166666666664,
+            "p95": 31.69999999999891,
+            "max": 31.700000000000728
+          },
+          "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "left-most": {
+          "drawCalls": {
+            "mean": 119,
+            "p95": 119,
+            "max": 119
+          },
+          "triangles": {
+            "mean": 551431,
+            "p95": 551431,
+            "max": 551431
+          },
+          "cpuFrameMs": {
+            "mean": 16.729999999826152,
+            "p95": 23.299999997019768,
+            "max": 31.799999997019768
+          },
+          "physicsMs": {
+            "mean": 14.925833333159487,
+            "p95": 21.200000002980232,
+            "max": 29.399999991059303
+          },
+          "renderSubmitMs": {
+            "mean": 1.3258333336561918,
+            "p95": 1.7000000029802322,
+            "max": 2.300000011920929
+          },
+          "frameIntervalMs": {
+            "mean": 31.250000000000014,
+            "p95": 31.700000000000728,
+            "max": 32.899999999999636
+          },
+          "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "right-most": {
+          "drawCalls": {
+            "mean": 119,
+            "p95": 119,
+            "max": 119
+          },
+          "triangles": {
+            "mean": 551431,
+            "p95": 551431,
+            "max": 551431
+          },
+          "cpuFrameMs": {
+            "mean": 15.964166666318972,
+            "p95": 21.5,
+            "max": 23.400000005960464
+          },
+          "physicsMs": {
+            "mean": 14.211666666343808,
+            "p95": 19.599999994039536,
+            "max": 21.30000001192093
+          },
+          "renderSubmitMs": {
+            "mean": 1.2824999999254942,
+            "p95": 1.5,
+            "max": 2.9000000059604645
+          },
+          "frameIntervalMs": {
+            "mean": 31.246666666666655,
+            "p95": 31.700000000000728,
+            "max": 31.900000000001455
+          },
+          "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        }
+      },
+      "framing": {
+        "camera": [
+          0.2,
+          1.82,
+          3.6669988145374957
+        ],
+        "target": [
+          0,
+          1.2,
+          0
+        ],
+        "carpetFrameFraction": 0.48725861821283734,
+        "lowerEdgeMetres": 0.5136685371398926,
+        "housing": [
+          {
+            "x": 8,
+            "z": -42,
+            "angle": 0,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "near"
+          },
+          {
+            "x": -37,
+            "z": -6,
+            "angle": 1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "near"
+          },
+          {
+            "x": 43,
+            "z": -8,
+            "angle": -1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "near"
+          },
+          {
+            "x": -48,
+            "z": -62,
+            "angle": 0.12,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "far"
+          },
+          {
+            "x": 51,
+            "z": -64,
+            "angle": -0.08,
+            "width": 60,
+            "depth": 12,
+            "height": 25.74,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": -62,
+            "z": -7,
+            "angle": 1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": 63,
+            "z": -6,
+            "angle": -1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": -62,
+            "z": -55,
+            "angle": 1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "far"
+          },
+          {
+            "x": 63,
+            "z": -54,
+            "angle": -1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": -31,
+            "z": 30,
+            "angle": 3.141592653589793,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "far"
+          },
+          {
+            "x": 29,
+            "z": 30,
+            "angle": 3.141592653589793,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          }
+        ],
+        "skylineHoles": []
+      },
+      "contrast": {
+        "menu": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "01:30",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона NaN/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster h1",
+            "text": "ВЫБЕЙ КОВЁР!",
+            "ratio": 5.37373294550469
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Зажми кнопку мыши для замаха, отпусти для удара. Бей в ритм!",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Фотографии настоящих ковров. Источники и лицензии:",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Персидский медальон «Анхальт» — The Metropolitan Museum of A",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кашанский шёлковый — The Met, Silk Kashan Carpet, 14.40.724,",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Текинский «бухара» — The Met, Tekke Main Carpet, 22.100.45, ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Текинский «тёплый красный» — The Met, Tekke Main Carpet, 200",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Салор — The Met, Salor Main Carpet, 1974.149.46, Bequest of ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Йомуд — The Met, Yomut Main Carpet, 1974.149.44, Bequest of ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Ширван — The Met, Kufesque-Border Lattice Shirvan Rug, 22.10",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кавказский медальон — The Met, Carpet with a Geometricized M",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Казак со звёздами — The Met, Star Kazak Carpet, 22.100.17, B",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Ушакский медальон — The Met, \"Medallion Ushak\" Carpet, 08.17",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кавказский синий — Envato Elements, item 6325SWE. Envato Ele",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Красный с медальоном — Envato Elements, item B7PV8QR. Envato",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Персидский с синей каймой — Envato Elements, item EPRJ58X. E",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Бухара — Envato Elements, item RBFEDY2. Envato Elements (per",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Килим — Envato Elements, item T834FYR. Envato Elements (pers",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Multi-storey building with balconies and sl",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Kitbash: City Streets - Bench A",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Detailed birch tree with dense foliage",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Kitbash: City Streets - Tree A",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Green Industrial Dumpster",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Small Utility Garage",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Kitbash: City Streets - Lamp I",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Multi-story building with gridded fenestrat",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "‹",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "›",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "Начать",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-selector strong",
+            "text": "Советская",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-selector small",
+            "text": "СССР 1950–80",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-selector small",
+            "text": "Выбрана",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-credits summary",
+            "text": "Об игре",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Персидский медальон «Анхальт»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кашанский шёлковый",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Текинский «бухара»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Текинский «тёплый красный»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Салор",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Йомуд",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Ширван",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кавказский медальон",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Казак со звёздами",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Ушакский медальон",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кавказский синий",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Красный с медальоном",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Персидский с синей каймой",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Бухара",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Килим",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Multi-storey building with balconies and sl",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Kitbash: City Streets - Bench A",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Detailed birch tree with dense foliage",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Kitbash: City Streets - Tree A",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Green Industrial Dumpster",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Small Utility Garage",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Kitbash: City Streets - Lamp I",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Multi-story building with gridded fenestrat",
+            "ratio": 6.999067036314147
+          }
+        ],
+        "credits": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "01:30",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона NaN/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster h1",
+            "text": "ВЫБЕЙ КОВЁР!",
+            "ratio": 5.37373294550469
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Зажми кнопку мыши для замаха, отпусти для удара. Бей в ритм!",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Фотографии настоящих ковров. Источники и лицензии:",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Персидский медальон «Анхальт» — The Metropolitan Museum of A",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кашанский шёлковый — The Met, Silk Kashan Carpet, 14.40.724,",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Текинский «бухара» — The Met, Tekke Main Carpet, 22.100.45, ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Текинский «тёплый красный» — The Met, Tekke Main Carpet, 200",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Салор — The Met, Salor Main Carpet, 1974.149.46, Bequest of ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Йомуд — The Met, Yomut Main Carpet, 1974.149.44, Bequest of ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Ширван — The Met, Kufesque-Border Lattice Shirvan Rug, 22.10",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кавказский медальон — The Met, Carpet with a Geometricized M",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Казак со звёздами — The Met, Star Kazak Carpet, 22.100.17, B",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Ушакский медальон — The Met, \"Medallion Ushak\" Carpet, 08.17",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кавказский синий — Envato Elements, item 6325SWE. Envato Ele",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Красный с медальоном — Envato Elements, item B7PV8QR. Envato",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Персидский с синей каймой — Envato Elements, item EPRJ58X. E",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Бухара — Envato Elements, item RBFEDY2. Envato Elements (per",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Килим — Envato Elements, item T834FYR. Envato Elements (pers",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Multi-storey building with balconies and sl",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Kitbash: City Streets - Bench A",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Detailed birch tree with dense foliage",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Kitbash: City Streets - Tree A",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Green Industrial Dumpster",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Small Utility Garage",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Kitbash: City Streets - Lamp I",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Envato Elements, Multi-story building with gridded fenestrat",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "‹",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "›",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "Начать",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-selector strong",
+            "text": "Советская",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-selector small",
+            "text": "СССР 1950–80",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-selector small",
+            "text": "Выбрана",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-credits summary",
+            "text": "Об игре",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Персидский медальон «Анхальт»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кашанский шёлковый",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Текинский «бухара»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Текинский «тёплый красный»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Салор",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Йомуд",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Ширван",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кавказский медальон",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Казак со звёздами",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Ушакский медальон",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кавказский синий",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Красный с медальоном",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Персидский с синей каймой",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Бухара",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Килим",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Multi-storey building with balconies and sl",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Kitbash: City Streets - Bench A",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Detailed birch tree with dense foliage",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Kitbash: City Streets - Tree A",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Green Industrial Dumpster",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Small Utility Garage",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Kitbash: City Streets - Lamp I",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Envato Elements, Multi-story building with gridded fenestrat",
+            "ratio": 6.999067036314147
+          }
+        ],
+        "playing": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "01:16",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона 1/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          }
+        ],
+        "toast": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "00:05",
+            "ratio": 7.465150476277376
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона 1/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-toast",
+            "text": "Соседка: «Да сколько можно!»",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-moth-popup",
+            "text": "+300 Моль!",
+            "ratio": 6.044961317784481
+          }
+        ],
+        "retry": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "00:05",
+            "ratio": 7.465150476277376
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона 1/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-toast",
+            "text": "Не удалось загрузить ковёр. Повторите попытку.Повторить",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-toast button",
+            "text": "Повторить",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-moth-popup",
+            "text": "+300 Моль!",
+            "ratio": 6.044961317784481
+          }
+        ],
+        "carpetDone": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "00:05",
+            "ratio": 7.465150476277376
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона 1/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster h1",
+            "text": "Ковёр чист! +800",
+            "ratio": 5.37373294550469
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Отличная работа! Во дворе ещё есть ковры.",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "Следующий ковёр",
+            "ratio": 6.044961317784481
+          }
+        ],
+        "gameOver": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "00:05",
+            "ratio": 7.465150476277376
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона 1/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster h1",
+            "text": "СМЕНА ОКОНЧЕНА!",
+            "ratio": 5.37373294550469
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Очки: 0 · Рекорд: 0",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "‹",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "›",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "Ещё раз",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-selector strong",
+            "text": "Советская",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-selector small",
+            "text": "СССР 1950–80",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-selector small",
+            "text": "Выбрана",
+            "ratio": 13.767954466579713
+          }
+        ],
+        "mobile": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "00:40",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона 1/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          }
+        ]
+      },
+      "contrastFailures": [],
+      "status": {
+        "stock": {
+          "requested": 8,
+          "loaded": [
+            "balcony-block",
+            "birch",
+            "garage",
+            "panel-block",
+            "dumpster",
+            "lamp",
+            "bench",
+            "deciduous"
+          ],
+          "failures": []
+        },
+        "assets": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        }
+      },
+      "errors": []
+    },
+    "procedural": {
+      "views": {
+        "default": {
+          "drawCalls": {
+            "mean": 95,
+            "p95": 95,
+            "max": 95
+          },
+          "triangles": {
+            "mean": 332000,
+            "p95": 332000,
+            "max": 332000
+          },
+          "cpuFrameMs": {
+            "mean": 17.04499999930461,
+            "p95": 24.599999994039536,
+            "max": 31.600000008940697
+          },
+          "physicsMs": {
+            "mean": 14.954999999453625,
+            "p95": 20.30000001192093,
+            "max": 28.700000002980232
+          },
+          "renderSubmitMs": {
+            "mean": 1.1141666665673255,
+            "p95": 1.3999999910593033,
+            "max": 2
+          },
+          "frameIntervalMs": {
+            "mean": 31.25,
+            "p95": 31.600000000000364,
+            "max": 31.800000000000182
+          },
+          "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "left-most": {
+          "drawCalls": {
+            "mean": 94,
+            "p95": 94,
+            "max": 94
+          },
+          "triangles": {
+            "mean": 331998,
+            "p95": 331998,
+            "max": 331998
+          },
+          "cpuFrameMs": {
+            "mean": 16.014166665946444,
+            "p95": 21.200000002980232,
+            "max": 29.5
+          },
+          "physicsMs": {
+            "mean": 14.51583333251377,
+            "p95": 19.700000002980232,
+            "max": 27.799999997019768
+          },
+          "renderSubmitMs": {
+            "mean": 1.0316666673868895,
+            "p95": 1.300000011920929,
+            "max": 1.800000011920929
+          },
+          "frameIntervalMs": {
+            "mean": 31.249166666666664,
+            "p95": 31.600000000000364,
+            "max": 31.899999999999636
+          },
+          "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "right-most": {
+          "drawCalls": {
+            "mean": 94,
+            "p95": 94,
+            "max": 94
+          },
+          "triangles": {
+            "mean": 331998,
+            "p95": 331998,
+            "max": 331998
+          },
+          "cpuFrameMs": {
+            "mean": 15.85166666644315,
+            "p95": 21,
+            "max": 24.899999991059303
+          },
+          "physicsMs": {
+            "mean": 14.425833333904544,
+            "p95": 19.5,
+            "max": 23.399999991059303
+          },
+          "renderSubmitMs": {
+            "mean": 1.0016666665673255,
+            "p95": 1.2000000029802322,
+            "max": 1.300000011920929
+          },
+          "frameIntervalMs": {
+            "mean": 31.250000000000014,
+            "p95": 31.700000000000728,
+            "max": 31.799999999999272
+          },
+          "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        }
+      },
+      "framing": {
+        "camera": [
+          0.2,
+          1.82,
+          3.6669988145374957
+        ],
+        "target": [
+          0,
+          1.2,
+          0
+        ],
+        "carpetFrameFraction": 0.49322947551794083,
+        "lowerEdgeMetres": 0.5141409635543823,
+        "housing": [
+          {
+            "x": 8,
+            "z": -42,
+            "angle": 0,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "near"
+          },
+          {
+            "x": -37,
+            "z": -6,
+            "angle": 1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "near"
+          },
+          {
+            "x": 43,
+            "z": -8,
+            "angle": -1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "near"
+          },
+          {
+            "x": -48,
+            "z": -62,
+            "angle": 0.12,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "far"
+          },
+          {
+            "x": 51,
+            "z": -64,
+            "angle": -0.08,
+            "width": 60,
+            "depth": 12,
+            "height": 25.74,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": -62,
+            "z": -7,
+            "angle": 1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": 63,
+            "z": -6,
+            "angle": -1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": -62,
+            "z": -55,
+            "angle": 1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "far"
+          },
+          {
+            "x": 63,
+            "z": -54,
+            "angle": -1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": -31,
+            "z": 30,
+            "angle": 3.141592653589793,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "far"
+          },
+          {
+            "x": 29,
+            "z": 30,
+            "angle": 3.141592653589793,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          }
+        ],
+        "skylineHoles": []
+      },
+      "contrast": {
+        "menu": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "01:30",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона NaN/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster h1",
+            "text": "ВЫБЕЙ КОВЁР!",
+            "ratio": 5.37373294550469
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Зажми кнопку мыши для замаха, отпусти для удара. Бей в ритм!",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Фотографии настоящих ковров. Источники и лицензии:",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Персидский медальон «Анхальт» — The Metropolitan Museum of A",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кашанский шёлковый — The Met, Silk Kashan Carpet, 14.40.724,",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Текинский «бухара» — The Met, Tekke Main Carpet, 22.100.45, ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Текинский «тёплый красный» — The Met, Tekke Main Carpet, 200",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Салор — The Met, Salor Main Carpet, 1974.149.46, Bequest of ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Йомуд — The Met, Yomut Main Carpet, 1974.149.44, Bequest of ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Ширван — The Met, Kufesque-Border Lattice Shirvan Rug, 22.10",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кавказский медальон — The Met, Carpet with a Geometricized M",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Казак со звёздами — The Met, Star Kazak Carpet, 22.100.17, B",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Ушакский медальон — The Met, \"Medallion Ushak\" Carpet, 08.17",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кавказский синий — Envato Elements, item 6325SWE. Envato Ele",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Красный с медальоном — Envato Elements, item B7PV8QR. Envato",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Персидский с синей каймой — Envato Elements, item EPRJ58X. E",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Бухара — Envato Elements, item RBFEDY2. Envato Elements (per",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Килим — Envato Elements, item T834FYR. Envato Elements (pers",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "‹",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "›",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "Начать",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-selector strong",
+            "text": "Советская",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-selector small",
+            "text": "СССР 1950–80",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-selector small",
+            "text": "Выбрана",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-credits summary",
+            "text": "Об игре",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Персидский медальон «Анхальт»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кашанский шёлковый",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Текинский «бухара»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Текинский «тёплый красный»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Салор",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Йомуд",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Ширван",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кавказский медальон",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Казак со звёздами",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Ушакский медальон",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кавказский синий",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Красный с медальоном",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Персидский с синей каймой",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Бухара",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Килим",
+            "ratio": 6.999067036314147
+          }
+        ],
+        "playing": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "01:16",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона 1/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          }
+        ]
+      },
+      "contrastFailures": [],
+      "status": {
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "failures": []
+        },
+        "assets": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        }
+      },
+      "errors": []
+    },
+    "no-assets": {
+      "views": {
+        "default": {
+          "drawCalls": {
+            "mean": 96,
+            "p95": 96,
+            "max": 96
+          },
+          "triangles": {
+            "mean": 332518,
+            "p95": 332518,
+            "max": 332518
+          },
+          "cpuFrameMs": {
+            "mean": 18.442500000447033,
+            "p95": 38.80000001192093,
+            "max": 51.3999999910593
+          },
+          "physicsMs": {
+            "mean": 16.335833333681027,
+            "p95": 35,
+            "max": 47.29999999701977
+          },
+          "renderSubmitMs": {
+            "mean": 1.1041666669150194,
+            "p95": 2,
+            "max": 3
+          },
+          "frameIntervalMs": {
+            "mean": 31.5125,
+            "p95": 31.600000000000364,
+            "max": 62.79999999999927
+          },
+          "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "left-most": {
+          "drawCalls": {
+            "mean": 95,
+            "p95": 95,
+            "max": 95
+          },
+          "triangles": {
+            "mean": 332516,
+            "p95": 332516,
+            "max": 332516
+          },
+          "cpuFrameMs": {
+            "mean": 15.899166666219632,
+            "p95": 22.299999997019768,
+            "max": 47.70000000298023
+          },
+          "physicsMs": {
+            "mean": 14.515833333258827,
+            "p95": 20.899999991059303,
+            "max": 46.400000005960464
+          },
+          "renderSubmitMs": {
+            "mean": 0.9300000011920929,
+            "p95": 1.1000000089406967,
+            "max": 1.2000000029802322
+          },
+          "frameIntervalMs": {
+            "mean": 31.254166666666666,
+            "p95": 31.600000000000364,
+            "max": 31.899999999999636
+          },
+          "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "right-most": {
+          "drawCalls": {
+            "mean": 96.70833333333333,
+            "p95": 100,
+            "max": 100
+          },
+          "triangles": {
+            "mean": 332546.06666666665,
+            "p95": 332604,
+            "max": 332604
+          },
+          "cpuFrameMs": {
+            "mean": 18.480000000322857,
+            "p95": 25.100000008940697,
+            "max": 211.8999999910593
+          },
+          "physicsMs": {
+            "mean": 15.13833333340784,
+            "p95": 21.599999994039536,
+            "max": 28.299999997019768
+          },
+          "renderSubmitMs": {
+            "mean": 2.7266666668156785,
+            "p95": 1.4000000059604645,
+            "max": 201.29999999701977
+          },
+          "frameIntervalMs": {
+            "mean": 32.8125,
+            "p95": 31.600000000002183,
+            "max": 187.39999999999964
+          },
+          "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        }
+      },
+      "framing": {
+        "camera": [
+          0.2,
+          1.82,
+          3.6669988145374957
+        ],
+        "target": [
+          0,
+          1.2,
+          0
+        ],
+        "carpetFrameFraction": 0.48859738592557606,
+        "lowerEdgeMetres": 0.5143423080444336,
+        "housing": [
+          {
+            "x": 8,
+            "z": -42,
+            "angle": 0,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "near"
+          },
+          {
+            "x": -37,
+            "z": -6,
+            "angle": 1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "near"
+          },
+          {
+            "x": 43,
+            "z": -8,
+            "angle": -1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "near"
+          },
+          {
+            "x": -48,
+            "z": -62,
+            "angle": 0.12,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "far"
+          },
+          {
+            "x": 51,
+            "z": -64,
+            "angle": -0.08,
+            "width": 60,
+            "depth": 12,
+            "height": 25.74,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": -62,
+            "z": -7,
+            "angle": 1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": 63,
+            "z": -6,
+            "angle": -1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": -62,
+            "z": -55,
+            "angle": 1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "far"
+          },
+          {
+            "x": 63,
+            "z": -54,
+            "angle": -1.5707963267948966,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          },
+          {
+            "x": -31,
+            "z": 30,
+            "angle": 3.141592653589793,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-447",
+            "lod": "far"
+          },
+          {
+            "x": 29,
+            "z": 30,
+            "angle": 3.141592653589793,
+            "width": 60,
+            "depth": 12,
+            "height": 14.299999999999999,
+            "variant": "1-464",
+            "lod": "far"
+          }
+        ],
+        "skylineHoles": []
+      },
+      "contrast": {
+        "menu": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "01:30",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона NaN/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster h1",
+            "text": "ВЫБЕЙ КОВЁР!",
+            "ratio": 5.37373294550469
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Зажми кнопку мыши для замаха, отпусти для удара. Бей в ритм!",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Фотографии настоящих ковров. Источники и лицензии:",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Персидский медальон «Анхальт» — The Metropolitan Museum of A",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кашанский шёлковый — The Met, Silk Kashan Carpet, 14.40.724,",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Текинский «бухара» — The Met, Tekke Main Carpet, 22.100.45, ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Текинский «тёплый красный» — The Met, Tekke Main Carpet, 200",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Салор — The Met, Salor Main Carpet, 1974.149.46, Bequest of ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Йомуд — The Met, Yomut Main Carpet, 1974.149.44, Bequest of ",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Ширван — The Met, Kufesque-Border Lattice Shirvan Rug, 22.10",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кавказский медальон — The Met, Carpet with a Geometricized M",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Казак со звёздами — The Met, Star Kazak Carpet, 22.100.17, B",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Ушакский медальон — The Met, \"Medallion Ushak\" Carpet, 08.17",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Кавказский синий — Envato Elements, item 6325SWE. Envato Ele",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Красный с медальоном — Envato Elements, item B7PV8QR. Envato",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Персидский с синей каймой — Envato Elements, item EPRJ58X. E",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Бухара — Envato Elements, item RBFEDY2. Envato Elements (per",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster p",
+            "text": "Килим — Envato Elements, item T834FYR. Envato Elements (pers",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "‹",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "›",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-poster button",
+            "text": "Начать",
+            "ratio": 6.044961317784481
+          },
+          {
+            "selector": ".ch-selector strong",
+            "text": "Советская",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-selector small",
+            "text": "СССР 1950–80",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-selector small",
+            "text": "Выбрана",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-credits summary",
+            "text": "Об игре",
+            "ratio": 13.767954466579713
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Персидский медальон «Анхальт»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кашанский шёлковый",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Текинский «бухара»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Текинский «тёплый красный»",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Салор",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Йомуд",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Ширван",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кавказский медальон",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Казак со звёздами",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Ушакский медальон",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Кавказский синий",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Красный с медальоном",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Персидский с синей каймой",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Бухара",
+            "ratio": 6.999067036314147
+          },
+          {
+            "selector": ".ch-credits a",
+            "text": "Килим",
+            "ratio": 6.999067036314147
+          }
+        ],
+        "playing": [
+          {
+            "selector": ".ch-score span",
+            "text": "Очки",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-score strong",
+            "text": "0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock span",
+            "text": "Время",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clock strong",
+            "text": "01:16",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-clean label",
+            "text": "Сторона 1/2 · Чистота0%",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-records",
+            "text": "Ковров выбито: 0Рекорд: 0",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-type",
+            "text": "Ковёр шерстяной",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-carpet-title",
+            "text": "Красный с медальоном",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-mute",
+            "text": "Звук: вкл · M",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-reticle-size",
+            "text": "Прицел: обычный · R",
+            "ratio": 9.19323973054771
+          },
+          {
+            "selector": ".ch-flip",
+            "text": "Перекинуть · F",
+            "ratio": 13.378441094639562
+          },
+          {
+            "selector": ".ch-combo",
+            "text": "×1",
+            "ratio": 6.044961317784481
+          }
+        ]
+      },
+      "contrastFailures": [],
+      "status": {
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "failures": []
+        },
+        "assets": {
+          "loaded": 0,
+          "total": 22,
+          "failures": [
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "fetch for \"http://127.0.0.1:5173/yard/sunset.hdr\" responded with 404: Not Found"
+          ]
+        }
+      },
+      "errors": []
+    }
+  },
+  "errors": []
+}

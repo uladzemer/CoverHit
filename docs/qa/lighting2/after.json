@@ -1,0 +1,122 @@
+{
+  "phase": "after",
+  "viewport": [
+    800,
+    700
+  ],
+  "qualities": {
+    "high": {
+      "gpuMs": {
+        "mean": 8.625777466666667,
+        "p95": 12.073216
+      },
+      "cpuMs": {
+        "mean": 16.387500000496704,
+        "p95": 20.900000005960464
+      },
+      "drawCalls": {
+        "mean": 323.5375,
+        "p95": 324
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "lighting": {
+        "temperature": 3500,
+        "elevation": 10,
+        "sourceElevation": 2.197265625,
+        "environmentIntensity": 1.35,
+        "skyFill": "HDRI, warm white balance",
+        "staticAO": true,
+        "sunDirection": [
+          0.7393084917565909,
+          -0.17364817766693033,
+          -0.6505914727458001
+        ]
+      },
+      "shadowType": 0,
+      "deltaGpuMs": 0.663224266666667
+    },
+    "medium": {
+      "gpuMs": {
+        "mean": 8.660439733333329,
+        "p95": 10.392256
+      },
+      "cpuMs": {
+        "mean": 16.57416666559875,
+        "p95": 21.899999976158142
+      },
+      "drawCalls": {
+        "mean": 324.55,
+        "p95": 325
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "lighting": {
+        "temperature": 3500,
+        "elevation": 10,
+        "sourceElevation": 2.197265625,
+        "environmentIntensity": 1.35,
+        "skyFill": "HDRI, warm white balance",
+        "staticAO": true,
+        "sunDirection": [
+          0.7393084917565909,
+          -0.17364817766693033,
+          -0.6505914727458001
+        ]
+      },
+      "shadowType": 1,
+      "deltaGpuMs": -0.1999570666666699
+    },
+    "low": {
+      "gpuMs": {
+        "mean": 7.554163333333334,
+        "p95": 8.519808
+      },
+      "cpuMs": {
+        "mean": 18.356666666517654,
+        "p95": 39.099999994039536
+      },
+      "drawCalls": {
+        "mean": 164.55,
+        "p95": 165
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "lighting": {
+        "temperature": null,
+        "elevation": 4.267863699604351,
+        "sourceElevation": 2.197265625,
+        "environmentIntensity": 0.75,
+        "skyFill": "legacy hemisphere",
+        "staticAO": false,
+        "sunDirection": [
+          0.595355276998344,
+          -0.074419409624793,
+          0.8000086534665247
+        ]
+      },
+      "shadowType": 1,
+      "deltaGpuMs": 1.155273333333331
+    }
+  },
+  "errors": [],
+  "sky": {
+    "original": [
+      134.50546875,
+      105.36875,
+      127.3678125
+    ],
+    "after": [
+      185.47671875,
+      123.949375,
+      132.03765625
+    ]
+  },
+  "foregroundShadows": {
+    "region": {
+      "left": 380,
+      "top": 530,
+      "width": 140,
+      "height": 40
+    },
+    "meanDarkening": 3.5090476190476036,
+    "pixelsDarkenedOver8": 543
+  }
+}

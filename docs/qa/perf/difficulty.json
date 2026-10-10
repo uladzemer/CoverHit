@@ -1,0 +1,206 @@
+[
+  {
+    "name": "museum",
+    "rounds": [
+      {
+        "id": "09",
+        "number": 1,
+        "width": 1.9028296849973307,
+        "height": 2.2,
+        "halves": [
+          11,
+          12
+        ],
+        "hits": 23,
+        "seconds": 90
+      },
+      {
+        "id": "03",
+        "number": 2,
+        "width": 2.30814332247557,
+        "height": 3,
+        "halves": [
+          15,
+          20
+        ],
+        "hits": 35,
+        "seconds": 95
+      },
+      {
+        "id": "01",
+        "number": 3,
+        "width": 1.5723819301848048,
+        "height": 3,
+        "halves": [
+          20,
+          21
+        ],
+        "hits": 41,
+        "seconds": 100
+      },
+      {
+        "id": "06",
+        "number": 4,
+        "width": 1.4429102496016997,
+        "height": 2.2,
+        "halves": [
+          22,
+          23
+        ],
+        "hits": 45,
+        "seconds": 105
+      },
+      {
+        "id": "02",
+        "number": 5,
+        "width": 2.0651085141903174,
+        "height": 3,
+        "halves": [
+          30,
+          30
+        ],
+        "hits": 60,
+        "seconds": 110
+      },
+      {
+        "id": "04",
+        "number": 6,
+        "width": 2.430939226519337,
+        "height": 3,
+        "halves": [
+          37,
+          35
+        ],
+        "hits": 72,
+        "seconds": 119
+      },
+      {
+        "id": "07",
+        "number": 7,
+        "width": 3,
+        "height": 2.156765676567657,
+        "halves": [
+          33,
+          36
+        ],
+        "hits": 69,
+        "seconds": 119
+      },
+      {
+        "id": "05",
+        "number": 8,
+        "width": 2.7655542986425337,
+        "height": 3.5,
+        "halves": [
+          37,
+          35
+        ],
+        "hits": 72,
+        "seconds": 119
+      }
+    ],
+    "firstCarpetThirtySeedMean": 28.4
+  },
+  {
+    "name": "local",
+    "rounds": [
+      {
+        "id": "envato-B7PV8QR",
+        "number": 1,
+        "width": 3,
+        "height": 1.8295898437500002,
+        "halves": [
+          11,
+          11
+        ],
+        "hits": 22,
+        "seconds": 90
+      },
+      {
+        "id": "envato-6325SWE",
+        "number": 2,
+        "width": 3,
+        "height": 2.279296875,
+        "halves": [
+          15,
+          18
+        ],
+        "hits": 33,
+        "seconds": 95
+      },
+      {
+        "id": "envato-EPRJ58X",
+        "number": 3,
+        "width": 3,
+        "height": 1.99951171875,
+        "halves": [
+          20,
+          21
+        ],
+        "hits": 41,
+        "seconds": 100
+      },
+      {
+        "id": "envato-RBFEDY2",
+        "number": 4,
+        "width": 2.07568359375,
+        "height": 3,
+        "halves": [
+          25,
+          26
+        ],
+        "hits": 51,
+        "seconds": 105
+      },
+      {
+        "id": "envato-T834FYR",
+        "number": 5,
+        "width": 2.2,
+        "height": 1.3008789062500001,
+        "halves": [
+          26,
+          29
+        ],
+        "hits": 55,
+        "seconds": 110
+      },
+      {
+        "id": "09",
+        "number": 6,
+        "width": 1.9028296849973307,
+        "height": 2.2,
+        "halves": [
+          33,
+          32
+        ],
+        "hits": 65,
+        "seconds": 119
+      },
+      {
+        "id": "03",
+        "number": 7,
+        "width": 2.30814332247557,
+        "height": 3,
+        "halves": [
+          37,
+          35
+        ],
+        "hits": 72,
+        "seconds": 119
+      },
+      {
+        "id": "01",
+        "number": 8,
+        "width": 1.5723819301848048,
+        "height": 3,
+        "halves": [
+          35,
+          34
+        ],
+        "hits": 69,
+        "seconds": 119
+      }
+    ],
+    "firstCarpetThirtySeedMean": 27.833333333333332
+  }
+]

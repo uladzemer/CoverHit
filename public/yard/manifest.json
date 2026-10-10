@@ -1,0 +1,112 @@
+[
+  {
+    "file": "asphalt_02_color.webp",
+    "id": "asphalt_02",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_diff_1k.jpg"
+  },
+  {
+    "file": "asphalt_02_normal.webp",
+    "id": "asphalt_02",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_nor_gl_1k.jpg"
+  },
+  {
+    "file": "asphalt_02_arm.webp",
+    "id": "asphalt_02",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_arm_1k.jpg"
+  },
+  {
+    "file": "leafy_grass_color.webp",
+    "id": "leafy_grass",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_diff_1k.jpg"
+  },
+  {
+    "file": "leafy_grass_normal.webp",
+    "id": "leafy_grass",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_nor_gl_1k.jpg"
+  },
+  {
+    "file": "leafy_grass_arm.webp",
+    "id": "leafy_grass",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_arm_1k.jpg"
+  },
+  {
+    "file": "rusty_painted_metal_color.webp",
+    "id": "rusty_painted_metal",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rusty_painted_metal/rusty_painted_metal_diff_1k.jpg"
+  },
+  {
+    "file": "rusty_painted_metal_normal.webp",
+    "id": "rusty_painted_metal",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rusty_painted_metal/rusty_painted_metal_nor_gl_1k.jpg"
+  },
+  {
+    "file": "rusty_painted_metal_arm.webp",
+    "id": "rusty_painted_metal",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rusty_painted_metal/rusty_painted_metal_arm_1k.jpg"
+  },
+  {
+    "file": "wood_planks_grey_color.webp",
+    "id": "wood_planks_grey",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_planks_grey/wood_planks_grey_diff_1k.jpg"
+  },
+  {
+    "file": "wood_planks_grey_normal.webp",
+    "id": "wood_planks_grey",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_planks_grey/wood_planks_grey_nor_gl_1k.jpg"
+  },
+  {
+    "file": "wood_planks_grey_arm.webp",
+    "id": "wood_planks_grey",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_planks_grey/wood_planks_grey_arm_1k.jpg"
+  },
+  {
+    "file": "playground_sand_color.webp",
+    "id": "playground_sand",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/playground_sand/playground_sand_diff_1k.jpg"
+  },
+  {
+    "file": "playground_sand_normal.webp",
+    "id": "playground_sand",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/playground_sand/playground_sand_nor_gl_1k.jpg"
+  },
+  {
+    "file": "playground_sand_arm.webp",
+    "id": "playground_sand",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/playground_sand/playground_sand_arm_1k.jpg"
+  },
+  {
+    "file": "sunset.hdr",
+    "id": "industrial_sunset_02",
+    "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/industrial_sunset_02_2k.hdr"
+  },
+  {
+    "file": "concrete_wall_008_color.webp",
+    "id": "concrete_wall_008",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_008/concrete_wall_008_diff_1k.jpg"
+  },
+  {
+    "file": "concrete_wall_008_normal.webp",
+    "id": "concrete_wall_008",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_008/concrete_wall_008_nor_gl_1k.jpg"
+  },
+  {
+    "file": "concrete_wall_008_arm.webp",
+    "id": "concrete_wall_008",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_wall_008/concrete_wall_008_arm_1k.jpg"
+  },
+  {
+    "file": "brick_wall_13_color.webp",
+    "id": "brick_wall_13",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brick_wall_13/brick_wall_13_diff_1k.jpg"
+  },
+  {
+    "file": "brick_wall_13_normal.webp",
+    "id": "brick_wall_13",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brick_wall_13/brick_wall_13_nor_gl_1k.jpg"
+  },
+  {
+    "file": "brick_wall_13_arm.webp",
+    "id": "brick_wall_13",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brick_wall_13/brick_wall_13_arm_1k.jpg"
+  }
+]

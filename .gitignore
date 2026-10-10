@@ -1,0 +1,96 @@
+node_modules/
+dist/
+.claude/worktrees/
+assets-src/carpets/_debug/
+artifacts/
+
+assets-src/carpets/envato/
+public/carpets/envato-*
+docs/qa/carpets/envato-*
+
+public/carpets/manifest.local.json
+docs/qa/cuts/envato-*.png
+docs/qa/cuts/envato-*.jpg
+.playwright-mcp/
+assets-src/yard/envato/
+assets-src/yard/_work/
+public/yard/stock/
+docs/qa/yard3/*.png
+docs/qa/yard4/*.png
+docs/qa/yard4/**/*.png
+
+# Size captures include optional licensed carpet and yard stock assets.
+docs/qa/size/*.png
+docs/qa/size/**/*.png
+
+# Backdrop captures can include licensed local yard and carpet stock.
+docs/qa/backdrop/**/*.png
+docs/qa/backdrop/*.png
+
+# Crown QA can include licensed local yard assets.
+docs/qa/crown/*.png
+docs/qa/crown/**/*.png
+
+# Ground captures include optional licensed carpet / yard stock.
+docs/qa/ground/*.png
+docs/qa/ground/**/*.png
+
+# Polish screenshots may include locally licensed yard/carpet assets.
+docs/qa/polish/*.png
+docs/qa/polish/**/*.png
+
+# UI captures containing optional licensed local yard/carpet stock.
+docs/qa/ui/**/licensed-stock-*.png
+
+# Layout captures can include licensed carpet and yard stock.
+docs/qa/layout/*.png
+docs/qa/layout/**/*.png
+
+# Background repair captures contain optional licensed local assets.
+docs/qa/bgfix/*.png
+docs/qa/bgfix/**/*.png
+docs/qa/owner-bg-house.png
+
+# Lighting comparisons include locally licensed carpet / yard stock.
+docs/qa/lighting/*.png
+docs/qa/lighting2/*.png
+
+# Colour QA captures include optional locally licensed yard / carpet stock.
+docs/qa/colour/*.png
+docs/qa/exposure/*.png
+docs/qa/exposure/**/*.png
+
+# Performance captures can include locally licensed yard/carpet stock.
+docs/qa/perf/*.png
+docs/qa/perf/**/*.png
+
+# Laundry browser QA may include personal licensed courtyard/carpet assets.
+docs/qa/laundry/*.png
+docs/qa/laundry/**/*.png
+
+# FX QA may include local licensed courtyard/carpet stock.
+docs/qa/fx/*.png
+docs/qa/fx/**/*.png
+
+# UI QA captures may show locally licensed stock.
+docs/qa/ui2/**/*.png
+
+# Photo QA normally blocks stock; explicitly named stock captures stay local.
+docs/qa/photos/licensed-stock-*.png
+docs/qa/photos/**/licensed-stock-*.png
+docs/qa/facades2/licensed-stock-*.png
+docs/qa/facades2/**/licensed-stock-*.png
+docs/qa/facades2/colour/*.png
+
+# Flip contact sheets may contain licensed carpets.
+docs/qa/flipwave/**/*.png
+docs/qa/flipwave/*.png
+__pycache__/
+
+# Contact QA can contain licensed local assets.
+docs/qa/flipcontact/**/*.png
+docs/qa/flipcontact/*.png
+
+# QA raster captures are regenerated artefacts and may show licensed local stock.
+docs/qa/**/*.png
+docs/qa/**/*.jpg

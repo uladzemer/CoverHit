@@ -1,0 +1,839 @@
+[
+  {
+    "id": "01",
+    "source": "01-persian-medallion-anhalt.jpg",
+    "title": "Персидский медальон «Анхальт»",
+    "archetype": "Persian floral medallion, warm red/gold ground (NW Persia)",
+    "type": "runner",
+    "credit": "The Metropolitan Museum of Art, Anhalt Medallion Carpet, 46.128, Gift of Samuel H. Kress Foundation, 1946",
+    "license": "CC0",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/450716",
+    "corners": [
+      [
+        25,
+        15
+      ],
+      [
+        1031,
+        15
+      ],
+      [
+        1046,
+        1980
+      ],
+      [
+        10,
+        1945
+      ]
+    ],
+    "cut": {
+      "symmetry": {
+        "pairs": [
+          "lr"
+        ],
+        "fieldCorners": [
+          [
+            242.40240540764597,
+            222.65155133709362
+          ],
+          [
+            807.5328971022163,
+            224.697391644818
+          ],
+          [
+            814.109286068453,
+            1791.252889456887
+          ],
+          [
+            235.53410905388057,
+            1773.5132310428387
+          ]
+        ]
+      },
+      "outputAspect": 0.5
+    }
+  },
+  {
+    "id": "02",
+    "source": "02-persian-kashan-silk-medallion.jpg",
+    "title": "Кашанский шёлковый",
+    "archetype": "Kashan medallion + corner spandrels, framed photo (crop frame)",
+    "type": "wool",
+    "credit": "The Met, Silk Kashan Carpet, 14.40.724, Bequest of Benjamin Altman, 1913",
+    "license": "CC0",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/446645",
+    "corners": [
+      [
+        103,
+        110
+      ],
+      [
+        1340,
+        115
+      ],
+      [
+        1340,
+        1909
+      ],
+      [
+        103,
+        1909
+      ]
+    ],
+    "cropNote": "Removed remaining bottom display-mat sliver.",
+    "enabled": false,
+    "cut": {
+      "manual": true,
+      "reason": "Disabled: uneven worn boundary against beige display mat cannot satisfy literal colour-only DeltaE<12 leakage without deleting woven border; wooden photo frame also confounds automatic segmentation."
+    }
+  },
+  {
+    "id": "03",
+    "source": "03-tekke-main-carpet-a.jpg",
+    "title": "Текинский «бухара»",
+    "archetype": "Turkmen Tekke gul, deep red",
+    "type": "wool",
+    "credit": "The Met, Tekke Main Carpet, 22.100.45, James F. Ballard Collection, 1922",
+    "license": "CC0",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/447504",
+    "corners": [
+      [
+        87,
+        249
+      ],
+      [
+        1266,
+        223
+      ],
+      [
+        1279,
+        1770
+      ],
+      [
+        97,
+        1771
+      ]
+    ],
+    "cropNote": "Hand-reviewed patterned woven ends; plain kilim extensions and original fringe excluded.",
+    "cut": {
+      "keepEnds": true,
+      "reason": "Keep reviewed patterned woven ends; reject plain kilim bands and fringe.",
+      "symmetry": {
+        "pairs": [
+          "lr"
+        ],
+        "fieldCorners": [
+          [
+            239.04012280647697,
+            338.28219695129604
+          ],
+          [
+            1111.778946189768,
+            322.369289940023
+          ],
+          [
+            1122.8761287805607,
+            1710.6670483631242
+          ],
+          [
+            248.45009087156967,
+            1711.9558330237815
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "04",
+    "source": "04-tekke-main-carpet-b.jpg",
+    "title": "Текинский «тёплый красный»",
+    "archetype": "Tekke gul, orange-red",
+    "type": "wool",
+    "credit": "The Met, Tekke Main Carpet, 2009.458.13, Gift of Hillary Black Dumas and Dr. D. Gilbert Dumas, 2009",
+    "license": "CC0",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/456982",
+    "corners": [
+      [
+        48,
+        108
+      ],
+      [
+        1353,
+        135
+      ],
+      [
+        1358,
+        1726
+      ],
+      [
+        24,
+        1774
+      ]
+    ],
+    "cropNote": "Hand-reviewed patterned woven ends; plain kilim extensions and original fringe excluded.",
+    "cut": {
+      "keepEnds": true,
+      "reason": "Keep reviewed patterned woven ends; reject plain kilim bands and fringe."
+    }
+  },
+  {
+    "id": "05",
+    "size": {
+      "width": 2.5,
+      "height": 3.5
+    },
+    "source": "05-salor-main-carpet.jpg",
+    "title": "Салор",
+    "archetype": "Salor gul, red, tight grid",
+    "type": "wool",
+    "credit": "The Met, Salor Main Carpet, 1974.149.46, Bequest of Joseph V. McMullan, 1973",
+    "license": "CC0",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/452598",
+    "corners": [
+      [
+        80,
+        90
+      ],
+      [
+        1447,
+        105
+      ],
+      [
+        1477,
+        1860
+      ],
+      [
+        50,
+        1870
+      ]
+    ],
+    "cut": {
+      "manualCorners": [
+        [
+          114.55556729083932,
+          101.95704036319881
+        ],
+        [
+          1425.9392084138,
+          116.19332301855732
+        ],
+        [
+          1454.693161936617,
+          1851.8631722897526
+        ],
+        [
+          86.4215724978473,
+          1861.3353682953264
+        ]
+      ],
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior."
+    }
+  },
+  {
+    "id": "06",
+    "source": "06-yomut-main-carpet.jpg",
+    "title": "Йомуд",
+    "archetype": "Yomut guls, red + cream border",
+    "type": "palas",
+    "credit": "The Met, Yomut Main Carpet, 1974.149.44, Bequest of Joseph V. McMullan, 1973",
+    "license": "CC0",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/452596",
+    "corners": [
+      [
+        20,
+        35
+      ],
+      [
+        1265,
+        20
+      ],
+      [
+        1265,
+        1890
+      ],
+      [
+        40,
+        1930
+      ]
+    ],
+    "cut": {
+      "manualCorners": [
+        [
+          41.844131816542486,
+          70.53928305482144
+        ],
+        [
+          1253.0588744065547,
+          55.4748707137135
+        ],
+        [
+          1253.243163679862,
+          1875.7120246561685
+        ],
+        [
+          60.969250818044266,
+          1914.450694725763
+        ]
+      ],
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior.",
+      "symmetry": {
+        "pairs": [
+          "lr"
+        ],
+        "fieldCorners": [
+          [
+            207.77010018685098,
+            184.40267824102932
+          ],
+          [
+            1083.1006380278345,
+            172.41056931485736
+          ],
+          [
+            1085.5903152749072,
+            1785.1130725337457
+          ],
+          [
+            222.3778889500617,
+            1812.2483334348115
+          ]
+        ]
+      },
+      "outputAspect": 0.656
+    }
+  },
+  {
+    "id": "07",
+    "source": "07-shirvan-kufesque-lattice.jpg",
+    "title": "Ширван",
+    "archetype": "Shirvan/Kuba, dark blue-black ground, lattice, Kufic border",
+    "type": "wool",
+    "credit": "The Met, Kufesque-Border Lattice Shirvan Rug, 22.100.6, Ballard Collection, 1922",
+    "license": "CC0",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/447472",
+    "corners": [
+      [
+        50,
+        80
+      ],
+      [
+        1890,
+        55
+      ],
+      [
+        1885,
+        1384
+      ],
+      [
+        90,
+        1364
+      ]
+    ],
+    "cut": {
+      "manualCorners": [
+        [
+          75.62568381016628,
+          85.70290370116197
+        ],
+        [
+          1881.590294903401,
+          61.37577717522199
+        ],
+        [
+          1876.8464508839959,
+          1377.9573633026025
+        ],
+        [
+          114.66252496363886,
+          1358.5181970482824
+        ]
+      ],
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior.",
+      "symmetry": {
+        "pairs": [],
+        "fieldCorners": [
+          [
+            273.1910135263344,
+            411.949533779534
+          ],
+          [
+            1700.094793610767,
+            401.7317474057512
+          ],
+          [
+            1699.9954281130329,
+            1017.8721888595678
+          ],
+          [
+            289.43820936387186,
+            1011.7446705978405
+          ]
+        ]
+      },
+      "outputAspect": 1.391
+    }
+  },
+  {
+    "id": "08",
+    "source": "08-caucasian-geometric-medallion.jpg",
+    "title": "Кавказский медальон",
+    "archetype": "Caucasian geometricized medallion, salmon/green",
+    "type": "wool",
+    "credit": "The Met, Carpet with a Geometricized Medallion Design, 22.100.21, Ballard Collection, 1922",
+    "license": "CC0",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/447487",
+    "corners": [
+      [
+        95,
+        25
+      ],
+      [
+        1218,
+        35
+      ],
+      [
+        1213,
+        1970
+      ],
+      [
+        55,
+        1970
+      ]
+    ],
+    "cut": {
+      "manualCorners": [
+        [
+          100.46281780427007,
+          48.408186575688546
+        ],
+        [
+          1212.057463083311,
+          58.1877414044535
+        ],
+        [
+          1207.006259205943,
+          1944.2882797520613
+        ],
+        [
+          61.656146790308945,
+          1944.1527649609684
+        ]
+      ],
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior.",
+      "symmetry": {
+        "pairs": [
+          "lr",
+          "tb"
+        ],
+        "fieldCorners": [
+          [
+            244.74809304052343,
+            166.15697161741127
+          ],
+          [
+            1066.373197194019,
+            172.94698967099356
+          ],
+          [
+            1058.0845629596681,
+            1830.5566589806665
+          ],
+          [
+            214.58755951960202,
+            1830.0157787470703
+          ]
+        ],
+        "pixelBias": [
+          3,
+          0,
+          0,
+          0
+        ]
+      },
+      "outputAspect": 0.5882352941176471
+    }
+  },
+  {
+    "id": "09",
+    "source": "09-kazak-star.jpg",
+    "title": "Казак со звёздами",
+    "archetype": "Kazak star, black/ivory/red",
+    "type": "palas",
+    "credit": "The Met, Star Kazak Carpet, 22.100.17, Ballard Collection, 1922",
+    "license": "CC0",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/447483",
+    "corners": [
+      [
+        45,
+        50
+      ],
+      [
+        1642,
+        40
+      ],
+      [
+        1697,
+        1910
+      ],
+      [
+        55,
+        1925
+      ]
+    ],
+    "cut": {
+      "manualCorners": [
+        [
+          59.17293041554423,
+          109.38355974520714
+        ],
+        [
+          1636.8504208822192,
+          99.36076344287031
+        ],
+        [
+          1689.677553385107,
+          1901.84882433105
+        ],
+        [
+          69.18874070746185,
+          1916.6318558373512
+        ]
+      ],
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior.",
+      "symmetry": {
+        "pairs": [
+          "lr"
+        ],
+        "fieldCorners": [
+          [
+            284.3434845112717,
+            328.57625331482984
+          ],
+          [
+            1429.3737590114417,
+            320.9147462831648
+          ],
+          [
+            1465.4912452721444,
+            1704.9639310788268
+          ],
+          [
+            296.69050070341615,
+            1715.2693203823917
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "10",
+    "source": "10-ushak-medallion-red.jpg",
+    "title": "Ушакский медальон",
+    "archetype": "Medallion Ushak, red, worn",
+    "type": "wool",
+    "credit": "The Met, \"Medallion Ushak\" Carpet, 08.173.13, Rogers Fund, 1908",
+    "license": "CC0",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/445311",
+    "corners": [
+      [
+        30,
+        60
+      ],
+      [
+        1106,
+        50
+      ],
+      [
+        1106,
+        1900
+      ],
+      [
+        50,
+        1930
+      ]
+    ],
+    "cut": {
+      "manualCorners": [
+        [
+          68.88843489946322,
+          67.83522768910015
+        ],
+        [
+          1085.0135344489381,
+          58.306539531772394
+        ],
+        [
+          1085.3961976866076,
+          1892.7681653046607
+        ],
+        [
+          87.9937773118987,
+          1921.0229161816965
+        ]
+      ],
+      "reason": "Reviewed straight inward envelope of bowed/worn woven boundary; original corners retained as fallback prior.",
+      "symmetry": {
+        "pairs": [
+          "lr",
+          "tb"
+        ],
+        "fieldCorners": [
+          [
+            242.7379283190714,
+            179.57082310947933
+          ],
+          [
+            900.4256301623996,
+            172.639788018019
+          ],
+          [
+            903.72496955705,
+            1785.4950408888521
+          ],
+          [
+            256.68517693343097,
+            1803.0745725216716
+          ]
+        ]
+      },
+      "outputAspect": 0.549
+    }
+  },
+  {
+    "id": "envato-2K7L5EB",
+    "source": "envato/2K7L5EB.jpg",
+    "title": "Советский красный",
+    "archetype": "Envato frontal carpet photograph",
+    "type": "wool",
+    "corners": [
+      [
+        93,
+        77
+      ],
+      [
+        1888,
+        72
+      ],
+      [
+        1914,
+        1977
+      ],
+      [
+        82,
+        1971
+      ]
+    ],
+    "credit": "Envato Elements, item 2K7L5EB",
+    "license": "Envato Elements (personal)",
+    "sourceUrl": "https://elements.envato.com/carpet-texture-background-2K7L5EB",
+    "draft": true,
+    "enabled": false,
+    "cropNote": "Fragment without complete outer rug border; excluded from whole-rug rotation."
+  },
+  {
+    "id": "envato-6325SWE",
+    "source": "envato/6325SWE.jpg",
+    "title": "Кавказский синий",
+    "archetype": "Envato frontal carpet photograph",
+    "type": "wool",
+    "corners": [
+      [
+        0,
+        0
+      ],
+      [
+        4688,
+        0
+      ],
+      [
+        4688,
+        3561
+      ],
+      [
+        0,
+        3561
+      ]
+    ],
+    "credit": "Envato Elements, item 6325SWE",
+    "license": "Envato Elements (personal)",
+    "sourceUrl": "https://elements.envato.com/turkish-carpet-6325SWE",
+    "draft": false,
+    "cropNote": "Manual full-frame rectangle replaces detector that selected disconnected internal motifs.",
+    "cut": {
+      "fullBleed": true,
+      "manual": true,
+      "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame."
+    }
+  },
+  {
+    "id": "envato-B7PV8QR",
+    "source": "envato/B7PV8QR.jpg",
+    "title": "Красный с медальоном",
+    "archetype": "Envato frontal carpet photograph",
+    "type": "wool",
+    "corners": [
+      [
+        62,
+        49
+      ],
+      [
+        4846,
+        49
+      ],
+      [
+        4859,
+        2952
+      ],
+      [
+        98,
+        2965
+      ]
+    ],
+    "credit": "Envato Elements, item B7PV8QR",
+    "license": "Envato Elements (personal)",
+    "sourceUrl": "https://elements.envato.com/old-red-persian-carpet-texture-abstract-ornament-B7PV8QR",
+    "draft": false,
+    "easy": true,
+    "cropNote": "Thin margin removed; complete bright rug. Owner-selected first carpet.",
+    "cut": {
+      "fullBleed": true,
+      "manual": true,
+      "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame."
+    }
+  },
+  {
+    "id": "envato-EPRJ58X",
+    "source": "envato/EPRJ58X.jpg",
+    "title": "Персидский с синей каймой",
+    "archetype": "Envato frontal carpet photograph",
+    "type": "wool",
+    "corners": [
+      [
+        0,
+        0
+      ],
+      [
+        6239,
+        0
+      ],
+      [
+        6239,
+        4159
+      ],
+      [
+        0,
+        4159
+      ]
+    ],
+    "credit": "Envato Elements, item EPRJ58X",
+    "license": "Envato Elements (personal)",
+    "sourceUrl": "https://elements.envato.com/vintage-arabic-carpet-texture-with-ornament-EPRJ58X",
+    "draft": false,
+    "cropNote": "Full frontal frame retained, no perspective correction required.",
+    "cut": {
+      "fullBleed": true,
+      "manual": true,
+      "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame."
+    }
+  },
+  {
+    "id": "envato-QSMGCAP",
+    "source": "envato/QSMGCAP.jpg",
+    "title": "Палас полосатый",
+    "archetype": "Envato frontal carpet photograph",
+    "type": "wool",
+    "corners": [
+      [
+        0,
+        2850
+      ],
+      [
+        3985,
+        2925
+      ],
+      [
+        3985,
+        4740
+      ],
+      [
+        0,
+        4680
+      ]
+    ],
+    "credit": "Envato Elements, item QSMGCAP",
+    "license": "Envato Elements (personal)",
+    "sourceUrl": "https://elements.envato.com/wool-woven-old-antique-turkish-rug-QSMGCAP",
+    "draft": true,
+    "enabled": false,
+    "cropNote": "Fragment without complete outer rug border; excluded from whole-rug rotation."
+  },
+  {
+    "id": "envato-RBFEDY2",
+    "source": "envato/RBFEDY2.jpg",
+    "title": "Бухара",
+    "archetype": "Envato frontal carpet photograph",
+    "type": "wool",
+    "corners": [
+      [
+        75,
+        173
+      ],
+      [
+        1848,
+        190
+      ],
+      [
+        1843,
+        2712
+      ],
+      [
+        83,
+        2758
+      ]
+    ],
+    "credit": "Envato Elements, item RBFEDY2",
+    "license": "Envato Elements (personal)",
+    "sourceUrl": "https://elements.envato.com/different-kinds-of-carpet-designs-for-the-room-not-RBFEDY2",
+    "draft": false,
+    "cropNote": "Source clips outer motif border on left/top. Rectified outer edge of the outermost COMPLETE inner frame; incomplete outer motif bands and striped end extension excluded. Full original outer border cannot be recovered from this photograph.",
+    "cut": {
+      "fullBleed": true,
+      "manual": true,
+      "reason": "Photograph contains woven cloth up to its frame; no visible floor/wall/studio background to model. Retain reviewed enclosing frame."
+    }
+  },
+  {
+    "id": "envato-T834FYR",
+    "source": "envato/T834FYR.jpg",
+    "title": "Килим",
+    "archetype": "Envato frontal carpet photograph",
+    "type": "palas",
+    "corners": [
+      [
+        470,
+        500
+      ],
+      [
+        4850,
+        500
+      ],
+      [
+        4850,
+        3090
+      ],
+      [
+        470,
+        3090
+      ]
+    ],
+    "credit": "Envato Elements, item T834FYR",
+    "license": "Envato Elements (personal)",
+    "sourceUrl": "https://elements.envato.com/rug-T834FYR",
+    "draft": false,
+    "cropNote": "Detected white-background rug, then tightened reviewed quad inside bowed woven edges to remove white slivers.",
+    "cut": {
+      "manual": true,
+      "reason": "Reviewed inward envelope preserves the kilim border and already removes the studio white; automatic fit moves outward into bowed edges."
+    }
+  }
+]

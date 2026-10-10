@@ -1,0 +1,21 @@
+﻿/* CoverHit: poster typography, disciplined game layout. */
+:root {
+  --ch-space-1:4px; --ch-space-2:8px; --ch-space-3:12px; --ch-space-4:16px;
+  --ch-space-6:24px; --ch-space-8:32px; --ch-space-12:48px;
+  --ch-radius-flat:0px; --ch-radius-panel:2px; --ch-radius-chip:4px;
+  --ch-font-display:'Russo One',Impact,sans-serif;
+  --ch-font-body:'PT Sans',Arial,sans-serif;
+  --ch-font-label:'PT Sans Narrow','PT Sans',Arial,sans-serif;
+  --ch-type-display:48px; --ch-leading-display:1.08;
+  --ch-type-title:28px; --ch-leading-title:1.15;
+  --ch-type-label:14px; --ch-leading-label:1.2;
+  --ch-type-body:16px; --ch-leading-body:1.5;
+  --ch-type-caption:12px; --ch-leading-caption:1.4;
+  --ch-red:#b3202a; --ch-red-dark:#891820; --ch-red-light:#c42c36;
+  --ch-paper:#f3e6c8; --ch-ink:#1d1b22; --ch-ochre:#e1b858;
+  --ch-green:#aac596; --ch-green-dark:#3e5636; --ch-muted:#665c4c;
+  --ch-panel:rgba(20,18,24,0.72);
+  --ch-grain:repeating-linear-gradient(17deg,transparent 0 3px,rgba(29,27,34,.025) 3px 4px);
+  --ch-safe:16px;
+}
+@media(min-width:1280px) { :root { --ch-safe:24px; } }

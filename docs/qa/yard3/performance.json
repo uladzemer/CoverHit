@@ -1,0 +1,222 @@
+{
+  "viewport": [
+    1468,
+    986
+  ],
+  "browser": "155.0.8059.39",
+  "views": {
+    "default": {
+      "drawCalls": {
+        "mean": 118,
+        "p95": 118,
+        "max": 118
+      },
+      "triangles": {
+        "mean": 500671,
+        "p95": 500671,
+        "max": 500671
+      },
+      "cpuFrameMs": {
+        "mean": 11.958333333333334,
+        "p95": 19.700000002980232,
+        "max": 21
+      },
+      "physicsMs": {
+        "mean": 10.066666666997804,
+        "p95": 17.700000002980232,
+        "max": 18.900000005960464
+      },
+      "frameIntervalMs": {
+        "mean": 18.251111111111115,
+        "p95": 18.799999999999272,
+        "max": 19.099999999998545
+      },
+      "stock": {
+        "requested": 8,
+        "loaded": [
+          "balcony-block",
+          "dumpster",
+          "birch",
+          "garage",
+          "panel-block",
+          "bench",
+          "lamp",
+          "deciduous"
+        ],
+        "failures": []
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    "wide": {
+      "drawCalls": {
+        "mean": 118,
+        "p95": 118,
+        "max": 118
+      },
+      "triangles": {
+        "mean": 501005,
+        "p95": 501005,
+        "max": 501005
+      },
+      "cpuFrameMs": {
+        "mean": 11.675000000248353,
+        "p95": 19.400000005960464,
+        "max": 20.099999994039536
+      },
+      "physicsMs": {
+        "mean": 10.083333333995608,
+        "p95": 17.700000002980232,
+        "max": 18.399999991059303
+      },
+      "frameIntervalMs": {
+        "mean": 18.27277777777778,
+        "p95": 18.799999999999272,
+        "max": 19.600000000000364
+      },
+      "stock": {
+        "requested": 8,
+        "loaded": [
+          "balcony-block",
+          "dumpster",
+          "birch",
+          "garage",
+          "panel-block",
+          "bench",
+          "lamp",
+          "deciduous"
+        ],
+        "failures": []
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    "garages": {
+      "drawCalls": {
+        "mean": 103,
+        "p95": 103,
+        "max": 103
+      },
+      "triangles": {
+        "mean": 425287,
+        "p95": 425287,
+        "max": 425287
+      },
+      "cpuFrameMs": {
+        "mean": 11.433333333084981,
+        "p95": 19.200000002980232,
+        "max": 21.599999994039536
+      },
+      "physicsMs": {
+        "mean": 10.013888888309399,
+        "p95": 17.799999997019768,
+        "max": 19.69999998807907
+      },
+      "frameIntervalMs": {
+        "mean": 18.25444444444444,
+        "p95": 18.700000000000728,
+        "max": 19
+      },
+      "stock": {
+        "requested": 8,
+        "loaded": [
+          "balcony-block",
+          "dumpster",
+          "birch",
+          "garage",
+          "panel-block",
+          "bench",
+          "lamp",
+          "deciduous"
+        ],
+        "failures": []
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    }
+  },
+  "fallbacks": {
+    "missing": {
+      "state": "playing",
+      "stock": {
+        "requested": 0,
+        "loaded": [],
+        "failures": []
+      },
+      "credits": 0,
+      "bar": [
+        0,
+        3.15,
+        0
+      ]
+    },
+    "html": {
+      "state": "playing",
+      "stock": {
+        "requested": 0,
+        "loaded": [],
+        "failures": []
+      },
+      "credits": 0,
+      "bar": [
+        0,
+        3.15,
+        0
+      ]
+    },
+    "invalid-json": {
+      "state": "playing",
+      "stock": {
+        "requested": 0,
+        "loaded": [],
+        "failures": []
+      },
+      "credits": 0,
+      "bar": [
+        0,
+        3.15,
+        0
+      ]
+    },
+    "malformed": {
+      "state": "playing",
+      "stock": {
+        "requested": 0,
+        "loaded": [],
+        "failures": []
+      },
+      "credits": 0,
+      "bar": [
+        0,
+        3.15,
+        0
+      ]
+    },
+    "broken-model": {
+      "state": "playing",
+      "stock": {
+        "requested": 8,
+        "loaded": [
+          "balcony-block",
+          "garage",
+          "panel-block",
+          "dumpster",
+          "bench",
+          "lamp",
+          "deciduous"
+        ],
+        "failures": [
+          {
+            "id": "birch",
+            "error": "birch: HTTP 404"
+          }
+        ]
+      },
+      "credits": 7,
+      "bar": [
+        0,
+        3.15,
+        0
+      ]
+    }
+  },
+  "credits": "Об игреФотографии настоящих ковров. Источники и лицензии:Персидский медальон «Анхальт» — The Metropolitan Museum of Art, Anhalt Medallion Carpet, 46.128, Gift of Samuel H. Kress Foundation, 1946. CC0Кашанский шёлковый — The Met, Silk Kashan Carpet, 14.40.724, Bequest of Benjamin Altman, 1913. CC0Текинский «бухара» — The Met, Tekke Main Carpet, 22.100.45, James F. Ballard Collection, 1922. CC0Текинский «тёплый красный» — The Met, Tekke Main Carpet, 2009.458.13, Gift of Hillary Black Dumas and Dr. D. Gilbert Dumas, 2009. CC0Салор — The Met, Salor Main Carpet, 1974.149.46, Bequest of Joseph V. McMullan, 1973. CC0Йомуд — The Met, Yomut Main Carpet, 1974.149.44, Bequest of Joseph V. McMullan, 1973. CC0Ширван — The Met, Kufesque-Border Lattice Shirvan Rug, 22.100.6, Ballard Collection, 1922. CC0Кавказский медальон — The Met, Carpet with a Geometricized Medallion Design, 22.100.21, Ballard Collection, 1922. CC0Казак со звёздами — The Met, Star Kazak Carpet, 22.100.17, Ballard Collection, 1922. CC0Ушакский медальон — The Met, \"Medallion Ushak\" Carpet, 08.173.13, Rogers Fund, 1908. CC0Кавказский синий — Envato Elements, item 6325SWE. Envato Elements (personal)Красный с медальоном — Envato Elements, item B7PV8QR. Envato Elements (personal)Персидский с синей каймой — Envato Elements, item EPRJ58X. Envato Elements (personal)Бухара — Envato Elements, item RBFEDY2. Envato Elements (personal)Килим — Envato Elements, item T834FYR. Envato Elements (personal)Envato Elements, Multi-storey building with balconies and sloped roofEnvato Elements, Kitbash: City Streets - Bench AEnvato Elements, Detailed birch tree with dense foliageEnvato Elements, Kitbash: City Streets - Tree AEnvato Elements, Green Industrial DumpsterEnvato Elements, Small Utility GarageEnvato Elements, Kitbash: City Streets - Lamp IEnvato Elements, Multi-story building with gridded fenestration and balconies",
+  "errors": []
+}

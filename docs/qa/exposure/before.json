@@ -1,0 +1,206 @@
+{
+  "phase": "before",
+  "viewport": [
+    1440,
+    900
+  ],
+  "seed": "colour-1986",
+  "assetMode": "CC photographs and base yard assets; optional licensed stock blocked, matching photos QA",
+  "regions": {
+    "pad": [
+      0.32,
+      0.83,
+      0.6,
+      0.98
+    ],
+    "lawn": [
+      0.1,
+      0.56,
+      0.24,
+      0.73
+    ],
+    "facade": [
+      0.79,
+      0.18,
+      0.98,
+      0.46
+    ]
+  },
+  "errors": [],
+  "metrics": {
+    "regions": {
+      "pad": 0.24865556307658004,
+      "lawn": 0.20224676321071078,
+      "facade": 0.2653064858206125
+    },
+    "clippedPercent": 0
+  },
+  "noShadows": {
+    "regions": {
+      "pad": 0.2507692690667872,
+      "lawn": 0.20235179685321222,
+      "facade": 0.2672098755739107
+    },
+    "clippedPercent": 0
+  },
+  "lighting": {
+    "state": {
+      "temperature": 3500,
+      "elevation": 7.5,
+      "sourceElevation": 2.197265625,
+      "environmentIntensity": 1.35,
+      "skyFill": "HDRI, warm white balance",
+      "staticAO": true,
+      "sunDirection": [
+        0.7442910587169268,
+        -0.13052619222005157,
+        0.6549761316708956
+      ]
+    },
+    "environment": true,
+    "exposure": 0.85,
+    "photos": [
+      {
+        "series": "panel",
+        "env": 0.85,
+        "emissive": 0,
+        "roughness": 0.94,
+        "normal": [
+          0.12,
+          0.12
+        ]
+      },
+      {
+        "series": "brick",
+        "env": 0.85,
+        "emissive": 0,
+        "roughness": 0.94,
+        "normal": [
+          0.12,
+          0.12
+        ]
+      },
+      {
+        "series": "panel335",
+        "env": 0.85,
+        "emissive": 0,
+        "roughness": 0.94,
+        "normal": [
+          0.12,
+          0.12
+        ]
+      },
+      {
+        "series": "brick",
+        "env": 0.85,
+        "emissive": 0,
+        "roughness": 0.94,
+        "normal": [
+          0.12,
+          0.12
+        ]
+      },
+      {
+        "series": "panel",
+        "env": 0.85,
+        "emissive": 0,
+        "roughness": 0.94,
+        "normal": [
+          0.12,
+          0.12
+        ]
+      },
+      {
+        "series": "car",
+        "env": 0.65,
+        "emissive": 0,
+        "roughness": 0.4,
+        "normal": [
+          1,
+          1
+        ]
+      },
+      {
+        "series": "nine",
+        "env": 0.85,
+        "emissive": 0,
+        "roughness": 0.9,
+        "normal": [
+          0.12,
+          0.12
+        ]
+      },
+      {
+        "series": "brick",
+        "env": 0.85,
+        "emissive": 0,
+        "roughness": 0.9,
+        "normal": [
+          0.12,
+          0.12
+        ]
+      },
+      {
+        "series": "panel",
+        "env": 0.85,
+        "emissive": 0,
+        "roughness": 0.9,
+        "normal": [
+          0.12,
+          0.12
+        ]
+      },
+      {
+        "series": "tower",
+        "env": 0.85,
+        "emissive": 0,
+        "roughness": 0.9,
+        "normal": [
+          0.12,
+          0.12
+        ]
+      },
+      {
+        "series": "school",
+        "env": 0.85,
+        "emissive": 0,
+        "roughness": 0.9,
+        "normal": [
+          0.12,
+          0.12
+        ]
+      }
+    ],
+    "casters": [
+      {
+        "name": "",
+        "backdrop": false
+      },
+      {
+        "name": "yard-static-batch",
+        "backdrop": false
+      },
+      {
+        "name": "yard-static-batch",
+        "backdrop": false
+      },
+      {
+        "name": "yard-static-batch",
+        "backdrop": false
+      },
+      {
+        "name": "yard-static-batch",
+        "backdrop": false
+      },
+      {
+        "name": "yard-static-batch",
+        "backdrop": false
+      }
+    ],
+    "grass": {
+      "color": "bacb91",
+      "emissive": 0,
+      "env": 0.25
+    }
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "version": 2,
+  "sources": [
+    {
+      "index": 0,
+      "title": "Schiguli WAS-2101 (side).jpg",
+      "output": "car-side.webp",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Schiguli_WAS-2101_%28side%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Schiguli_WAS-2101_(side).jpg",
+      "author": "Fiver, der Hellseher",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "index": 1,
+      "title": "Schiguli WAS-2101 (front).jpg",
+      "output": "car-front.webp",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Schiguli_WAS-2101_%28front%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Schiguli_WAS-2101_(front).jpg",
+      "author": "Fiver, der Hellseher",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "index": 2,
+      "title": "Lada 1600 -- Front.JPG",
+      "output": "car-detail.webp",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Lada_1600_--_Front.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Lada_1600_--_Front.JPG",
+      "author": "Bull-Doser",
+      "license": "Public domain"
+    },
+    {
+      "index": 3,
+      "title": "Lada 1600 -- Rear.JPG",
+      "output": "car-rear.webp",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Lada_1600_--_Rear.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Lada_1600_--_Rear.JPG",
+      "author": "Bull-Doser",
+      "license": "Public domain"
+    },
+    {
+      "index": 4,
+      "title": "Lada 1200.svg",
+      "output": "car-outline.png",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Lada_1200.svg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lada_1200.svg",
+      "author": "Marseille77 at German Wikipedia",
+      "license": "Public domain"
+    },
+    {
+      "index": 5,
+      "title": "Moscow car show 2025-08-03 VAZ-2101 beige 0.jpg",
+      "output": "car-beige.webp",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Moscow_car_show_2025-08-03_VAZ-2101_beige_0.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Moscow_car_show_2025-08-03_VAZ-2101_beige_0.jpg",
+      "author": "Retired electrician",
+      "license": "CC0"
+    },
+    {
+      "index": 9,
+      "title": "Gastello Street, Moscow - 5159.jpg",
+      "output": "nine-reference.webp",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Gastello_Street%2C_Moscow_-_5159.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gastello_Street,_Moscow_-_5159.jpg",
+      "author": "Roman Balabin",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "index": 7,
+      "title": "Domo en strato Fabriĉnaja 17 (Tjumeno).jpg",
+      "series": "panel",
+      "corners": [
+        [
+          748,
+          56
+        ],
+        [
+          855,
+          81
+        ],
+        [
+          855,
+          289
+        ],
+        [
+          747,
+          276
+        ]
+      ],
+      "sourceBays": 2,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Domo_en_strato_Fabri%C4%89naja_17_%28Tjumeno%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Domo_en_strato_Fabri%C4%89naja_17_(Tjumeno).jpg",
+      "author": "RG72",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "index": 8,
+      "title": "A house at Lenina street (Bor).JPG",
+      "series": "brick",
+      "corners": [
+        [
+          264,
+          259
+        ],
+        [
+          488,
+          72
+        ],
+        [
+          492,
+          447
+        ],
+        [
+          264,
+          502
+        ]
+      ],
+      "sourceBays": 4,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/A_house_at_Lenina_street_%28Bor%29.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:A_house_at_Lenina_street_(Bor).JPG",
+      "author": "Андрей Романенко",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "index": 6,
+      "title": "Apartment building in Pavlovspy Posad.jpg",
+      "series": "nine",
+      "corners": [
+        [
+          464,
+          250
+        ],
+        [
+          615,
+          164
+        ],
+        [
+          616,
+          362
+        ],
+        [
+          464,
+          406
+        ]
+      ],
+      "sourceBays": 4,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Apartment_building_in_Pavlovspy_Posad.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Apartment_building_in_Pavlovspy_Posad.jpg",
+      "author": "Stolbovsky",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "index": 10,
+      "title": "Moscow Kantemitovskaya street 2021-09.jpg",
+      "series": "tower",
+      "corners": [
+        [
+          706,
+          48
+        ],
+        [
+          906,
+          80
+        ],
+        [
+          907,
+          162
+        ],
+        [
+          706,
+          142
+        ]
+      ],
+      "sourceBays": 4,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Moscow_Kantemitovskaya_street_2021-09.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Moscow_Kantemitovskaya_street_2021-09.jpg",
+      "author": "Svetlov Artem",
+      "license": "CC0"
+    },
+    {
+      "index": 11,
+      "title": "Valday, Novgorod Oblast, Russia - panoramio (990).jpg",
+      "series": "panel335",
+      "corners": [
+        [
+          314,
+          274
+        ],
+        [
+          419,
+          297
+        ],
+        [
+          419,
+          425
+        ],
+        [
+          314,
+          411
+        ]
+      ],
+      "sourceBays": 4,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Valday%2C_Novgorod_Oblast%2C_Russia_-_panoramio_%28990%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Valday,_Novgorod_Oblast,_Russia_-_panoramio_(990).jpg",
+      "author": "Дмитрий Cкляренко",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "files": [
+    {
+      "file": "car-atlas.webp",
+      "sources": [
+        0,
+        1,
+        3
+      ],
+      "transform": "manual crop homography, photo projection atlas; mirrored opposite side; civilian decal removal, alpha paint mask"
+    },
+    {
+      "file": "car-side.webp",
+      "sources": [
+        0
+      ],
+      "transform": "manual polygon alpha cutout; civilian decal removal, alpha paint mask"
+    },
+    {
+      "file": "car-front.webp",
+      "sources": [
+        1
+      ],
+      "transform": "reference, resized; not uploaded to GPU"
+    },
+    {
+      "file": "car-detail.webp",
+      "sources": [
+        2
+      ],
+      "transform": "reference, resized; not uploaded to GPU"
+    },
+    {
+      "file": "car-rear.webp",
+      "sources": [
+        3
+      ],
+      "transform": "reference, resized; not uploaded to GPU"
+    },
+    {
+      "file": "car-outline.png",
+      "sources": [
+        4
+      ],
+      "transform": "reference, resized; not uploaded to GPU"
+    },
+    {
+      "file": "car-beige.webp",
+      "sources": [
+        5
+      ],
+      "transform": "reference, resized; not uploaded to GPU"
+    },
+    {
+      "file": "nine-reference.webp",
+      "sources": [
+        9
+      ],
+      "transform": "reference, resized; not uploaded to GPU"
+    },
+    {
+      "file": "panel-albedo.webp",
+      "sources": [
+        7
+      ],
+      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+    },
+    {
+      "file": "panel-normal.webp",
+      "sources": [
+        7
+      ],
+      "transform": "original-resolution four-corner homography [[748,56],[855,81],[855,289],[747,276]] in 1000x750 preview coordinates; normal; horizontal mirrored bays, upright floor repeat"
+    },
+    {
+      "file": "panel-roughness.webp",
+      "sources": [
+        7
+      ],
+      "transform": "original-resolution four-corner homography [[748,56],[855,81],[855,289],[747,276]] in 1000x750 preview coordinates; roughness; horizontal mirrored bays, upright floor repeat"
+    },
+    {
+      "file": "panel-windows.webp",
+      "sources": [
+        7
+      ],
+      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+    },
+    {
+      "file": "brick-albedo.webp",
+      "sources": [
+        8
+      ],
+      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+    },
+    {
+      "file": "brick-normal.webp",
+      "sources": [
+        8
+      ],
+      "transform": "original-resolution four-corner homography [[264,259],[488,72],[492,447],[264,502]] in 1000x750 preview coordinates; normal; horizontal mirrored bays, upright floor repeat"
+    },
+    {
+      "file": "brick-roughness.webp",
+      "sources": [
+        8
+      ],
+      "transform": "original-resolution four-corner homography [[264,259],[488,72],[492,447],[264,502]] in 1000x750 preview coordinates; roughness; horizontal mirrored bays, upright floor repeat"
+    },
+    {
+      "file": "brick-windows.webp",
+      "sources": [
+        8
+      ],
+      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+    },
+    {
+      "file": "nine-albedo.webp",
+      "sources": [
+        6
+      ],
+      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+    },
+    {
+      "file": "nine-normal.webp",
+      "sources": [
+        6
+      ],
+      "transform": "original-resolution four-corner homography [[464,250],[615,164],[616,362],[464,406]] in 1000x750 preview coordinates; normal; horizontal mirrored bays, upright floor repeat"
+    },
+    {
+      "file": "nine-roughness.webp",
+      "sources": [
+        6
+      ],
+      "transform": "original-resolution four-corner homography [[464,250],[615,164],[616,362],[464,406]] in 1000x750 preview coordinates; roughness; horizontal mirrored bays, upright floor repeat"
+    },
+    {
+      "file": "nine-windows.webp",
+      "sources": [
+        6
+      ],
+      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+    },
+    {
+      "file": "tower-albedo.webp",
+      "sources": [
+        6
+      ],
+      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+    },
+    {
+      "file": "tower-normal.webp",
+      "sources": [
+        10
+      ],
+      "transform": "original-resolution four-corner homography [[706,48],[906,80],[907,162],[706,142]] in 1000x750 preview coordinates; normal; horizontal mirrored bays, upright floor repeat"
+    },
+    {
+      "file": "tower-roughness.webp",
+      "sources": [
+        10
+      ],
+      "transform": "original-resolution four-corner homography [[706,48],[906,80],[907,162],[706,142]] in 1000x750 preview coordinates; roughness; horizontal mirrored bays, upright floor repeat"
+    },
+    {
+      "file": "tower-windows.webp",
+      "sources": [
+        6
+      ],
+      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+    },
+    {
+      "file": "panel335-albedo.webp",
+      "sources": [
+        7
+      ],
+      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+    },
+    {
+      "file": "panel335-normal.webp",
+      "sources": [
+        11
+      ],
+      "transform": "original-resolution four-corner homography [[314,274],[419,297],[419,425],[314,411]] in 1000x750 preview coordinates; normal; horizontal mirrored bays, upright floor repeat"
+    },
+    {
+      "file": "panel335-roughness.webp",
+      "sources": [
+        11
+      ],
+      "transform": "original-resolution four-corner homography [[314,274],[419,297],[419,425],[314,411]] in 1000x750 preview coordinates; roughness; horizontal mirrored bays, upright floor repeat"
+    },
+    {
+      "file": "panel335-windows.webp",
+      "sources": [
+        7
+      ],
+      "transform": "LSD line-family refined four-corner homography; Lanczos4; mild unsharp; upright floor/bay modules, 8px gutters, no reflections; bounded baked window variants"
+    },
+    {
+      "file": "concrete-reference.webp",
+      "sources": [
+        "polyhaven"
+      ],
+      "transform": "CC0 reference; not uploaded to GPU"
+    },
+    {
+      "file": "concrete-detail-normal.webp",
+      "sources": [
+        "polyhaven"
+      ],
+      "transform": "CC0 concrete_slab_wall_02, central-difference detail normal; 3.5m upright repeat"
+    },
+    {
+      "file": "panel-impostor-albedo.webp",
+      "sources": [
+        7
+      ],
+      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+    },
+    {
+      "file": "panel-impostor-windows.webp",
+      "sources": [
+        7
+      ],
+      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+    },
+    {
+      "file": "panel335-impostor-albedo.webp",
+      "sources": [
+        7
+      ],
+      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+    },
+    {
+      "file": "panel335-impostor-windows.webp",
+      "sources": [
+        7
+      ],
+      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+    },
+    {
+      "file": "brick-impostor-albedo.webp",
+      "sources": [
+        8
+      ],
+      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+    },
+    {
+      "file": "brick-impostor-windows.webp",
+      "sources": [
+        8
+      ],
+      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+    },
+    {
+      "file": "nine-impostor-albedo.webp",
+      "sources": [
+        6
+      ],
+      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+    },
+    {
+      "file": "nine-impostor-windows.webp",
+      "sources": [
+        6
+      ],
+      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+    },
+    {
+      "file": "tower-impostor-albedo.webp",
+      "sources": [
+        6
+      ],
+      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+    },
+    {
+      "file": "tower-impostor-windows.webp",
+      "sources": [
+        6
+      ],
+      "transform": "four seeded full-building impostors baked from upright joint-aligned floor/bay modules; no reflections"
+    }
+  ],
+  "facadeModules": {
+    "size": 1024,
+    "gutter": 8,
+    "atlas": 2048,
+    "columns": 2,
+    "rows": 2,
+    "slots": [
+      "ground",
+      "typical-a",
+      "typical-b",
+      "top"
+    ],
+    "mirrored": false
+  }
+}

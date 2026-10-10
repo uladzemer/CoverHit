@@ -1,0 +1,71 @@
+{
+  "carpetSeconds": 20.75,
+  "buildSeconds": 24.519842,
+  "deterministic": true,
+  "hashedFiles": 31,
+  "assetBytes": 4319544,
+  "assetMiB": 4.119438171386719,
+  "grid": [
+    {
+      "id": "01",
+      "beforeNodes": 819,
+      "afterNodes": 630,
+      "cellError": 0
+    },
+    {
+      "id": "03",
+      "beforeNodes": 1575,
+      "afterNodes": 1462,
+      "cellError": 0.0031845220212702863
+    },
+    {
+      "id": "04",
+      "beforeNodes": 1505,
+      "afterNodes": 1505,
+      "cellError": 0.001816662427787774
+    },
+    {
+      "id": "05",
+      "beforeNodes": 980,
+      "afterNodes": 945,
+      "cellError": 0.0018610421836227076
+    },
+    {
+      "id": "06",
+      "beforeNodes": 1014,
+      "afterNodes": 1014,
+      "cellError": 0.0029203539823008384
+    },
+    {
+      "id": "07",
+      "beforeNodes": 999,
+      "afterNodes": 999,
+      "cellError": 0.0045351473922901064
+    },
+    {
+      "id": "08",
+      "beforeNodes": 735,
+      "afterNodes": 735,
+      "cellError": 0.00027100271002711285
+    },
+    {
+      "id": "09",
+      "beforeNodes": 1184,
+      "afterNodes": 1085,
+      "cellError": 0.0012269938650306678
+    },
+    {
+      "id": "10",
+      "beforeNodes": 984,
+      "afterNodes": 943,
+      "cellError": 0.0018822811212292345
+    }
+  ],
+  "runtimeAdded": {
+    "drawCalls": 0,
+    "triangles": 0,
+    "shaderWork": 0,
+    "ammoNodes": 0
+  },
+  "limits": "Offline pipeline only; no GPU timer or live CPU frame benchmark was run. Grid node counts establish unchanged/decreased solver work topology, not measured milliseconds."
+}

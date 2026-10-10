@@ -1,0 +1,82 @@
+{
+  "phase": "before",
+  "viewport": [
+    800,
+    700
+  ],
+  "qualities": {
+    "high": {
+      "gpuMs": {
+        "mean": 7.9625532,
+        "p95": 11.179104
+      },
+      "cpuMs": {
+        "mean": 17.14333333273729,
+        "p95": 23.399999976158142
+      },
+      "drawCalls": {
+        "mean": 330.5416666666667,
+        "p95": 331
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "lighting": {
+        "temperature": 3500,
+        "elevation": 12,
+        "sourceElevation": 2.197265625,
+        "environmentIntensity": 1.45,
+        "skyFill": "HDRI",
+        "staticAO": true
+      },
+      "shadowType": 0
+    },
+    "medium": {
+      "gpuMs": {
+        "mean": 8.860396799999998,
+        "p95": 9.683008
+      },
+      "cpuMs": {
+        "mean": 16.721249998981754,
+        "p95": 21.599999994039536
+      },
+      "drawCalls": {
+        "mean": 331.54583333333335,
+        "p95": 332
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "lighting": {
+        "temperature": 3500,
+        "elevation": 12,
+        "sourceElevation": 2.197265625,
+        "environmentIntensity": 1.45,
+        "skyFill": "HDRI",
+        "staticAO": true
+      },
+      "shadowType": 1
+    },
+    "low": {
+      "gpuMs": {
+        "mean": 6.398890000000003,
+        "p95": 8.23072
+      },
+      "cpuMs": {
+        "mean": 15.967499999453624,
+        "p95": 21.30000001192093
+      },
+      "drawCalls": {
+        "mean": 164.54583333333332,
+        "p95": 165
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "lighting": {
+        "temperature": null,
+        "elevation": 4.267863699604351,
+        "sourceElevation": 2.197265625,
+        "environmentIntensity": 0.75,
+        "skyFill": "legacy hemisphere",
+        "staticAO": false
+      },
+      "shadowType": 1
+    }
+  },
+  "errors": []
+}

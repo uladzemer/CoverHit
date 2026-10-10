@@ -1,0 +1,16 @@
+{
+  "source": "docs/qa/photos/photos-default.png",
+  "viewport": [
+    1468,
+    986
+  ],
+  "note": "Architect-review capture, differing viewport/seed/quality history; diagnostic only, not the matched acceptance baseline.",
+  "metrics": {
+    "regions": {
+      "pad": 0.09263087067746946,
+      "lawn": 0.11934736031078601,
+      "facade": 0.2614380911610622
+    },
+    "clippedPercent": 0
+  }
+}

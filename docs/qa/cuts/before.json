@@ -1,0 +1,712 @@
+[
+  {
+    "id": "01",
+    "before": {
+      "outerLeakage": 0.5762411347517731,
+      "nextLeakage": 0.2158878106911815,
+      "outerPixels": 23688,
+      "nextPixels": 46992,
+      "outerLeakPixels": 13650,
+      "nextLeakPixels": 10145,
+      "width": 1021,
+      "height": 1948
+    },
+    "clusters": [
+      {
+        "lab": [
+          68.39894667814353,
+          0.28894361374984595,
+          -0.39344264982945476
+        ],
+        "fraction": 0.7271619975639464
+      },
+      {
+        "lab": [
+          71.0517955591574,
+          0.5457669340526379,
+          -0.5508105999380003
+        ],
+        "fraction": 0.21762078765732845
+      }
+    ],
+    "borderBefore": {
+      "left": 229.9988081048868,
+      "right": 228.78188319427892,
+      "top": 219.15,
+      "bottom": 178.9725,
+      "lr": 0.005305039787798433,
+      "tb": 0.20183486238532114,
+      "width": 1021,
+      "height": 1948
+    },
+    "note": "Intact outer woven border. The original lower end frame is narrower than the upper frame; retain the handmade design."
+  },
+  {
+    "id": "02",
+    "before": {
+      "outerLeakage": 0.4188284864507601,
+      "nextLeakage": 0.3453739173884077,
+      "outerPixels": 24208,
+      "nextPixels": 48032,
+      "outerLeakPixels": 10139,
+      "nextLeakPixels": 16589,
+      "width": 1237,
+      "height": 1797
+    },
+    "clusters": [
+      {
+        "lab": [
+          52.12765222713714,
+          7.550374997264759,
+          15.937392177231741
+        ],
+        "fraction": 0.449302676215605
+      },
+      {
+        "lab": [
+          68.79878327219862,
+          6.3774050119667915,
+          29.137575608238436
+        ],
+        "fraction": 0.3964065837416761
+      },
+      {
+        "lab": [
+          76.81169753340073,
+          2.745272375997741,
+          25.045580511390867
+        ],
+        "fraction": 0.15429074004271892
+      }
+    ],
+    "borderBefore": {
+      "left": 267.3987284287012,
+      "right": 237.06357856494094,
+      "top": 270.673125,
+      "bottom": 260.565,
+      "lr": 0.12026726057906471,
+      "tb": 0.03805496828752653,
+      "width": 1237,
+      "height": 1797
+    },
+    "note": "Displayed worn rug: side frames differ in the photograph. Bottom display-mat sliver removed; woven borders retained."
+  },
+  {
+    "id": "03",
+    "before": {
+      "outerLeakage": 0.01024741506646972,
+      "nextLeakage": 0.00020957526080476901,
+      "outerPixels": 21664,
+      "nextPixels": 42944,
+      "outerLeakPixels": 222,
+      "nextLeakPixels": 9,
+      "width": 1181,
+      "height": 1535
+    },
+    "clusters": [
+      {
+        "lab": [
+          67.47139440371397,
+          0.18266472126442265,
+          -1.359462727552944
+        ],
+        "fraction": 0.3757942201270752
+      },
+      {
+        "lab": [
+          69.73785193791302,
+          -0.0066025471272921805,
+          -0.26952948823256573
+        ],
+        "fraction": 0.2806927649108424
+      },
+      {
+        "lab": [
+          69.2824366523423,
+          0.4163315292345229,
+          -2.320224482228858
+        ],
+        "fraction": 0.3435130149620824
+      }
+    ],
+    "borderBefore": {
+      "left": 152,
+      "right": 155,
+      "top": 90,
+      "bottom": 56,
+      "lr": 0.019543973941368076,
+      "tb": 0.4657534246575342,
+      "width": 1181,
+      "height": 1535
+    },
+    "note": "Plain kilim extensions removed at both ends. The photographed patterned end frames themselves differ in width; side symmetry is 1.95%."
+  },
+  {
+    "id": "04",
+    "before": {
+      "outerLeakage": 0.12610506630397825,
+      "nextLeakage": 0.09071820363387041,
+      "outerPixels": 23528,
+      "nextPixels": 46672,
+      "outerLeakPixels": 2967,
+      "nextLeakPixels": 4234,
+      "width": 1320,
+      "height": 1629
+    },
+    "clusters": [
+      {
+        "lab": [
+          87.21424720805379,
+          2.4068078146190737,
+          -3.3751028431185865
+        ],
+        "fraction": 0.15662871832537642
+      },
+      {
+        "lab": [
+          99.73546890435259,
+          -0.013590133745250754,
+          0.0251548494432272
+        ],
+        "fraction": 0.8141755416819684
+      }
+    ],
+    "borderBefore": {
+      "left": 152.65998457979956,
+      "right": 133.3230531996916,
+      "top": 16.29,
+      "bottom": 113.01187499999999,
+      "lr": 0.13523131672597874,
+      "tb": 1.496062992125984,
+      "width": 1320,
+      "height": 1629
+    },
+    "note": "Plain kilim extensions removed. The upper patterned frame is nearly absent in this worn asymmetric original; its lower frame survives. Equality would require deleting intact lower motifs."
+  },
+  {
+    "id": "05",
+    "before": {
+      "outerLeakage": 0.5806145074437757,
+      "nextLeakage": 0.4362432173635493,
+      "outerPixels": 25256,
+      "nextPixels": 50128,
+      "outerLeakPixels": 14664,
+      "nextLeakPixels": 21868,
+      "width": 1397,
+      "height": 1768
+    },
+    "clusters": [
+      {
+        "lab": [
+          69.264586769439,
+          0.00017730236934548126,
+          -0.000130434649930133
+        ],
+        "fraction": 0.2441474419000596
+      },
+      {
+        "lab": [
+          70.31279848902211,
+          -0.00012973037561470898,
+          -0.0002371095593167247
+        ],
+        "fraction": 0.49101898357027324
+      },
+      {
+        "lab": [
+          71.64943981940324,
+          -0.000012593309470966858,
+          0.000005037323779357919
+        ],
+        "fraction": 0.26483357452966716
+      }
+    ],
+    "borderBefore": {
+      "left": 96.15427215189874,
+      "right": 89.52294303797468,
+      "top": 51.935,
+      "bottom": 40.885,
+      "lr": 0.07142857142857145,
+      "tb": 0.2380952380952382,
+      "width": 1397,
+      "height": 1768
+    },
+    "note": "Intact outer border. Original end frames are narrower than side frames, with wear and small top/bottom differences."
+  },
+  {
+    "id": "06",
+    "before": {
+      "outerLeakage": 0.48344051446945335,
+      "nextLeakage": 0.23568130265716136,
+      "outerPixels": 24880,
+      "nextPixels": 49376,
+      "outerLeakPixels": 12028,
+      "nextLeakPixels": 11637,
+      "width": 1235,
+      "height": 1883
+    },
+    "clusters": [
+      {
+        "lab": [
+          56.98519068137866,
+          0.03513278169222079,
+          0.03934929912380257
+        ],
+        "fraction": 0.1575819324163695
+      },
+      {
+        "lab": [
+          63.309064493473365,
+          -0.034659351320808024,
+          0.3010193922133983
+        ],
+        "fraction": 0.1445067074206147
+      },
+      {
+        "lab": [
+          63.61829693597995,
+          0.007999159822560744,
+          -0.042017672128637204
+        ],
+        "fraction": 0.6979113601630158
+      }
+    ],
+    "borderBefore": {
+      "left": 176.59675881792182,
+      "right": 174.2421353670162,
+      "top": 148.28625,
+      "bottom": 107.095625,
+      "lr": 0.013422818791946288,
+      "tb": 0.3225806451612903,
+      "width": 1235,
+      "height": 1883
+    },
+    "note": "Intact outer border. The original upper patterned end frame is deeper than the lower one."
+  },
+  {
+    "id": "07",
+    "before": {
+      "outerLeakage": 0.1980269489894129,
+      "nextLeakage": 0.12894034917555772,
+      "outerPixels": 24936,
+      "nextPixels": 49488,
+      "outerLeakPixels": 4938,
+      "nextLeakPixels": 6381,
+      "width": 1818,
+      "height": 1307
+    },
+    "clusters": [
+      {
+        "lab": [
+          70.28579183038359,
+          -0.9794472104230608,
+          -2.670127858858361
+        ],
+        "fraction": 0.923681031010874
+      }
+    ],
+    "borderBefore": {
+      "left": 224.9775,
+      "right": 178.39124999999999,
+      "top": 330.72782608695655,
+      "bottom": 360.2773913043478,
+      "lr": 0.2309859154929578,
+      "tb": 0.08552631578947356,
+      "width": 1818,
+      "height": 1307
+    },
+    "note": "Intact outer border and selvedge. Original side frame widths differ; field is off-centre in the weaving."
+  },
+  {
+    "id": "08",
+    "before": {
+      "outerLeakage": 0.3425398633257403,
+      "nextLeakage": 0.2649024270252542,
+      "outerPixels": 24584,
+      "nextPixels": 48784,
+      "outerLeakPixels": 8421,
+      "nextLeakPixels": 12923,
+      "width": 1141,
+      "height": 1940
+    },
+    "clusters": [
+      {
+        "lab": [
+          68.71905693856026,
+          0.1752367747448177,
+          -0.42429398069113217
+        ],
+        "fraction": 0.7208363374188896
+      },
+      {
+        "lab": [
+          72.06729719961093,
+          0.1007967618170269,
+          -0.26986373706609773
+        ],
+        "fraction": 0.27498197548666187
+      }
+    ],
+    "borderBefore": {
+      "left": 153.99256110520722,
+      "right": 150.35494155154092,
+      "top": 137.01250000000002,
+      "bottom": 133.375,
+      "lr": 0.023904382470119424,
+      "tb": 0.02690582959641268,
+      "width": 1141,
+      "height": 1940
+    },
+    "note": "Intact outer border. Small residual differences reflect non-straight woven edges and wear."
+  },
+  {
+    "id": "09",
+    "before": {
+      "outerLeakage": 0.2564921090387374,
+      "nextLeakage": 0.2041859289222768,
+      "outerPixels": 27880,
+      "nextPixels": 55376,
+      "outerLeakPixels": 7151,
+      "nextLeakPixels": 11307,
+      "width": 1620,
+      "height": 1873
+    },
+    "clusters": [
+      {
+        "lab": [
+          69.35577130821966,
+          -0.010130255991311048,
+          -0.011795876136744269
+        ],
+        "fraction": 0.2917942134886936
+      },
+      {
+        "lab": [
+          70.32751605933666,
+          0.4344522104929176,
+          -2.243524891422326
+        ],
+        "fraction": 0.6927026760146144
+      }
+    ],
+    "borderBefore": {
+      "left": 241.1271676300578,
+      "right": 229.42196531791907,
+      "top": 291.48562499999997,
+      "bottom": 204.859375,
+      "lr": 0.049751243781094565,
+      "tb": 0.34905660377358483,
+      "width": 1620,
+      "height": 1873
+    },
+    "note": "Intact outer border. Upper woven edge bows downward in the middle; a four-corner crop retains that edge and some background rather than deleting its corners."
+  },
+  {
+    "id": "10",
+    "before": {
+      "outerLeakage": 0.622729609321453,
+      "nextLeakage": 0.5514858327574291,
+      "outerPixels": 23344,
+      "nextPixels": 46304,
+      "outerLeakPixels": 14537,
+      "nextLeakPixels": 25536,
+      "width": 1066,
+      "height": 1860
+    },
+    "clusters": [
+      {
+        "lab": [
+          0.7345562637028676,
+          -0.002582611055958195,
+          -0.005246964598124572
+        ],
+        "fraction": 0.24616079494128273
+      },
+      {
+        "lab": [
+          75.38161827369662,
+          0.012838815736169334,
+          -1.1136658702659057
+        ],
+        "fraction": 0.5124209575429087
+      },
+      {
+        "lab": [
+          75.601781908528,
+          -0.7410950278455868,
+          0.24676318011437817
+        ],
+        "fraction": 0.24141824751580848
+      }
+    ],
+    "borderBefore": {
+      "left": 208.08505997818975,
+      "right": 209.24754634678297,
+      "top": 120.89999999999999,
+      "bottom": 122.0625,
+      "lr": 0.005571030640668439,
+      "tb": 0.009569377990430693,
+      "width": 1066,
+      "height": 1860
+    },
+    "note": "Intact outer border: both opposing pairs already within 2%."
+  },
+  {
+    "id": "envato-2K7L5EB",
+    "before": {
+      "outerLeakage": 0.6788316243928764,
+      "nextLeakage": 0.6492395437262357,
+      "outerPixels": 29648,
+      "nextPixels": 58912,
+      "outerLeakPixels": 20126,
+      "nextLeakPixels": 38248,
+      "width": 1814,
+      "height": 1900
+    },
+    "clusters": [
+      {
+        "lab": [
+          28.644331184297247,
+          50.773178957101656,
+          23.37767205765389
+        ],
+        "fraction": 0.6551313663804098
+      },
+      {
+        "lab": [
+          34.36415853063462,
+          58.76405726082944,
+          25.09486648633913
+        ],
+        "fraction": 0.3179151432701301
+      }
+    ],
+    "borderBefore": null,
+    "note": "Disabled fragment: no complete enclosing border exists in source."
+  },
+  {
+    "id": "envato-6325SWE",
+    "before": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 28768,
+      "nextPixels": 57152,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 2048,
+      "height": 1556
+    },
+    "clusters": [],
+    "borderBefore": {
+      "left": 515.68,
+      "right": 442.42999999999995,
+      "top": 682.8913580246914,
+      "bottom": 665.3061728395062,
+      "lr": 0.15290519877675843,
+      "tb": 0.026086956521739143,
+      "width": 4688,
+      "height": 3561
+    },
+    "note": "Frame fills source. Left and right patterned border widths already differ in the photograph; cropping the left edge would delete intact outer motifs."
+  },
+  {
+    "id": "envato-B7PV8QR",
+    "before": {
+      "outerLeakage": 0.20967619337184554,
+      "nextLeakage": 0.2859111791730475,
+      "outerPixels": 26312,
+      "nextPixels": 52240,
+      "outerLeakPixels": 5517,
+      "nextLeakPixels": 14936,
+      "width": 2048,
+      "height": 1249
+    },
+    "clusters": [
+      {
+        "lab": [
+          31.78033533386285,
+          45.78089741273128,
+          26.81614785042094
+        ],
+        "fraction": 0.23995363214837712
+      },
+      {
+        "lab": [
+          38.13158508791348,
+          54.193570965252455,
+          33.19088933199038
+        ],
+        "fraction": 0.42465224111282845
+      },
+      {
+        "lab": [
+          43.39405706721536,
+          60.51464288345732,
+          38.145822711478225
+        ],
+        "fraction": 0.33539412673879443
+      }
+    ],
+    "borderBefore": {
+      "left": 390.789375,
+      "right": 378.856875,
+      "top": 444.70769230769235,
+      "bottom": 423.81538461538463,
+      "lr": 0.031007751937984506,
+      "tb": 0.0481099656357389,
+      "width": 4773,
+      "height": 2910
+    },
+    "note": "Reviewed quad retains original outer frame. Small residual border differences exist in the photographed design."
+  },
+  {
+    "id": "envato-EPRJ58X",
+    "before": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 27240,
+      "nextPixels": 54096,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 2048,
+      "height": 1365
+    },
+    "clusters": [],
+    "borderBefore": {
+      "left": 674.591875,
+      "right": 686.29,
+      "top": 752.2839737582005,
+      "bottom": 654.83786316776,
+      "lr": 0.017191977077363904,
+      "tb": 0.1385041551246538,
+      "width": 6239,
+      "height": 4159
+    },
+    "note": "Frame fills source. Original upper and lower blue floral bands differ in depth; no unused margin can be cropped to equalize them."
+  },
+  {
+    "id": "envato-QSMGCAP",
+    "before": {
+      "outerLeakage": 0.29249244205576086,
+      "nextLeakage": 0.28796986115814427,
+      "outerPixels": 23816,
+      "nextPixels": 47248,
+      "outerLeakPixels": 6966,
+      "nextLeakPixels": 13606,
+      "width": 2048,
+      "height": 937
+    },
+    "clusters": [
+      {
+        "lab": [
+          21.894631713235377,
+          22.2006880501999,
+          4.591076658354756
+        ],
+        "fraction": 0.5603882099209202
+      },
+      {
+        "lab": [
+          63.213668268274674,
+          12.449352709028902,
+          39.559532962666424
+        ],
+        "fraction": 0.15492451473759886
+      },
+      {
+        "lab": [
+          33.84154687890505,
+          49.35610381621064,
+          30.107343929286756
+        ],
+        "fraction": 0.28468727534148097
+      }
+    ],
+    "borderBefore": null,
+    "note": "Disabled fragment: no complete enclosing border exists in source."
+  },
+  {
+    "id": "envato-RBFEDY2",
+    "before": {
+      "outerLeakage": 0.48079982643910907,
+      "nextLeakage": 0.4630425284008156,
+      "outerPixels": 27656,
+      "nextPixels": 54928,
+      "outerLeakPixels": 13297,
+      "nextLeakPixels": 25434,
+      "width": 1417,
+      "height": 2048
+    },
+    "clusters": [
+      {
+        "lab": [
+          32.9608685793799,
+          36.740970591851564,
+          31.23335946243945
+        ],
+        "fraction": 0.3788659793814433
+      },
+      {
+        "lab": [
+          58.66991800816418,
+          15.35741190102759,
+          25.523156136033318
+        ],
+        "fraction": 0.27147766323024053
+      },
+      {
+        "lab": [
+          85.05516724260345,
+          4.244616869165045,
+          16.936031180441876
+        ],
+        "fraction": 0.34965635738831613
+      }
+    ],
+    "borderBefore": {
+      "left": 178.7750677506775,
+      "right": 180.37127371273712,
+      "top": 137.2775,
+      "bottom": 137.2775,
+      "lr": 0.00888888888888893,
+      "tb": 0,
+      "width": 1767,
+      "height": 2554
+    },
+    "note": "Retained complete inner frame meets 2% on both opposing pairs. The source clips the original outer motif frame at left/top, so preserving that entire frame is impossible."
+  },
+  {
+    "id": "envato-T834FYR",
+    "before": {
+      "outerLeakage": 0,
+      "nextLeakage": 0,
+      "outerPixels": 26008,
+      "nextPixels": 51632,
+      "outerLeakPixels": 0,
+      "nextLeakPixels": 0,
+      "width": 2048,
+      "height": 1211
+    },
+    "clusters": [
+      {
+        "lab": [
+          100.00000386665222,
+          -0.000016666666158296486,
+          0.000006666666463317367
+        ],
+        "fraction": 1
+      }
+    ],
+    "borderBefore": {
+      "left": 317.55,
+      "right": 366.82500000000005,
+      "top": 665.2959830866808,
+      "bottom": 643.3932346723045,
+      "lr": 0.1440000000000001,
+      "tb": 0.03347280334728035,
+      "width": 4380,
+      "height": 2590
+    },
+    "note": "Reviewed studio crop follows inner envelope of bowed woven edges, avoiding white slivers. The original left/right kilim side bands differ in width."
+  }
+]

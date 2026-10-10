@@ -1,0 +1,101 @@
+{
+  "textures": [
+    {
+      "file": "panel-albedo.webp",
+      "width": 2048,
+      "height": 2048,
+      "rgbaMipBytes": 22369621.333333332
+    },
+    {
+      "file": "concrete-detail-normal.webp",
+      "width": 512,
+      "height": 512,
+      "rgbaMipBytes": 1398101.3333333333
+    },
+    {
+      "file": "panel-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "brick-albedo.webp",
+      "width": 2048,
+      "height": 2048,
+      "rgbaMipBytes": 22369621.333333332
+    },
+    {
+      "file": "brick-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "panel335-albedo.webp",
+      "width": 2048,
+      "height": 2048,
+      "rgbaMipBytes": 22369621.333333332
+    },
+    {
+      "file": "panel335-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "brick-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "brick-impostor-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "nine-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "nine-impostor-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "panel-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "panel-impostor-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "car-atlas.webp",
+      "width": 1024,
+      "height": 512,
+      "rgbaMipBytes": 2796202.6666666665
+    },
+    {
+      "file": "tower-impostor-albedo.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    },
+    {
+      "file": "tower-impostor-windows.webp",
+      "width": 1024,
+      "height": 1024,
+      "rgbaMipBytes": 5592405.333333333
+    }
+  ],
+  "rgbaMipBytes": 132819626.66666663
+}

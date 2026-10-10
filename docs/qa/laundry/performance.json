@@ -1,0 +1,57 @@
+{
+  "errors": [],
+  "clips": {
+    "calm": {
+      "calls": 3,
+      "triangles": 7340
+    },
+    "breeze": {
+      "calls": 3,
+      "triangles": 7340
+    },
+    "strong": {
+      "calls": 3,
+      "triangles": 7340
+    }
+  },
+  "qualities": {
+    "high": {
+      "drawCalls": 144,
+      "triangles": 546974,
+      "frameCpuMs": 6.306666666269303,
+      "gpuMs": 7.044869333333333,
+      "intervalMs": 16.666666666666668
+    },
+    "medium": {
+      "drawCalls": 145,
+      "triangles": 546975,
+      "frameCpuMs": 7.10000000099341,
+      "gpuMs": 44.70203946666665,
+      "intervalMs": 147.78
+    },
+    "low": {
+      "drawCalls": 92,
+      "triangles": 418150,
+      "frameCpuMs": 5.889999999602636,
+      "gpuMs": 77.24863573333332,
+      "intervalMs": 91.1166666666666
+    }
+  },
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "vertexUploadsPerFrame": 0,
+  "laundrySimulationCpuMs": 0,
+  "isolatedSubmission": {
+    "meanMs": 0.06166666679912143,
+    "colourDrawCalls": 2,
+    "shadowDrawCalls": 1
+  },
+  "fallback": "passed",
+  "integration": {
+    "status": "vat",
+    "visible": [
+      true,
+      true
+    ],
+    "sharedMaterial": true
+  }
+}

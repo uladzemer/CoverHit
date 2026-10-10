@@ -1,0 +1,166 @@
+{
+  "types": [
+    {
+      "type": "palas",
+      "nominal": {
+        "width": 1.5,
+        "height": 2.2
+      },
+      "longSide": 2.2
+    },
+    {
+      "type": "wool",
+      "nominal": {
+        "width": 2,
+        "height": 3
+      },
+      "longSide": 3
+    },
+    {
+      "type": "runner",
+      "nominal": {
+        "width": 0.9,
+        "height": 3
+      },
+      "longSide": 3
+    },
+    {
+      "type": "tapestry",
+      "nominal": {
+        "width": 2.7,
+        "height": 2.2
+      },
+      "longSide": 2.7
+    }
+  ],
+  "barHeight": 2.15,
+  "barSpan": 3.4,
+  "conservativeBiggestClearance": 0.3879999999999999,
+  "metrics": [
+    {
+      "id": "09",
+      "type": "palas",
+      "aspect": 0.8649225840896957,
+      "width": 1.9028296849973307,
+      "height": 2.2,
+      "span": 1.9028296849973307,
+      "drop": 1.1,
+      "barHeight": 2.15,
+      "barSpan": 3.4,
+      "endMargin": 0.7485851575013346,
+      "groundClearance": 1.1274442558288573,
+      "frameHeight": 0.4312230839470844,
+      "bounds": {
+        "minY": -0.37021145637928354,
+        "maxY": 0.49223471151488524,
+        "minX": -0.5244053862109852,
+        "maxX": 0.5445470470089667
+      },
+      "camera": [
+        0.2,
+        1.82,
+        2.9
+      ],
+      "target": [
+        0,
+        1.5999999999999999,
+        0
+      ],
+      "recoveries": 0
+    },
+    {
+      "id": "03",
+      "type": "wool",
+      "aspect": 0.6499724821133737,
+      "width": 1.949917446340121,
+      "height": 3,
+      "span": 1.949917446340121,
+      "drop": 1.5,
+      "barHeight": 2.15,
+      "barSpan": 3.4,
+      "endMargin": 0.7250412768299395,
+      "groundClearance": 0.7796659355163573,
+      "frameHeight": 0.5451102187365992,
+      "bounds": {
+        "minY": -0.45639293816366056,
+        "maxY": 0.6338274993095377,
+        "minX": -0.5131847416504649,
+        "maxX": 0.5286588823754885
+      },
+      "camera": [
+        0.2,
+        1.82,
+        3.1194955193114104
+      ],
+      "target": [
+        0,
+        1.4,
+        0
+      ],
+      "recoveries": 0
+    },
+    {
+      "id": "05",
+      "type": "wool",
+      "aspect": 0.790158371040724,
+      "width": 2.7655542986425337,
+      "height": 3.5,
+      "span": 2.7655542986425337,
+      "drop": 1.75,
+      "barHeight": 2.15,
+      "barSpan": 3.4,
+      "endMargin": 0.3172228506787331,
+      "groundClearance": 0.4677114372253417,
+      "frameHeight": 0.5451142444408084,
+      "bounds": {
+        "minY": -0.49586141120753224,
+        "maxY": 0.5943670776740845,
+        "minX": -0.6123936107268287,
+        "maxX": 0.6351058617427334
+      },
+      "camera": [
+        0.2,
+        1.82,
+        3.6394114391966457
+      ],
+      "target": [
+        0,
+        1.275,
+        0
+      ],
+      "recoveries": 0
+    },
+    {
+      "id": "01",
+      "type": "runner",
+      "aspect": 0.5241273100616016,
+      "width": 1.5723819301848048,
+      "height": 3,
+      "span": 1.5723819301848048,
+      "drop": 1.5,
+      "barHeight": 2.15,
+      "barSpan": 3.4,
+      "endMargin": 0.9138090349075976,
+      "groundClearance": 0.7542430047988891,
+      "frameHeight": 0.5490677287097306,
+      "bounds": {
+        "minY": -0.47595815726823404,
+        "maxY": 0.6221773001512273,
+        "minX": -0.4139950366232806,
+        "maxX": 0.4211406642068821
+      },
+      "camera": [
+        0.2,
+        1.82,
+        3.1194955193114104
+      ],
+      "target": [
+        0,
+        1.4,
+        0
+      ],
+      "recoveries": 0
+    }
+  ],
+  "errors": []
+}

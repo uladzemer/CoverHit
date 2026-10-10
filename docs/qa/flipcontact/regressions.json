@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "bar-clip",
+      "code": 0,
+      "elapsedMs": 70732
+    },
+    {
+      "name": "fold",
+      "code": 0,
+      "elapsedMs": 42612
+    },
+    {
+      "name": "layers",
+      "code": 0,
+      "elapsedMs": 35662
+    },
+    {
+      "name": "crown",
+      "code": 0,
+      "elapsedMs": 10538
+    }
+  ]
+}

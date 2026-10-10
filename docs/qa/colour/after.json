@@ -1,0 +1,12 @@
+{
+  "phase": "after",
+  "viewport": [
+    1000,
+    800
+  ],
+  "quality": "high",
+  "method": "Frozen default camera, clean cloth. GPU-filtered sRGB scan at identical visible UVs; silhouette eroded 2px. Circular saturation-weighted mean hue, mean HSV saturation, mean Rec.709 sRGB luminance. Any channel =255 counts as clipping.",
+  "carpets": [],
+  "qualityChecks": {},
+  "errors": []
+}

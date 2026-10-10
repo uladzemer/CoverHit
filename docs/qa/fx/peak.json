@@ -1,0 +1,18 @@
+{
+  "combinedParticles": 3000,
+  "mainPool": 2760,
+  "mothScalePool": 240,
+  "moths": 30,
+  "drawCalls": 5,
+  "triangles": 11700,
+  "saturatedEmitMeanMs": 0.05700000017881393,
+  "combinedUpdateMeanMs": 0.022599999994039534,
+  "isolatedGPU": {
+    "mean": 0.28164,
+    "min": 0.276032,
+    "max": 0.307776,
+    "samples": 20
+  },
+  "fallbackShaderRendered": true,
+  "errors": []
+}

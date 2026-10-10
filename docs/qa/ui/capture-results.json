@@ -1,0 +1,282 @@
+[
+  {
+    "size": "1440x900",
+    "state": "menu",
+    "file": "licensed-stock-menu.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "beater-locked",
+    "file": "licensed-stock-beater-locked.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "quality-low",
+    "file": "licensed-stock-quality-low.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "credits",
+    "file": "licensed-stock-credits.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "playing-waiting",
+    "file": "licensed-stock-playing-waiting.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "toggles",
+    "file": "licensed-stock-toggles.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "hit-excellent",
+    "file": "licensed-stock-hit-excellent.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "hit-good",
+    "file": "licensed-stock-hit-good.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "hit-weak",
+    "file": "licensed-stock-hit-weak.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "threshold-89-9",
+    "file": "licensed-stock-threshold-89-9.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "side-ready-focus",
+    "file": "licensed-stock-side-ready-focus.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "flipping",
+    "file": "licensed-stock-flipping.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "timer-urgent",
+    "file": "licensed-stock-timer-urgent.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "carpet-done",
+    "file": "licensed-stock-carpet-done.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "next-carpet",
+    "file": "licensed-stock-next-carpet.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "toast-retry",
+    "file": "licensed-stock-toast-retry.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "unlock",
+    "file": "licensed-stock-unlock.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "game-over",
+    "file": "licensed-stock-game-over.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "fresh-restart",
+    "file": "licensed-stock-fresh-restart.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1440x900",
+    "state": "reduced-motion",
+    "file": "licensed-stock-reduced-motion.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "menu",
+    "file": "licensed-stock-menu.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "beater-locked",
+    "file": "licensed-stock-beater-locked.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "quality-low",
+    "file": "licensed-stock-quality-low.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "credits",
+    "file": "licensed-stock-credits.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "playing-waiting",
+    "file": "licensed-stock-playing-waiting.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "toggles",
+    "file": "licensed-stock-toggles.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "hit-excellent",
+    "file": "licensed-stock-hit-excellent.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "hit-good",
+    "file": "licensed-stock-hit-good.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "hit-weak",
+    "file": "licensed-stock-hit-weak.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "threshold-89-9",
+    "file": "licensed-stock-threshold-89-9.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "side-ready-focus",
+    "file": "licensed-stock-side-ready-focus.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "flipping",
+    "file": "licensed-stock-flipping.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "timer-urgent",
+    "file": "licensed-stock-timer-urgent.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "carpet-done",
+    "file": "licensed-stock-carpet-done.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "next-carpet",
+    "file": "licensed-stock-next-carpet.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "toast-retry",
+    "file": "licensed-stock-toast-retry.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "unlock",
+    "file": "licensed-stock-unlock.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "game-over",
+    "file": "licensed-stock-game-over.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "fresh-restart",
+    "file": "licensed-stock-fresh-restart.png",
+    "licensed": true,
+    "errors": []
+  },
+  {
+    "size": "1024x640",
+    "state": "reduced-motion",
+    "file": "licensed-stock-reduced-motion.png",
+    "licensed": true,
+    "errors": []
+  }
+]

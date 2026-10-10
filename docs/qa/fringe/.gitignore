@@ -1,0 +1,5 @@
+# Licensed rug pixels and local stock yard pixels must stay local.
+envato-*.png
+envato-*.jpg
+*-game.png
+*-flip.png

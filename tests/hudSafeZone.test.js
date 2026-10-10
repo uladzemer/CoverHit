@@ -1,0 +1,35 @@
+import {it,expect} from 'vitest';
+import {readFileSync} from 'node:fs';
+import {chromium} from '../scripts/qa-browser.mjs';
+
+// Use the actual HUD markup and styles in a layout engine: DOM mocks cannot
+// detect media-query, font-size or expanded-panel overlaps.
+it('keeps HUD panels outside the central 60% at small, short and desktop sizes',async()=>{
+ const css=['tokens','hud'].map(name=>readFileSync(`src/ui/${name}.css`,'utf8')).join('\n');
+ const source=readFileSync('src/ui/hud.js','utf8'),markup=source.match(/this.root.innerHTML = `([\s\S]*?)`;/)[1];
+ const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||(process.platform==='win32'?'C:/Program Files/Google/Chrome/Application/chrome.exe':undefined),headless:true});
+ try {
+  for(const [width,height] of [[800,700],[1024,640],[1440,900]]){
+   const page=await browser.newPage({viewport:{width,height}});
+   await page.setContent(`<style>body{margin:0}${css}</style><div class="coverhit-hud" data-state="playing">${markup}</div>`);
+   await page.evaluate(()=>{
+    document.querySelector('[data-screen]').hidden=true;document.querySelector('[data-reward]').hidden=true;
+    document.querySelector('[data-type]').textContent='Ковёр шерстяной';
+    document.querySelector('[data-carpet-title]').textContent='Красный с медальоном';
+    document.querySelector('[data-reticle]').textContent='Прицел: крупный · R';
+    document.querySelector('[data-reticle]').dataset.icon='◎';document.querySelector('[data-mute]').dataset.icon='♪';
+   });
+   for(const expanded of [false,true]){
+    await page.locator('.ch-stats').evaluate((node,open)=>node.open=open,expanded);
+    const overlaps=await page.locator('.ch-zone').evaluateAll(nodes=>nodes.flatMap(node=>{
+     const r=node.getBoundingClientRect(),w=innerWidth,h=innerHeight;
+     return r.left<w*.8&&r.right>w*.2&&r.top<h*.8&&r.bottom>h*.2?[{class:node.className,rect:r.toJSON()}]:[];
+    }));
+    expect(overlaps,`${width}x${height}, expanded=${expanded}`).toEqual([]);
+   }
+   const iconOnly=await page.locator('.ch-toggles button').first().evaluate(node=>getComputedStyle(node).fontSize==='0px');
+   expect(iconOnly).toBe(width<1000||height<760);
+   await page.close();
+  }
+ } finally {await browser.close();}
+},30000);

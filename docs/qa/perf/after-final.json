@@ -1,0 +1,705 @@
+{
+  "viewport": [
+    1440,
+    900
+  ],
+  "phase": "after-final",
+  "baseline": false,
+  "cpu": "Intel(R) Core(TM) i9-10900KF CPU @ 3.70GHz",
+  "browser": "155.0.8059.39",
+  "active": false,
+  "uncapped": true,
+  "qualities": {
+    "high": {
+      "carpet": "envato-B7PV8QR",
+      "grid": [
+        36,
+        22
+      ],
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "hardware": true,
+      "nodes": 851,
+      "meshes": [
+        {
+          "name": "yard-static-batch",
+          "material": "leaves",
+          "triangles": 39000,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "",
+          "triangles": 38776,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "Garage Utility Building",
+          "triangles": 31196,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "trunk",
+          "triangles": 23409,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "",
+          "triangles": 23328,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "KB3D_CTS_LeafAtlas",
+          "triangles": 22239,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": true,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "dumpster_mat",
+          "triangles": 17277,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "carpet-fringe",
+          "material": "",
+          "triangles": 16768,
+          "shadow": true,
+          "instances": 524
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "KB3D_CTS_SteelPaintBlackA",
+          "triangles": 14982,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "KB3D_CTS_SteelRoughBlackT",
+          "triangles": 12246,
+          "shadow": false,
+          "instances": 1
+        }
+      ],
+      "metrics": {
+        "frameMs": {
+          "mean": 2.997083332389593,
+          "p95": 6.0999999940395355,
+          "max": 7.799999982118607
+        },
+        "physicsMs": {
+          "mean": 1.0583333327124516,
+          "p95": 4.0999999940395355,
+          "max": 4.700000017881393
+        },
+        "renderMs": {
+          "mean": 1.191250000273188,
+          "p95": 1.4000000059604645,
+          "max": 2.2999999821186066
+        },
+        "gpuMs": {
+          "mean": 2.5521057333333323,
+          "p95": 3.021088,
+          "max": 4.2736
+        },
+        "intervalMs": {
+          "mean": 3.255000000000003,
+          "p95": 6.399999999999636,
+          "max": 8.399999999999636
+        },
+        "drawCalls": {
+          "mean": 146,
+          "p95": 146,
+          "max": 146
+        },
+        "triangles": {
+          "mean": 543536,
+          "p95": 543536,
+          "max": 543536
+        },
+        "ammo": {
+          "mean": 0.27708333370586236,
+          "p95": 1.5,
+          "max": 1.699999988079071
+        },
+        "integrate": {
+          "mean": 0.4416666674117247,
+          "p95": 2.4000000059604645,
+          "max": 2.9000000059604645
+        },
+        "integrateSteps": {
+          "mean": 0.19166666666666668,
+          "p95": 1,
+          "max": 1
+        },
+        "projectBar": {
+          "mean": 0.019583333283662796,
+          "p95": 0.10000002384185791,
+          "max": 0.20000001788139343
+        },
+        "projectLayers": {
+          "mean": 0.05291666636864344,
+          "p95": 0.30000001192092896,
+          "max": 0.4000000059604645
+        },
+        "clampVelocities": {
+          "mean": 0.01249999962747097,
+          "p95": 0.09999999403953552,
+          "max": 0.20000001788139343
+        },
+        "watchdog": {
+          "mean": 0.046666667237877844,
+          "p95": 0.30000001192092896,
+          "max": 0.4000000059604645
+        },
+        "readNodes": {
+          "mean": 0.02583333378036817,
+          "p95": 0.19999998807907104,
+          "max": 0.30000001192092896
+        },
+        "refreshGeometry": {
+          "mean": 0.2049999994536241,
+          "p95": 1.300000011920929,
+          "max": 1.5
+        },
+        "dustMs": {
+          "mean": 0.009166666492819785,
+          "p95": 0.09999999403953552,
+          "max": 0.10000002384185791
+        },
+        "raycastMs": {
+          "mean": 0,
+          "p95": 0,
+          "max": 0
+        },
+        "fringeMs": {
+          "mean": 0.03250000042219957,
+          "p95": 0.20000001788139343,
+          "max": 0.30000001192092896
+        },
+        "normalsMs": {
+          "mean": 0.02541666626930237,
+          "p95": 0.19999998807907104,
+          "max": 0.20000001788139343
+        },
+        "smoothNormalsMs": {
+          "mean": 0.05458333343267441,
+          "p95": 0.5999999940395355,
+          "max": 0.7000000178813934
+        },
+        "shadingMs": {
+          "mean": 0.049166667337218924,
+          "p95": 0.30000001192092896,
+          "max": 0.4000000059604645
+        }
+      },
+      "fps": 307.21966205837145
+    },
+    "medium": {
+      "carpet": "envato-B7PV8QR",
+      "grid": [
+        36,
+        22
+      ],
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "hardware": true,
+      "nodes": 851,
+      "meshes": [
+        {
+          "name": "yard-static-batch",
+          "material": "leaves",
+          "triangles": 39000,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "",
+          "triangles": 38776,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "Garage Utility Building",
+          "triangles": 31196,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "trunk",
+          "triangles": 23409,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "",
+          "triangles": 23328,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "KB3D_CTS_LeafAtlas",
+          "triangles": 22239,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": true,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "dumpster_mat",
+          "triangles": 17277,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "carpet-fringe",
+          "material": "",
+          "triangles": 16768,
+          "shadow": true,
+          "instances": 524
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "KB3D_CTS_SteelPaintBlackA",
+          "triangles": 14982,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "KB3D_CTS_SteelRoughBlackT",
+          "triangles": 12246,
+          "shadow": false,
+          "instances": 1
+        }
+      ],
+      "metrics": {
+        "frameMs": {
+          "mean": 2.8774999997268123,
+          "p95": 5.9000000059604645,
+          "max": 6.300000011920929
+        },
+        "physicsMs": {
+          "mean": 1.012499999254942,
+          "p95": 3.9000000059604645,
+          "max": 4.200000017881393
+        },
+        "renderMs": {
+          "mean": 1.1333333325882753,
+          "p95": 1.300000011920929,
+          "max": 1.5999999940395355
+        },
+        "gpuMs": {
+          "mean": 2.2637077333333337,
+          "p95": 2.59072,
+          "max": 2.840576
+        },
+        "intervalMs": {
+          "mean": 3.1058333333333317,
+          "p95": 6.200000000000728,
+          "max": 6.700000000000728
+        },
+        "drawCalls": {
+          "mean": 147,
+          "p95": 147,
+          "max": 147
+        },
+        "triangles": {
+          "mean": 543537,
+          "p95": 543537,
+          "max": 543537
+        },
+        "ammo": {
+          "mean": 0.25500000044703486,
+          "p95": 1.4000000059604645,
+          "max": 1.5
+        },
+        "integrate": {
+          "mean": 0.40750000017384685,
+          "p95": 2.2999999821186066,
+          "max": 2.4000000059604645
+        },
+        "integrateSteps": {
+          "mean": 0.18333333333333332,
+          "p95": 1,
+          "max": 1
+        },
+        "projectBar": {
+          "mean": 0.018749999503294628,
+          "p95": 0.09999999403953552,
+          "max": 0.20000001788139343
+        },
+        "projectLayers": {
+          "mean": 0.05125000029802322,
+          "p95": 0.30000001192092896,
+          "max": 0.4000000059604645
+        },
+        "clampVelocities": {
+          "mean": 0.011249999701976775,
+          "p95": 0.09999999403953552,
+          "max": 0.19999998807907104
+        },
+        "watchdog": {
+          "mean": 0.039166666691501935,
+          "p95": 0.29999998211860657,
+          "max": 0.4000000059604645
+        },
+        "readNodes": {
+          "mean": 0.022499999900658926,
+          "p95": 0.19999998807907104,
+          "max": 0.20000001788139343
+        },
+        "refreshGeometry": {
+          "mean": 0.19083333313465117,
+          "p95": 1.300000011920929,
+          "max": 1.4000000059604645
+        },
+        "dustMs": {
+          "mean": 0.008749999850988389,
+          "p95": 0.09999999403953552,
+          "max": 0.10000002384185791
+        },
+        "raycastMs": {
+          "mean": 0,
+          "p95": 0,
+          "max": 0
+        },
+        "fringeMs": {
+          "mean": 0.03208333328366279,
+          "p95": 0.20000001788139343,
+          "max": 0.30000001192092896
+        },
+        "normalsMs": {
+          "mean": 0.02374999982615312,
+          "p95": 0.19999998807907104,
+          "max": 0.30000001192092896
+        },
+        "smoothNormalsMs": {
+          "mean": 0.04833333343267441,
+          "p95": 0.5,
+          "max": 0.6000000238418579
+        },
+        "shadingMs": {
+          "mean": 0.04958333348234494,
+          "p95": 0.30000001192092896,
+          "max": 0.5999999940395355
+        }
+      },
+      "fps": 321.97477864233986
+    },
+    "low": {
+      "carpet": "envato-B7PV8QR",
+      "grid": [
+        36,
+        22
+      ],
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "hardware": true,
+      "nodes": 851,
+      "meshes": [
+        {
+          "name": "yard-static-batch",
+          "material": "leaves",
+          "triangles": 39000,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "",
+          "triangles": 38776,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "Garage Utility Building",
+          "triangles": 31196,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "trunk",
+          "triangles": 23409,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "",
+          "triangles": 23328,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "KB3D_CTS_LeafAtlas",
+          "triangles": 22239,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": true,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "",
+          "material": "",
+          "triangles": 21016,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "dumpster_mat",
+          "triangles": 17277,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "carpet-fringe",
+          "material": "",
+          "triangles": 16768,
+          "shadow": true,
+          "instances": 524
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "KB3D_CTS_SteelPaintBlackA",
+          "triangles": 14982,
+          "shadow": false,
+          "instances": 1
+        },
+        {
+          "name": "yard-static-batch",
+          "material": "KB3D_CTS_SteelRoughBlackT",
+          "triangles": 12246,
+          "shadow": false,
+          "instances": 1
+        }
+      ],
+      "metrics": {
+        "frameMs": {
+          "mean": 2.5725000015149515,
+          "p95": 5.5999999940395355,
+          "max": 7.0999999940395355
+        },
+        "physicsMs": {
+          "mean": 0.9487500003228585,
+          "p95": 3.9000000059604645,
+          "max": 4.300000011920929
+        },
+        "renderMs": {
+          "mean": 0.8683333339790503,
+          "p95": 1.100000023841858,
+          "max": 2.100000023841858
+        },
+        "gpuMs": {
+          "mean": 1.8103998666666667,
+          "p95": 2.355072,
+          "max": 2.949088
+        },
+        "intervalMs": {
+          "mean": 2.810416666666667,
+          "p95": 5.899999999999636,
+          "max": 7.600000000000364
+        },
+        "drawCalls": {
+          "mean": 102,
+          "p95": 102,
+          "max": 102
+        },
+        "triangles": {
+          "mean": 418776,
+          "p95": 418776,
+          "max": 418776
+        },
+        "ammo": {
+          "mean": 0.23416666661699612,
+          "p95": 1.4000000059604645,
+          "max": 1.5999999940395355
+        },
+        "integrate": {
+          "mean": 0.3712500002235174,
+          "p95": 2.2999999821186066,
+          "max": 2.5
+        },
+        "integrateSteps": {
+          "mean": 0.16666666666666666,
+          "p95": 1,
+          "max": 1
+        },
+        "projectBar": {
+          "mean": 0.014999999850988387,
+          "p95": 0.09999999403953552,
+          "max": 0.20000001788139343
+        },
+        "projectLayers": {
+          "mean": 0.044583332786957426,
+          "p95": 0.30000001192092896,
+          "max": 0.4000000059604645
+        },
+        "clampVelocities": {
+          "mean": 0.0125,
+          "p95": 0.09999999403953552,
+          "max": 0.20000001788139343
+        },
+        "watchdog": {
+          "mean": 0.03500000014901161,
+          "p95": 0.20000004768371582,
+          "max": 0.4000000059604645
+        },
+        "readNodes": {
+          "mean": 0.021666667237877846,
+          "p95": 0.19999998807907104,
+          "max": 0.20000001788139343
+        },
+        "refreshGeometry": {
+          "mean": 0.17333333293596903,
+          "p95": 1.300000011920929,
+          "max": 1.600000023841858
+        },
+        "dustMs": {
+          "mean": 0.005833333233992258,
+          "p95": 0.09999999403953552,
+          "max": 0.10000002384185791
+        },
+        "raycastMs": {
+          "mean": 0,
+          "p95": 0,
+          "max": 0
+        },
+        "fringeMs": {
+          "mean": 0.029999999701976775,
+          "p95": 0.20000001788139343,
+          "max": 0.30000001192092896
+        },
+        "normalsMs": {
+          "mean": 0.021666666368643443,
+          "p95": 0.19999998807907104,
+          "max": 0.20000001788139343
+        },
+        "smoothNormalsMs": {
+          "mean": 0.04458333353201548,
+          "p95": 0.5,
+          "max": 0.6000000238418579
+        },
+        "shadingMs": {
+          "mean": 0.04208333293596903,
+          "p95": 0.29999998211860657,
+          "max": 0.30000001192092896
+        }
+      },
+      "fps": 355.8191252779837
+    }
+  },
+  "errors": []
+}

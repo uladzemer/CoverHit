@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Laundry QA</title><link rel="icon" href="data:,"><style>body{margin:0;background:#d0b79b}canvas{display:block}</style></head><body><script type="module">
+import * as THREE from 'three';
+import {createLaundry} from '/src/scene/yard/laundry.js';
+import {wind} from '/src/scene/wind.js';
+const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setSize(640,400);document.body.append(renderer.domElement);
+renderer.shadowMap.enabled=true;
+const scene=new THREE.Scene();scene.background=new THREE.Color('#d0b79b');
+const camera=new THREE.PerspectiveCamera(43,1.6,.1,30);camera.position.set(.8,2.05,-1.9);camera.lookAt(-1.9,2.05,-1.9);
+scene.add(new THREE.HemisphereLight('#e8e1cd','#6c7661',2));
+const sun=new THREE.DirectionalLight('#ffd1a0',3);sun.position.set(-4,5,-4);sun.castShadow=true;scene.add(sun);
+const laundry=createLaundry(scene);await laundry.ready;
+window.qa={laundry,renderer,wind,render(t,strength){wind.uniforms.uWindTime.value=t;wind.uniforms.uWindStrength.value=strength;renderer.render(scene,camera);return {calls:renderer.info.render.calls,triangles:renderer.info.render.triangles};}};
+window.qa.render(0,.5);
+</script></body></html>

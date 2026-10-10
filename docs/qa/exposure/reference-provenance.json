@@ -1,0 +1,5 @@
+{
+  "revision": "a00a80a983ee3dc3e5620caa5bcafedb0661332e",
+  "method": "All src files restored by git show into an ignored isolated directory; shared unchanged base assets and carpets. Optional licensed stock blocked in both renders.",
+  "command": "node node_modules/vite/bin/vite.js artifacts/exposure-baseline --host 127.0.0.1 --port 5184"
+}

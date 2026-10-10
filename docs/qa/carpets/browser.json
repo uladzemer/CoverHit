@@ -1,0 +1,280 @@
+{
+  "metrics": [
+    {
+      "id": "01",
+      "aspect": 0.5241273100616016,
+      "meshAspect": 0.5241273100616016,
+      "cols": 22,
+      "rows": 42,
+      "finite": true,
+      "maxCoordinate": 2.7506160736083984,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "02",
+      "aspect": 0.6822945394373966,
+      "meshAspect": 0.6822945394373966,
+      "cols": 30,
+      "rows": 44,
+      "finite": true,
+      "maxCoordinate": 2.466334104537964,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "03",
+      "aspect": 0.6499724821133737,
+      "meshAspect": 0.6499724821133737,
+      "cols": 26,
+      "rows": 40,
+      "finite": true,
+      "maxCoordinate": 2.4341418743133545,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "04",
+      "aspect": 0.6939632545931759,
+      "meshAspect": 0.6939632545931759,
+      "cols": 34,
+      "rows": 49,
+      "finite": true,
+      "maxCoordinate": 2.5076234340667725,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "05",
+      "aspect": 0.790158371040724,
+      "meshAspect": 0.790158371040724,
+      "cols": 34,
+      "rows": 43,
+      "finite": true,
+      "maxCoordinate": 2.4585604667663574,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "06",
+      "aspect": 0.6558682952734998,
+      "meshAspect": 0.6558682952734998,
+      "cols": 21,
+      "rows": 32,
+      "finite": true,
+      "maxCoordinate": 2.2975387573242188,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "07",
+      "aspect": 1.3909716908951797,
+      "meshAspect": 1.3909716908951797,
+      "cols": 39,
+      "rows": 28,
+      "finite": true,
+      "maxCoordinate": 2.309469223022461,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "08",
+      "aspect": 0.5881443298969072,
+      "meshAspect": 0.5881443298969072,
+      "cols": 20,
+      "rows": 34,
+      "finite": true,
+      "maxCoordinate": 2.377359628677368,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "09",
+      "aspect": 0.8649225840896957,
+      "meshAspect": 0.8649225840896957,
+      "cols": 32,
+      "rows": 37,
+      "finite": true,
+      "maxCoordinate": 2.3488380908966064,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "10",
+      "aspect": 0.5731182795698925,
+      "meshAspect": 0.5731182795698925,
+      "cols": 27,
+      "rows": 47,
+      "finite": true,
+      "maxCoordinate": 2.4901137351989746,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "envato-6325SWE",
+      "aspect": 1.3161953727506426,
+      "meshAspect": 1.3161953727506426,
+      "cols": 46,
+      "rows": 35,
+      "finite": true,
+      "maxCoordinate": 2.3891847133636475,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "envato-B7PV8QR",
+      "aspect": 1.6397117694155323,
+      "meshAspect": 1.6397117694155323,
+      "cols": 41,
+      "rows": 25,
+      "finite": true,
+      "maxCoordinate": 2.2681970596313477,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "envato-EPRJ58X",
+      "aspect": 1.5003663003663004,
+      "meshAspect": 1.5003663003663004,
+      "cols": 36,
+      "rows": 24,
+      "finite": true,
+      "maxCoordinate": 2.2517921924591064,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "envato-RBFEDY2",
+      "aspect": 0.66650390625,
+      "meshAspect": 0.66650390625,
+      "cols": 16,
+      "rows": 24,
+      "finite": true,
+      "maxCoordinate": 2.2505805492401123,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    },
+    {
+      "id": "envato-T834FYR",
+      "aspect": 1.6911643270024772,
+      "meshAspect": 1.6911643270024772,
+      "cols": 44,
+      "rows": 26,
+      "finite": true,
+      "maxCoordinate": 2.2145943641662598,
+      "repeat": [
+        1,
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "canvasTexture": false
+    }
+  ],
+  "blocked": "envato-B7PV8QR",
+  "fallback": {
+    "id": "envato-6325SWE",
+    "canvasTexture": false
+  },
+  "errors": []
+}

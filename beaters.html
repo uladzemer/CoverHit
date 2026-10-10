@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoverHit · Выбивалки</title>
+  <link rel="icon" href="data:," />
+  <style>
+    * { box-sizing: border-box; } body { margin: 0; background: #292b31; color: #f7e6ce; font: 14px system-ui,sans-serif; }
+    canvas { display: block; width: 100%; height: 100vh; }
+    header { position: absolute; top: 24px; left: 32px; pointer-events: none; }
+    h1 { font-size: 28px; margin: 0 0 8px; font-weight: 500; } p { color: #ccb9a0; margin: 0; }
+    #cards { position: absolute; left: 2%; right: 2%; bottom: 28px; display: grid; grid-template-columns: repeat(6,1fr); gap: 12px; }
+    button { text-align: left; color: inherit; font: inherit; cursor: pointer; border: 1px solid #aa866347; background: #242429de; border-radius: 12px; padding: 12px; }
+    button:hover, button:focus-visible { background: #4f3d31; outline: 2px solid #dda869; }
+    button small { display: block; color: #c5ae93; margin-top: 5px; font-size: 11px; }
+    #controls { position: absolute; right: 24px; top: 24px; display: flex; gap: 8px; }
+    @media(max-width:800px) { #cards { grid-template-columns: repeat(3,1fr); gap: 4px; bottom: 12px; } button { padding: 8px; font-size: 12px; } header { left:16px; top:16px; } h1 { font-size:20px; } header p { max-width: 240px; } #controls { top:80px; } }
+  </style>
+</head>
+<body>
+  <header><h1>Шесть способов выбить пыль</h1><p>Процедурная коллекция · вечерний свет · масштаб 1:1<br>Тяните мышью, чтобы повернуть. Нажмите название: удар и звук.</p></header>
+  <div id="controls"><button id="rotate">Вращение: вкл.</button><button id="flex">Изгиб</button></div>
+  <div id="cards"></div>
+  <script type="module" src="/src/beaters-preview.js"></script>
+</body>
+</html>

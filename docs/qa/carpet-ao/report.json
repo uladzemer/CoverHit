@@ -1,0 +1,23 @@
+{
+  "state": {
+    "id": "09",
+    "vertices": 460,
+    "aoRange": [
+      0.4156224727630615,
+      1
+    ],
+    "renderer": "WebKit WebGL"
+  },
+  "timing": {
+    "id": "10",
+    "vertices": 1760,
+    "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "timer": "GPU timer query",
+    "baselineMs": 6.1376,
+    "enhancedMs": 6.633888,
+    "updateMs": 0.18,
+    "addedMs": 0.6762879999999998,
+    "samplesPerMode": 96
+  },
+  "errors": []
+}

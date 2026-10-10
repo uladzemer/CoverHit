@@ -1,0 +1,173 @@
+[
+  {
+    "variant": "60",
+    "carpet": "envato-B7PV8QR",
+    "simulatedSeconds": 2.28333333333333,
+    "steps": 137,
+    "hits": 1,
+    "flips": null,
+    "maxExtent": 61341.59375,
+    "maxSpeed": 4.790151559020996,
+    "maxKineticEnergy": 0.6851256846416047,
+    "recoveries": 0,
+    "failed": {
+      "phase": "four-strikes",
+      "time": 2.28333333333333,
+      "extent": 61341.59375,
+      "speed": 0.975614844749955
+    },
+    "samples": [
+      {
+        "phase": "warmup",
+        "time": 1.0000000000000013,
+        "extent": 1.485115885734558,
+        "speed": 0.23951954603153186,
+        "kinetic": 0.0023023491704511337,
+        "potential": -13.689299267469663,
+        "energy": -13.686996918299212
+      },
+      {
+        "phase": "four-strikes",
+        "time": 1.9999999999999978,
+        "extent": 1.498934268951416,
+        "speed": 1.8937807572469305,
+        "kinetic": 0.18481747714680422,
+        "potential": -13.275758234602156,
+        "energy": -13.090940757455352
+      },
+      {
+        "phase": "four-strikes",
+        "time": 2.28333333333333,
+        "extent": 61341.59375,
+        "speed": 0.975614844749955,
+        "kinetic": 0.0925732028465926,
+        "potential": -13.556636595320994,
+        "energy": -13.4640633924744
+      },
+      {
+        "phase": "flips",
+        "time": 2.28333333333333,
+        "extent": 61341.59375,
+        "speed": 0.975614844749955,
+        "kinetic": 0.0925732028465926,
+        "potential": -13.556636595320994,
+        "energy": -13.4640633924744
+      }
+    ],
+    "errors": []
+  },
+  {
+    "variant": "144",
+    "carpet": "envato-B7PV8QR",
+    "simulatedSeconds": 2.3166666666666633,
+    "steps": 139,
+    "hits": 1,
+    "flips": null,
+    "maxExtent": 96233.34375,
+    "maxSpeed": 4.417874428361447,
+    "maxKineticEnergy": 0.6792291404559595,
+    "recoveries": 0,
+    "failed": {
+      "phase": "four-strikes",
+      "time": 2.3166666666666633,
+      "extent": 96233.34375,
+      "speed": 0.9338919881306308
+    },
+    "samples": [
+      {
+        "phase": "warmup",
+        "time": 1.0000000000000013,
+        "extent": 1.485115885734558,
+        "speed": 0.23951954603153186,
+        "kinetic": 0.0023023491704511337,
+        "potential": -13.689299267469663,
+        "energy": -13.686996918299212
+      },
+      {
+        "phase": "four-strikes",
+        "time": 1.9999999999999978,
+        "extent": 1.4987914562225342,
+        "speed": 1.8385796398379777,
+        "kinetic": 0.17842790230058556,
+        "potential": -13.286403270232286,
+        "energy": -13.1079753679317
+      },
+      {
+        "phase": "four-strikes",
+        "time": 2.3166666666666633,
+        "extent": 96233.34375,
+        "speed": 0.9338919881306308,
+        "kinetic": 0.09220892875806144,
+        "potential": -13.56424458445999,
+        "energy": -13.472035655701928
+      },
+      {
+        "phase": "flips",
+        "time": 2.3166666666666633,
+        "extent": 96233.34375,
+        "speed": 0.9338919881306308,
+        "kinetic": 0.09220892875806144,
+        "potential": -13.56424458445999,
+        "energy": -13.472035655701928
+      }
+    ],
+    "errors": []
+  },
+  {
+    "variant": "hitch",
+    "carpet": "envato-B7PV8QR",
+    "simulatedSeconds": 2.28333333333333,
+    "steps": 137,
+    "hits": 1,
+    "flips": null,
+    "maxExtent": 61341.59375,
+    "maxSpeed": 4.790151559020996,
+    "maxKineticEnergy": 0.6851256846416047,
+    "recoveries": 0,
+    "failed": {
+      "phase": "four-strikes",
+      "time": 2.28333333333333,
+      "extent": 61341.59375,
+      "speed": 0.975614844749955
+    },
+    "samples": [
+      {
+        "phase": "warmup",
+        "time": 1.0000000000000013,
+        "extent": 1.485115885734558,
+        "speed": 0.23951954603153186,
+        "kinetic": 0.0023023491704511337,
+        "potential": -13.689299267469663,
+        "energy": -13.686996918299212
+      },
+      {
+        "phase": "four-strikes",
+        "time": 1.9999999999999978,
+        "extent": 1.498934268951416,
+        "speed": 1.8937807572469305,
+        "kinetic": 0.18481747714680422,
+        "potential": -13.275758234602156,
+        "energy": -13.090940757455352
+      },
+      {
+        "phase": "four-strikes",
+        "time": 2.28333333333333,
+        "extent": 61341.59375,
+        "speed": 0.975614844749955,
+        "kinetic": 0.0925732028465926,
+        "potential": -13.556636595320994,
+        "energy": -13.4640633924744
+      },
+      {
+        "phase": "flips",
+        "time": 2.28333333333333,
+        "extent": 61341.59375,
+        "speed": 0.975614844749955,
+        "kinetic": 0.0925732028465926,
+        "potential": -13.556636595320994,
+        "energy": -13.4640633924744
+      }
+    ],
+    "errors": []
+  }
+]

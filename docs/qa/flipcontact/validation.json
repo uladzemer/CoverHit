@@ -1,0 +1,42 @@
+{
+  "passed": false,
+  "sourceHash": "f44841d8d20e97a5cbe065fd3503970b17d7f356a0a348ae10ee03827d1fade9",
+  "commands": [
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "tests": 341
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/verify-flip-contact.mjs --no-images",
+      "exitCode": 1,
+      "reasons": [
+        "penetration",
+        "complete-step contact push including settled handoff"
+      ]
+    },
+    {
+      "command": "node scripts/verify-flip-wave.mjs --no-images",
+      "exitCode": 1,
+      "monotonicThrows": {
+        "60": 20,
+        "144": 20,
+        "30": 20,
+        "hitch": 20
+      },
+      "reason": "no-constraint contact CPU threshold"
+    },
+    {
+      "command": "node scripts/verify-contact-regressions.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/verify-longrun.mjs --out=docs/qa/flipcontact/longrun.json",
+      "exitCode": 0
+    }
+  ]
+}

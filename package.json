@@ -1,0 +1,32 @@
+{
+  "name": "coverhit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/build-carpets.mjs && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "carpets": "node scripts/build-carpets.mjs",
+    "carpets:new": "node scripts/new-carpets.mjs",
+    "yard:stock": "node scripts/import-yard-stock.mjs"
+  },
+  "dependencies": {
+    "gsap": "3.15.0",
+    "n8ao": "2.0.1",
+    "postprocessing": "6.39.5",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.5.1",
+    "@gltf-transform/extensions": "^4.5.1",
+    "@gltf-transform/functions": "^4.5.1",
+    "meshoptimizer": "^1.3.0",
+    "playwright": "^1.64.0",
+    "sharp": "^0.35.5",
+    "vite": "^6.4.4",
+    "vitest": "^4.1.11",
+    "yauzl": "^3.4.0"
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "browser": "155.0.8059.39",
+  "modes": {
+    "stock": {
+      "views": {
+        "default": {
+          "yaw": 0,
+          "perf": {
+            "drawCalls": {
+              "mean": 133,
+              "p95": 133,
+              "max": 133
+            },
+            "triangles": {
+              "mean": 536009,
+              "p95": 536009,
+              "max": 536009
+            },
+            "frameMs": {
+              "mean": 14.962499999503295,
+              "p95": 19.400000005960464,
+              "max": 24.599999994039536
+            },
+            "renderMs": {
+              "mean": 1.4674999989569186,
+              "p95": 1.7000000178813934,
+              "max": 2.600000023841858
+            },
+            "intervalMs": {
+              "mean": 32.65833333333333,
+              "p95": 33.19999999999891,
+              "max": 33.30000000000109
+            }
+          }
+        },
+        "aim-left": {
+          "yaw": -35,
+          "perf": {
+            "drawCalls": {
+              "mean": 121,
+              "p95": 121,
+              "max": 121
+            },
+            "triangles": {
+              "mean": 428610,
+              "p95": 428610,
+              "max": 428610
+            },
+            "frameMs": {
+              "mean": 14.76499999910593,
+              "p95": 19.30000001192093,
+              "max": 25.100000023841858
+            },
+            "renderMs": {
+              "mean": 1.3566666645308336,
+              "p95": 1.5999999940395355,
+              "max": 2.100000023841858
+            },
+            "intervalMs": {
+              "mean": 32.69583333333333,
+              "p95": 33.20000000000073,
+              "max": 33.5
+            }
+          }
+        },
+        "aim-right": {
+          "yaw": 35,
+          "perf": {
+            "drawCalls": {
+              "mean": 130.75,
+              "p95": 132,
+              "max": 132
+            },
+            "triangles": {
+              "mean": 531967.8666666667,
+              "p95": 532398,
+              "max": 532398
+            },
+            "frameMs": {
+              "mean": 14.370000002036493,
+              "p95": 19,
+              "max": 20.80000001192093
+            },
+            "renderMs": {
+              "mean": 1.3950000002980232,
+              "p95": 1.699999988079071,
+              "max": 1.9000000059604645
+            },
+            "intervalMs": {
+              "mean": 32.709166666666654,
+              "p95": 33.20000000000073,
+              "max": 33.400000000001455
+            }
+          }
+        }
+      },
+      "errors": [],
+      "assets": {
+        "surfaces": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        },
+        "stock": {
+          "requested": 8,
+          "loaded": [
+            "balcony-block",
+            "birch",
+            "garage",
+            "panel-block",
+            "bench",
+            "dumpster",
+            "lamp",
+            "deciduous"
+          ],
+          "failures": []
+        }
+      }
+    },
+    "procedural": {
+      "views": {
+        "default": {
+          "yaw": 0,
+          "perf": {
+            "drawCalls": {
+              "mean": 108,
+              "p95": 108,
+              "max": 108
+            },
+            "triangles": {
+              "mean": 316576,
+              "p95": 316576,
+              "max": 316576
+            },
+            "frameMs": {
+              "mean": 14.948333333432675,
+              "p95": 19.80000001192093,
+              "max": 27.599999994039536
+            },
+            "renderMs": {
+              "mean": 1.213333332290252,
+              "p95": 1.5,
+              "max": 2.2999999821186066
+            },
+            "intervalMs": {
+              "mean": 32.74416666666666,
+              "p95": 33.20000000000073,
+              "max": 35.400000000001455
+            }
+          }
+        },
+        "aim-left": {
+          "yaw": -35,
+          "perf": {
+            "drawCalls": {
+              "mean": 98,
+              "p95": 98,
+              "max": 98
+            },
+            "triangles": {
+              "mean": 302674,
+              "p95": 302674,
+              "max": 302674
+            },
+            "frameMs": {
+              "mean": 14.488333333780368,
+              "p95": 19.30000001192093,
+              "max": 22.400000005960464
+            },
+            "renderMs": {
+              "mean": 1.103333333134651,
+              "p95": 1.399999976158142,
+              "max": 2.5
+            },
+            "intervalMs": {
+              "mean": 32.69416666666666,
+              "p95": 33.20000000000073,
+              "max": 33.600000000000364
+            }
+          }
+        },
+        "aim-right": {
+          "yaw": 35,
+          "perf": {
+            "drawCalls": {
+              "mean": 105.48333333333333,
+              "p95": 108,
+              "max": 108
+            },
+            "triangles": {
+              "mean": 313037.9666666667,
+              "p95": 313082,
+              "max": 313082
+            },
+            "frameMs": {
+              "mean": 16.834166665623584,
+              "p95": 18.5,
+              "max": 357.89999997615814
+            },
+            "renderMs": {
+              "mean": 4.031666665275892,
+              "p95": 1.4000000059604645,
+              "max": 348.7999999821186
+            },
+            "intervalMs": {
+              "mean": 35.41416666666666,
+              "p95": 33.20000000000073,
+              "max": 358.2999999999993
+            }
+          }
+        }
+      },
+      "errors": [],
+      "assets": {
+        "surfaces": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        },
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "failures": []
+        }
+      }
+    },
+    "no-assets": {
+      "views": {
+        "default": {
+          "yaw": 0,
+          "perf": {
+            "drawCalls": {
+              "mean": 108,
+              "p95": 108,
+              "max": 108
+            },
+            "triangles": {
+              "mean": 316576,
+              "p95": 316576,
+              "max": 316576
+            },
+            "frameMs": {
+              "mean": 14.430833334475755,
+              "p95": 18.900000005960464,
+              "max": 20.5
+            },
+            "renderMs": {
+              "mean": 1.0616666672130426,
+              "p95": 1.300000011920929,
+              "max": 1.9000000059604645
+            },
+            "intervalMs": {
+              "mean": 32.68750000000001,
+              "p95": 33.19999999999982,
+              "max": 33.5
+            }
+          }
+        },
+        "aim-left": {
+          "yaw": -35,
+          "perf": {
+            "drawCalls": {
+              "mean": 98,
+              "p95": 98,
+              "max": 98
+            },
+            "triangles": {
+              "mean": 302674,
+              "p95": 302674,
+              "max": 302674
+            },
+            "frameMs": {
+              "mean": 14.371666666616996,
+              "p95": 18.69999998807907,
+              "max": 23.700000017881393
+            },
+            "renderMs": {
+              "mean": 0.9916666651765506,
+              "p95": 1.199999988079071,
+              "max": 1.2999999821186066
+            },
+            "intervalMs": {
+              "mean": 32.701666666666675,
+              "p95": 33.20000000000073,
+              "max": 33.600000000000364
+            }
+          }
+        },
+        "aim-right": {
+          "yaw": 35,
+          "perf": {
+            "drawCalls": {
+              "mean": 103,
+              "p95": 103,
+              "max": 103
+            },
+            "triangles": {
+              "mean": 312994,
+              "p95": 312994,
+              "max": 312994
+            },
+            "frameMs": {
+              "mean": 14.026666667809089,
+              "p95": 18.80000001192093,
+              "max": 20.700000017881393
+            },
+            "renderMs": {
+              "mean": 0.9725000011424224,
+              "p95": 1.199999988079071,
+              "max": 1.4000000059604645
+            },
+            "intervalMs": {
+              "mean": 32.72166666666666,
+              "p95": 33.29999999999927,
+              "max": 33.600000000000364
+            }
+          }
+        }
+      },
+      "errors": [],
+      "assets": {
+        "surfaces": {
+          "loaded": 0,
+          "total": 22,
+          "failures": [
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "fetch for \"http://127.0.0.1:5178/yard/sunset.hdr\" responded with 404: Not Found"
+          ]
+        },
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "failures": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,430 @@
+{
+  "browser": "155.0.8059.39",
+  "modes": {
+    "stock": {
+      "views": {
+        "default": {
+          "yaw": 0,
+          "perf": {
+            "drawCalls": {
+              "mean": 309.48333333333335,
+              "p95": 310,
+              "max": 310
+            },
+            "triangles": {
+              "mean": 1041316.4833333333,
+              "p95": 1041317,
+              "max": 1041317
+            },
+            "frameMs": {
+              "mean": 20.74916666423281,
+              "p95": 22.599999994039536,
+              "max": 458.2999999821186
+            },
+            "renderMs": {
+              "mean": 6.631666665275891,
+              "p95": 4.300000011920929,
+              "max": 437.2999999821186
+            },
+            "intervalMs": {
+              "mean": 34.6375,
+              "p95": 31.69999999999891,
+              "max": 437.7000000000007
+            }
+          },
+          "coverage": {
+            "samples": 3645,
+            "geometry": 3192,
+            "sky": 453,
+            "maxDistance": 350,
+            "failures": []
+          },
+          "quality": "medium"
+        },
+        "aim-left": {
+          "yaw": -35,
+          "perf": {
+            "drawCalls": {
+              "mean": 293,
+              "p95": 293,
+              "max": 293
+            },
+            "triangles": {
+              "mean": 971408,
+              "p95": 971408,
+              "max": 971408
+            },
+            "frameMs": {
+              "mean": 17.06249999900659,
+              "p95": 21.599999994039536,
+              "max": 26.5
+            },
+            "renderMs": {
+              "mean": 2.9449999985595543,
+              "p95": 4.5,
+              "max": 5.0999999940395355
+            },
+            "intervalMs": {
+              "mean": 31.25,
+              "p95": 31.69999999999891,
+              "max": 31.799999999999272
+            }
+          },
+          "coverage": {
+            "samples": 3645,
+            "geometry": 3335,
+            "sky": 310,
+            "maxDistance": 350,
+            "failures": []
+          },
+          "quality": "medium"
+        },
+        "aim-right": {
+          "yaw": 35,
+          "perf": {
+            "drawCalls": {
+              "mean": 296,
+              "p95": 296,
+              "max": 296
+            },
+            "triangles": {
+              "mean": 997470,
+              "p95": 997470,
+              "max": 997470
+            },
+            "frameMs": {
+              "mean": 16.15249999985099,
+              "p95": 20.700000017881393,
+              "max": 21.299999982118607
+            },
+            "renderMs": {
+              "mean": 2.800833334028721,
+              "p95": 3,
+              "max": 5.100000023841858
+            },
+            "intervalMs": {
+              "mean": 31.25,
+              "p95": 31.599999999998545,
+              "max": 31.799999999999272
+            }
+          },
+          "coverage": {
+            "samples": 3645,
+            "geometry": 3285,
+            "sky": 360,
+            "maxDistance": 350,
+            "failures": []
+          },
+          "quality": "medium"
+        }
+      },
+      "errors": [],
+      "assets": {
+        "surfaces": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        },
+        "stock": {
+          "requested": 8,
+          "loaded": [
+            "balcony-block",
+            "garage",
+            "panel-block",
+            "birch",
+            "dumpster",
+            "bench",
+            "lamp",
+            "deciduous"
+          ],
+          "failures": []
+        }
+      }
+    },
+    "procedural": {
+      "views": {
+        "default": {
+          "yaw": 0,
+          "perf": {
+            "drawCalls": {
+              "mean": 273.475,
+              "p95": 274,
+              "max": 274
+            },
+            "triangles": {
+              "mean": 684738.475,
+              "p95": 684739,
+              "max": 684739
+            },
+            "frameMs": {
+              "mean": 18.91500000009934,
+              "p95": 24.400000005960464,
+              "max": 224.69999998807907
+            },
+            "renderMs": {
+              "mean": 4.325833334277074,
+              "p95": 3.7000000178813934,
+              "max": 214.59999999403954
+            },
+            "intervalMs": {
+              "mean": 32.81333333333334,
+              "p95": 31.69999999999891,
+              "max": 218.5
+            }
+          },
+          "coverage": {
+            "samples": 3645,
+            "geometry": 3193,
+            "sky": 452,
+            "maxDistance": 350,
+            "failures": []
+          },
+          "quality": "medium"
+        },
+        "aim-left": {
+          "yaw": -35,
+          "perf": {
+            "drawCalls": {
+              "mean": 261,
+              "p95": 261,
+              "max": 261
+            },
+            "triangles": {
+              "mean": 695101,
+              "p95": 695101,
+              "max": 695101
+            },
+            "frameMs": {
+              "mean": 16.698333333184323,
+              "p95": 21.19999998807907,
+              "max": 28.400000005960464
+            },
+            "renderMs": {
+              "mean": 2.4983333334326745,
+              "p95": 3.5999999940395355,
+              "max": 4.399999976158142
+            },
+            "intervalMs": {
+              "mean": 31.252499999999994,
+              "p95": 31.700000000000728,
+              "max": 31.799999999999272
+            }
+          },
+          "coverage": {
+            "samples": 3645,
+            "geometry": 3337,
+            "sky": 308,
+            "maxDistance": 350,
+            "failures": []
+          },
+          "quality": "medium"
+        },
+        "aim-right": {
+          "yaw": 35,
+          "perf": {
+            "drawCalls": {
+              "mean": 263,
+              "p95": 263,
+              "max": 263
+            },
+            "triangles": {
+              "mean": 669565,
+              "p95": 669565,
+              "max": 669565
+            },
+            "frameMs": {
+              "mean": 16.29166666691502,
+              "p95": 21.69999998807907,
+              "max": 30.899999976158142
+            },
+            "renderMs": {
+              "mean": 2.4149999996026357,
+              "p95": 2.9000000059604645,
+              "max": 4.100000023841858
+            },
+            "intervalMs": {
+              "mean": 31.247500000000006,
+              "p95": 31.600000000002183,
+              "max": 31.799999999999272
+            }
+          },
+          "coverage": {
+            "samples": 3645,
+            "geometry": 3285,
+            "sky": 360,
+            "maxDistance": 350,
+            "failures": []
+          },
+          "quality": "medium"
+        }
+      },
+      "errors": [],
+      "assets": {
+        "surfaces": {
+          "loaded": 22,
+          "total": 22,
+          "failures": []
+        },
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "failures": []
+        }
+      }
+    },
+    "no-assets": {
+      "views": {
+        "default": {
+          "yaw": 0,
+          "perf": {
+            "drawCalls": {
+              "mean": 273.475,
+              "p95": 274,
+              "max": 274
+            },
+            "triangles": {
+              "mean": 684738.475,
+              "p95": 684739,
+              "max": 684739
+            },
+            "frameMs": {
+              "mean": 18.107500000049672,
+              "p95": 22.900000005960464,
+              "max": 177.5
+            },
+            "renderMs": {
+              "mean": 3.739999999354283,
+              "p95": 3.0999999940395355,
+              "max": 167.10000002384186
+            },
+            "intervalMs": {
+              "mean": 32.29166666666667,
+              "p95": 31.600000000000364,
+              "max": 156.5
+            }
+          },
+          "coverage": {
+            "samples": 3645,
+            "geometry": 3192,
+            "sky": 453,
+            "maxDistance": 350,
+            "failures": []
+          },
+          "quality": "medium"
+        },
+        "aim-left": {
+          "yaw": -35,
+          "perf": {
+            "drawCalls": {
+              "mean": 261,
+              "p95": 261,
+              "max": 261
+            },
+            "triangles": {
+              "mean": 695101,
+              "p95": 695101,
+              "max": 695101
+            },
+            "frameMs": {
+              "mean": 16.474999999006588,
+              "p95": 21.099999994039536,
+              "max": 28
+            },
+            "renderMs": {
+              "mean": 2.369166667262713,
+              "p95": 2.699999988079071,
+              "max": 4.5
+            },
+            "intervalMs": {
+              "mean": 31.250833333333336,
+              "p95": 31.600000000000364,
+              "max": 31.700000000000728
+            }
+          },
+          "coverage": {
+            "samples": 3645,
+            "geometry": 3335,
+            "sky": 310,
+            "maxDistance": 350,
+            "failures": []
+          },
+          "quality": "medium"
+        },
+        "aim-right": {
+          "yaw": 35,
+          "perf": {
+            "drawCalls": {
+              "mean": 263,
+              "p95": 263,
+              "max": 263
+            },
+            "triangles": {
+              "mean": 669565,
+              "p95": 669565,
+              "max": 669565
+            },
+            "frameMs": {
+              "mean": 15.727499999602635,
+              "p95": 20.5,
+              "max": 24
+            },
+            "renderMs": {
+              "mean": 2.2874999980131787,
+              "p95": 2.5,
+              "max": 3.9000000059604645
+            },
+            "intervalMs": {
+              "mean": 31.25250000000001,
+              "p95": 31.600000000002183,
+              "max": 31.700000000000728
+            }
+          },
+          "coverage": {
+            "samples": 3645,
+            "geometry": 3285,
+            "sky": 360,
+            "maxDistance": 350,
+            "failures": []
+          },
+          "quality": "medium"
+        }
+      },
+      "errors": [],
+      "assets": {
+        "surfaces": {
+          "loaded": 0,
+          "total": 22,
+          "failures": [
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "Yard texture could not be loaded",
+            "fetch for \"http://127.0.0.1:5178/yard/sunset.hdr\" responded with 404: Not Found"
+          ]
+        },
+        "stock": {
+          "requested": 0,
+          "loaded": [],
+          "failures": []
+        }
+      }
+    }
+  }
+}

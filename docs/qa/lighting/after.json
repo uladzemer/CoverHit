@@ -1,0 +1,85 @@
+{
+  "phase": "after",
+  "viewport": [
+    800,
+    700
+  ],
+  "qualities": {
+    "high": {
+      "gpuMs": {
+        "mean": 9.492056666666663,
+        "p95": 12.584928
+      },
+      "cpuMs": {
+        "mean": 18.087083332737286,
+        "p95": 24.599999994039536
+      },
+      "drawCalls": {
+        "mean": 330.51666666666665,
+        "p95": 331
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "lighting": {
+        "temperature": 3500,
+        "elevation": 12,
+        "sourceElevation": 2.197265625,
+        "environmentIntensity": 1.45,
+        "skyFill": "HDRI",
+        "staticAO": true
+      },
+      "shadowType": 0,
+      "deltaGpuMs": -0.35926600000000164
+    },
+    "medium": {
+      "gpuMs": {
+        "mean": 8.887507999999997,
+        "p95": 10.10656
+      },
+      "cpuMs": {
+        "mean": 16.667499999701977,
+        "p95": 21.700000017881393
+      },
+      "drawCalls": {
+        "mean": 331.5208333333333,
+        "p95": 332
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "lighting": {
+        "temperature": 3500,
+        "elevation": 12,
+        "sourceElevation": 2.197265625,
+        "environmentIntensity": 1.45,
+        "skyFill": "HDRI",
+        "staticAO": true
+      },
+      "shadowType": 1,
+      "deltaGpuMs": 0.12376973333333119
+    },
+    "low": {
+      "gpuMs": {
+        "mean": 8.096399866666669,
+        "p95": 9.449472
+      },
+      "cpuMs": {
+        "mean": 15.585416666790843,
+        "p95": 20.299999982118607
+      },
+      "drawCalls": {
+        "mean": 164.52083333333334,
+        "p95": 165
+      },
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "lighting": {
+        "temperature": null,
+        "elevation": 4.267863699604351,
+        "sourceElevation": 2.197265625,
+        "environmentIntensity": 0.75,
+        "skyFill": "legacy hemisphere",
+        "staticAO": false
+      },
+      "shadowType": 1,
+      "deltaGpuMs": 0.47478213333333485
+    }
+  },
+  "errors": []
+}
