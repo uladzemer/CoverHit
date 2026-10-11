@@ -1,5 +1,16 @@
-export const TOUCH_AIM_OFFSET = -48;
+export const TOUCH_AIM_OFFSET = 0;
+export const RAISED_TOUCH_AIM_OFFSET = -40;
+export function readTouchAimOffset(storage) {
+  try { return storage?.getItem('coverhit-raised-aim') === '1' ? RAISED_TOUCH_AIM_OFFSET : 0; } catch { return 0; }
+}
+export function saveTouchAimOffset(storage, raised) {
+  try { storage?.setItem('coverhit-raised-aim', raised ? '1' : '0'); } catch {}
+  return raised ? RAISED_TOUCH_AIM_OFFSET : 0;
+}
 export function pointerAim(event, rect, offset = TOUCH_AIM_OFFSET) {
+  // client coordinates and getBoundingClientRect share the layout viewport.
+  // visualViewport offsets must not be added to just one side: toolbar/pan
+  // movement is already represented by rect.top/left. DPR is irrelevant here.
   const x = event.pointerType !== 'touch' ? event.clientX : Math.min(rect.right ?? rect.left + rect.width, Math.max(rect.left, event.clientX));
   const y = event.pointerType !== 'touch' ? event.clientY : Math.min(rect.bottom ?? rect.top + rect.height, Math.max(rect.top, event.clientY + (event.pointerType === 'touch' ? offset : 0)));
   return { x, y, nx: (x - rect.left) / rect.width * 2 - 1, ny: 1 - (y - rect.top) / rect.height * 2 };

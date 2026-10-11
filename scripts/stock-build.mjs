@@ -7,6 +7,7 @@ export function shouldRemoveStock(file, includeStock = process.env.COVERHIT_INCL
 export function stockAssetFilterPlugin() {
   let outDir, yardStock;
   return {name:'exclude-licensed-stock',apply:'build',
+    config() { return process.env.COVERHIT_INCLUDE_STOCK === '1' ? {define:{'import.meta.env.VITE_STOCK':JSON.stringify('1')}} : {}; },
     configResolved(config) {outDir=path.resolve(config.root,config.build.outDir,'carpets');yardStock=path.resolve(config.root,config.build.outDir,'yard/stock');},
     async closeBundle() {
       const files=await readdir(outDir).catch(error=>{if(error.code==='ENOENT')return [];throw error;});

@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { pointerAim, TOUCH_AIM_OFFSET } from "./touch.js";
+import { pointerAim, readTouchAimOffset } from "./touch.js";
 import { BEATERS, createBeaterModel } from "./beaters/index.js";
 
 export function createLegacyModel() {
@@ -129,7 +129,11 @@ export function swingArc(seconds, charge) {
 }
 
 export class Beater {
-  constructor(camera, dom, carpetMeshGetter, { touchAimOffset = TOUCH_AIM_OFFSET } = {}) {
+  constructor(camera, dom, carpetMeshGetter, { touchAimOffset } = {}) {
+    if (touchAimOffset === undefined) {
+      let storage; try { storage = globalThis.localStorage; } catch {}
+      touchAimOffset = readTouchAimOffset(storage);
+    }
     this.touchAimOffset = touchAimOffset; this.activePointer = null; this.touchInput = false;
     this.camera = camera; this.dom = dom; this.carpetMeshGetter = carpetMeshGetter;
     this.group = new THREE.Group(); this.callbacks = new Set();

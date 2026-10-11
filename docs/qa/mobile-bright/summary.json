@@ -1,0 +1,26 @@
+{
+  "unitTests": 398,
+  "build": "PASS",
+  "uiStates": 204,
+  "touchGrids": 16,
+  "touchPoints": 144,
+  "canvasCases": 8,
+  "desktopMaxMeanChannelDifference": 0.2989375,
+  "maxCarpetDelta": 0.13848927978444414,
+  "maxCentreDelta": 0.100511081822517,
+  "maxHue": 0.9084613159701007,
+  "minSaturationRetention": 1.040564183579933,
+  "maxClipping": 0,
+  "aim": {
+    "chromium": {
+      "hit": 0.0413836249637149,
+      "reticle": 0.000016499607936761603,
+      "headTarget": 0.0413836249637149
+    },
+    "webkit": {
+      "hit": 1.3222455614014916,
+      "reticle": 1.3244583198194861,
+      "headTarget": 1.3222455614014916
+    }
+  }
+}

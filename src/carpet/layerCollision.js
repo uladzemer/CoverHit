@@ -40,7 +40,7 @@ function workspace(nodes,pairs) {
   const count=nodes.size();let w=workspaces.get(pairs);
   if(!w || w.count!==count) {
     w={count,points:new Float64Array(count*3),surface:new Float64Array(count*3),normals:new Float64Array(count*3),
-      gaps:new Float64Array(pairs.length),updated:new Float64Array(pairs.length),z:new Float64Array(count),v:new Float64Array(count),mass:new Float64Array(count),original:new Float64Array(count),wrappers:new Array(count)};
+      gaps:new Float64Array(pairs.length),updated:new Float64Array(pairs.length),active:new Int32Array(pairs.length),z:new Float64Array(count),v:new Float64Array(count),mass:new Float64Array(count),original:new Float64Array(count),wrappers:new Array(count)};
     workspaces.set(pairs,w);
   }
   return w;
@@ -48,7 +48,8 @@ function workspace(nodes,pairs) {
 export function layerRequiredGaps(nodes,pairs,side=0,output=null) {
   const w=workspace(nodes,pairs),{points,surface,normals}=w,grid=pairs.grid;
   const gaps=output ?? w.gaps;
-  for(let i=0;i<w.count;i++) {
+  if(nodes.copyPositions)nodes.copyPositions(points);
+  else for(let i=0;i<w.count;i++) {
     const p=nodes.at(i).get_m_x(),k=i*3;
     points[k]=p.x();points[k+1]=p.y();points[k+2]=p.z();
   }
@@ -113,15 +114,25 @@ export function separateLayerNodes(front, back, gap=LAYER_GAP, restitution=.1) {
 export function projectLayers(nodes, pairs, side=0, refinement=0, contactGaps=null, correctionLimit=Infinity) {
   if(typeof correctionLimit!=='number'||correctionLimit<0)correctionLimit=Infinity;
   // Read/write WASM once per node, not once per constraint per iteration.
-  const {count,z,v,mass,original,wrappers}=workspace(nodes,pairs);
+  const {count,z,v,mass,original,wrappers,active}=workspace(nodes,pairs);
   for(let i=0;i<count;i++) {
     const node=wrappers[i]=nodes.at(i);
     original[i]=z[i]=node.get_m_x().z();v[i]=node.get_m_v().z();mass[i]=node.get_m_im();
   }
   const gaps=contactGaps ?? layerRequiredGaps(nodes,pairs,side);
+  // Separated sheets need neither sweeps nor a second normal construction.
+  // Use the same bounded contact planes as the narrow solve, including a
+  // velocity-contact tolerance, so this cannot miss a moving near contact.
+  let activeCount=0;
+  for(let j=0;j<pairs.length;j++) {
+    const pair=pairs[j];
+    if(gaps[j]-z[pair[side]]+z[pair[1-side]]>=-1e-7)active[activeCount++]=j;
+  }
+  if(!activeCount)return;
   for(let pass=0;pass<6;pass++) {
     let worst=0;
-    for(let j=0;j<pairs.length;j++) {
+    for(let a=0;a<activeCount;a++) {
+      const j=active[a];
       const pair=pairs[j];
       const f=pair[side], b=pair[1-side], depth=gaps[j]-z[f]+z[b], sum=mass[f]+mass[b];
       if(!(depth>=-1e-7)||!sum||!Number.isFinite(depth)||!Number.isFinite(sum))continue;
@@ -134,7 +145,8 @@ export function projectLayers(nodes, pairs, side=0, refinement=0, contactGaps=nu
   }
   // Monotone outward cleanup guarantees every neighbour constraint, even after
   // deep penetration. Each correction only increases other contact gaps.
-  for(let j=0;j<pairs.length;j++) {
+  for(let a=0;a<activeCount;a++) {
+    const j=active[a];
     const pair=pairs[j];
     const f=pair[side],b=pair[1-side],depth=gaps[j]-z[f]+z[b],sum=mass[f]+mass[b];
     if(depth>1e-12 && sum && Number.isFinite(depth) && Number.isFinite(sum)){z[f]+=(depth+1e-9)*mass[f]/sum;z[b]-=(depth+1e-9)*mass[b]/sum;}

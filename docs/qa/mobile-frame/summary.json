@@ -1,0 +1,67 @@
+{
+  "tests": 399,
+  "build": "PASS",
+  "phoneCases": 18,
+  "desktopMeanChannelMax": 0.3097854938271605,
+  "touchGrids": 16,
+  "maxHitError": 1.3579555261133134,
+  "maxReticleError": 1.350813489218716,
+  "maxHeadTargetError": 1.3579555261133134,
+  "canvasCases": 8,
+  "presence": [
+    {
+      "device": "iPhone 14 Pro",
+      "rug": "09",
+      "before": 0.224993105717452,
+      "after": 0.26166597004623315
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "rug": "05",
+      "before": 0.22418006694712694,
+      "after": 0.2612000727594813
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "rug": "runner",
+      "before": 0.22439482520672321,
+      "after": 0.26132969252729543
+    },
+    {
+      "device": "iPhone SE",
+      "rug": "09",
+      "before": 0.2734420574403584,
+      "after": 0.31361714487612846
+    },
+    {
+      "device": "iPhone SE",
+      "rug": "05",
+      "before": 0.2721305269145092,
+      "after": 0.3126418403737744
+    },
+    {
+      "device": "iPhone SE",
+      "rug": "runner",
+      "before": 0.2724727653368353,
+      "after": 0.31292695919084657
+    },
+    {
+      "device": "Pixel 7",
+      "rug": "09",
+      "before": 0.23918282369263907,
+      "after": 0.2771064565010892
+    },
+    {
+      "device": "Pixel 7",
+      "rug": "05",
+      "before": 0.2382357929291955,
+      "after": 0.27650931125275224
+    },
+    {
+      "device": "Pixel 7",
+      "rug": "runner",
+      "before": 0.23848507568329708,
+      "after": 0.2766791685691809
+    }
+  ]
+}

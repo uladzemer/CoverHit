@@ -1,0 +1,146 @@
+{
+  "method": "Identical frozen cloth/camera; eroded visible-carpet mask; mean Rec.709 sRGB luminance and HSV saturation, paired dirt=0/1. Before shader = previous dirt overlay only. Procedural noise, no external assets.",
+  "cases": [
+    {
+      "profile": "full",
+      "id": "01",
+      "clean": {
+        "pixels": 101511,
+        "luminance": 0.21392204274201154,
+        "saturation": 0.4797044760186746
+      },
+      "dirty": {
+        "pixels": 101511,
+        "luminance": 0.13639796560245843,
+        "saturation": 0.11380970742545943
+      },
+      "luminanceDrop": 0.36239405788138723,
+      "saturationDrop": 0.7627503742094979
+    },
+    {
+      "profile": "full",
+      "id": "03",
+      "clean": {
+        "pixels": 160324,
+        "luminance": 0.11083223199002375,
+        "saturation": 0.7620506159572767
+      },
+      "dirty": {
+        "pixels": 160324,
+        "luminance": 0.07499849493501606,
+        "saturation": 0.2299949067247887
+      },
+      "luminanceDrop": 0.3233151260387245,
+      "saturationDrop": 0.6981894615545026
+    },
+    {
+      "profile": "lite",
+      "id": "01",
+      "clean": {
+        "pixels": 16784,
+        "luminance": 0.05993083043608536,
+        "saturation": 0.9784919128955776
+      },
+      "dirty": {
+        "pixels": 16784,
+        "luminance": 0.007206527084618489,
+        "saturation": 0.25902530798562634
+      },
+      "luminanceDrop": 0.8797525909088802,
+      "saturationDrop": 0.7352810947418951
+    },
+    {
+      "profile": "lite",
+      "id": "03",
+      "clean": {
+        "pixels": 26728,
+        "luminance": 0.034110321583889894,
+        "saturation": 0.98583722937229
+      },
+      "dirty": {
+        "pixels": 26728,
+        "luminance": 0.004993774201689031,
+        "saturation": 0.25588333511733546
+      },
+      "luminanceDrop": 0.8535993221463042,
+      "saturationDrop": 0.7404405844154784
+    },
+    {
+      "profile": "minimal",
+      "id": "01",
+      "clean": {
+        "pixels": 16580,
+        "luminance": 0.060386152368788866,
+        "saturation": 0.982746405467787
+      },
+      "dirty": {
+        "pixels": 16580,
+        "luminance": 0.006905559024574765,
+        "saturation": 0.46858412881181816
+      },
+      "luminanceDrop": 0.8856433345446271,
+      "saturationDrop": 0.5231891704668488
+    },
+    {
+      "profile": "minimal",
+      "id": "03",
+      "clean": {
+        "pixels": 26436,
+        "luminance": 0.03459569475967364,
+        "saturation": 0.9970418059824945
+      },
+      "dirty": {
+        "pixels": 26436,
+        "luminance": 0.005107984922520915,
+        "saturation": 0.5745288648720769
+      },
+      "luminanceDrop": 0.8523520062827291,
+      "saturationDrop": 0.42376652470862974
+    }
+  ],
+  "errors": [],
+  "motion": [
+    {
+      "profile": "full",
+      "temporal": {
+        "quality": "excellent",
+        "gameSeconds": 0.05000000000000001,
+        "physicsSeconds": 0.04999999999999982,
+        "visualSeconds": 0.004000000000000001,
+        "impact": true
+      },
+      "reduced": {
+        "seconds": 0.02,
+        "impact": false
+      }
+    },
+    {
+      "profile": "lite",
+      "temporal": {
+        "quality": "excellent",
+        "gameSeconds": 0.05000000000000001,
+        "physicsSeconds": 0.04999999999999982,
+        "visualSeconds": 0.004000000000000001,
+        "impact": true
+      },
+      "reduced": {
+        "seconds": 0.02,
+        "impact": false
+      }
+    },
+    {
+      "profile": "minimal",
+      "temporal": {
+        "quality": "excellent",
+        "gameSeconds": 0.05000000000000001,
+        "physicsSeconds": 0.04999999999999982,
+        "visualSeconds": 0.004000000000000001,
+        "impact": true
+      },
+      "reduced": {
+        "seconds": 0.02,
+        "impact": false
+      }
+    }
+  ]
+}

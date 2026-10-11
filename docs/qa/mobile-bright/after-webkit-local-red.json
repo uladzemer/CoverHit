@@ -1,0 +1,183 @@
+{
+  "phase": "after",
+  "engine": "webkit",
+  "localRed": "envato-B7PV8QR",
+  "method": "CSS composited screenshot; eroded GPU carpet mask; same visible UV source scan; central 60% frame; Rec.709 sRGB luminance",
+  "rows": [
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "full",
+      "id": "01",
+      "source": {
+        "pixels": 21457,
+        "hue": 10.054108793645128,
+        "saturation": 0.4417096457941588,
+        "luminance": 0.4241669535879738,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 21457,
+        "hue": 9.77853869453287,
+        "saturation": 0.43390433370846404,
+        "luminance": 0.3873672072645081,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 43.19263211331071,
+        "saturation": 0.39398372283641725,
+        "luminance": 0.3405159581465629,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.27557009911225805,
+      "saturationRetention": 0.9823293148338171
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "lite",
+      "id": "01",
+      "source": {
+        "pixels": 21566,
+        "hue": 11.83988781040307,
+        "saturation": 0.4416367829477181,
+        "luminance": 0.42942790216262516,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 21566,
+        "hue": 12.055783411890104,
+        "saturation": 0.4802842671782272,
+        "luminance": 0.41406965281225017,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 29.703874539679703,
+        "saturation": 0.38436685636053297,
+        "luminance": 0.3274871133564003,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.21589560148703413,
+      "saturationRetention": 1.087509658893345
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "minimal",
+      "id": "01",
+      "source": {
+        "pixels": 21291,
+        "hue": 12.81418726540062,
+        "saturation": 0.43504246821576537,
+        "luminance": 0.4358370844718484,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 21291,
+        "hue": 13.169097636232436,
+        "saturation": 0.4724295602894602,
+        "luminance": 0.4216348365552595,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 29.361807688606007,
+        "saturation": 0.3811130150503101,
+        "luminance": 0.3388785341039252,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.3549103708318171,
+      "saturationRetention": 1.0859389480457622
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "full",
+      "id": "01",
+      "source": {
+        "pixels": 29379,
+        "hue": 9.331880602377282,
+        "saturation": 0.4462668952587685,
+        "luminance": 0.4188638703515687,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 29379,
+        "hue": 9.03475629950782,
+        "saturation": 0.43876649268558054,
+        "luminance": 0.38262478545099166,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 47.58974838308666,
+        "saturation": 0.4749170479253492,
+        "luminance": 0.2905193992647219,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.297124302869463,
+      "saturationRetention": 0.9831930115075221
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "lite",
+      "id": "01",
+      "source": {
+        "pixels": 29522,
+        "hue": 11.463138691296933,
+        "saturation": 0.4447209442532119,
+        "luminance": 0.42565038946030403,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 29522,
+        "hue": 11.665985109858525,
+        "saturation": 0.4837197190799875,
+        "luminance": 0.41001669367211724,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 31.062367052963452,
+        "saturation": 0.4168582782432563,
+        "luminance": 0.3113242417626773,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.2028464185615917,
+      "saturationRetention": 1.0876926875847133
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "minimal",
+      "id": "01",
+      "source": {
+        "pixels": 28990,
+        "hue": 12.091932151570461,
+        "saturation": 0.440378576345702,
+        "luminance": 0.429683586984019,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 28990,
+        "hue": 12.287758826420998,
+        "saturation": 0.47927256686210873,
+        "luminance": 0.4142765462870926,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 31.542187293922836,
+        "saturation": 0.4180019114531187,
+        "luminance": 0.3164707013467176,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.19582667485053662,
+      "saturationRetention": 1.0883194428737935
+    }
+  ],
+  "errors": []
+}

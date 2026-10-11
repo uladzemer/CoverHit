@@ -15,33 +15,47 @@ export const dustVertex = `
 attribute vec3 aorigin, avelocity, aflowStart;
 attribute vec4 alife, ashape, aplane;
 uniform float time; uniform vec3 flow;
+uniform float phone, coverageScale; uniform vec2 viewport;
 varying vec2 vUv; varying vec3 vWorld; varying vec4 vData; varying float vAlpha;
 ${noise}
 void main() {
  float age=max(0.,time-alife.x), t=age/max(.001,alife.y), kind=ashape.x;
- float drag=kind<.5?3.6:2.8;
+ bool cloud=kind<.5||kind>2.5;
+ float drag=cloud?3.6:2.8;
  vec3 drift=flow-aflowStart;
  vec3 p=aorigin+avelocity*(1.-exp(-drag*age))/drag+drift;
  vec3 q=aorigin*2.1+vec3(alife.w*.01,age*.22,0.);
  // Bounded procedural curl displacement; subtract birth field to avoid teleporting.
- p+=(curl(q)-curl(q-vec3(0.,age*.22,0.)))*(.07+.10*min(age,3.));
- p.y+=kind<.5?.035*age:-.018*age;
- if(kind>1.5) p.y-=.25*(age-(1.-exp(-4.*age))/4.);
- float size=alife.z*(kind<.5?1.+3.5*min(age/3.5,1.):1.);
- float angle=ashape.y+age*(kind>1.5?2.:.13);
- vec2 xy=position.xy; if(kind>1.5) xy*=vec2(.25,2.8);
+ float curlSize=phone>.5&&kind>.5&&kind<1.5?.015+.02*min(age,3.):.07+.10*min(age,3.);
+ p+=(curl(q)-curl(q-vec3(0.,age*.22,0.)))*curlSize;
+ p.y+=cloud?.035*age:-.018*age;
+ if(kind>1.5&&kind<2.5) p.y-=.25*(age-(1.-exp(-4.*age))/4.);
+ float size=alife.z*(cloud?1.+mix(3.5,1.,phone)*min(age/mix(3.5,.8,phone),1.):1.);
+ if(phone>.5&&cloud&&viewport.x>viewport.y) size*=.85;
+ float angle=ashape.y+age*(kind>1.5&&kind<2.5?2.:.13);
+ vec2 xy=position.xy; if(kind>1.5&&kind<2.5) xy*=vec2(.25,2.8);
  xy=mat2(cos(angle),-sin(angle),sin(angle),cos(angle))*xy*size;
- vec4 center=viewMatrix*vec4(p,1.); center.xy+=xy;
+ vec4 center=viewMatrix*vec4(p,1.);
+ if(phone>.5) {
+   // Clamp the rotated quad's bounding diameter in current framebuffer pixels.
+   float diagonal=kind>1.5&&kind<2.5?length(vec2(.25,2.8)):1.414214;
+   float pixels=size*diagonal*projectionMatrix[1][1]*viewport.y/(2.*max(.001,-center.z));
+   float cap=viewport.x*(kind>2.5?.14:.22);
+   xy*=min(1.,cap/max(.001,pixels));
+ }
+ center.xy+=xy;
  gl_Position=projectionMatrix*center;
  vUv=uv;vWorld=p;vData=vec4(kind,t,ashape.z,alife.w);
  float ground=smoothstep(.015,.14,p.y);
- float cloth=smoothstep(.008,.085,abs(dot(aplane.xyz,p)-aplane.w));
- vAlpha=ashape.w*smoothstep(0.,.08,age)*pow(max(0.,1.-t),1.6)*ground*cloth;
+ float cloth=smoothstep(mix(.008,.025,phone),mix(.085,.12,phone),abs(dot(aplane.xyz,p)-aplane.w));
+ float decay=phone>.5?(kind>.5&&kind<1.5?.6:2.4):1.6;
+ vAlpha=ashape.w*smoothstep(0.,.08,age)*pow(max(0.,1.-t),decay)*ground*cloth*coverageScale;
  if(time<alife.x || alife.y<=0. || t>=1.) {vAlpha=0.;gl_Position=vec4(2.,2.,2.,1.);}
 }
 `;
 export const dustFragment = `
 uniform sampler2D atlas; uniform float tiled,time; uniform vec3 sunDir;
+uniform float phone;
 varying vec2 vUv; varying vec3 vWorld; varying vec4 vData; varying float vAlpha;
 vec4 frame(float f) {
  vec2 cell=vec2(mod(f,4.),3.-floor(f/4.));
@@ -49,16 +63,18 @@ vec4 frame(float f) {
 }
 void main() {
  float alpha;
- if(vData.x<.5) {
+ if(vData.x<.5||vData.x>2.5) {
   float f=mod(vData.y*14.+vData.z,16.);
   alpha=tiled>.5?mix(frame(floor(f)).a,frame(mod(floor(f)+1.,16.)).a,fract(f)):texture2D(atlas,vUv).a;
  } else {vec2 d=vUv*2.-1.;alpha=exp(-dot(d,d)*5.)*smoothstep(1.,.5,length(d));}
+ if(phone>.5) {vec2 d=vUv*2.-1.;alpha*=1.-smoothstep(.65,1.,length(d));}
  float c=dot(normalize(cameraPosition-vWorld),-normalize(sunDir));
  float hg=.64/(12.56637*pow(max(.001,1.36-1.2*c),1.5));
  float sun=clamp(hg*1.5,0.,1.)*smoothstep(.1,1.3,vWorld.y);
  vec3 color=mix(vec3(.30,.27,.22),vec3(.72,.56,.38),sun);
+ if(phone>.5) color=mix(vec3(.90,.75,.53),vec3(1.,.90,.72),sun);
  float twinkle=.65+.35*pow(.5+.5*sin(time*(1.884956+fract(vData.w)*3.141593)+vData.w),8.);
- if(vData.x>.5) {alpha*=twinkle*(.3+sun*1.7);color*=1.+sun*.6;}
+ if(vData.x>.5&&vData.x<2.5) {alpha*=twinkle*(.3+sun*1.7);color*=1.+sun*.6;}
  gl_FragColor=vec4(color,alpha*vAlpha);
  #include <tonemapping_fragment>
  #include <colorspace_fragment>

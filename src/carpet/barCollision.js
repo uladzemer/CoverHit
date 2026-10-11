@@ -8,9 +8,10 @@ export function barHitScale(point, axis) {
 
 export function clampNodeVelocity(node, axis, throwing=false) {
   const p=node.get_m_x(),v=node.get_m_v();
-  const max=throwing ? 9 : Math.hypot(p.y()-axis.y,p.z()-axis.z)<.3 ? .9 : 6;
-  const speed=Math.hypot(v.x(),v.y(),v.z());
-  if(speed>max)v.setValue(v.x()*max/speed,v.y()*max/speed,v.z()*max/speed);
+  const dy=p.y()-axis.y,dz=p.z()-axis.z;
+  const max=throwing ? 9 : dy*dy+dz*dz<.09 ? .9 : 6;
+  const vx=v.x(),vy=v.y(),vz=v.z(),speedSquared=vx*vx+vy*vy+vz*vz;
+  if(speedSquared>max*max){const scale=max/Math.sqrt(speedSquared);v.setValue(vx*scale,vy*scale,vz*scale);}
 }
 
 // A penetrated position alone cannot change sides. During a throw a node must
@@ -26,9 +27,10 @@ export function crownSide(node, axis, side, hysteresis=.004) {
 export function projectBarNode(node, axis, restSide, radius=BAR_CONTACT_RADIUS) {
   const p=node.get_m_x(),v=node.get_m_v();
   let dy=p.y()-axis.y,dz=p.z()-axis.z;
-  const distance=Math.hypot(dy,dz);
+  const distanceSquared=dy*dy+dz*dz;
   const wrongSide=restSide!==0 && dz*restSide<0 && Math.abs(dy)<radius;
-  if(distance>=radius && !wrongSide)return false;
+  if(distanceSquared>=radius*radius && !wrongSide)return false;
+  const distance=Math.sqrt(distanceSquared);
   if(restSide===0){dy=Math.abs(dy);dz=0;}
   else dz=restSide*Math.max(Math.abs(dz),1e-8);
   const length=Math.hypot(dy,dz);

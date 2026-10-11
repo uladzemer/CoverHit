@@ -27,7 +27,7 @@ jobs:
       # Run the pure-logic tests first; the licensed local-only stock assets are never present in CI.
       - run: npm test
       # Use the committed, already-processed assets (public/carpets, public/yard); no source photos are needed.
-      - run: npx vite build
+      - run: npm run build:public
         env:
           COVERHIT_BASE: /${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3
@@ -37,9 +37,25 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  smoke:
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/smoke-pages.mjs "$PAGE_URL"
+        env:
+          PAGE_URL: ${{ needs.deploy.outputs.page_url }}

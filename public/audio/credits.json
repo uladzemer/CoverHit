@@ -1,0 +1,152 @@
+[
+  {
+    "id": "kids-a",
+    "title": "209901 foongaz city-playground-boxhagenerplatz-berlin.wav",
+    "author": "foongaz",
+    "credit": "foongaz",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:209901_foongaz_city-playground-boxhagenerplatz-berlin.wav",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/209901_foongaz_city-playground-boxhagenerplatz-berlin.wav",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "files": [
+      "kids-a.m4a",
+      "kids-a.ogg"
+    ],
+    "changes": "Excerpt at 8s; mono, 22.05 kHz, loudness normalisation, edge fades; AAC/Opus 32 kbps."
+  },
+  {
+    "id": "kids-b",
+    "title": "209901 foongaz city-playground-boxhagenerplatz-berlin.wav",
+    "author": "foongaz",
+    "credit": "foongaz",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:209901_foongaz_city-playground-boxhagenerplatz-berlin.wav",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/209901_foongaz_city-playground-boxhagenerplatz-berlin.wav",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "files": [
+      "kids-b.m4a",
+      "kids-b.ogg"
+    ],
+    "changes": "Excerpt at 30s; mono, 22.05 kHz, loudness normalisation, edge fades; AAC/Opus 32 kbps."
+  },
+  {
+    "id": "sparrows-a",
+    "title": "Joseph Sardin - Passer domesticus tschilp call.oga",
+    "author": "Joseph Sardin",
+    "credit": "Joseph Sardin",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Sardin_-_Passer_domesticus_tschilp_call.oga",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Joseph_Sardin_-_Passer_domesticus_tschilp_call.oga",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "files": [
+      "sparrows-a.m4a",
+      "sparrows-a.ogg"
+    ],
+    "changes": "Excerpt at 0s; mono, 22.05 kHz, loudness normalisation, edge fades; AAC/Opus 32 kbps."
+  },
+  {
+    "id": "sparrows-b",
+    "title": "House Sparrow 202279702.wav",
+    "author": "*ngoomie",
+    "credit": "*ngoomie",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:House_Sparrow_202279702.wav",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/House_Sparrow_202279702.wav",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "files": [
+      "sparrows-b.m4a",
+      "sparrows-b.ogg"
+    ],
+    "changes": "Excerpt at 0s; mono, 22.05 kHz, loudness normalisation, edge fades; AAC/Opus 32 kbps."
+  },
+  {
+    "id": "traffic",
+    "title": "Sunday in the city street noise1.ogg",
+    "author": "cori",
+    "credit": "cori",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunday_in_the_city_street_noise1.ogg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Sunday_in_the_city_street_noise1.ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://en.wikipedia.org/wiki/Public_domain",
+    "files": [
+      "traffic.m4a",
+      "traffic.ogg"
+    ],
+    "changes": "Excerpt at 35s; mono, 22.05 kHz, loudness normalisation, 1.5 s loop crossfade; AAC/Opus 32 kbps."
+  },
+  {
+    "id": "dog",
+    "title": "Personality-of-Wild-Male-Crested-Macaques-(Macaca-nigra)-pone.0069383.s001.oga",
+    "author": "Neumann C, Agil M, Widdig A, Engelhardt A",
+    "credit": "Neumann C, Agil M, Widdig A, Engelhardt A",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Personality-of-Wild-Male-Crested-Macaques-(Macaca-nigra)-pone.0069383.s001.oga",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Personality-of-Wild-Male-Crested-Macaques-%28Macaca-nigra%29-pone.0069383.s001.oga",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "files": [
+      "dog.m4a",
+      "dog.ogg"
+    ],
+    "changes": "Excerpt at 0s; mono, 22.05 kHz, loudness normalisation, edge fades; AAC/Opus 32 kbps."
+  },
+  {
+    "id": "swing",
+    "title": "Playground swings (Gravity Sound).wav",
+    "author": "Gravity Sound",
+    "credit": "Gravity Sound",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playground_swings_(Gravity_Sound).wav",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Playground_swings_%28Gravity_Sound%29.wav",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "files": [
+      "swing.m4a",
+      "swing.ogg"
+    ],
+    "changes": "Excerpt at 0s; mono, 22.05 kHz, loudness normalisation, edge fades; AAC/Opus 32 kbps."
+  },
+  {
+    "id": "tram",
+    "title": "Tram sound in Lyon, France.ogg",
+    "author": "Glaneur de sons",
+    "credit": "Glaneur de sons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tram_sound_in_Lyon,_France.ogg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Tram_sound_in_Lyon%2C_France.ogg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "files": [
+      "tram.m4a",
+      "tram.ogg"
+    ],
+    "changes": "Excerpt at 0s; mono, 22.05 kHz, loudness normalisation, edge fades; AAC/Opus 32 kbps."
+  },
+  {
+    "id": "door",
+    "title": "Slam closet door (Gravity Sound).wav",
+    "author": "Gravity Sound",
+    "credit": "Gravity Sound",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Slam_closet_door_(Gravity_Sound).wav",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Slam_closet_door_%28Gravity_Sound%29.wav",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "files": [
+      "door.m4a",
+      "door.ogg"
+    ],
+    "changes": "Excerpt at 0s; mono, 22.05 kHz, loudness normalisation, edge fades; AAC/Opus 32 kbps."
+  },
+  {
+    "id": "window",
+    "title": "Flapping window opening.ogg",
+    "author": "ezwa",
+    "credit": "ezwa",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flapping_window_opening.ogg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Flapping_window_opening.ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://en.wikipedia.org/wiki/Public_domain",
+    "files": [
+      "window.m4a",
+      "window.ogg"
+    ],
+    "changes": "Excerpt at 0s; mono, 22.05 kHz, loudness normalisation, edge fades; AAC/Opus 32 kbps."
+  }
+]

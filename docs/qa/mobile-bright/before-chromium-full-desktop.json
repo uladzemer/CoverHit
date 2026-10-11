@@ -1,0 +1,95 @@
+{
+  "phase": "before",
+  "engine": "chromium",
+  "method": "CSS composited screenshot; eroded GPU carpet mask; same visible UV source scan; central 60% frame; Rec.709 sRGB luminance",
+  "rows": [
+    {
+      "width": 1440,
+      "height": 900,
+      "profile": "full",
+      "id": "03",
+      "source": {
+        "pixels": 204701,
+        "hue": 6.697298201182264,
+        "saturation": 0.7605822014917089,
+        "luminance": 0.1223434112365317,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 204701,
+        "hue": 6.409006989588647,
+        "saturation": 0.7648725539217376,
+        "luminance": 0.10905591703097237,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 465157,
+        "hue": 21.20322320039827,
+        "saturation": 0.5755955802550266,
+        "luminance": 0.204726292438408,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.2882912115936165,
+      "saturationRetention": 1.0056408793442895
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "profile": "full",
+      "id": "05",
+      "source": {
+        "pixels": 320483,
+        "hue": 8.594413921124612,
+        "saturation": 0.6062183556969761,
+        "luminance": 0.19957380708150688,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 320483,
+        "hue": 8.26099230141017,
+        "saturation": 0.6062485342502711,
+        "luminance": 0.18000435268996498,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 465157,
+        "hue": 14.592225991566295,
+        "saturation": 0.5559769584615537,
+        "luminance": 0.209363937308648,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.33342161971444284,
+      "saturationRetention": 1.000049781655424
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "profile": "full",
+      "id": "09",
+      "source": {
+        "pixels": 97063,
+        "hue": 8.06572355382093,
+        "saturation": 0.5585383584318763,
+        "luminance": 0.18564814705953867,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 97063,
+        "hue": 7.521236698880557,
+        "saturation": 0.5572293454160179,
+        "luminance": 0.16811805771590582,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 465157,
+        "hue": 58.6576544892763,
+        "saturation": 0.4791224923577539,
+        "luminance": 0.2535132588073961,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.5444868549403736,
+      "saturationRetention": 0.9976563596822007
+    }
+  ],
+  "errors": []
+}

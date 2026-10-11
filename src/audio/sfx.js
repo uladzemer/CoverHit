@@ -4,7 +4,10 @@ const FLOOR = 0.0001;
 
 /** Procedural sound. Call unlock() directly from a pointer/key gesture. */
 export class Sfx {
-  constructor() {
+  constructor(options = {}) {
+    this.options = options;
+    this._yardImport = null;
+    this._disposed = false;
     this.context = null;
     this.volume = 0.8;
     this._ambienceWanted = false;
@@ -15,6 +18,7 @@ export class Sfx {
   unlock() {
     try {
       if (!this.context || this.context.state === 'closed') {
+        this._yard?.dispose();
         const Context = globalThis.AudioContext || globalThis.webkitAudioContext;
         if (!Context) return Promise.resolve();
         const context = new Context();
@@ -48,6 +52,8 @@ export class Sfx {
     this.volume = clamp01(volume);
     if (this.context && this.context.state !== 'closed') {
       this.master.gain.setTargetAtTime(this.volume, this.context.currentTime, 0.025);
+      if (this.volume > 0 && this._ambienceWanted) this._startYard();
+      else this._yard?.setEnabled(false);
     }
   }
 
@@ -117,6 +123,7 @@ export class Sfx {
 
   hit(strength, preset = 'wire') {
     if (!this._ready()) return;
+    this._yard?.duck();
     const p = hitPresetParameters(strength, preset, Math.random());
     const time = this.context.currentTime;
     const voice = this._voice();
@@ -200,87 +207,26 @@ export class Sfx {
 
   ambience(on) {
     this._ambienceWanted = Boolean(on);
-    if (this._ambienceWanted) {
-      if (this._ready()) this._startYard();
-    } else if (this._yard) {
-      const yard = this._yard;
-      this._yard = null;
-      yard.active = false;
-      const time = this.context.currentTime;
-      yard.gain.gain.cancelAndHoldAtTime(time);
-      yard.gain.gain.linearRampToValueAtTime(0, time + 0.6);
-      for (const voice of yard.voices) {
-        for (const source of voice.sources) source.stop(time + 0.65);
-      }
-    }
+    if (this._ambienceWanted && this.volume > 0 && this._ready()) this._startYard();
+    else this._yard?.setEnabled(false);
   }
 
   _startYard() {
-    if (this._yard || !this._ready()) return;
-    const gain = this.context.createGain();
-    const time = this.context.currentTime;
-    gain.gain.setValueAtTime(0, time);
-    gain.gain.linearRampToValueAtTime(1, time + 0.8);
-    gain.connect(this.master);
-    const yard = { gain, active: true, voices: new Set() };
-    this._yard = yard;
-    this._yardChunk(yard, time);
+    if (this._disposed || !this._ready() || !this._ambienceWanted || this.volume <= 0) return;
+    if (this._yard) { this._yard.setEnabled(true); return; }
+    if (this._yardImport) return;
+    const context = this.context;
+    this._yardImport = import('./ambience.js').then(({ Ambience }) => {
+      if (this._disposed || context !== this.context || context.state === 'closed') return;
+      this._yard = new Ambience(context, this.master, this.options);
+      this._yard.setEnabled(this._ambienceWanted && this.volume > 0);
+    }).catch(() => {}).finally(() => { this._yardImport = null; });
   }
 
-  _yardChunk(yard, time) {
-    if (!yard.active || !this._ready()) return;
-    const voice = this._voice(yard.gain);
-    yard.voices.add(voice);
-    // Six-second overlapping beds avoid seams without persistent source nodes.
-    this._noise(voice, time, 6, 0.018, 220);
-    this._tone(voice, time, 6, 74, 0.006);
-    const chirpTime = time + 1 + Math.random() * 2;
-    for (let i = 0; i < 2; i++) {
-      const start = chirpTime + i * 0.22;
-      const carrier = this.context.createOscillator();
-      const modulator = this.context.createOscillator();
-      const depth = voice.node(this.context.createGain());
-      carrier.frequency.setValueAtTime(2900, start);
-      carrier.frequency.exponentialRampToValueAtTime(4300, start + 0.07);
-      carrier.frequency.exponentialRampToValueAtTime(2700, start + 0.16);
-      modulator.frequency.value = 36;
-      depth.gain.value = 180;
-      modulator.connect(depth);
-      depth.connect(carrier.frequency);
-      carrier.connect(this._envelope(voice, start, 0.18, 0.012, 0.012));
-      voice.source(carrier, start, start + 0.2);
-      voice.source(modulator, start, start + 0.2);
-    }
-    if (Math.random() < 0.28) {
-      const start = time + 3.5;
-      if (Math.random() < 0.6) {
-        for (let i = 0; i < 2; i++) {
-          this._noise(voice, start + i * 0.3, 0.14, 0.012, 500, 'bandpass');
-          this._tone(voice, start + i * 0.3, 0.13, 180, 0.007, 'triangle', 100);
-        }
-      } else {
-        this._tone(voice, start, 0.5, 650, 0.005, 'triangle', 420);
-      }
-    }
-    // Silent audio-clock trigger schedules the next bed while this one fades.
-    const clockVoice = this._voice(yard.gain);
-    const trigger = this.context.createOscillator();
-    const silence = clockVoice.node(this.context.createGain());
-    silence.gain.value = 0;
-    trigger.connect(silence);
-    silence.connect(yard.gain);
-    // Separate trigger ownership prevents overriding the voice cleanup handler.
-    yard.voices.add(clockVoice);
-    clockVoice.source(trigger, time, time + 4);
-    clockVoice.onended = () => {
-      yard.voices.delete(clockVoice);
-      if (yard.active) this._yardChunk(yard, this.context.currentTime);
-      else if (!yard.voices.size) yard.gain.disconnect();
-    };
-    voice.onended = () => {
-      yard.voices.delete(voice);
-      if (!yard.active && !yard.voices.size) yard.gain.disconnect();
-    };
+  dispose() {
+    this._disposed = true;
+    this._ambienceWanted = false;
+    this._yard?.dispose(); this._yard = null;
+    void this.context?.close();
   }
 }
-

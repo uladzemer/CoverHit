@@ -1,0 +1,307 @@
+{
+  "assets": {
+    "clips": 10,
+    "files": 20,
+    "totalBytes": 648997,
+    "budgetBytes": 1800000,
+    "records": [
+      {
+        "file": "kids-a.m4a",
+        "bytes": 34030,
+        "duration": 8
+      },
+      {
+        "file": "kids-a.ogg",
+        "bytes": 28963,
+        "duration": 8.01
+      },
+      {
+        "file": "kids-b.m4a",
+        "bytes": 34063,
+        "duration": 8
+      },
+      {
+        "file": "kids-b.ogg",
+        "bytes": 29712,
+        "duration": 8.01
+      },
+      {
+        "file": "sparrows-a.m4a",
+        "bytes": 23159,
+        "duration": 5
+      },
+      {
+        "file": "sparrows-a.ogg",
+        "bytes": 17468,
+        "duration": 5.01
+      },
+      {
+        "file": "sparrows-b.m4a",
+        "bytes": 25428,
+        "duration": 6
+      },
+      {
+        "file": "sparrows-b.ogg",
+        "bytes": 21997,
+        "duration": 6.01
+      },
+      {
+        "file": "traffic.m4a",
+        "bytes": 93344,
+        "duration": 22.5
+      },
+      {
+        "file": "traffic.ogg",
+        "bytes": 104951,
+        "duration": 22.51
+      },
+      {
+        "file": "dog.m4a",
+        "bytes": 14852,
+        "duration": 2.93
+      },
+      {
+        "file": "dog.ogg",
+        "bytes": 11219,
+        "duration": 2.94
+      },
+      {
+        "file": "swing.m4a",
+        "bytes": 25990,
+        "duration": 6
+      },
+      {
+        "file": "swing.ogg",
+        "bytes": 22708,
+        "duration": 6.01
+      },
+      {
+        "file": "tram.m4a",
+        "bytes": 50408,
+        "duration": 12
+      },
+      {
+        "file": "tram.ogg",
+        "bytes": 45271,
+        "duration": 12.01
+      },
+      {
+        "file": "door.m4a",
+        "bytes": 9360,
+        "duration": 2
+      },
+      {
+        "file": "door.ogg",
+        "bytes": 7621,
+        "duration": 2.01
+      },
+      {
+        "file": "window.m4a",
+        "bytes": 16722,
+        "duration": 3.81
+      },
+      {
+        "file": "window.ogg",
+        "bytes": 17333,
+        "duration": 3.82
+      }
+    ]
+  },
+  "browsers": {
+    "chromium": {
+      "capabilities": {
+        "audioContext": "function",
+        "aac": "probably",
+        "opus": "probably"
+      },
+      "decoded": [
+        {
+          "id": "kids-a",
+          "duration": 8,
+          "channels": 1,
+          "sampleRate": 48000
+        },
+        {
+          "id": "kids-b",
+          "duration": 8,
+          "channels": 1,
+          "sampleRate": 48000
+        },
+        {
+          "id": "sparrows-a",
+          "duration": 5,
+          "channels": 1,
+          "sampleRate": 48000
+        },
+        {
+          "id": "sparrows-b",
+          "duration": 6,
+          "channels": 1,
+          "sampleRate": 48000
+        },
+        {
+          "id": "traffic",
+          "duration": 22.5,
+          "channels": 1,
+          "sampleRate": 48000
+        },
+        {
+          "id": "dog",
+          "duration": 2.9300208333333333,
+          "channels": 1,
+          "sampleRate": 48000
+        },
+        {
+          "id": "swing",
+          "duration": 6,
+          "channels": 1,
+          "sampleRate": 48000
+        },
+        {
+          "id": "tram",
+          "duration": 12,
+          "channels": 1,
+          "sampleRate": 48000
+        },
+        {
+          "id": "door",
+          "duration": 2,
+          "channels": 1,
+          "sampleRate": 48000
+        },
+        {
+          "id": "window",
+          "duration": 3.813875,
+          "channels": 1,
+          "sampleRate": 48000
+        }
+      ],
+      "formats": [
+        {
+          "file": "kids-a.m4a",
+          "supported": true,
+          "duration": 8
+        },
+        {
+          "file": "kids-a.ogg",
+          "supported": true,
+          "duration": 8
+        },
+        {
+          "file": "kids-b.m4a",
+          "supported": true,
+          "duration": 8
+        },
+        {
+          "file": "kids-b.ogg",
+          "supported": true,
+          "duration": 8
+        },
+        {
+          "file": "sparrows-a.m4a",
+          "supported": true,
+          "duration": 5
+        },
+        {
+          "file": "sparrows-a.ogg",
+          "supported": true,
+          "duration": 5
+        },
+        {
+          "file": "sparrows-b.m4a",
+          "supported": true,
+          "duration": 6
+        },
+        {
+          "file": "sparrows-b.ogg",
+          "supported": true,
+          "duration": 6
+        },
+        {
+          "file": "traffic.m4a",
+          "supported": true,
+          "duration": 22.5
+        },
+        {
+          "file": "traffic.ogg",
+          "supported": true,
+          "duration": 22.5
+        },
+        {
+          "file": "dog.m4a",
+          "supported": true,
+          "duration": 2.9300208333333333
+        },
+        {
+          "file": "dog.ogg",
+          "supported": true,
+          "duration": 2.930083333333333
+        },
+        {
+          "file": "swing.m4a",
+          "supported": true,
+          "duration": 6
+        },
+        {
+          "file": "swing.ogg",
+          "supported": true,
+          "duration": 6
+        },
+        {
+          "file": "tram.m4a",
+          "supported": true,
+          "duration": 12
+        },
+        {
+          "file": "tram.ogg",
+          "supported": true,
+          "duration": 12
+        },
+        {
+          "file": "door.m4a",
+          "supported": true,
+          "duration": 2
+        },
+        {
+          "file": "door.ogg",
+          "supported": true,
+          "duration": 2
+        },
+        {
+          "file": "window.m4a",
+          "supported": true,
+          "duration": 3.813875
+        },
+        {
+          "file": "window.ogg",
+          "supported": true,
+          "duration": 3.8139166666666666
+        }
+      ],
+      "performance": {
+        "meanTickMs": 0.009583333383003871,
+        "p95TickMs": 0.10000002384185791,
+        "maxVoices": 8,
+        "phoneVoices": 4,
+        "airGain": 0.005105522461235523,
+        "wind": 0.6608829547196093,
+        "airGainSettled": 0.011927801184356213
+      },
+      "errors": [],
+      "beforePlayRequests": 0,
+      "passed": true
+    },
+    "webkit": {
+      "capabilities": {
+        "audioContext": "undefined",
+        "aac": "probably",
+        "opus": ""
+      },
+      "skipped": true,
+      "reason": "Installed Windows WebKit exposes no AudioContext. Real iOS playback/unlock remains unverified.",
+      "gracefulNoAudio": true,
+      "errors": []
+    }
+  },
+  "passed": true
+}

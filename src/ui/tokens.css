@@ -17,6 +17,7 @@
   --ch-panel:rgba(20,18,24,0.72);
   --ch-grain:repeating-linear-gradient(17deg,transparent 0 3px,rgba(29,27,34,.025) 3px 4px);
   --ch-safe:16px;
+  --ch-phone-outline:2px 0 #1d1b22,-2px 0 #1d1b22,0 2px #1d1b22,0 -2px #1d1b22,1.5px 1.5px #1d1b22,-1.5px 1.5px #1d1b22,1.5px -1.5px #1d1b22,-1.5px -1.5px #1d1b22;
 }
 @media(min-width:1280px) { :root { --ch-safe:24px; } }
 

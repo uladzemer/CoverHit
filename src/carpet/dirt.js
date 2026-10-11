@@ -1,8 +1,43 @@
 import * as THREE from "three";
 
+// Shared CPU reference for the shader; dirt=0 is an exact identity.
+export function dirtLook(dirt, speckle = .5) {
+  const d = Math.max(0, Math.min(1, Number.isFinite(dirt) ? dirt : 0));
+  const film = d * d * (3 - 2 * d);
+  return { film, desaturation: film * .90, brightness: 1 - film * (.58 + (speckle - .5) * .08) };
+}
+
+export function createDirtNoise(size = 32) {
+  const data = new Uint8Array(size * size);
+  let seed = 1986;
+  for (let i = 0; i < data.length; i++) {
+    seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+    data[i] = seed >>> 24;
+  }
+  const texture = new THREE.DataTexture(data, size, size, THREE.RedFormat);
+  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+  texture.minFilter = texture.magFilter = THREE.LinearFilter;
+  texture.needsUpdate = true;
+  return texture;
+}
+
+// Exact peak per coarse zone, cached by the visual hint consumer between strikes.
+export function findDirtyZones(dirt, count = 3) {
+  const zones = new Map();
+  for (let y = 0; y < dirt.size; y++) for (let x = 0; x < dirt.size; x++) {
+    const u = (x + .5) / dirt.size, v = (y + .5) / dirt.size;
+    if (!dirt.isOnSide(u, v, dirt.visibleSide)) continue;
+    const value = dirt.grid[y * dirt.size + x];
+    const key = Math.floor(v * 8) * 8 + Math.floor(u * 8);
+    if (!zones.has(key) || value > zones.get(key).value) zones.set(key, { u, v, value });
+  }
+  return [...zones.values()].sort((a, b) => b.value - a.value).slice(0, count);
+}
+
 export class DirtMap {
   constructor({ size = 128, dirtAmount = 1, foldAxis = null, width = 1, height = 1 } = {}) {
     this.size = size;
+    this.revision = 0;
     // Equal UV coverage scales the physical cleaning area with the whole carpet.
     // sqrt(area) converts this normalized kernel to an equivalent radius in metres.
     this.cleaningLengthScale = Math.sqrt(width * height);
@@ -64,6 +99,7 @@ export class DirtMap {
         removed += before - this.grid[index];
       }
     this.total = Math.max(0, this.total - removed);
+    this.revision++;
     this.texture.needsUpdate = true;
     // Removed dirt as a fraction of the full carpet; emission scales with actual dirt left.
     return removed / this.grid.length;
@@ -74,11 +110,20 @@ export class DirtMap {
     return side===0 ? coordinate<=.5 : coordinate>=.5;
   }
   halfCleanliness(side) {
-    let total=0,count=0;
-    for(let y=0;y<this.size;y++)for(let x=0;x<this.size;x++) {
-      if(this.isOnSide((x+.5)/this.size,(y+.5)/this.size,side)){total+=this.grid[y*this.size+x];count++;}
+    // Gameplay/HUD/hints ask several times per frame; sum only after mask edits.
+    // Texture version also invalidates direct QA/debug edits followed by upload.
+    if (this.halfVersion !== this.texture.version) {
+      const totals = [0, 0], counts = [0, 0];
+      for (let y = 0; y < this.size; y++) for (let x = 0; x < this.size; x++) {
+        const u = (x + .5) / this.size, v = (y + .5) / this.size;
+        for (let half = 0; half < 2; half++) if (this.isOnSide(u, v, half)) {
+          totals[half] += this.grid[y * this.size + x]; counts[half]++;
+        }
+      }
+      this.halfValues = totals.map((total, half) => counts[half] ? THREE.MathUtils.clamp(1 - total / counts[half], 0, 1) : 0);
+      this.halfVersion = this.texture.version;
     }
-    return THREE.MathUtils.clamp(1-total/count,0,1);
+    return this.halfValues[side === 1 ? 1 : 0];
   }
   cleanliness() {
     return THREE.MathUtils.clamp(1 - this.total / this.grid.length, 0, 1);

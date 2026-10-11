@@ -20,6 +20,10 @@ try {
    assert.equal(row.actual,profile==='auto'?'lite':profile);
    Object.assign(row,await verifyPresentedPixels(page,`${out}/${device.replaceAll(' ','-')}-${profile}.png`));
    if(profile==='full') {
+    const portrait=page.viewportSize();
+    await page.setViewportSize({width:portrait.height,height:portrait.width});await page.waitForTimeout(800);
+    row.landscape=await verifyPresentedPixels(page,`${out}/${device.replaceAll(' ','-')}-full-landscape.png`);
+    await page.setViewportSize(portrait);await page.waitForTimeout(800);
     row.transitions=[];
     for(const next of ['lite','minimal']) {
      await page.evaluate(next=>window.__coverhit.setQuality(next),next);
@@ -47,6 +51,12 @@ try {
     const blank=await page.addStyleTag({content:'#app > canvas {visibility:hidden!important}'});
     try {await assert.rejects(()=>verifyPresentedPixels(page),/Canvas/);row.blankRejected=true;}
     finally {await blank.evaluate(node=>node.remove());}
+   }
+   if(profile!=='full'){
+    const size=page.viewportSize();
+    if(size.width<size.height)await page.setViewportSize({width:size.height,height:size.width});
+    await page.waitForTimeout(800);
+    row.landscape=await verifyPresentedPixels(page,`${out}/${device.replaceAll(' ','-')}-${profile}-landscape.png`);
    }
    assert.equal(errors.length,0,errors.join('\n'));row.pass=true;
   }catch(e){row.pass=false;row.failure=e.message;failed=true;}

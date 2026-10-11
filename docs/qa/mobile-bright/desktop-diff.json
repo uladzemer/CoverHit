@@ -1,0 +1,20 @@
+[
+  {
+    "id": "03",
+    "meanChannelDelta": 0.2343454218106996,
+    "maxChannelDelta": 186,
+    "channelsOver4Percent": 0.6663837448559671
+  },
+  {
+    "id": "05",
+    "meanChannelDelta": 0.2989375,
+    "maxChannelDelta": 191,
+    "channelsOver4Percent": 0.8406635802469136
+  },
+  {
+    "id": "09",
+    "meanChannelDelta": 0.13443364197530863,
+    "maxChannelDelta": 220,
+    "channelsOver4Percent": 0.32839506172839505
+  }
+]

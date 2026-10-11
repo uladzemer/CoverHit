@@ -4,13 +4,13 @@ const weights=t=>[-.5*t+t*t-.5*t*t*t,1-2.5*t*t+1.5*t*t*t,.5*t+2*t*t-1.5*t*t*t,-.
 // Interpolate within each material interval, preserving the narrow crown chords
 // and their nonuniform UV spacing exactly. Physics and contact topology stay coarse.
 export function createSmoothGeometry(cloth) {
- const {cols,rows,foldAxis}=cloth, nx=cols*2,ny=rows*2,stride=nx+1;
+ const {cols,rows,foldAxis}=cloth, subdivision=!cloth.profile||cloth.profile==='full'?2:1,nx=cols*subdivision,ny=rows*subdivision,stride=nx+1;
  const geometry=new THREE.BufferGeometry(), count=stride*(ny+1),indices=[];
  const uv=new Float32Array(count*2), positions=new Float32Array(count*3),ao=new Float32Array(count*2);
  const sourceUv=cloth.geometry.attributes.uv.array;
  const samples=[];
  for(let y=0;y<=ny;y++)for(let x=0;x<=nx;x++){
-  const gx=x*.5,gy=y*.5,ix=Math.min(cols-1,Math.floor(gx)),iy=Math.min(rows-1,Math.floor(gy)),tx=gx-ix,ty=gy-iy;
+  const gx=x/subdivision,gy=y/subdivision,ix=Math.min(cols-1,Math.floor(gx)),iy=Math.min(rows-1,Math.floor(gy)),tx=gx-ix,ty=gy-iy;
   const corners=[iy*(cols+1)+ix,iy*(cols+1)+ix+1,(iy+1)*(cols+1)+ix,(iy+1)*(cols+1)+ix+1];
   const linear=[(1-tx)*(1-ty),tx*(1-ty),(1-tx)*ty,tx*ty];
   const wx=weights(tx),wy=weights(ty),nodes=[],coefficients=[];
@@ -18,8 +18,10 @@ export function createSmoothGeometry(cloth) {
   // Keep those exact too, so smoothing cannot detach them during a dent.
   const crown=Math.abs((foldAxis==='u'?gx-cols/2:gy-rows/2))<=3 || x===0 || x===nx || y===0 || y===ny;
   for(let j=0;j<4;j++)for(let i=0;i<4;i++){
+   const coefficient=wx[i]*wy[j];
+   if(coefficient===0)continue;
    nodes.push(Math.max(0,Math.min(rows,iy+j-1))*(cols+1)+Math.max(0,Math.min(cols,ix+i-1)));
-   coefficients.push(wx[i]*wy[j]);
+   coefficients.push(coefficient);
   }
   const index=y*stride+x;
   for(let k=0;k<2;k++)for(let i=0;i<4;i++)uv[index*2+k]+=sourceUv[corners[i]*2+k]*linear[i];
@@ -31,6 +33,7 @@ export function createSmoothGeometry(cloth) {
  geometry.setAttribute('position',new THREE.BufferAttribute(positions,3).setUsage(THREE.DynamicDrawUsage));
  geometry.setAttribute('uv',new THREE.BufferAttribute(uv,2));
  geometry.setAttribute('clothOcclusion',new THREE.BufferAttribute(ao,2).setUsage(THREE.DynamicDrawUsage));
+ if(subdivision===1)geometry.setAttribute('normal',new THREE.BufferAttribute(new Float32Array(count*3),3).setUsage(THREE.DynamicDrawUsage));
  let side=0,frame=0,recoveries=cloth.watchdogRecoveries,flipping=false;
  const update=()=>{
   const forceNormals=side!==cloth.visibleSide||recoveries!==cloth.watchdogRecoveries||flipping!==Boolean(cloth.flip);
@@ -47,8 +50,11 @@ export function createSmoothGeometry(cloth) {
    for(let k=0;k<2;k++){let value=0;for(let j=0;j<4;j++)value+=(sourceAO?.[s.corners[j]*2+k]??1)*s.linear[j];ao[i*2+k]=value;}
   }
   geometry.attributes.position.needsUpdate=true;geometry.attributes.clothOcclusion.needsUpdate=true;
-  if(!geometry.attributes.normal||forceNormals||frame++%2===0)geometry.computeVertexNormals();
-  geometry.computeBoundingSphere();
+  if(subdivision===1){geometry.attributes.normal.array.set(cloth.geometry.attributes.normal.array);geometry.attributes.normal.needsUpdate=true;}
+  else if(!geometry.attributes.normal||forceNormals||frame++%2===0)geometry.computeVertexNormals();
+  if(subdivision===1 && cloth.geometry.boundingSphere){
+   geometry.boundingSphere??=new THREE.Sphere();geometry.boundingSphere.copy(cloth.geometry.boundingSphere);
+  } else geometry.computeBoundingSphere();
  };
  update();return {geometry,update};
 }

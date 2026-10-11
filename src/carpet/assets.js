@@ -1,5 +1,5 @@
 import { activeProfile, mobileDevice, loadProfileTexture } from '../boot/mobileAssets.js';
-﻿import * as THREE from 'three';
+import * as THREE from 'three';
 import {carpetType} from './types.js';
 
 export function fitCarpetSize(type, aspect) {
@@ -75,7 +75,7 @@ export function createCarpetAssets(manifest, loadTexture) {
     throw new Error('No rug scan could be loaded. Retry when images are available.');
   },dispose(){for(const map of cache.values()) map.dispose();cache.clear();}};
 }
-export async function loadCarpetManifest(base, fetchManifest=fetch, includeStock=true) {
+export async function loadCarpetManifest(base, fetchManifest=fetch, includeStock=import.meta.env.DEV || import.meta.env.VITE_STOCK === '1') {
   const response=await fetchManifest(`${base}manifest.json`);
   if(!response.ok) throw new Error('Unable to load carpet manifest');
   const manifest=await response.json();
@@ -95,7 +95,7 @@ export async function loadCarpetManifest(base, fetchManifest=fetch, includeStock
 }
 export async function loadCarpetAssets(renderer) {
   const base=`${import.meta.env.BASE_URL}carpets/`;
-  const manifest=await loadCarpetManifest(base, fetch, activeProfile === 'full' && !mobileDevice);
+  const manifest=await loadCarpetManifest(base, fetch, activeProfile === 'full' && !mobileDevice && (import.meta.env.DEV || import.meta.env.VITE_STOCK === '1'));
   const loader=new THREE.TextureLoader();
   return createCarpetAssets(manifest,async entry=>{
     const map=await loadProfileTexture(loader,base+entry.file);

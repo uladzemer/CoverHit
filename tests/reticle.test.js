@@ -43,15 +43,15 @@ it('tracks the current surface normal and point, renders above patterns, and dis
     const reticle=new Reticle(camera,dom);
     const normal=new THREE.Vector3(.2,.1,1).normalize();
     const hit={point:new THREE.Vector3(.3,.2,0),face:{normal},object:{matrixWorld:new THREE.Matrix4()}};
-    const beater={enabled:true,phase:'charging',charge:1,pointer:new THREE.Vector2(),raycaster:{ray:{direction:new THREE.Vector3(0,0,-1)}},aim:()=>hit};
+    const beater={touchInput:true,enabled:true,phase:'charging',charge:1,pointer:new THREE.Vector2(),raycaster:{ray:{direction:new THREE.Vector3(0,0,-1)}},aim:()=>hit};
     reticle.update(.016,beater);
     expect(reticle.mesh.visible).toBe(true); expect(fallback.hidden).toBe(true);
     expect(new THREE.Vector3(0,0,1).applyQuaternion(reticle.mesh.quaternion).distanceTo(normal)).toBeLessThan(1e-6);
-    expect(reticle.mesh.position.distanceTo(hit.point.clone().addScaledVector(normal,.002))).toBeLessThan(1e-6);
+    expect(reticle.mesh.position.distanceTo(hit.point.clone().addScaledVector(beater.raycaster.ray.direction,-.002))).toBeLessThan(1e-6);
     expect(reticle.material.depthTest).toBe(false); expect(reticle.material.depthWrite).toBe(false);
     expect(reticle.material.uniforms.arc.value).toBe(Math.PI*2);
     hit.point.y+=.1; reticle.update(.016,beater,{flipping:true});
-    expect(reticle.mesh.position.y).toBeCloseTo(hit.point.y+normal.y*.002);
+    expect(reticle.mesh.position.y).toBeCloseTo(hit.point.y);
     expect(reticle.material.uniforms.opacity.value).toBe(.28);
     beater.aim=()=>null; reticle.update(.016,beater);
     expect(reticle.mesh.visible).toBe(false); expect(fallback.hidden).toBe(false);

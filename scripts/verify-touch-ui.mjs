@@ -3,7 +3,7 @@ import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 
 const origin = process.env.UI_URL || 'http://127.0.0.1:5173';
-const folder = 'docs/qa/mobile-ui';
+const folder = 'docs/qa/mobile-hud';
 await mkdir(folder, { recursive:true });
 await writeFile(`${folder}/.gitignore`, '*.png\n');
 const engines = process.env.MOBILE_ENGINES?.split(',') || ['chromium','webkit'];
@@ -12,11 +12,16 @@ let report = [];
 if(process.env.MOBILE_ENGINES) {
   try { report=JSON.parse(await readFile(`${folder}/results.json`,'utf8')).filter(r=>!engines.includes(r.engine)); } catch {}
 }
-const sizes = [[320,740],[360,740],[390,844],[430,932],[844,390],[740,360]];
+const sizes = [[320,568],[360,740],[393,852],[430,932],[844,390],[740,360]];
 async function audit(page, gameplay = false) {
   return page.evaluate(gameplay => {
     const issues=[];
     const root=document.querySelector('.coverhit-hud');
+    if(gameplay)for(const node of root.querySelectorAll('.ch-zone,.ch-score-pop')){
+      const s=getComputedStyle(node);if(s.display==='none')continue;
+      if(s.backgroundImage!=='none'||s.backgroundColor!=='rgba(0, 0, 0, 0)'||parseFloat(s.borderTopWidth)!==0||s.backdropFilter!=='none')issues.push({class:node.className,reason:'phone backing plate'});
+    }
+    if(gameplay&&root.querySelector('[data-score]').getBoundingClientRect().height>28)issues.push({reason:'score too tall'});
     for(const node of root.querySelectorAll('*')) {
       const r=node.getBoundingClientRect(),s=getComputedStyle(node);
       if(!r.width||!r.height||s.visibility==='hidden'||s.display==='none'||node.closest('[hidden]'))continue;
@@ -42,6 +47,9 @@ for(const engine of engines) {
       });
       const errors=[];page.on('pageerror',e=>errors.push(e.message));
       await page.route('https://fonts.googleapis.com/**',r=>r.abort());
+      // Install before the first game frame: resetting performance.now after
+      // startup otherwise leaves the 30fps throttle ahead of the fake clock.
+      await page.clock.install({time:new Date('2026-01-01T00:00:00Z')});
       await page.goto(origin,{waitUntil:'domcontentloaded'});
       await page.waitForFunction(()=>window.__coverhit?.hud,{timeout:120000});
       await page.evaluate(() => {
@@ -49,8 +57,7 @@ for(const engine of engines) {
         window.__qaFlips=0;
         window.__coverhit.game.on('flipStart',()=>window.__qaFlips++);
       });
-      await page.clock.install();
-      await page.clock.pauseAt(new Date());
+      await page.clock.pauseAt(new Date('2026-01-01T01:00:00Z'));
       await page.emulateMedia({reducedMotion:'reduce'});
       const record=async state=>{
         const issues=await audit(page,state==='playing');
@@ -70,20 +77,22 @@ for(const engine of engines) {
           const {beater}=window.__coverhit;
           const r=beater.dom.getBoundingClientRect();
           // Find a visible carpet ray rather than assuming the other stream's camera framing.
-          for(let y=innerHeight*.32;y<innerHeight*.7;y+=12)for(let x=innerWidth*.25;x<innerWidth*.75;x+=12){
+          for(const fy of [.5,.45,.55,.4,.6])for(const fx of [.5,.45,.55,.4,.6]){
+            const x=innerWidth*fx,y=innerHeight*fy;
             beater.pointer.set((x-r.left)/r.width*2-1,1-(y-r.top)/r.height*2);
-            if(beater.aim(beater.pointer)?.uv)return {x,y:y+48};
+            if(beater.aim(beater.pointer)?.uv)return {x,y};
           }
           throw Error('No carpet ray in central touch area');
         });
         const before=await page.evaluate(()=>({score:window.__coverhit.game.score,clean:window.__coverhit.dirt.halfCleanliness(window.__coverhit.game.visibleSide)}));
         await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...point,id:1}]});
-        await page.waitForTimeout(500);
-        await page.clock.fastForward(500);
+        await page.clock.runFor(500);
         assert.equal(await page.evaluate(()=>window.__coverhit.beater.phase),'charging');
         await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
-        await page.clock.fastForward(150);
-        await page.waitForFunction(score=>window.__coverhit.game.score>score,before.score,{timeout:15000});
+        await page.clock.runFor(200);
+        const strikeDebug=await page.evaluate(()=>{const a=window.__coverhit,b=a.beater;return {phase:b.phase,hit:b.lockedHit?.uv?.toArray(),pending:b.contactPending,score:a.game.score,enabled:b.enabled,blocking:a.hud.blocking,side:a.game.visibleSide,point:b.pointer.toArray(),log:a.strikeLog?.slice(-1)};});
+        console.log('touch strike',JSON.stringify(strikeDebug));
+        assert(strikeDebug.score>before.score,'Touch must score: '+JSON.stringify(strikeDebug));
         const after=await page.evaluate(()=>({score:window.__coverhit.game.score,clean:window.__coverhit.dirt.halfCleanliness(window.__coverhit.game.visibleSide),audioResumes:window.__audioResumes}));
         assert(after.clean>before.clean,'Touch strike must clean the carpet');
         assert(await page.evaluate(()=>!window.__audioAvailable||window.__audioResumes>0),'Touch must resume AudioContext');
@@ -108,7 +117,7 @@ for(const engine of engines) {
       assert(await page.evaluate(score=>window.__coverhit.game===window.__qaGame&&window.__coverhit.game.score>=score,score),'Orientation must preserve the session and score');
       await context.close();
     }
-  } finally {await browser.close();await writeFile(`${folder}/results.json`,JSON.stringify(report,null,2));}
+  } finally {await browser.close();await writeFile(`${folder}/results-${engine}.json`,JSON.stringify(report.filter(r=>r.engine===engine),null,2));await writeFile(`${folder}/results.json`,JSON.stringify(report,null,2));}
 }
 assert.deepEqual(report.filter(r=>r.issues?.length||r.errors?.length),[],'Mobile layout/browser errors');
 console.log('Mobile UI, real touch scoring, cleanliness, flip, pinch and orientation checks passed.');

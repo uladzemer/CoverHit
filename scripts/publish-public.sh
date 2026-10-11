@@ -15,6 +15,7 @@ SRC="$(git rev-parse --show-toplevel)"
 SHA="$(git -C "$SRC" rev-parse --short HEAD)"
 SUBJECT="$(git -C "$SRC" log -1 --pretty=%s)"
 TMP="$(mktemp -d)"
+trap 'rm -rf "$TMP"' EXIT
 PUB="$TMP/pub"
 
 if [ "$DRY" = 0 ] && gh repo view "$REPO" >/dev/null 2>&1; then
@@ -29,7 +30,7 @@ if [ -d "$PUB/docs/qa" ]; then
   find "$PUB/docs/qa" -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.gif' \) -delete
 fi
 
-echo "snapshot: $PUB ($(find "$PUB" -type f ! -path '*/.git/*' | wc -l) files)"
+node "$SRC/scripts/check-public-snapshot.mjs" "$PUB"
 if [ "$DRY" = 1 ]; then echo "dry run - nothing pushed"; exit 0; fi
 
 git -C "$PUB" add --all

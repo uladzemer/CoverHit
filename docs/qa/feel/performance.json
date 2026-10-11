@@ -1,0 +1,28 @@
+{
+  "profile": "full",
+  "quality": "high",
+  "uncapped": true,
+  "baseline": false,
+  "viewport": [
+    1000,
+    800
+  ],
+  "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 2080 Ti (0x00001E07) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "method": "240 real render frames per case after warmup; maximum total draws and mean entire-frame CPU, including physics and submission. Headless Chrome; wall scheduling and shader compilation are not GPU timings.",
+  "idle": {
+    "frames": 240,
+    "drawCalls": 146,
+    "meanCpuMs": 6.839999999354283,
+    "meanIntervalMs": 7.21541666666667,
+    "meanPhysicsMs": 3.2083333308498063,
+    "meanRenderMs": 2.6479166666666667
+  },
+  "strikes": {
+    "frames": 240,
+    "drawCalls": 147,
+    "meanCpuMs": 9.304583332439263,
+    "meanIntervalMs": 9.919583333333337,
+    "meanPhysicsMs": 5.1783333341280615,
+    "meanRenderMs": 3.025833333283663
+  }
+}

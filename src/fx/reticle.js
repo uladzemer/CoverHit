@@ -57,7 +57,9 @@ export class Reticle {
     if (!hit) return;
     const normal = hit.face.normal.clone().applyNormalMatrix(new THREE.Matrix3().getNormalMatrix(hit.object.matrixWorld)).normalize();
     if (normal.dot(beater.raycaster.ray.direction) > 0) normal.negate();
-    this.mesh.position.copy(hit.point).addScaledVector(normal, 0.002);
+    // Lift toward the camera along the aim ray, preserving its exact screen
+    // centre even at the edges of a tilted carpet.
+    this.mesh.position.copy(hit.point).addScaledVector(beater.touchInput ? beater.raycaster.ray.direction : normal, beater.touchInput ? -0.002 : 0.002);
     this.mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), normal);
     // Camera depth, rather than radial distance, gives consistent screen size.
     const depth = -hit.point.clone().applyMatrix4(this.camera.matrixWorldInverse).z;

@@ -8,6 +8,17 @@ export const CONTACT_FRICTION = 0;
 export const CONTACT_RESTITUTION = .05;
 const TAU = 2 * Math.PI;
 
+// A chord can approach the axis more closely than either endpoint. These
+// conservative bounds reject only edges that cannot reach the node's ray/radius.
+export function polarEdgeBounds(ax,ay,az,bx,by,bz,out=new Float64Array(4),offset=0) {
+  const dy=by-ay,dz=bz-az,lengthSquared=dy*dy+dz*dz;
+  const t=lengthSquared>0?Math.max(0,Math.min(1,-(ay*dy+az*dz)/lengthSquared)):0;
+  out[offset]=Math.hypot(ay+t*dy,az+t*dz);
+  out[offset+1]=Math.max(Math.hypot(ay,az),Math.hypot(by,bz));
+  out[offset+2]=Math.min(ax,bx);out[offset+3]=Math.max(ax,bx);
+  return out;
+}
+
 // Bounded atan approximation (maximum error < .000012 rad). No lookup objects
 // or temporary arrays on the fixed-step path; the cylindrical axis is world X.
 export function polarAngle(y, z) {
@@ -21,10 +32,10 @@ export function polarAngle(y, z) {
 }
 
 export class PolarContact {
-  constructor(cols, rows, spacing, axis = 'v') {
+  constructor(cols, rows, spacing, axis = 'v', profile = 'full') {
     this.cols = cols; this.rows = rows; this.axis = axis;
     this.count = (cols + 1) * (rows + 1); this.spacing = spacing;
-    this.nx = (axis === 'u' ? rows : cols) + 3; this.nt = 96;
+    this.nx = (axis === 'u' ? rows : cols) + 3; this.nt = profile==='full'?96:48;
     const n = this.count, bins = this.nx * this.nt;
     this.p = new Float64Array(n * 3); this.origin = new Float64Array(n * 3);
     this.previous = new Float64Array(n * 3); this.ready = false;
@@ -49,6 +60,8 @@ export class PolarContact {
     this.hangingBin = new Int32Array(n);
     const edgeCount = axis === 'u' ? cols * (rows + 1) : rows * (cols + 1);
     this.edges = new Int32Array(edgeCount * 2);
+    this.edgeBounds = new Float64Array(edgeCount * 4);
+    this.edgeBoundsReady=false;
     for (let y = 0, e = 0; y <= rows; y++) for (let x = 0; x <= cols; x++) {
       if (axis === 'u' ? x === cols : y === rows) continue;
       const a = y * (cols + 1) + x;
@@ -67,15 +80,20 @@ export class PolarContact {
     return Math.abs(this.gridX[a] - this.gridX[b]) > 3 || Math.abs(this.gridY[a] - this.gridY[b]) > 3;
   }
   capture(nodes) {
-    for(let i=0;i<this.count;i++){const p=nodes.at(i).get_m_x(),k=i*3;this.previous[k]=p.x();this.previous[k+1]=p.y();this.previous[k+2]=p.z();}
+    if(nodes.copyPositions)nodes.copyPositions(this.previous);
+    else for(let i=0;i<this.count;i++){const p=nodes.at(i).get_m_x(),k=i*3;this.previous[k]=p.x();this.previous[k+1]=p.y();this.previous[k+2]=p.z();}
     this.ready=true;
   }
   read(nodes, flip) {
     const middle = (this.axis === 'u' ? this.cols : this.rows) / 2;
+    const bulk=nodes.copyPositions && nodes.copyVelocities;
+    if(bulk){nodes.copyPositions(this.p);this.origin.set(this.p);nodes.copyVelocities(this.v);}
     for (let i = 0; i < this.count; i++) {
-      const n = nodes.at(i), p = n.get_m_x(), v = n.get_m_v(), k = i * 3;
-      this.origin[k] = this.p[k] = p.x(); this.origin[k + 1] = this.p[k + 1] = p.y(); this.origin[k + 2] = this.p[k + 2] = p.z();
-      this.v[k] = v.x(); this.v[k + 1] = v.y(); this.v[k + 2] = v.z();
+      const n = nodes.at(i), k = i * 3;
+      if(!bulk){const p=n.get_m_x(),v=n.get_m_v();
+        this.origin[k] = this.p[k] = p.x(); this.origin[k + 1] = this.p[k + 1] = p.y(); this.origin[k + 2] = this.p[k + 2] = p.z();
+        this.v[k] = v.x(); this.v[k + 1] = v.y(); this.v[k + 2] = v.z();
+      }
       const along = this.axis === 'u' ? this.gridX[i] : this.gridY[i];
       this.im[i] = flip && Math.abs(along - middle) <= 2 ? 0 : n.get_m_im();
       if(flip && this.ready && Math.abs(along-middle)<=2){this.v[k+1]=(this.p[k+1]-this.previous[k+1])/this.dt;this.v[k+2]=(this.p[k+2]-this.previous[k+2])/this.dt;}
@@ -147,6 +165,8 @@ export class PolarContact {
     for (let e = 0; e < this.edges.length / 2; e++) {
       const a = this.edges[e * 2], b = this.edges[e * 2 + 1];
       if (Math.max(this.p[a * 3 + 1], this.p[b * 3 + 1]) < this.bar.y - .08) continue;
+      polarEdgeBounds(this.p[a*3],this.p[a*3+1]-this.bar.y,this.p[a*3+2]-this.bar.z,
+        this.p[b*3],this.p[b*3+1]-this.bar.y,this.p[b*3+2]-this.bar.z,this.edgeBounds,e*4);
       const start = this.theta[a]; let end = this.theta[b];
       if (end - start > Math.PI) end -= TAU; if (end - start < -Math.PI) end += TAU;
       const lo = Math.floor(Math.min(start, end) * this.nt / TAU), hi = Math.floor(Math.max(start, end) * this.nt / TAU);
@@ -158,8 +178,15 @@ export class PolarContact {
         this.edgeId[entry] = e; this.edgeNext[entry] = this.edgeHead[bin]; this.edgeHead[bin] = entry++;
       }
     }
+    this.edgeBoundsReady=true;
   }
   edge(i, e) {
+    if(this.edgeBoundsReady){
+      const k=e*4,r=this.r[i],x=this.p[i*3],pad=this.spacing*.55;
+      // Earlier edge contacts can move either endpoint within the shared budget.
+      const radialPad=.06+MAX_CONTACT_CORRECTION+1e-6;
+      if(r<this.edgeBounds[k]-radialPad || r>this.edgeBounds[k+1]+radialPad || x<this.edgeBounds[k+2]-pad || x>this.edgeBounds[k+3]+pad)return;
+    }
     const a = this.edges[e * 2], b = this.edges[e * 2 + 1];
     if(!(this.im[i]+this.im[a]+this.im[b]))return;
     if (!this.remote(i, a) || !this.remote(i, b)) return;

@@ -1,3 +1,4 @@
+import { strikeQuality, feel } from './feel.js';
 import { difficultyFor, CLEAN_THRESHOLD } from './difficulty.js';
 
 export const FLIP_DURATION = 1.65;
@@ -121,7 +122,8 @@ export class Game {
     this.sessionStats.hits++;
     this.carpetStats.bestCombo = Math.max(this.carpetStats.bestCombo, this.comboMultiplier);
     this.sessionStats.bestCombo = Math.max(this.sessionStats.bestCombo, this.comboMultiplier);
-    const points = Math.round((10 * strength + dust * 50) * this.comboMultiplier);
+    const quality = strikeQuality(strength);
+    const points = Math.round((10 * strength + dust * 50) * this.comboMultiplier * (quality === 'excellent' ? feel.excellentBonus : 1));
     this.carpetStats.hitPoints += points;
     this.addScore(points);
     this.hitTimes = this.hitTimes.filter(t => this.time - t <= 1 + 1e-9);
@@ -138,6 +140,7 @@ export class Game {
         this.emit('neighborPenalty', { points: -500, count: 3 });
       }
     } else if (this.neighborCount) this.nextDecay = this.time + 15;
+    this.emit('hit', { strength, dust, uv, quality, points });
     this.checkClean();
     return points;
   }

@@ -1,7 +1,13 @@
+if (process.argv.includes('--dirty')) { await import('./verify-feel.mjs'); process.exit(0); }
 import { mkdir, writeFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { chromium } from './qa-browser.mjs';
 import sharp from 'sharp';
+// Phone QA uses the same eroded mask, filtered source and circular hue metrics.
+if(process.argv.some(v=>v.startsWith('--profile=')||v==='--iphone'||v.startsWith('--engine='))){
+  if(process.argv.includes('--iphone')&&!process.argv.some(v=>v.startsWith('--engine=')))process.argv.push('--engine=webkit');
+  await import('./mobile-probes/verify-bright.mjs');process.exit(0);
+}
 const phase=process.argv[2]||'after', out=process.env.COLOUR_OUT||'docs/qa/colour';
 await mkdir(out,{recursive:true});
 const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
@@ -11,7 +17,7 @@ function stats(data,indices){let sin=0,cos=0,sat=0,lum=0,clipped=0;const histogr
 try{
  const page=await browser.newPage({viewport:{width:1000,height:800}});page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});
  await page.goto(process.env.COLOUR_URL||'http://127.0.0.1:5183/?seed=colour-1986');await page.waitForFunction(()=>window.__coverhit,null,{timeout:60000});
- await page.evaluate(()=>{window.__coverhit.setQuality('high');window.__coverhit.start();});await page.waitForTimeout(2000);
+ await page.evaluate(()=>{window.__coverhit.renderPipeline.sampleFrame=()=>{};window.__coverhit.setQuality('high');window.__coverhit.start();});await page.waitForTimeout(2000);
  for(const [id,name]of [['01','red medallion'],['03','bukhara'],['09','Kazak']]){
   await page.evaluate(async id=>{await window.__coverhit.setCarpet(id);},id);await page.waitForTimeout(1200);
   await page.evaluate(()=>{const a=window.__coverhit;a.dirt.grid.fill(0);a.dirt.texture.needsUpdate=true;window.qaRAF=window.requestAnimationFrame;window.requestAnimationFrame=cb=>{window.qaNext=cb;return 0;};});await page.waitForTimeout(100);

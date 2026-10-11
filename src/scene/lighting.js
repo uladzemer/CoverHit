@@ -8,6 +8,27 @@ export function sunsetDirection() {
  return new THREE.Vector3(-.75,0,-.66).normalize().multiplyScalar(Math.cos(elevation)).setY(Math.sin(elevation));
 }
 
+// No HDR, PMREM or AO bake on phones. Diffuse sky/ground plus a small front
+// bounce replace the lost environment at a fixed cost of two cheap lights.
+export function applyPhoneLighting(scene,sun,yard) {
+ const sky=yard.sky.material.uniforms;
+ sky.zenith.value.set('#8e7294');sky.horizon.value.set('#ffa276').multiplyScalar(1.1);
+ sky.sunDirection.value.copy(sunsetDirection());sky.sunColour.value.set('#ffbd86').multiplyScalar(3);
+ sky.sunRadius.value.set(.004,.006);scene.fog?.color.set('#d6a18c');
+ yard.sky.visible=true;scene.environment=null;
+ yard.bounce.color.set('#fff1df');yard.bounce.groundColor.set('#b6adb0');yard.bounce.intensity=2.8;
+ let ambient=scene.getObjectByName('phone-ambient');
+ if(!ambient){ambient=new THREE.AmbientLight('#e8e1db',.35);ambient.name='phone-ambient';scene.add(ambient);}
+ let bounce=scene.getObjectByName('phone-sun-bounce');
+ if(!bounce){bounce=new THREE.DirectionalLight('#ffe7cf',.65);bounce.name='phone-sun-bounce';bounce.position.set(-2,3,6);bounce.target.position.set(0,1,0);scene.add(bounce,bounce.target);}
+ // Sun reaches the hanging front at rest; distant perimeter shells do not
+ // cast into the play area. PCF and limited intensity keep shade light.
+ sun.color.set('#ffbd86');sun.intensity=3;sun.position.set(-12,18,24);sun.target.position.set(0,1,0);
+ sun.shadow.intensity=.4;sun.shadow.radius=3;sun.shadow.normalBias=.015;
+ yard.backdrop.group.traverse(o=>{if(o.isMesh)o.castShadow=false;});
+ scene.userData.phoneLighting={noIBL:true,hemisphere:2.8,ambient:.35,bounce:.65,shadowIntensity:.4};
+}
+
 // HDRLoader rows run from zenith to nadir (flipY on upload).
 export function analyseSun(image) {
  const {data,width,height}=image;let peak=0,index=0;
@@ -125,5 +146,5 @@ export function createLightingState(scene,sun,fill,yard) {
   scene.userData.lighting={temperature:low?null:analysis?.temperature??3500,elevation:low?THREE.MathUtils.radToDeg(Math.asin(-legacy.direction.y)):SUNSET_ELEVATION,sourceElevation:analysis?.sourceElevation,environmentIntensity:scene.environmentIntensity,skyFill:low?'legacy hemisphere':scene.environment?'HDRI, warm white balance':'limited fallback hemisphere',staticAO:!low,sunDirection:direction.toArray()};
   return {direction,color,intensity};
  }
- return {apply,register};
+ return {apply,register,applyPhone:()=>applyPhoneLighting(scene,sun,yard)};
 }

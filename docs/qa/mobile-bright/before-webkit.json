@@ -1,0 +1,530 @@
+{
+  "phase": "before",
+  "engine": "webkit",
+  "method": "CSS composited screenshot; eroded GPU carpet mask; same visible UV source scan; central 60% frame; Rec.709 sRGB luminance",
+  "rows": [
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "full",
+      "id": "03",
+      "source": {
+        "pixels": 27707,
+        "hue": 7.478816038512832,
+        "saturation": 0.7218498839648954,
+        "luminance": 0.13127961148064068,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 27707,
+        "hue": 7.203389321003044,
+        "saturation": 0.7263173836259451,
+        "luminance": 0.11675891174949042,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 30.839812671964467,
+        "saturation": 0.4538896412063755,
+        "luminance": 0.2835614344768079,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.275426717509788,
+      "saturationRetention": 1.0061889594502824
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "full",
+      "id": "05",
+      "source": {
+        "pixels": 37008,
+        "hue": 8.53055269307498,
+        "saturation": 0.593718592426279,
+        "luminance": 0.20427958821834183,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 37008,
+        "hue": 8.201514889563384,
+        "saturation": 0.593340039258655,
+        "luminance": 0.18364930999550574,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 32.06743995702874,
+        "saturation": 0.4510839824613944,
+        "luminance": 0.29050345252572524,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.3290378035115964,
+      "saturationRetention": 0.9993624030433728
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "full",
+      "id": "09",
+      "source": {
+        "pixels": 16607,
+        "hue": 12.120037641028148,
+        "saturation": 0.5192606599381979,
+        "luminance": 0.19721252705863404,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 16607,
+        "hue": 11.692462272243688,
+        "saturation": 0.5191372047498038,
+        "luminance": 0.17808656080532836,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 43.52744948437504,
+        "saturation": 0.39860441405344366,
+        "luminance": 0.3086028382043728,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.4275753687844599,
+      "saturationRetention": 0.9997622481387117
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "lite",
+      "id": "03",
+      "source": {
+        "pixels": 27813,
+        "hue": 7.851600116289887,
+        "saturation": 0.7202797750880668,
+        "luminance": 0.13209785061718243,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 27813,
+        "hue": 7.509012518811915,
+        "saturation": 0.9855842819105343,
+        "luminance": 0.033646991285641074,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 31.102457903064817,
+        "saturation": 0.6156331054580108,
+        "luminance": 0.14720567334519813,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.34258759747797285,
+      "saturationRetention": 1.3683353552305828
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "lite",
+      "id": "05",
+      "source": {
+        "pixels": 37315,
+        "hue": 8.936889177717887,
+        "saturation": 0.5968819802507067,
+        "luminance": 0.20432193904044194,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 37315,
+        "hue": 9.086317554587538,
+        "saturation": 0.9792870912315912,
+        "luminance": 0.046590500944537094,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 29.39772725742921,
+        "saturation": 0.6533912590712081,
+        "luminance": 0.14396144626779214,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.1494283768696505,
+      "saturationRetention": 1.6406712275352389
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "lite",
+      "id": "09",
+      "source": {
+        "pixels": 16732,
+        "hue": 13.605378092288106,
+        "saturation": 0.5157469311728985,
+        "luminance": 0.1997142233034734,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 16732,
+        "hue": 18.955105812880447,
+        "saturation": 0.8001893462229286,
+        "luminance": 0.05543830668485298,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 43.69396963191218,
+        "saturation": 0.5488039615033565,
+        "luminance": 0.16215239180035446,
+        "clippedPercent": 0
+      },
+      "hueShift": 5.349727720592341,
+      "saturationRetention": 1.5515154775679585
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "minimal",
+      "id": "03",
+      "source": {
+        "pixels": 27547,
+        "hue": 8.250929580434502,
+        "saturation": 0.7042638310689853,
+        "luminance": 0.13517289908085853,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 27547,
+        "hue": 8.5289206094792,
+        "saturation": 0.996393631149096,
+        "luminance": 0.03453829557611925,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 30.600359108725172,
+        "saturation": 0.6075283335613088,
+        "luminance": 0.15261783864965447,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.2779910290446992,
+      "saturationRetention": 1.4148016513026005
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "minimal",
+      "id": "05",
+      "source": {
+        "pixels": 36692,
+        "hue": 8.866305069907526,
+        "saturation": 0.5942474067251986,
+        "luminance": 0.20480691870643386,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 36692,
+        "hue": 9.186808498650464,
+        "saturation": 0.9818245817210055,
+        "luminance": 0.04632852234713139,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 28.56677718985833,
+        "saturation": 0.6399081306065315,
+        "luminance": 0.14954800403090798,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.32050342874293847,
+      "saturationRetention": 1.6522151726865448
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "profile": "minimal",
+      "id": "09",
+      "source": {
+        "pixels": 16212,
+        "hue": 15.447148334785595,
+        "saturation": 0.49997204519687155,
+        "luminance": 0.20739472049268665,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 16212,
+        "hue": 20.195052273808017,
+        "saturation": 0.9074480918245997,
+        "luminance": 0.056947169320233915,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 42.23411942732798,
+        "saturation": 0.5592880516712545,
+        "luminance": 0.16766086246795467,
+        "clippedPercent": 0
+      },
+      "hueShift": 4.747903939022422,
+      "saturationRetention": 1.8149976594536967
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "full",
+      "id": "03",
+      "source": {
+        "pixels": 37930,
+        "hue": 7.310809810455282,
+        "saturation": 0.7259839115933829,
+        "luminance": 0.12997540668827523,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 37930,
+        "hue": 7.047162551499582,
+        "saturation": 0.7307062059298572,
+        "luminance": 0.11561111142817299,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 31.48147562235721,
+        "saturation": 0.5606584616791082,
+        "luminance": 0.21271663745231026,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.2636472589557002,
+      "saturationRetention": 1.0065046817995043
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "full",
+      "id": "05",
+      "source": {
+        "pixels": 59661,
+        "hue": 8.517376091449819,
+        "saturation": 0.5971601516367359,
+        "luminance": 0.20216214049904976,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 59661,
+        "hue": 8.185169630777636,
+        "saturation": 0.5969172972765582,
+        "luminance": 0.18175728166099034,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 24.827126705198907,
+        "saturation": 0.5498823492497025,
+        "luminance": 0.21515304772572813,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.3322064606721824,
+      "saturationRetention": 0.9995933178737528
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "full",
+      "id": "09",
+      "source": {
+        "pixels": 17703,
+        "hue": 11.75900866587034,
+        "saturation": 0.5229011669476193,
+        "luminance": 0.1950986012119356,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 17703,
+        "hue": 11.223464914042438,
+        "saturation": 0.5219078992769127,
+        "luminance": 0.1760240473698372,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 54.602936092677965,
+        "saturation": 0.49590596065274695,
+        "luminance": 0.2548699193092809,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.5355437518279018,
+      "saturationRetention": 0.9981004676724959
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "lite",
+      "id": "03",
+      "source": {
+        "pixels": 38132,
+        "hue": 7.7957203313704895,
+        "saturation": 0.7247269498188635,
+        "luminance": 0.13078968454265177,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 38132,
+        "hue": 7.41821630691328,
+        "saturation": 0.9838462030225577,
+        "luminance": 0.03345152171095647,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 28.3489523073477,
+        "saturation": 0.7504837250951193,
+        "luminance": 0.0946758495940427,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.37750402445720965,
+      "saturationRetention": 1.3575405237358122
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "lite",
+      "id": "05",
+      "source": {
+        "pixels": 59948,
+        "hue": 9.077757546337978,
+        "saturation": 0.6037746448244868,
+        "luminance": 0.20202205746941615,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 59948,
+        "hue": 9.286088293929481,
+        "saturation": 0.9768551021106856,
+        "luminance": 0.04688911083724451,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 21.41513637767798,
+        "saturation": 0.8202004781258134,
+        "luminance": 0.08539826506779308,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.2083307475915035,
+      "saturationRetention": 1.6179134226390885
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "lite",
+      "id": "09",
+      "source": {
+        "pixels": 17829,
+        "hue": 13.323275076045661,
+        "saturation": 0.5204176783881288,
+        "luminance": 0.19861224420667295,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 17829,
+        "hue": 18.943520523581185,
+        "saturation": 0.7930523109399037,
+        "luminance": 0.05548557786993715,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 47.11487988590011,
+        "saturation": 0.6572341763035895,
+        "luminance": 0.12120625113568231,
+        "clippedPercent": 0
+      },
+      "hueShift": 5.620245447535524,
+      "saturationRetention": 1.5238765781289298
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "minimal",
+      "id": "03",
+      "source": {
+        "pixels": 37504,
+        "hue": 7.909299777936781,
+        "saturation": 0.7133828307533506,
+        "luminance": 0.1320708429323097,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 37504,
+        "hue": 7.918613939147235,
+        "saturation": 0.9951515933182576,
+        "luminance": 0.03353564532724649,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 28.39815394113043,
+        "saturation": 0.7567495068397462,
+        "luminance": 0.0977693716176694,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.009314161210454586,
+      "saturationRetention": 1.394975531254869
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "minimal",
+      "id": "05",
+      "source": {
+        "pixels": 59334,
+        "hue": 8.946655612855352,
+        "saturation": 0.5943721793251732,
+        "luminance": 0.20464583489808796,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 59334,
+        "hue": 9.327506373545987,
+        "saturation": 0.9813425141474807,
+        "luminance": 0.04653275918248686,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 21.460725771690306,
+        "saturation": 0.8256098026287138,
+        "luminance": 0.08679596691983815,
+        "clippedPercent": 0
+      },
+      "hueShift": 0.3808507606906346,
+      "saturationRetention": 1.6510572807456407
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "profile": "minimal",
+      "id": "09",
+      "source": {
+        "pixels": 17591,
+        "hue": 15.456106346980903,
+        "saturation": 0.5028683732661008,
+        "luminance": 0.20699050129243912,
+        "clippedPercent": 0
+      },
+      "carpet": {
+        "pixels": 17591,
+        "hue": 19.990810196170628,
+        "saturation": 0.9005257989176584,
+        "luminance": 0.056800620861159036,
+        "clippedPercent": 0
+      },
+      "centre": {
+        "pixels": 120596,
+        "hue": 45.80479956138436,
+        "saturation": 0.6800106607154908,
+        "luminance": 0.12560940150844238,
+        "clippedPercent": 0
+      },
+      "hueShift": 4.534703849189725,
+      "saturationRetention": 1.7907783563098147
+    }
+  ],
+  "errors": []
+}

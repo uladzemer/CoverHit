@@ -42,4 +42,18 @@ describe('phone boot',()=>{
     expect(events.map(e=>e[0])).toEqual(['error','unhandledrejection','webglcontextlost']);expect(events[2][2]).toBe(true);
     setBootStep('manifest');setAssetProgress(3,21);expect(JSON.parse(diagnosticsText()).assets).toEqual({loaded:3,total:21});
   });
+  it('centres the phone panel and centres the panel; landscape keeps both posts, portrait fills the width with the carpet',()=>{
+    for(const aspect of [393/852,320/568,412/839,852/393,568/320])for(const [span,drop] of [[2.02,1.1],[2.766,1.75],[1.572,1.5]]) {
+      const f=cameraFraming(aspect,3.4,drop,2.15,true,span);
+      const camera=new THREE.PerspectiveCamera(f.fov,aspect,.1,600);
+      camera.position.set(f.x,f.y,f.distance);camera.lookAt(0,f.targetY,0);camera.updateMatrixWorld();
+      const top=new THREE.Vector3(0,2.15,0).project(camera),bottom=new THREE.Vector3(0,2.15-drop,0).project(camera);
+      expect(.5-(top.y+bottom.y)/4).toBeCloseTo(.4,5);
+      if(aspect>=1.3)for(const x of [-1.78,1.78])for(const y of [0,2.186])expect(Math.abs(new THREE.Vector3(x,y,0).project(camera).x)).toBeLessThan(.95);
+      // Portrait is carpet-first: the hanging cloth fills about 85% of the width and the posts may leave the frame.
+      else{const hw=span/2,l=new THREE.Vector3(-hw,2.15-drop/2,0).project(camera).x,r=new THREE.Vector3(hw,2.15-drop/2,0).project(camera).x;expect(r-l).toBeGreaterThan(1.4);expect(r-l).toBeLessThan(1.95);}
+      expect(f.distance).toBeGreaterThanOrEqual(3.2);
+      if(aspect<1.3)expect(f.fov).toBe(52);
+    }
+  });
 });

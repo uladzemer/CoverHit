@@ -4,6 +4,11 @@ import * as THREE from "three";
 import {wind as sharedWind,WIND_RESPONSE} from "../scene/wind.js";
 const carpetWind = new THREE.Vector3();
 
+function dampStructurePair(i,j,anchored,velocity,delta,gain) {
+  if(anchored.has(i)||anchored.has(j))return;
+  for(let k=0;k<3;k++){const impulse=(velocity[j*3+k]-velocity[i*3+k])*gain;delta[i*3+k]+=impulse;delta[j*3+k]-=impulse;}
+}
+
 import { BAR_HEIGHT, BAR_RADIUS, CARPET_THICKNESS, projectBarNode, crownSide, barHitScale, clampNodeVelocity } from './barCollision.js';
 
 import { BAR_CONTACT_RADIUS, BAR_FLIP_RADIUS, BAR_SDF_MARGIN, BAR_MIN_SPAN, CLOTH_BAR_OFFSET } from './barGeometry.js';
@@ -12,8 +17,25 @@ import { cacheNodes } from './nodeAccess.js';
 
 import { layerPairs, projectLayers } from './layerCollision.js';
 import { PolarContact } from './polarContact.js';
+import { diagnostics } from '../boot/bootGuard.js';
 
 let modulePromise;
+export const PHYSICS_PROFILES = Object.freeze({
+  full: Object.freeze({ longIntervals: null, position: 16, velocity: 4, collision: 6, geometryEvery: 1 }),
+  lite: Object.freeze({ longIntervals: 24, shortIntervals: 16, position: 8, velocity: 2, collision: 2, geometryEvery: 1 }),
+  minimal: Object.freeze({ longIntervals: 18, shortIntervals: 12, position: 6, velocity: 2, collision: 2, geometryEvery: 2 }),
+});
+
+// The image dimensions are never rounded. Only the interval counts change;
+// crownLayout/clothUv retain equal panel spacing and exact material coordinates.
+export function profileClothGrid(width, height, profile = 'full') {
+  const long = PHYSICS_PROFILES[profile]?.longIntervals;
+  if (!long) return {};
+  if (![width, height].every(v => Number.isFinite(v) && v > 0)) throw new RangeError('Invalid cloth size');
+  const short = Math.max(8, Math.min(PHYSICS_PROFILES[profile].shortIntervals, Math.round(long * Math.min(width,height) / Math.max(width,height) / 2) * 2));
+  return width > height ? { cols: long, rows: short } : { cols: short, rows: long };
+}
+
 export function loadAmmo() {
   if (!modulePromise)
     modulePromise = new Promise((resolve, reject) => {
@@ -114,8 +136,15 @@ export function unsafeClothNode(node, bar, extent = 4, maxSpeed = 30) {
 export class Cloth {
   constructor(options = {}) {
     Object.assign(this, clothParameters(options));
+    // The factory currently supplies mobile rather than the profile name.
+    // Explicit profile is also supported by Node physics QA and future callers.
+    this.profile = options.profile ?? (options.mobile ?
+      (PHYSICS_PROFILES[diagnostics.profile] ? diagnostics.profile : new URLSearchParams(globalThis.location?.search ?? '').get('minimal') === '1' ? 'minimal' : 'lite') : 'full');
+    Object.assign(this, profileClothGrid(this.width, this.height, this.profile));
+    const policy = PHYSICS_PROFILES[this.profile] ?? PHYSICS_PROFILES.full;
     this.foldAxis ??= this.width>this.height ? 'u' : 'v';
     if(this.foldAxis==='u')this.cols=Math.max(4,this.cols+this.cols%2);else this.rows=Math.max(4,this.rows+this.rows%2);
+    this.crownCount=crownLayout(this).crown;
     this.span=this.foldAxis==='u'?this.height:this.width;
     this.drop=(this.foldAxis==='u'?this.width:this.height)/2;
     const A = (this.A = options.ammo);
@@ -173,9 +202,9 @@ export class Cloth {
     if (Math.abs(A.HEAPF32[(configAddress + 4) >> 2] - cfg.get_kVCF()) > 1e-6)
       throw new Error("Unexpected Ammo Config layout");
     A.HEAP32[configAddress >> 2] = 1; // eAeroModel::V_TwoSided
-    cfg.set_viterations(4);
-    cfg.set_piterations(Math.max(16,this.iterations));
-    cfg.set_citerations(6);
+    cfg.set_viterations(policy.velocity);
+    cfg.set_piterations(this.profile === 'full' ? Math.max(16,this.iterations) : policy.position);
+    cfg.set_citerations(policy.collision);
     cfg.set_kDP(this.damping);
     cfg.set_kDG(this.aeroDrag);
     cfg.set_kLF(0.08);
@@ -234,7 +263,7 @@ export class Cloth {
     this.anchorHandles=Array.from({length:this.body.get_m_anchors().size()},(_,i)=>this.body.get_m_anchors().at(i));
     this.nodes=cacheNodes(A,nodes);
     this.layerContacts=layerPairs(this.cols,this.rows,this.foldAxis);
-    this.selfContact=new PolarContact(this.cols,this.rows,Math.max(this.width/this.cols,this.height/this.rows),this.foldAxis);
+    this.selfContact=new PolarContact(this.cols,this.rows,Math.max(this.width/this.cols,this.height/this.rows),this.foldAxis,this.profile);
     // Optional native first layer, measured by scripts/verify-layers.mjs.
     // Generate only after wrapping: flat clusters have the wrong rest shape.
     if(this.clusterSelfCollision) {
@@ -305,6 +334,9 @@ export class Cloth {
     for(const {offset} of colliders)this.beaterLocalHead.add(offset);
     this.beaterLocalHead.divideScalar(Math.max(1,colliders.length));
     this.previousBeaterPose=null;
+    this.beaterHeadScratch ??= new THREE.Vector3();
+    this.beaterDeltaScratch ??= new THREE.Vector3();
+    this.beaterPreviousScratch ??= new THREE.Vector3();
     const compound = new A.btCompoundShape(); this.owned.push(compound);
     for (const {offset, radius} of colliders) {
       this.transform.setIdentity(); this.vector.setValue(offset.x,offset.y,offset.z);
@@ -320,13 +352,13 @@ export class Cloth {
   }
   setBeaterPose(position, quaternion) {
     // Limit kinematic contact travel near the crown as well as impulse insurance.
-    const head=this.beaterLocalHead.clone().applyQuaternion(quaternion).add(position);
+    const head=this.beaterHeadScratch.copy(this.beaterLocalHead).applyQuaternion(quaternion).add(position);
     if(this.previousBeaterPose && Math.hypot(head.y-this.barAxis.y,head.z-this.barAxis.z)<.3) {
-      const delta=position.clone().sub(this.previousBeaterPose);
+      const delta=this.beaterDeltaScratch.copy(position).sub(this.previousBeaterPose);
       if(delta.length()<1) position.copy(this.previousBeaterPose).add(delta.clampLength(0,.015));
       this.body.get_m_cfg().set_kKHR(.25);
     } else this.body.get_m_cfg().set_kKHR(.8);
-    this.previousBeaterPose=position.clone();
+    this.previousBeaterPose=this.beaterPreviousScratch.copy(position);
     this.transform.setIdentity();
     this.vector.setValue(position.x, position.y, position.z);
     this.transform.setOrigin(this.vector);
@@ -360,7 +392,11 @@ export class Cloth {
   integrate(dt) {
     if (!Number.isFinite(dt) || dt <= 0) return;
     dt=Math.min(dt,1/30);
-    this.watchdog();
+    this.stepDt=dt;
+    // Always check positions before publishing; alternate the extra pre-solve
+    // history/force audit on phones. Full retains both original audits.
+    this.physicsSteps = (this.physicsSteps ?? 0) + 1;
+    if(this.profile === 'full' || this.physicsSteps % 2 === 0) this.watchdog();
     const activeFlip=this.flip;
     if(activeFlip)this.selfContact?.capture(this.nodes);
     this.time += dt;
@@ -414,6 +450,7 @@ export class Cloth {
   clampVelocities() {
     if(!this.barAxis)return;
     const nodes=(this.nodes ?? this.body.get_m_nodes());
+    if(nodes.clampVelocities){nodes.clampVelocities(this.barAxis,!!this.flip);return;}
     for(let i=0;i<nodes.size();i++)clampNodeVelocity(nodes.at(i),this.barAxis,!!this.flip);
   }
   dampStructure(dt) {
@@ -425,20 +462,17 @@ export class Cloth {
     delta.fill(0);
     for(let i=0;i<count;i++){const p=nodes.at(i).get_m_v();v[i*3]=p.x();v[i*3+1]=p.y();v[i*3+2]=p.z();}
     const gain=(1-Math.exp(-this.structuralDamping*dt))*.25;
-    const pair=(i,j)=>{
-      if(this.anchored.has(i)||this.anchored.has(j))return;
-      for(let k=0;k<3;k++){const impulse=(v[j*3+k]-v[i*3+k])*gain;delta[i*3+k]+=impulse;delta[j*3+k]-=impulse;}
-    };
     for(let y=0;y<=this.rows;y++)for(let x=0;x<=this.cols;x++){
       const i=y*(this.cols+1)+x;
-      if(x<this.cols)pair(i,i+1);if(y<this.rows)pair(i,i+this.cols+1);
+      if(x<this.cols)dampStructurePair(i,i+1,this.anchored,v,delta,gain);
+      if(y<this.rows)dampStructurePair(i,i+this.cols+1,this.anchored,v,delta,gain);
     }
     for(let i=0;i<count;i++)nodes.at(i).get_m_v().setValue(v[i*3]+delta[i*3],v[i*3+1]+delta[i*3+1],v[i*3+2]+delta[i*3+2]);
   }
   projectBar() {
     if(!this.barAxis)return;
     const nodes=(this.nodes ?? this.body.get_m_nodes());
-    const side=this.visibleSide, crown=crownLayout(this).crown;
+    const side=this.visibleSide, crown=this.crownCount??crownLayout(this).crown;
     for(let i=0;i<nodes.size();i++) {
       const d=this.foldAxis==='u' ? i%(this.cols+1)-this.cols/2 : Math.floor(i/(this.cols+1))-this.rows/2;
       const node=nodes.at(i),p=node.get_m_x(),v=node.get_m_v(),restSide=Math.sign(d)*(side===0?1:-1);
@@ -496,7 +530,7 @@ export class Cloth {
     if(!this.layerContacts)return;
     const nodes=this.nodes??this.body.get_m_nodes();
     if(this.flip) {
-      this.selfContact?.project(nodes,this.barAxis,BAR_FLIP_RADIUS,this.flip.sides,this.flip);
+      this.selfContact?.project(nodes,this.barAxis,BAR_FLIP_RADIUS,this.flip.sides,this.flip,this.profile&&this.profile!=='full'?(this.stepDt??1/30):1/60);
       if(this.flip.age>=1.05){
         // Landing drag damps the swing, while gravity remains free to lower
         // the far corner. Damping Y too held that corner above its rest hem.
@@ -625,8 +659,9 @@ export class Cloth {
     if(this.barWrap && this.layerContacts){this.projectBar();this.projectLayers();this.ensureBarClearance(this.lastFlip);this.projectLayers();this.ensureBarClearance(this.lastFlip);this.clampVelocities();}
   }
   readNodes() {
-    this.watchdog();
+    this.watchdog(!this.profile || this.profile==='full' || !this.physicsSteps || this.physicsSteps%2===0);
     const nodes = (this.nodes ?? this.body.get_m_nodes());
+    if(nodes.copyPositions){nodes.copyPositions(this.positions);return;}
     for (let i = 0; i < nodes.size(); i++) {
       const p = nodes.at(i).get_m_x();
       this.positions[i * 3] = p.x();
@@ -634,11 +669,13 @@ export class Cloth {
       this.positions[i * 3 + 2] = p.z();
     }
   }
-  watchdog() {
+  watchdog(heavy=true) {
     if (!this.bar) return false;
     const nodes = (this.nodes ?? this.body.get_m_nodes());
-    for (let i=0;i<nodes.size();i++) {
-      if (!unsafeClothNode(nodes.at(i), this.bar)) continue;
+    const unsafe=nodes.findUnsafe?.(this.bar,4,30,heavy);
+    if(unsafe===-1)return false;
+    for (let i=unsafe??0;i<nodes.size();i++) {
+      if (unsafe===undefined && !unsafeClothNode(nodes.at(i), this.bar)) continue;
       this.watchdogRecoveries = (this.watchdogRecoveries ?? 0) + 1;
       if (!this.watchdogLogged) {
         console.warn('CoverHit physics watchdog: restored unstable carpet to rest drape');
@@ -665,10 +702,18 @@ export class Cloth {
     return false;
   }
   refreshGeometry() {
+    const every = PHYSICS_PROFILES[this.profile]?.geometryEvery ?? 1;
+    this.geometryFrames = (this.geometryFrames ?? 0) + 1;
+    const changed = this.geometrySide !== this.visibleSide || this.geometryRecoveries !== this.watchdogRecoveries || this.geometryFlipping !== Boolean(this.flip);
+    if(!changed && this.geometryFrames % every !== 0) return;
+    this.geometrySide=this.visibleSide;this.geometryRecoveries=this.watchdogRecoveries;this.geometryFlipping=Boolean(this.flip);
     this.geometry.attributes.position.needsUpdate = true;
-    this.geometry.computeVertexNormals();
+    const shadingFrame=changed || !this.profile || this.profile==='full' || this.geometryFrames%2===0;
+    if(shadingFrame)this.geometry.computeVertexNormals();
     this.geometry.computeBoundingSphere();
-    this.updateShading?.();
+    // Phone positions remain current on lite; normals/AO/fringe consume the
+    // accumulated cloth time on alternating frames. Full retains every update.
+    if(shadingFrame)this.updateShading?.();
     this.updateRenderGeometry?.();
   }
   step(dt) {

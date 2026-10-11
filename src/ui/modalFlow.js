@@ -1,4 +1,5 @@
 import { Modal, paginate } from './modal.js';
+import { readTouchAimOffset, saveTouchAimOffset } from '../input/touch.js';
 const element = (className, html = '') => { const n = document.createElement('div'); n.className = className; n.innerHTML = html; return n; };
 export function installModal(hud, options) {
   // Page nodes live off-DOM until selected; never inert a future page.
@@ -16,12 +17,12 @@ export function installModal(hud, options) {
   const desktopInstructions = hud.instructions.innerHTML;
   hud.rulesHTML = hud.instructions.querySelector('.ch-rule-rows').outerHTML;
   hud.updateTouchHints = () => {
-    hud.menuReopen.textContent = hud.touchMode ? '☰ Меню / пауза' : 'Меню · Esc';
+    hud.menuReopen.textContent = hud.touchMode ? 'Меню' : 'Меню · Esc';
     hud.instructions.innerHTML = desktopInstructions;
     if (hud.touchMode) {
       hud.instructions.querySelector('.ch-step-cards').innerHTML = '<li><span>↓</span><b>Зажми палец — замах</b></li><li><span>✦</span><b>Отпусти — удар</b></li><li><span>↻</span><b>Кнопка «Перекинуть»</b></li>';
       const labels = ['Палец', '↻', '◎', '♪', '☰'];
-      const words = ['Веди по ковру — прицел выше пальца', 'Кнопка «Перекинуть»', 'Размер прицела', 'Звук', 'Меню / пауза'];
+      const words = ['Веди по ковру — прицел под пальцем', 'Кнопка «Перекинуть»', 'Размер прицела', 'Звук', 'Меню / пауза'];
       hud.instructions.querySelectorAll('tr').forEach((row, i) => { row.querySelector('th').textContent = labels[i]; row.querySelector('td').textContent = words[i]; });
     }
     if (hud.blocking && hud.modalFlow === 'menu' && hud.phoneLayout.matches) {
@@ -46,6 +47,15 @@ export function installModal(hud, options) {
   hud.facadesChanged=event=>{hud.setting('[data-setting-facades]').value=event.detail.mode;};
   window.addEventListener('coverhit-facades',hud.facadesChanged);
   hud.setting('[data-setting-reticle]').onchange = e => { if (e.target.value !== hud.reticleSize) hud.cycleReticle(); };
+  const aimLabel=document.createElement('label');aimLabel.className='ch-motion-label ch-touch-aim-setting';
+  aimLabel.innerHTML='<input data-setting-touch-aim type="checkbox"> Прицел над пальцем';
+  hud.setting('[data-setting-reticle]').closest('label').after(aimLabel);
+  let aimStorage;try{aimStorage=localStorage;}catch{}
+  aimLabel.querySelector('input').checked=readTouchAimOffset(aimStorage)!==0;
+  aimLabel.querySelector('input').onchange=e=>{
+    const offset=saveTouchAimOffset(aimStorage,e.target.checked);
+    if(window.__coverhit?.beater)window.__coverhit.beater.touchAimOffset=offset;
+  };
   hud.volume = 0.8;
   hud.setting('[data-setting-volume]').oninput = e => { hud.volume = Number(e.target.value); options.onVolume?.(hud.volume); };
   hud.setting('[data-setting-motion]').onchange = e => { hud.reduceMotion = e.target.checked; hud.root.dataset.reducedMotion = String(hud.reduceMotion); if(hud.reduceMotion) hud.motionChanged(); };
@@ -129,9 +139,9 @@ export function installModal(hud, options) {
     }
   };
   const controller = new AbortController(); hud.creditsAbort = controller;
-  fetch(`${import.meta.env.BASE_URL}yard/credits.json`, {signal:controller.signal})
-    .then(response => response.ok ? response.json() : null)
-    .then(data => { if (!controller.signal.aborted) hud.addCredits(Array.isArray(data) ? data : data?.credits); })
+  // Ambience recordings ship their own credits file; yard/credits.json no longer exists (it was a 404 source).
+  fetch(`${import.meta.env.BASE_URL}audio/credits.json`, {signal:controller.signal})
+    .then(response => response.ok ? response.json() : null).then(data => { if (!controller.signal.aborted) hud.addCredits(data); })
     .catch(() => {});
   fetch(`${import.meta.env.BASE_URL}yard/photos/credits.json`, {signal:controller.signal})
     .then(response => response.ok ? response.json() : null)

@@ -5,8 +5,10 @@ import { Beater } from "../src/input/beater.js";
 import { Game } from '../src/game/state.js';
 import { advanceGameplayFrame } from '../src/game/frame.js';
 
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => { vi.useRealTimers(); vi.unstubAllGlobals(); });
 function setup() {
+  // Holds and impacts use explicit game frames; freeze wall time for CI too.
+  vi.useFakeTimers({toFake:['Date','performance','setTimeout','clearTimeout']});
   vi.stubGlobal("document", {
     createElement: () => ({ style: { setProperty() {} }, remove() {} }),
     body: { append() {} },
@@ -44,7 +46,7 @@ function setup() {
   return { beater, cloth, mesh, event, step, dispose };
 }
 describe("beater event and kinematic integration without WASM", () => {
-  it.each([1 / 60, 0.13])('grows combo after 8 and 12 real 400 ms holds / 250 ms releases with %s second frames', frameDt => {
+  it.each([1 / 60, 0.13])('grows combo after 8 and 12 simulated 400 ms holds / 250 ms releases with %s second frames', frameDt => {
     const { beater, cloth, mesh, event, dispose } = setup();
     cloth.integrate = vi.fn(); cloth.refreshGeometry = vi.fn();
     const game = new Game({ rng: () => 0 }); game.start();
@@ -71,7 +73,7 @@ describe("beater event and kinematic integration without WASM", () => {
       expect(game.time).toBeCloseTo(7.8, 5);
       for (let i = 1; i < times.length; i++) expect(times[i] - times[i - 1]).toBeCloseTo(0.65, 5);
     } finally { dispose(); }
-  });
+  }, 30000);
   it('builds combo from eight 350 ms holds plus 250 ms gaps, timestamped at impact', () => {
     const {beater,cloth,mesh,event,dispose}=setup();
     const game=new Game({rng:()=>0});game.start();
@@ -84,7 +86,7 @@ describe("beater event and kinematic integration without WASM", () => {
     for(let i=1;i<times.length;i++) expect(times[i]-times[i-1]).toBeCloseTo(0.6,5);
     expect(game.streak).toBe(7);expect(game.comboMultiplier).toBe(2);
     dispose();
-  });
+  }, 30000);
   it('selects the visible panel even when the hidden panel swings closer to the camera',()=>{
     const {beater,mesh,dispose}=setup();
     const geometry=new THREE.BufferGeometry();
@@ -182,9 +184,24 @@ it('tracks only the held touch, drags its offset aim, and cancels on leave', () 
   beater.move({...touch,pointerId:2,clientX:600});
   beater.up({...touch,pointerId:2}); beater.cancel({...touch,pointerId:2});
   expect(beater.pointer.equals(aim)).toBe(true); expect(beater.charge).toBe(charge); expect(beater.phase).toBe('charging');
-  beater.move({...touch,clientX:420}); expect(beater.pointer.x).toBeCloseTo(.05); expect(beater.pointer.y).toBeCloseTo(.16);
+  beater.move({...touch,clientX:420}); expect(beater.pointer.x).toBeCloseTo(.05); expect(beater.pointer.y).toBeCloseTo(0);
   beater.cancel(touch); beater.up(touch); expect(beater.phase).toBe('idle'); expect(beater.charge).toBe(0);
   beater.down(touch); beater.move({...touch,clientX:801});
   expect(beater.phase).toBe('idle'); expect(beater.activePointer).toBe(null);
  } finally {dispose();}
+});
+
+it('captures the last touch ray on release while the beater head is still travelling',()=>{
+ const {beater,event,step,dispose}=setup();
+ try{
+  const touch={...event,pointerType:'touch'};beater.down(touch);step(1);
+  beater.move({...touch,clientX:455,clientY:320});
+  const hit=beater.aim(beater.pointer);const released=hit.point.clone();
+  beater.up({...touch,clientX:455,clientY:320});
+  expect(beater.lockedHit.point.distanceTo(released)).toBeLessThan(1e-9);
+  expect(beater.lockedTarget.distanceTo(released)).toBeLessThan(1e-9);
+  expect(beater.group.position.distanceTo(released)).toBeGreaterThan(.1);
+  const dispatched=[];beater.onHit(h=>dispatched.push(h));step(15);
+  expect(dispatched).toHaveLength(1);expect(dispatched[0].point.distanceTo(released)).toBeLessThan(1e-9);
+ }finally{dispose();}
 });

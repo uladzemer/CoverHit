@@ -5,7 +5,8 @@ import {createStockHousingFallback} from './buildings.js';
 
 const base=()=>`${import.meta.env?.BASE_URL||'/'}yard/stock/`;
 const roles=new Set(['building','horizon','garage','tree','birch','bench','lamp','dumpster']);
-export async function loadStockManifest(url=base()+'manifest.local.json',fetchManifest=fetch){
+export async function loadStockManifest(url=base()+'manifest.local.json',fetchManifest=fetch,includeStock=import.meta.env.DEV || import.meta.env.VITE_STOCK === '1'){
+ if(!includeStock)return [];
  try{
   const response=await fetchManifest(url,{signal:AbortSignal.timeout(4000)});
   if(!response.ok||!response.headers.get('content-type')?.toLowerCase().includes('json'))return [];

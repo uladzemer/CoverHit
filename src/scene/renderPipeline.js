@@ -48,7 +48,7 @@ function gpuTimer(renderer) {
   };
 }
 
-function createFullPipeline(renderer, scene, camera, sun, lighting) {
+function createFullPipeline(renderer, scene, camera, sun, lighting, phone = false) {
   const allocated = []; let releaseOnFailure = () => {};
   try {
   renderer.toneMapping = THREE.NoToneMapping;
@@ -82,7 +82,7 @@ function createFullPipeline(renderer, scene, camera, sun, lighting) {
   const sunIntensity = sun.intensity;
   const direction = sun.target.position.clone().sub(sun.position).normalize();
   sun.castShadow = false; sun.intensity = 0; sun.shadow.map?.dispose(); sun.shadow.map = null;
-  let csm, quality, manual = false, frames = 0, frameTotal = 0;
+  let csm, quality, manual = false, frames = 0, frameTotal = 0, outputSized = false;
   function registerMaterials() {
     scene.traverse(object => {
       for (const material of object.material ? [object.material].flat() : []) {
@@ -112,7 +112,7 @@ function createFullPipeline(renderer, scene, camera, sun, lighting) {
     releaseCSM(); quality = level; const settings = QUALITY[level];
     const lightState=lighting?.apply(level)||{direction,color:sun.color,intensity:sunIntensity};
     renderer.shadowMap.type=level==='high'?THREE.BasicShadowMap:THREE.PCFShadowMap;
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, settings.pixelRatio));
+    if(!phone||!outputSized)renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, settings.pixelRatio));
     csm = new CSM({ camera, parent: scene, cascades: settings.cascades, maxFar: 220,
       mode: 'custom', customSplitsCallback: (count, near, far, target) => target.push(...(count === 1 ? [1] : [14 / far, 55 / far, 1])),
       shadowMapSize: settings.shadowSize, shadowBias: -.000015, lightDirection: lightState.direction, lightIntensity: lightState.intensity,
@@ -133,12 +133,23 @@ function createFullPipeline(renderer, scene, camera, sun, lighting) {
     window.dispatchEvent(new CustomEvent('coverhit-quality', { detail: { level, label: settings.label } }));
     return true;
   }
-  function resize() { renderer.setSize(window.innerWidth, window.innerHeight); composer.setSize(window.innerWidth, window.innerHeight); csm?.updateFrustums(); csm?.userDataTune?.(); }
+  function resize() {
+    if(phone){
+      // The explicit full override has the same WebKit buffer-resize failure
+      // as direct profiles. Retain composer/output resolution after startup;
+      // camera projection follows the CSS rect, so rotation still maps exactly.
+      if(!outputSized)renderer.setSize(window.innerWidth,window.innerHeight);
+      outputSized=true;renderer.domElement.style.width='100%';renderer.domElement.style.height='100%';
+      const size=renderer.getSize(new THREE.Vector2());composer.setSize(size.x,size.y);
+    }else{renderer.setSize(window.innerWidth,window.innerHeight);composer.setSize(window.innerWidth,window.innerHeight);}
+    csm?.updateFrustums();csm?.userDataTune?.();
+  }
   releaseOnFailure = releaseCSM;
   let saved; try { saved = localStorage.getItem('coverhit-quality'); } catch {}
   setQuality(QUALITY[saved] ? saved : 'high', true);
   return {
     composer, ao, tone, get quality() { return quality; }, setQuality, resize,
+    updateCameraFraming(){csm?.updateFrustums();csm?.userDataTune?.();},
     setToneMapping(name) { if (!(name in ToneMappingMode)) return false; tone.mode = ToneMappingMode[name]; return true; },
     render(dt) { lighting?.register(); registerMaterials(); csm.update(); renderer.info.reset(); timer.begin(); composer.render(dt); return timer.end(); },
     sampleFrame(ms) { if (frames < 120) { frameTotal += ms; if (++frames === 120 && !manual && quality === 'high' && frameTotal / frames > 20) setQuality('medium', true); } },
@@ -158,23 +169,24 @@ export function createRenderPipeline(renderer, scene, camera, sun, lighting, dev
   const originalSun = {intensity:sun.intensity, position:sun.position.clone()};
   let outputSized = false, renderPixelRatio;
   function direct() {
-    lighting?.apply('low');
+    lighting?.apply?.('low');
     const otherSuns=[];scene.traverse(o=>{if(o.isDirectionalLight&&o!==sun)otherSuns.push(o);});
     otherSuns.forEach(light=>{light.removeFromParent();light.target.removeFromParent();});
-    renderer.toneMapping = THREE.NeutralToneMapping; renderer.toneMappingExposure = .85;
+    lighting?.applyPhone?.();
+    renderer.toneMapping = THREE.NoToneMapping; renderer.toneMappingExposure = 1;
     // EffectComposer disables autoClear; a downgraded scene target needs fresh
     // colour and depth every frame, including moving/flipping carpet geometry.
     renderer.autoClear = true; renderer.autoClearColor = true; renderer.autoClearDepth = true;
     renderer.shadowMap.type = THREE.PCFShadowMap; renderer.info.autoReset = false;
-    sun.intensity = originalSun.intensity; sun.castShadow = true;
-    sun.position.copy(originalSun.position); sun.target.position.set(0,1,0);
+    if(!lighting?.applyPhone){sun.intensity = originalSun.intensity;sun.position.copy(originalSun.position);sun.target.position.set(0,1,0);}
+    sun.castShadow = true;
     sun.shadow.map?.dispose(); sun.shadow.map = null;
     sun.shadow.mapSize.setScalar(PROFILES[profile].shadow);
     Object.assign(sun.shadow.camera,{left:-6,right:6,top:6,bottom:-6,near:.1,far:85});
     sun.shadow.camera.updateProjectionMatrix();
     scene.environment = null;
     const present = createPresentPass(renderer);
-    return { quality:profile, get renderHeight(){return present.height;}, resize() {
+    return { quality:profile, grade:present.uniforms, get renderHeight(){return present.height;}, resize() {
       renderPixelRatio = Math.min(window.devicePixelRatio || 1,PROFILES[profile].dpr);
       // WebKit stops presenting an existing canvas after its drawing buffer is
       // resized (readPixels still works). Size it only before the first draw;
@@ -182,7 +194,8 @@ export function createRenderPipeline(renderer, scene, camera, sun, lighting, dev
       if(!outputSized && warmup===0) {renderer.setPixelRatio(renderPixelRatio);renderer.setSize(window.innerWidth,window.innerHeight);}
       outputSized = true;
       renderer.domElement.style.width='100%';renderer.domElement.style.height='100%';
-      present.resize(window.innerWidth,window.innerHeight,renderPixelRatio);
+      const rect=renderer.domElement.getBoundingClientRect?.()||{width:window.innerWidth,height:window.innerHeight};
+      present.resize(rect.width,rect.height,renderPixelRatio);
     },
       render() { renderer.info.reset(); present.render(scene,camera); return null; }, dispose() {present.dispose();} };
   }
@@ -202,15 +215,15 @@ export function createRenderPipeline(renderer, scene, camera, sun, lighting, dev
     inner = direct(); inner.resize(); announce(reason); badFrames = 0; return true;
   }
   if (profile === 'full') {
-    try { inner = createFullPipeline(renderer,scene,camera,sun,lighting); }
+    try { inner = createFullPipeline(renderer,scene,camera,sun,lighting,device.mobile); }
     catch(error) { downgrade(`pipeline creation: ${error.message}`); }
   } else { inner = direct(); inner.resize(); }
   announce('device profile');
   return { get profile(){return profile;},get quality(){return inner.quality;},get composer(){return inner.composer;},get ao(){return inner.ao;},get tone(){return inner.tone;},
-    get renderPixelRatio(){return profile==='full'?renderer.getPixelRatio():renderPixelRatio;},get renderHeight(){return inner.renderHeight??renderer.domElement.height;},
+    get renderPixelRatio(){return profile==='full'?renderer.getPixelRatio():renderPixelRatio;},get renderHeight(){return inner.renderHeight??renderer.domElement.height;},get grade(){return inner.grade;},
     get vignette(){return profile!=='full';},downgrade,
     setQuality(level) { if(PROFILES[level]) {if(level===profile)return true;if(level==='lite'&&profile==='full')return downgrade('manual');if(level==='minimal'){while(profile!=='minimal')downgrade('manual');return true;}return false;}return inner.setQuality?.(level)||false; },
-    setToneMapping(name){return inner.setToneMapping?.(name)||false;},resize(){inner.resize();},
+    setToneMapping(name){return inner.setToneMapping?.(name)||false;},resize(){inner.resize();},updateCameraFraming(){inner.updateCameraFraming?.();},
     render(dt) {
       if(renderer.getContext().isContextLost())return null;
       let result;

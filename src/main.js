@@ -22,6 +22,7 @@ import { createYard, loadYardAssets } from "./scene/yard.js";
 import { Sfx } from "./audio/sfx.js";
 import { createStrikeLog } from "./game/strikeLog.js";
 import { bindClothFlip } from "./game/clothFlip.js";
+import { feel as gameFeel, strikeQuality, shakeAmount, soundIntensity, installFeel } from './game/feel.js';
 import { Game } from "./game/state.js";
 import { advanceGameplayFrame } from "./game/frame.js";
 import { Hud } from "./ui/hud.js";
@@ -30,7 +31,7 @@ import { rackSpan, BAR_HEIGHT, CLOTH_BAR_OFFSET } from './carpet/barGeometry.js'
 import { loadAmmo } from "./carpet/cloth.js";
 import { createRenderPipeline } from './scene/renderPipeline.js';
 import { optimizeYard } from './scene/yard/performance.js';
-import { createLightingState } from './scene/lighting.js';
+import { createLightingState, applyPhoneLighting } from './scene/lighting.js';
 import {setFacadeMode} from './scene/yard/facade.js';
 
 setBootStep('modules loaded');
@@ -88,13 +89,16 @@ async function boot() {
   });
   const baseCamera = new THREE.Vector3();
   const lookTarget = new THREE.Vector3();
+  const desiredCamera = new THREE.Vector3();
+  const desiredTarget = new THREE.Vector3();
+  let desiredFov = 48, framingReady = false, phoneFraming = false;
   if (yard.renderFallback) { device.name = 'lite'; setAssetProfile('lite'); }
   // Soft courtyard bounce lights the front; the pipeline cascades own sun shadows.
   const fill = new THREE.DirectionalLight("#d4dce1", 0.35);
   fill.position.set(1, 4, 6);
   fill.target.position.copy(yard.barPosition).add(new THREE.Vector3(0, -1, 0));
   if (device.name === 'full') scene.add(fill, fill.target);
-  const lighting = device.name === 'full' ? createLightingState(scene, yard.sun, fill, yard) : undefined;
+  const lighting = device.name === 'full' ? createLightingState(scene, yard.sun, fill, yard) : {applyPhone:()=>applyPhoneLighting(scene,yard.sun,yard)};
   const pipeline = createRenderPipeline(renderer, scene, camera, yard.sun, lighting, device);
   setBootStep('pipeline created');
   const yardPerformance=optimizeYard(yard);
@@ -104,7 +108,7 @@ async function boot() {
   scene.add(dust.points);
   const dirtyHints = new DirtyHints(); scene.add(dirtyHints.points);
   const moths = new MothSystem(scene, { mobile: pipeline.profile !== 'full' });
-  const sfx = new Sfx();
+  const sfx = new Sfx({ mobile: () => pipeline.profile !== 'full' });
   let carpet,
     shake = 0,
     elapsed = 0,
@@ -145,7 +149,6 @@ async function boot() {
     carpet.mesh.updateMatrixWorld();
     hud?.setCleanliness(0);
     hud?.setCarpetType(type.nameRu, currentEntry.title);
-    lookTarget.copy(yard.barPosition).add(new THREE.Vector3(0, -carpet.cloth.drop / 2, 0));
     resize();
   }
   // Initialized before the first carpet so replacement can also update the HUD.
@@ -259,15 +262,17 @@ async function boot() {
     const cleaningStrength = strength;
     const amount = dirt.hit(uv.x, uv.y, cleaningStrength, feel.headRadius);
     dust.emit(point, normal, amount);
-    sfx.hit(strength, beater.entry.sound.preset);
-    shake = Math.min(0.035, shake + strength * 0.009);
+    sfx.hit(soundIntensity(strength), beater.entry.sound.preset);
+    // BEGIN feel camera/impact hook
+    shake = shakeAmount(shake, strength, strikeFeel.reduced());
+    strikeFeel.impact(point, normal, strength);
+    // END feel camera/impact hook
     if (game.state === "playing") {
       const points = game.onHit({ strength, dust: amount, uv });
       const projected = point.clone().project(camera);
       const rect = renderer.domElement.getBoundingClientRect();
-      const charge = (strength - .25) / .75;
       hud.popScore((projected.x + 1) * rect.width / 2, (1 - projected.y) * rect.height / 2,
-        points, charge >= .8 ? 'excellent' : charge >= .4 ? 'good' : 'weak');
+        points, strikeQuality(strength));
       strikeLog?.hit({time:game.time,wall:performance.now()/1000,multiplier:game.comboMultiplier,uv:uv.toArray()});
     }
     return amount;
@@ -326,14 +331,25 @@ async function boot() {
     return strike({ ...sampleSurface(u, v), strength });
   }
   function resize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    const framing = cameraFraming(camera.aspect, yard.barLength, carpet.cloth.drop);
-    camera.fov = framing.fov;
-    baseCamera.set(framing.x, framing.y, framing.distance);
-    camera.position.copy(baseCamera);
-    camera.lookAt(lookTarget);
-    camera.updateProjectionMatrix();
     pipeline.resize();
+    const rect = renderer.domElement.getBoundingClientRect();
+    camera.aspect = rect.width / Math.max(1,rect.height);
+    phoneFraming = device.mobile || camera.aspect < 1.3;
+    const framing = cameraFraming(camera.aspect, yard.barLength, carpet.cloth.drop, BAR_HEIGHT, phoneFraming, carpet.cloth.span);
+    desiredFov = framing.fov;
+    desiredCamera.set(framing.x, framing.y, framing.distance);
+    desiredTarget.copy(yard.barPosition).add(new THREE.Vector3(0, -carpet.cloth.drop / 2, 0));
+    if (framing.phone) desiredTarget.y = framing.targetY;
+    if (!framingReady || !phoneFraming) {
+      baseCamera.copy(desiredCamera);
+      lookTarget.copy(desiredTarget);
+      camera.fov = desiredFov;
+      camera.position.copy(baseCamera);
+      camera.lookAt(lookTarget);
+      framingReady = true;
+    }
+    camera.updateProjectionMatrix();
+    pipeline.updateCameraFraming();
     camera.updateMatrixWorld();
     if (dust.points.material.uniforms?.scale)
       dust.points.material.uniforms.scale.value =
@@ -343,6 +359,7 @@ async function boot() {
   window.addEventListener("resize", resize);
   window.addEventListener("orientationchange", resize);
   window.visualViewport?.addEventListener("resize", resize);
+  window.visualViewport?.addEventListener("scroll", resize);
   resize();
   const beater = new Beater(camera, renderer.domElement, () => carpet.mesh);
   beater.setBeater(progression.selected);
@@ -365,7 +382,11 @@ async function boot() {
     game.state === "playing" &&
     moths.intercept(raycaster, carpet.mesh, (id) => game.catchMoth(id));
   beater.onMiss = () => {strikeLog?.miss(game.time);game.onHit({miss:true});};
+  // BEGIN feel visual-clock integration (Bullet/Game retain real fixed dt).
+  const strikeFeel = installFeel({ scene, beater, dust, game, hud });
+  // END feel visual-clock integration
   window.__coverhit = {
+    feel: gameFeel,
     yard, renderer, scene, wind,
     setFacades: mode => {const changed=setFacadeMode(yard.root,mode);if(changed)window.dispatchEvent(new CustomEvent('coverhit-facades',{detail:{mode}}));return changed;},
     get facades(){return yard.root.userData.facadeMode||'photo';},
@@ -404,19 +425,34 @@ async function boot() {
     const elapsedDt = previous===null?0:(now - previous) / 1000;
     const dt = Math.max(0,elapsedDt);
     previous = now;
-    elapsed += dt;
+    elapsed += dt * strikeFeel.scale();
     wind.update(dt);
     const frameStart = performance.now();
     if (!hud.blocking) accumulator = advanceGameplayFrame({ game, beater, cloth: carpet.cloth, mesh: carpet.mesh }, elapsedDt, accumulator);
     else carpet.cloth.windTimeOrigin=wind.time-carpet.cloth.time;
     window.__coverhit.performance.physicsMs = performance.now() - frameStart;
-    shake *= Math.exp(-dt * 16);
+    // BEGIN feel camera clock (visual only)
+    strikeFeel.update(dt);
+    shake = strikeFeel.reduced() ? 0 : shake * Math.exp(-dt * strikeFeel.scale() * gameFeel.shake.decay);
+    // END feel camera clock
+    if (phoneFraming) {
+      const blend = 1 - Math.exp(-Math.min(dt, .1) * 10);
+      baseCamera.lerp(desiredCamera, blend);
+      lookTarget.lerp(desiredTarget, blend);
+      if (Math.abs(desiredFov - camera.fov) > 1e-6) {
+        camera.fov += (desiredFov - camera.fov) * blend;
+        camera.updateProjectionMatrix();
+        pipeline.updateCameraFraming();
+        if (dust.points.material.uniforms?.scale)
+          dust.points.material.uniforms.scale.value = pipeline.renderHeight / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)));
+      }
+    }
     camera.position
       .copy(baseCamera)
       .add(
         new THREE.Vector3(
-          Math.sin(elapsed * 0.6) * 0.016 + Math.sin(elapsed * 87) * shake,
-          Math.sin(elapsed * 0.8) * 0.009 + Math.cos(elapsed * 73) * shake,
+          Math.sin(elapsed * 0.6) * 0.016 + Math.sin(elapsed * gameFeel.shake.frequencyX) * shake,
+          Math.sin(elapsed * 0.8) * 0.009 + Math.cos(elapsed * gameFeel.shake.frequencyY) * shake,
           0,
         ),
       );
@@ -424,9 +460,10 @@ async function boot() {
     camera.updateMatrixWorld();
     moths.update(dt);
     dust.update(dt);
-    dirtyHints.update(carpet.dirt, sampleSurface, elapsed, game.state === 'playing');
+    dirtyHints.update(carpet.dirt, sampleSurface, elapsed, game.state === 'playing', strikeFeel.reduced());
+    carpet.mesh.material.userData.dirtyZone?.value.copy(dirtyHints.zone);
     if (carpet.mesh.material.userData.dirtyHint)
-      carpet.mesh.material.userData.dirtyHint.value = game.state === 'playing' && carpet.dirt.halfCleanliness(game.visibleSide) >= .85 ? 1 : 0;
+      carpet.mesh.material.userData.dirtyHint.value = dirtyHints.pulse;
     yard.update(dt);
     if(yardQuality!==pipeline.quality){yardPerformance.apply(); reduceMobileScene(yard, pipeline.profile);if(pipeline.profile!=='full')yardAssets.releaseEnvironment();yardQuality=pipeline.quality;}
     hud.setCleanliness(game.state === "menu" ? 0 : carpet.dirt.halfCleanliness(game.visibleSide));
@@ -461,6 +498,7 @@ async function boot() {
       window.removeEventListener("resize", resize);
       window.removeEventListener("orientationchange", resize);
       window.visualViewport?.removeEventListener("resize", resize);
+      window.visualViewport?.removeEventListener("scroll", resize);
       window.removeEventListener("pointerdown", unlock, { capture: true });
       window.removeEventListener("keydown", keydown);
       document.removeEventListener("visibilitychange", resetClock);
@@ -470,12 +508,13 @@ async function boot() {
       beater.dispose();
       dust.dispose();
       dirtyHints.dispose();
+      strikeFeel.dispose();
       carpet.dispose();
       assets.dispose();
       yard.root.userData.laundry?.dispose();
       yardAssets.dispose();
       sfx.ambience(false);
-      void sfx.context?.close();
+      sfx.dispose();
       scene.remove(beater.group, dust.points, carpet.mesh);
       const sceneAssets = new Set();
       scene.traverse((object) => {

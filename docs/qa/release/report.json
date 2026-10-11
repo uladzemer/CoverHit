@@ -1,0 +1,85 @@
+{
+  "url": "http://127.0.0.1:5189/CoverHit/",
+  "at": "2026-10-11T07:21:02.903Z",
+  "results": [
+    {
+      "device": "Desktop",
+      "failedRequests": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "warnings": [
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision",
+        "THREE.WebGLProgram: Program Info Log: (85,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(85,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+      ],
+      "optionalRequests": [],
+      "runtime": {
+        "profile": "full",
+        "quality": "high",
+        "meanFrameMs": 10.428333331644534,
+        "meanRenderMs": 3.0408333321412404,
+        "maxDrawCalls": 127
+      },
+      "shaderDiagnostics": [
+        {
+          "log": "(210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision",
+          "owner": "three/PMREMGenerator",
+          "ownPCSS": false,
+          "shaderNames": [
+            "PMREMGGXConvolution",
+            "PMREMGGXConvolution"
+          ]
+        },
+        {
+          "log": "(85,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(85,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value",
+          "owner": "n8ao/PoissionBlur.js",
+          "ownPCSS": false,
+          "shaderNames": []
+        }
+      ],
+      "dependencyWarnings": [
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision",
+        "THREE.WebGLProgram: Program Info Log: (85,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(85,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+      ],
+      "ownWarnings": [],
+      "passed": true
+    },
+    {
+      "device": "iPhone 14 Pro",
+      "failedRequests": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "warnings": [],
+      "optionalRequests": [],
+      "runtime": {
+        "profile": "lite",
+        "quality": "lite",
+        "meanFrameMs": 69.95,
+        "meanRenderMs": 5.525,
+        "maxDrawCalls": 66
+      },
+      "shaderDiagnostics": [],
+      "dependencyWarnings": [],
+      "ownWarnings": [],
+      "passed": true
+    },
+    {
+      "device": "Pixel 7",
+      "failedRequests": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "warnings": [],
+      "optionalRequests": [],
+      "runtime": {
+        "profile": "lite",
+        "quality": "lite",
+        "meanFrameMs": 10.524166668951512,
+        "meanRenderMs": 2.1908333336313563,
+        "maxDrawCalls": 62
+      },
+      "shaderDiagnostics": [],
+      "dependencyWarnings": [],
+      "ownWarnings": [],
+      "passed": true
+    }
+  ]
+}

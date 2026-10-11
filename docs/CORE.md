@@ -6,6 +6,19 @@ bootGuard; the parallel HTML agent owns the pre-module inline guard, and the UI
 agent owns the CSS vignette and coverhit:quality toast.
 
 
+Phone framing now overrides the older size-wave camera described below. It
+uses actual crosswise cloth span plus 6%, with an independent fit for the fixed
+posts, a 52-degree portrait lens, a 2.7 m eye, and a projected panel centre at
+40% height. Landscape also respects the existing outer 20% HUD columns. Camera
+position, target and lens approach their new fit exponentially on rug changes
+and viewport/orientation events; aspect still updates immediately from the
+canvas CSS rect, preserving exact touch rays. Desktop retains its old formula.
+The physical rack limits zoom: narrow rugs cannot occupy 80-90% width while
+both fixed posts remain visible. The portrait fit consequently needs more than
+4.2 m distance, and some landscape rugs occupy less than 65% height to retain
+post/HUD clearance. See [phone framing measurements](qa/mobile-frame/README.md)
+for actual cloth coverage, these constraint decisions, screenshots and checks.
+
 Phone presentation regression: WebKit loses the composited canvas when an
 already presented drawing buffer changes size during a quality downgrade.
 An isolated DPR 1 -> .75 mutation produced 99.01% body-colour pixels and 99.59%
@@ -23,6 +36,15 @@ the retained output buffer. On rotation, the fixed output buffer can soften the
 image along the axis that grows, while gameplay framing remains correct.
 
 `?minimal=1` joins `?lite=1`, `?full=1` and automatic phone selection.
+Phone direct lighting uses warm sunset sky/fog, the existing hemisphere plus
+an ambient fill and small unshadowed sun bounce, without IBL or static AO bake.
+The front receives sun at rest; PCF shadow intensity is 0.4. The existing RGBA8
+present pass exposes exposure/gamma/saturation/lift/contrast uniforms. Wool's
+alpha mask preserves its textile exposure, while final saturation is +10%.
+Phone counters and score popups use 2px outlined poster text without panels;
+the bottom strip and 44px translucent thumb pills stay outside the aim area.
+See [brightness measurements](qa/mobile-bright/README.md),
+[touch measurements](qa/mobile-aim/README.md) and [HUD evidence](qa/mobile-hud/README.md).
 Run `npm run verify:canvas-presented` and `npm run verify:mobile` with `MOBILE_URL`
 pointing at the built preview (set `COVERHIT_BASE=/CoverHit/` for both build and
 preview). The former checks WebKit iPhone 14 Pro/SE for all four choices after
@@ -61,7 +83,7 @@ Dirt covers the full UV sheet, with half-specific cleanliness and clipped cleani
 
 F or the HUD button starts a seeded hand throw lasting up to 1.65 s. Two three-node grip patches on the back hem are the default; 30% of gestures use one corner patch. The hands scoop down/back, then above the pipe and forward. The remaining hanging nodes stay dynamic, with a bounded travelling launch pulse. Crown anchor influence releases progressively, and the supported collar peels along the bar with 0.20 s (two hands) or 0.32 s (corner) delay from end to end. The supported crown retains its positional contact envelope; it is not an extra hand or native body. Bar projection remains active throughout, with crown passage and a 4 mm hysteresis band determining per-node bar sides. During throws, polar and below-pipe graph contacts follow current geometry; the rest separator returns at completion. `flipThrow` fires at hand release (0.95 s), with crown dust proportional to thrown-side dirt; `flipEnd` retains the landing sound. The visible game half changes when the centre crown node passes, but hits stay gated until release and speed below 0.6 m/s (after the 1.4 s minimum gesture), or the 0.7 s release timeout. A half automatically flips once when it first reaches the threshold. Manual flips work both ways at any time during play. Dirt and scoring ignore hits during the pull; physics resumes afterward, and the camera stays in place. Moths and late-round hints use only the visible half. Raycasting also selects only that half, even when the panels swing across each other.
 
-Hold mouse/touch to wind up, release to strike. On phones, drag one held finger to aim; the reticle and strike ray sit 48 CSS px above the finger (configurable with Beater touchAimOffset). Additional carpet touches are ignored; cancellation/leave cancels the charge. A guarded vibration tick signals a strong charge. Bottom buttons flip the carpet and open the pause menu; top icons toggle sound and reticle size. Desktop F/R/M/Esc controls remain available on hybrid devices, with hints following the latest pointer type. Audio resumes directly on pointerdown, including touch. Phone pages use compact counters and short paged content without scrolling. Safe-area insets protect controls; visualViewport resize/orientation updates layout without restarting the game. Charge reaches full strength in 0.6 s, with a subtle cursor arc; quick clicks are 0.25-strength taps. The 85 ms accelerating strike and 280 ms total recovery preserve a roughly 0.5 s moderate-charge rhythm. The hit ray is captured on release. Moth interception occurs once at impact before carpet scoring. `game/state.js` timing windows are unchanged. `window.__coverhit.strikeLog` records game-time intervals, wall times, UVs, misses and multipliers. Browser QA at 400 ms hold + 250 ms gap reaches ?3 at strike 9 and retains it through strike 12.
+Hold mouse/touch to wind up, release to strike. On phones, drag one held finger to aim; the reticle, strike ray and beater head target sit under the finger by default. The phone menu setting "Прицел над пальцем" optionally raises aim 40 CSS px and persists through guarded localStorage. Additional carpet touches are ignored; cancellation/leave cancels the charge. A guarded vibration tick signals a strong charge. Bottom buttons flip the carpet and open the pause menu; top icons toggle sound and reticle size. Desktop F/R/M/Esc controls remain available on hybrid devices, with hints following the latest pointer type. Audio resumes directly on pointerdown, including touch. Phone pages use compact counters and short paged content without scrolling. Safe-area insets protect controls; visualViewport resize/scroll and orientation update layout without restarting the game. Input, camera aspect and scene target use the same canvas CSS rect; client coordinates already share its layout viewport space, so no extra viewport offset or DPR scaling is added. Charge reaches full strength in 0.6 s, with a subtle cursor arc; quick clicks are 0.25-strength taps. The 85 ms accelerating strike and 280 ms total recovery preserve a roughly 0.5 s moderate-charge rhythm. The hit ray is captured on release, independently of beater head travel. Moth interception occurs once at impact before carpet scoring. `game/state.js` timing windows are unchanged. `window.__coverhit.strikeLog` records game-time intervals, wall times, UVs, misses and multipliers. Browser QA at 400 ms hold + 250 ms gap reaches ?3 at strike 9 and retains it through strike 12.
 
 Recovery accepts the next hold after impact, so a 350 ms hold plus 250 ms gap builds combo. The browser debug `setCarpetType(id)` now returns a promise; `setCarpet(id)` selects a museum image by ID, and `carpetEntry` exposes its manifest entry. The regular sequence starts with Kazak stars (09), then Tekke (03), then the forest tapestry (11), and includes every image before repeating. The first carpet's dirt/duration use the existing easy difficulty curve.
 

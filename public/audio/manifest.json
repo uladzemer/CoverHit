@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "clips": [
+    {
+      "id": "kids-a",
+      "kind": "kids",
+      "duration": 8,
+      "loop": false,
+      "formats": [
+        {
+          "file": "kids-a.m4a",
+          "mime": "audio/mp4; codecs=\"mp4a.40.2\"",
+          "bytes": 34030
+        },
+        {
+          "file": "kids-a.ogg",
+          "mime": "audio/ogg; codecs=opus",
+          "bytes": 28963
+        }
+      ]
+    },
+    {
+      "id": "kids-b",
+      "kind": "kids",
+      "duration": 8,
+      "loop": false,
+      "formats": [
+        {
+          "file": "kids-b.m4a",
+          "mime": "audio/mp4; codecs=\"mp4a.40.2\"",
+          "bytes": 34063
+        },
+        {
+          "file": "kids-b.ogg",
+          "mime": "audio/ogg; codecs=opus",
+          "bytes": 29712
+        }
+      ]
+    },
+    {
+      "id": "sparrows-a",
+      "kind": "birds",
+      "duration": 5,
+      "loop": false,
+      "formats": [
+        {
+          "file": "sparrows-a.m4a",
+          "mime": "audio/mp4; codecs=\"mp4a.40.2\"",
+          "bytes": 23159
+        },
+        {
+          "file": "sparrows-a.ogg",
+          "mime": "audio/ogg; codecs=opus",
+          "bytes": 17468
+        }
+      ]
+    },
+    {
+      "id": "sparrows-b",
+      "kind": "birds",
+      "duration": 6,
+      "loop": false,
+      "formats": [
+        {
+          "file": "sparrows-b.m4a",
+          "mime": "audio/mp4; codecs=\"mp4a.40.2\"",
+          "bytes": 25428
+        },
+        {
+          "file": "sparrows-b.ogg",
+          "mime": "audio/ogg; codecs=opus",
+          "bytes": 21997
+        }
+      ]
+    },
+    {
+      "id": "traffic",
+      "kind": "bed",
+      "duration": 22.5,
+      "loop": true,
+      "formats": [
+        {
+          "file": "traffic.m4a",
+          "mime": "audio/mp4; codecs=\"mp4a.40.2\"",
+          "bytes": 93344
+        },
+        {
+          "file": "traffic.ogg",
+          "mime": "audio/ogg; codecs=opus",
+          "bytes": 104951
+        }
+      ]
+    },
+    {
+      "id": "dog",
+      "kind": "dog",
+      "duration": 2.9300680272108846,
+      "loop": false,
+      "formats": [
+        {
+          "file": "dog.m4a",
+          "mime": "audio/mp4; codecs=\"mp4a.40.2\"",
+          "bytes": 14852
+        },
+        {
+          "file": "dog.ogg",
+          "mime": "audio/ogg; codecs=opus",
+          "bytes": 11219
+        }
+      ]
+    },
+    {
+      "id": "swing",
+      "kind": "swing",
+      "duration": 6,
+      "loop": false,
+      "formats": [
+        {
+          "file": "swing.m4a",
+          "mime": "audio/mp4; codecs=\"mp4a.40.2\"",
+          "bytes": 25990
+        },
+        {
+          "file": "swing.ogg",
+          "mime": "audio/ogg; codecs=opus",
+          "bytes": 22708
+        }
+      ]
+    },
+    {
+      "id": "tram",
+      "kind": "tram",
+      "duration": 12,
+      "loop": false,
+      "formats": [
+        {
+          "file": "tram.m4a",
+          "mime": "audio/mp4; codecs=\"mp4a.40.2\"",
+          "bytes": 50408
+        },
+        {
+          "file": "tram.ogg",
+          "mime": "audio/ogg; codecs=opus",
+          "bytes": 45271
+        }
+      ]
+    },
+    {
+      "id": "door",
+      "kind": "door",
+      "duration": 2,
+      "loop": false,
+      "formats": [
+        {
+          "file": "door.m4a",
+          "mime": "audio/mp4; codecs=\"mp4a.40.2\"",
+          "bytes": 9360
+        },
+        {
+          "file": "door.ogg",
+          "mime": "audio/ogg; codecs=opus",
+          "bytes": 7621
+        }
+      ]
+    },
+    {
+      "id": "window",
+      "kind": "window",
+      "duration": 3.813877551020408,
+      "loop": false,
+      "formats": [
+        {
+          "file": "window.m4a",
+          "mime": "audio/mp4; codecs=\"mp4a.40.2\"",
+          "bytes": 16722
+        },
+        {
+          "file": "window.ogg",
+          "mime": "audio/ogg; codecs=opus",
+          "bytes": 17333
+        }
+      ]
+    }
+  ]
+}

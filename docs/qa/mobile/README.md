@@ -29,9 +29,10 @@ Extension names alone are insufficient. Diagnostics include caps, DPR, viewport,
 profile, failure reasons, asset counts and a texture memory estimate.
 
 Full retains the desktop composer, N8AO, bloom, grading and CSM. Lite/minimal use
-a depth-backed RGBA8 scene target and an opaque fullscreen copy with Neutral
-tone mapping, plus one PCF directional sun
-shadow (1024/512). Both use the procedural sky and hemisphere light, skipping
+a depth-backed RGBA8 scene target and an opaque fullscreen grade with a wool
+coverage mask, plus one PCF directional sun
+shadow (1024/512, intensity 0.4). Both use the warm procedural sky, hemisphere,
+ambient and a small unshadowed sun bounce, skipping
 HDR/PMREM, static AO bake, VAT laundry download and licensed stock manifests.
 Licensed stock manifests are also skipped on phones with the `?full=1` override.
 The first phone carpet image preloads alongside yard assets, avoiding a second
@@ -43,6 +44,10 @@ pixels. Quality/viewport changes resize the scene target instead. The canvas
 uses 100% CSS dimensions and the camera follows the current viewport. A live
 full-to-lite downgrade retains the existing output buffer. See CORE.md for the
 DPR bisect and screenshot regression criteria.
+The explicit full override also retains its output/composer resolution on
+phones after startup: WebKit loses presentation on full-profile rotation too.
+Its camera still follows the current CSS rect. Desktop full keeps normal
+composer resizing and quality DPR selection.
 Full→lite→minimal fallback preserves the scene on creation/render exceptions or
 30 consecutive GL-error frames; persistent minimal errors show the panel.
 After 120 warm-up frames, a 120-frame average over 24ms (full) or 40ms (lite)

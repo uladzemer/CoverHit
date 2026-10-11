@@ -4,7 +4,7 @@ import { carpetGeometry } from "./assets.js";
 import { createSmoothGeometry } from './smoothGeometry.js';
 import { Cloth } from "./cloth.js";
 import { CARPET_HALF_THICKNESS } from './barGeometry.js';
-import { DirtMap } from "./dirt.js";
+import { DirtMap, createDirtNoise } from "./dirt.js";
 import { createLayerOcclusion } from './occlusion.js';
 import { createThicknessStrip } from './thickness.js';
 import { createFringe } from './fringe.js';
@@ -53,8 +53,12 @@ export function createCarpet(seed, clothOptions = {}) {
     depthTest: true,
     depthWrite: true,
   });
+  const dirtNoise = createDirtNoise();
   material.onBeforeCompile = (shader) => {
     shader.uniforms.dirtMap = { value: dirt.texture };
+    shader.uniforms.dirtNoise = { value: dirtNoise };
+    shader.uniforms.dirtyZone = { value: new THREE.Vector2(.5,.5) };
+    material.userData.dirtyZone = shader.uniforms.dirtyZone;
     shader.uniforms.dirtyHint = { value: 0 };
     material.userData.dirtyHint = shader.uniforms.dirtyHint;
     shader.vertexShader = shader.vertexShader
@@ -63,15 +67,19 @@ export function createCarpet(seed, clothOptions = {}) {
       .replace("#include <begin_vertex>", `#include <begin_vertex>\ntransformed += objectNormal * ${CARPET_HALF_THICKNESS};`);
     shader.fragmentShader = shader.fragmentShader.replace(
       "#include <common>",
-      "#include <common>\nuniform sampler2D dirtMap;\nuniform float dirtyHint;\nvarying vec2 vDirtUv;\nvarying vec2 vClothOcclusion;",
+      "#include <common>\nuniform sampler2D dirtMap;\nuniform sampler2D dirtNoise;\nuniform vec2 dirtyZone;\nuniform float dirtyHint;\nvarying vec2 vDirtUv;\nvarying vec2 vClothOcclusion;",
     );
     shader.fragmentShader = shader.fragmentShader.replace(
       "#include <map_fragment>",
       `#include <map_fragment>
       float dirt = texture2D(dirtMap, vDirtUv).r;
-      diffuseColor.rgb *= 1.0 - dirt * 0.38;
-      diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.15, 0.115, 0.085), dirt * 0.08);
-      diffuseColor.rgb *= 1.0 - dirtyHint * smoothstep(0.10, 0.40, dirt) * 0.32;
+      float film = smoothstep(0.0, 1.0, dirt);
+      float speckle = texture2D(dirtNoise, vDirtUv * vec2(19.0, 27.0)).r;
+      float pileLuma = dot(diffuseColor.rgb, vec3(.2126, .7152, .0722));
+      vec3 dustPile = mix(diffuseColor.rgb, pileLuma * vec3(1.04, 1.0, .92), film * .90);
+      diffuseColor.rgb = dustPile * (1.0 - film * (.58 + (speckle - .5) * .08));
+      float hintZone = 1.0 - smoothstep(.035, .18, distance(vDirtUv, dirtyZone));
+      diffuseColor.rgb *= 1.0 - dirtyHint * hintZone * smoothstep(.1, .4, dirt) * .12;
     `,
     );
     shader.fragmentShader = shader.fragmentShader.replace('#include <aomap_fragment>', `#include <aomap_fragment>
@@ -91,7 +99,7 @@ export function createCarpet(seed, clothOptions = {}) {
   // The compositor carries an opaque coverage mask in alpha (0 = wool).
   // Preserve physical diffuse light/shadow variation, with textile-specific
   // exposure and white balance. Additive specular must not bleach dark dyes.
-  material.customProgramCacheKey = () => "coverhit-carpet-colour-v4";
+  material.customProgramCacheKey = () => "coverhit-carpet-colour-dust-v5";
   const mesh = new THREE.Mesh(cloth.geometry, material);
   mesh.castShadow = true;
   mesh.receiveShadow = true;
@@ -129,6 +137,7 @@ export function createCarpet(seed, clothOptions = {}) {
 
       bumpMap.dispose();
       dirt.texture.dispose();
+      dirtNoise.dispose();
     },
   };
 }

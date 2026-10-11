@@ -241,6 +241,7 @@ export class Hud {
   }
   setSide(side,flipping=false) {
     this.nodes.side.textContent=`Сторона ${side === 1 ? 2 : 1}/2 · Чистота`;
+    if(this.touchMode)this.nodes.side.textContent=`Сторона ${side === 1 ? 2 : 1}/2`;
     this.nodes.flip.disabled=flipping||this.game?.state!=='playing';
     this.nodes.flip.textContent=flipping ? 'Перекидываем…' : this.touchMode ? 'Перекинуть' : 'Перекинуть · F';
   }
