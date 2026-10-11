@@ -10,45 +10,29 @@ export function cameraFraming(aspect, barLength, drop, barHeight = 2.15, phone =
   return { fov, distance, x: .2, y: barHeight - .33 + (portrait ? .12 : 0) };
 }
 
-// A fixed rack limits the zoom for narrow rugs. Keep both post radii and a
-// motion reserve visible rather than changing the physical rack or aim mapping.
+// Frame the cloth with a frontal eye line. Moving the lens window vertically
+// keeps the projected view and touch rays on the same camera.
 function phoneFraming(aspect, barLength, drop, barHeight, span) {
   const portrait = aspect < 1.3;
-  const y = 2.7;
-  const distanceFor = fov => {
-    const tan = Math.tan(fov * Math.PI / 360);
-    const pose = distance => {
-      let lower = 0, upper = Math.PI / 3;
-      const projectY = (height, tilt) => .5 - ((height - y) * Math.cos(tilt) + distance * Math.sin(tilt)) / (2 * tan * (distance * Math.cos(tilt) + (y - height) * Math.sin(tilt)));
-      // Centre the projected hanging panel, accounting for perspective rather
-      // than just placing its world-space midpoint on the desired screen row.
-      for (let i = 0; i < 24; i++) {
-        const angle = (lower + upper) / 2;
-        if ((projectY(barHeight, angle) + projectY(barHeight - drop, angle)) / 2 > .4) lower = angle; else upper = angle;
-      }
-      const tilt = (lower + upper) / 2;
-      const depth = height => distance * Math.cos(tilt) + (y - height) * Math.sin(tilt);
-      const screenY = height => .5 - ((height - y) * Math.cos(tilt) + distance * Math.sin(tilt)) / (2 * tan * depth(height));
-      return { tilt, depth, height: screenY(barHeight - drop) - screenY(barHeight) };
-    };
-    let lo = 3.2, hi = 30;
-    for (let i = 0; i < 40; i++) {
-      const d = (lo + hi) / 2, p = pose(d);
-      // Six percent cloth margin, with an independent fit for the fixed posts.
-      // Landscape HUD columns occupy the outer 20% on each side. A 60%
-      // panel fit keeps the top digits and bottom strip clear even on SE.
-      const clothFraction = portrait ? .85 : .60;
-      // Portrait is carpet-first: the hanging cloth fills ~85% of the width and the posts may run off the
-      // screen edges (the bar still reads as a pipe crossing the frame). Landscape keeps both posts visible.
-      const needed = portrait ? span * 1.06 / clothFraction : Math.max(span * 1.06 / clothFraction, (barLength + .16) / .94);
-      const width = needed / (2 * tan * aspect * p.depth(barHeight));
-      if (width > 1 || (!portrait && p.height > .70)) lo = d; else hi = d;
-    }
-    return {distance:hi, ...pose(hi)};
-  };
-  // Portrait retains a natural 52 degree lens. Landscape uses the drop to
-  // choose a tighter lens at the existing beater-safe minimum distance.
-  const fov = portrait ? 52 : Math.min(48, 2 * Math.atan(drop / (2 * 3.4 * .70)) * 180 / Math.PI);
-  const p = distanceFor(fov);
-  return {fov, distance:p.distance, x:0, y, targetY:y - p.distance * Math.tan(p.tilt), phone:true};
+  const targetY = barHeight - drop / 2 + .15;
+  // Tall runners need a little less width to clear the SE's top HUD.
+  const runner = drop / span > .8;
+  const portraitWidth = runner ? .94 : .98;
+  // Fit the cloth, not the rack. Thickness adds a small amount to the nominal
+  // 98% width; portrait posts can leave the frame.
+  const distance = portrait
+    ? span / (2 * Math.tan(50 * Math.PI / 360) * aspect * portraitWidth) + .04
+    : 3.8;
+  const y = portrait ? 1.8 : Math.max(1.7, Math.min(1.85, targetY + distance * Math.tan(5.8 * Math.PI / 180)));
+  const tilt = Math.atan2(y - targetY, distance);
+  const depth = height => distance * Math.cos(tilt) + (y - height) * Math.sin(tilt);
+  // Keep the cloth between the landscape HUD columns on the shorter SE.
+  const panelHeight = Math.min(.62, .56 * aspect * drop / span);
+  const fov = portrait ? 50 : 2 * Math.atan(
+    drop * distance / (depth(barHeight) * depth(barHeight - drop) * 2 * panelHeight)
+  ) * 180 / Math.PI;
+  const tan = Math.tan(fov * Math.PI / 360);
+  const screenY = height => .5 - ((height - y) * Math.cos(tilt) + distance * Math.sin(tilt)) / (2 * tan * depth(height));
+  const viewOffset = (screenY(barHeight) + screenY(barHeight - drop)) / 2 - (portrait ? (runner ? .423 : .42) : .46);
+  return { fov, distance, x: 0, y, targetY, viewOffset, phone: true };
 }

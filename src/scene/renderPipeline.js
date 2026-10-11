@@ -7,6 +7,7 @@ import { EffectComposer, RenderPass, EffectPass, SMAAEffect, SMAAPreset, BloomEf
 import { N8AOPostPass } from 'n8ao';
 import { injectSoftShadows } from './softShadows.js';
 import { createPresentPass } from './presentPass.js';
+import { fitPhoneSunShadow, registerPhoneCarpet } from './lighting.js';
 
 export const QUALITY = Object.freeze({
   high: { label: 'Графика: высокая', pixelRatio: 1.5, cascades: 3, shadowSize: 2048, halfRes: false },
@@ -173,6 +174,7 @@ export function createRenderPipeline(renderer, scene, camera, sun, lighting, dev
     const otherSuns=[];scene.traverse(o=>{if(o.isDirectionalLight&&o!==sun)otherSuns.push(o);});
     otherSuns.forEach(light=>{light.removeFromParent();light.target.removeFromParent();});
     lighting?.applyPhone?.();
+    if(scene.userData.phoneGroundFill)scene.userData.phoneGroundFill.value=profile==='minimal'?.05:.25;
     renderer.toneMapping = THREE.NoToneMapping; renderer.toneMappingExposure = 1;
     // EffectComposer disables autoClear; a downgraded scene target needs fresh
     // colour and depth every frame, including moving/flipping carpet geometry.
@@ -182,8 +184,9 @@ export function createRenderPipeline(renderer, scene, camera, sun, lighting, dev
     sun.castShadow = true;
     sun.shadow.map?.dispose(); sun.shadow.map = null;
     sun.shadow.mapSize.setScalar(PROFILES[profile].shadow);
-    Object.assign(sun.shadow.camera,{left:-6,right:6,top:6,bottom:-6,near:.1,far:85});
-    sun.shadow.camera.updateProjectionMatrix();
+    // Keep thin posts legible at each texel density; PCF supplies the soft edge.
+    sun.shadow.radius = profile === 'minimal' ? .1 : 1;
+    fitPhoneSunShadow(sun);
     scene.environment = null;
     const present = createPresentPass(renderer);
     return { quality:profile, grade:present.uniforms, get renderHeight(){return present.height;}, resize() {
@@ -197,7 +200,7 @@ export function createRenderPipeline(renderer, scene, camera, sun, lighting, dev
       const rect=renderer.domElement.getBoundingClientRect?.()||{width:window.innerWidth,height:window.innerHeight};
       present.resize(rect.width,rect.height,renderPixelRatio);
     },
-      render() { renderer.info.reset(); present.render(scene,camera); return null; }, dispose() {present.dispose();} };
+      render() { registerPhoneCarpet(scene); renderer.info.reset(); present.render(scene,camera); return null; }, dispose() {present.dispose();} };
   }
   function announce(reason) {
     diagnostics.profile = profile; diagnostics.reasons.push(reason); setAssetProfile(profile);

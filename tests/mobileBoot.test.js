@@ -42,18 +42,30 @@ describe('phone boot',()=>{
     expect(events.map(e=>e[0])).toEqual(['error','unhandledrejection','webglcontextlost']);expect(events[2][2]).toBe(true);
     setBootStep('manifest');setAssetProgress(3,21);expect(JSON.parse(diagnosticsText()).assets).toEqual({loaded:3,total:21});
   });
-  it('centres the phone panel and centres the panel; landscape keeps both posts, portrait fills the width with the carpet',()=>{
-    for(const aspect of [393/852,320/568,412/839,852/393,568/320])for(const [span,drop] of [[2.02,1.1],[2.766,1.75],[1.572,1.5]]) {
+  it('keeps phone cloth frontal, fitted and clear of the thumb strip',()=>{
+    for(const aspect of [393/852,320/568,393/727,412/839,852/393,568/320])for(const [span,drop] of [[2.02,1.1],[2.766,1.75],[1.572,1.5]]) {
       const f=cameraFraming(aspect,3.4,drop,2.15,true,span);
       const camera=new THREE.PerspectiveCamera(f.fov,aspect,.1,600);
-      camera.position.set(f.x,f.y,f.distance);camera.lookAt(0,f.targetY,0);camera.updateMatrixWorld();
+      camera.position.set(f.x,f.y,f.distance);camera.lookAt(0,f.targetY,0);
+      camera.setViewOffset(aspect*1000,1000,0,f.viewOffset*1000,aspect*1000,1000);camera.updateMatrixWorld();
       const top=new THREE.Vector3(0,2.15,0).project(camera),bottom=new THREE.Vector3(0,2.15-drop,0).project(camera);
-      expect(.5-(top.y+bottom.y)/4).toBeCloseTo(.4,5);
-      if(aspect>=1.3)for(const x of [-1.78,1.78])for(const y of [0,2.186])expect(Math.abs(new THREE.Vector3(x,y,0).project(camera).x)).toBeLessThan(.95);
-      // Portrait is carpet-first: the hanging cloth fills about 85% of the width and the posts may leave the frame.
-      else{const hw=span/2,l=new THREE.Vector3(-hw,2.15-drop/2,0).project(camera).x,r=new THREE.Vector3(hw,2.15-drop/2,0).project(camera).x;expect(r-l).toBeGreaterThan(1.4);expect(r-l).toBeLessThan(1.95);}
-      expect(f.distance).toBeGreaterThanOrEqual(3.2);
-      if(aspect<1.3)expect(f.fov).toBe(52);
+      expect(.5-(top.y+bottom.y)/4).toBeCloseTo(aspect<1.3?(drop/span>.8?.423:.42):.46,5);
+      expect(f.y).toBeGreaterThanOrEqual(1.7);expect(f.y).toBeLessThanOrEqual(2);
+      expect(Math.atan2(f.y-f.targetY,f.distance)*180/Math.PI).toBeLessThanOrEqual(6);
+      expect(f.targetY).toBeCloseTo(2.15-drop/2+.15);
+      expect(f.distance).toBeGreaterThan(0);
+      if(aspect<1.3){
+        expect(f.fov).toBe(50);expect(f.y).toBeGreaterThanOrEqual(1.8);expect(f.y).toBeLessThanOrEqual(1.95);
+        const l=new THREE.Vector3(-span/2,2.15-drop/2,0).project(camera),r=new THREE.Vector3(span/2,2.15-drop/2,0).project(camera);
+        expect((r.x-l.x)/2).toBeGreaterThanOrEqual(.92);expect((r.x-l.x)/2).toBeLessThanOrEqual(1.06);
+      }else{
+        expect((top.y-bottom.y)/2).toBeCloseTo(Math.min(.62,.56*aspect*drop/span),5);expect(f.distance).toBeLessThanOrEqual(5);
+      }
+      expect((1-bottom.y)/2).toBeLessThan(.8);
+      for(const x of [-span/3,0,span/3]){
+        const target=new THREE.Vector3(x,2.15-drop/2,0),ndc=target.clone().project(camera),ray=new THREE.Raycaster();ray.setFromCamera(ndc,camera);
+        const hit=ray.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0,0,1),0),new THREE.Vector3());expect(hit.distanceTo(target)).toBeLessThan(1e-8);
+      }
     }
   });
 });

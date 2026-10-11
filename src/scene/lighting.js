@@ -1,32 +1,107 @@
 import * as THREE from 'three';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 
 // Source behind-left of the rack; shadows run toward the +Z default camera.
 // A 2m rack casts a 15.2m shadow across the pad and foreground lawn.
 export const SUNSET_ELEVATION = 7.5;
+export const SUNSET_INTENSITY = 6;
+export function sunsetColour(temperature = 3500) {
+ const t=THREE.MathUtils.clamp((temperature-3500)/500,0,1);
+ return new THREE.Color().setRGB(1,THREE.MathUtils.lerp(.755,.807,t),THREE.MathUtils.lerp(.552,.652,t),THREE.SRGBColorSpace);
+}
 export function sunsetDirection() {
  const elevation=THREE.MathUtils.degToRad(SUNSET_ELEVATION);
  return new THREE.Vector3(-.75,0,-.66).normalize().multiplyScalar(Math.cos(elevation)).setY(Math.sin(elevation));
 }
 
-// No HDR, PMREM or AO bake on phones. Diffuse sky/ground plus a small front
-// bounce replace the lost environment at a fixed cost of two cheap lights.
+// No HDR, PMREM or AO bake on phones. Cool sky and warm ground replace IBL.
 export function applyPhoneLighting(scene,sun,yard) {
  const sky=yard.sky.material.uniforms;
  sky.zenith.value.set('#8e7294');sky.horizon.value.set('#ffa276').multiplyScalar(1.1);
  sky.sunDirection.value.copy(sunsetDirection());sky.sunColour.value.set('#ffbd86').multiplyScalar(3);
  sky.sunRadius.value.set(.004,.006);scene.fog?.color.set('#d6a18c');
  yard.sky.visible=true;scene.environment=null;
- yard.bounce.color.set('#fff1df');yard.bounce.groundColor.set('#b6adb0');yard.bounce.intensity=2.8;
+ yard.bounce.color.set('#b5c9ff');yard.bounce.groundColor.set('#866044');yard.bounce.intensity=1.5;
  let ambient=scene.getObjectByName('phone-ambient');
- if(!ambient){ambient=new THREE.AmbientLight('#e8e1db',.35);ambient.name='phone-ambient';scene.add(ambient);}
+ if(ambient)ambient.removeFromParent();
  let bounce=scene.getObjectByName('phone-sun-bounce');
- if(!bounce){bounce=new THREE.DirectionalLight('#ffe7cf',.65);bounce.name='phone-sun-bounce';bounce.position.set(-2,3,6);bounce.target.position.set(0,1,0);scene.add(bounce,bounce.target);}
- // Sun reaches the hanging front at rest; distant perimeter shells do not
+ if(!bounce){bounce=new THREE.HemisphereLight('#000000','#ffc58f',.35);bounce.name='phone-sun-bounce';scene.add(bounce);}
+ // Sun reaches the hanging back at rest; distant perimeter shells do not
  // cast into the play area. PCF and limited intensity keep shade light.
- sun.color.set('#ffbd86');sun.intensity=3;sun.position.set(-12,18,24);sun.target.position.set(0,1,0);
- sun.shadow.intensity=.4;sun.shadow.radius=3;sun.shadow.normalBias=.015;
+ sun.color.copy(yard.hdrSun?.color||sunsetColour());sun.intensity=SUNSET_INTENSITY;
+ sun.target.position.set(0,1,0);sun.position.copy(sunsetDirection().multiplyScalar(65).add(sun.target.position));
+ sun.shadow.intensity=.6;sun.shadow.radius=2;sun.shadow.bias=-.00002;sun.shadow.normalBias=.008;
  yard.backdrop.group.traverse(o=>{if(o.isMesh)o.castShadow=false;});
- scene.userData.phoneLighting={noIBL:true,hemisphere:2.8,ambient:.35,bounce:.65,shadowIntensity:.4};
+ yard.root.traverse(o=>{if(!o.isMesh)return;
+  if(['tree','birch'].includes(o.parent?.userData.stockRole))o.castShadow=true;
+  if(o.material===yard.materials.chainlink)o.castShadow=true;
+ });
+ retainPhoneCasters(yard);
+ const groundFill=scene.userData.phoneGroundFill??={value:.25};
+ for(const m of [yard.materials.asphalt,yard.materials.grass,yard.materials.blades]){
+  if(m.userData.phoneGroundSun)continue;m.userData.phoneGroundSun=true;
+  const compile=m.onBeforeCompile,cache=m.customProgramCacheKey;
+  m.onBeforeCompile=function(shader,renderer){compile.call(this,shader,renderer);
+   shader.uniforms.phoneGroundFill=groundFill;
+   shader.fragmentShader='uniform float phoneGroundFill;\n'+shader.fragmentShader;
+   // A diffuse grazing-angle boost keeps a cheap low sun legible on the pad.
+   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
+    reflectedLight.indirectDiffuse*=phoneGroundFill;`);
+   shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`outgoingLight+=reflectedLight.directDiffuse*9.0;
+    #include <opaque_fragment>`);
+  };m.customProgramCacheKey=function(){return `${cache.call(this)}:phone-ground-sun`;};m.needsUpdate=true;
+ }
+ scene.userData.phoneLighting={noIBL:true,hemisphere:1.5,bounce:.35,shadowIntensity:.6,elevation:SUNSET_ELEVATION,sunDirection:sunsetDirection().toArray()};
+}
+
+function retainPhoneCasters(yard) {
+ if(yard.root.getObjectByName('phone-near-casters'))return;
+ const pieces=[],matrix=new THREE.Matrix4(),position=new THREE.Vector3();yard.root.updateMatrixWorld(true);
+ yard.root.traverse(o=>{
+  if(!o.isInstancedMesh||!o.visible||o.material===yard.materials.foliage||o.material===yard.materials.chainlink)return;
+  for(let i=0;i<o.count;i++){
+   const role=o.userData.fallbackEntries?.[i]?.role;
+   if(!role||!(role.startsWith('tree-')||['service-fence','lawn-fence','lamp'].includes(role)))continue;
+   o.getMatrixAt(i,matrix);matrix.premultiply(o.matrixWorld);position.setFromMatrixPosition(matrix);
+   if(position.x < -16||position.x > 18||position.z < -18||position.z > 8)continue;
+   const g=o.geometry.clone().applyMatrix4(matrix);for(const key of Object.keys(g.attributes))if(key!=='position')g.deleteAttribute(key);
+   pieces.push(g.index?g.toNonIndexed():g);if(g.index)g.dispose();
+  }
+ });
+ if(!pieces.length)return;
+ const geometry=mergeGeometries(pieces);pieces.forEach(g=>g.dispose());
+ const material=new THREE.MeshBasicMaterial();material.userData.shadowOnly=true;
+ const mesh=new THREE.Mesh(geometry,material);mesh.name='phone-near-casters';mesh.castShadow=true;mesh.userData.performanceCastShadow=true;
+ geometry.setDrawRange(0,0);mesh.onBeforeShadow=()=>geometry.setDrawRange(0,Infinity);mesh.onAfterShadow=()=>geometry.setDrawRange(0,0);
+ yard.root.add(mesh);
+}
+
+export function registerPhoneCarpet(scene) {
+ const carpet=scene.getObjectByName('carpet');if(!carpet)return;
+ carpet.traverse(o=>{const m=o.material;if(!m||m.userData.phoneSunBounce)return;
+  if(m.name!=='carpet-wool'&&o.name!=='carpet-fringe')return;
+  m.userData.phoneSunBounce=true;const compile=m.onBeforeCompile,cache=m.customProgramCacheKey;
+  m.onBeforeCompile=function(shader,renderer){compile.call(this,shader,renderer);
+   // Local ground reflection fills the front of the backlit hero. Wool's
+   // existing white balance and exposure cap still protect the scan colours.
+   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
+    reflectedLight.indirectDiffuse+=diffuseColor.rgb*vec3(.48,.45,.42);`);
+   if(o.name==='carpet-fringe')shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`outgoingLight+=diffuseColor.rgb*vec3(.12,.055,.015)*pow(1.0-abs(dot(normal,geometryViewDir)),2.0);
+    #include <opaque_fragment>`);
+  };m.customProgramCacheKey=function(){return `${cache.call(this)}:phone-sun-bounce`;};m.needsUpdate=true;
+ });
+}
+
+// Fixed world footprint contains the pad, rack, carpet, benches, nearest lamp
+// and trees, including the foreground where the low sun projects their shadows.
+// Fit in light space once; camera rotation never resizes or reallocates the map.
+export function fitPhoneSunShadow(sun) {
+ sun.updateMatrixWorld(true);sun.target.updateMatrixWorld(true);
+ const camera=sun.shadow.camera;camera.position.copy(sun.position);camera.lookAt(sun.target.position);camera.updateMatrixWorld(true);
+ const bounds=new THREE.Box3();
+ for(const x of [-16,18])for(const y of [0,12])for(const z of [-18,24])bounds.expandByPoint(new THREE.Vector3(x,y,z).applyMatrix4(camera.matrixWorldInverse));
+ Object.assign(camera,{left:bounds.min.x-1,right:bounds.max.x+1,bottom:bounds.min.y-1,top:bounds.max.y+1,near:Math.max(.1,-bounds.max.z-2),far:-bounds.min.z+2});
+ camera.updateProjectionMatrix();sun.shadow.needsUpdate=true;
 }
 
 // HDRLoader rows run from zenith to nadir (flipY on upload).
@@ -40,8 +115,7 @@ export function analyseSun(image) {
  // The solar disc is clipped red in this HDR; constrain its channel-ratio
  // temperature estimate to the requested photographic golden-hour range.
  const temperature=THREE.MathUtils.clamp(4000-1000*(data[index*4]/Math.max(data[index*4+1],1)-1),3500,4000);
- const t=(temperature-3500)/500;
- const color=new THREE.Color().setRGB(1,THREE.MathUtils.lerp(.755,.807,t),THREE.MathUtils.lerp(.552,.652,t),THREE.SRGBColorSpace);
+ const color=sunsetColour(temperature);
  const yaw=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0),phi-Math.atan2(direction.z,direction.x));
  const aligned=source.clone().applyQuaternion(yaw);
  const rotation=new THREE.Euler().setFromQuaternion(new THREE.Quaternion().setFromUnitVectors(aligned,direction).multiply(yaw));
@@ -142,7 +216,7 @@ export function createLightingState(scene,sun,fill,yard) {
    if(['tree','birch'].includes(o.parent?.userData.stockRole))o.castShadow=low?o.userData.legacyCastShadow:true;
    if(o.material===yard.materials.chainlink)o.castShadow=!low;
   });
-  const direction=low?legacy.direction:sunsetDirection().negate(),color=low?legacy.sunColor:analysis?.color||new THREE.Color('#ffbd86'),intensity=low?legacy.sunIntensity:6;
+  const direction=low?legacy.direction:sunsetDirection().negate(),color=low?legacy.sunColor:analysis?.color||sunsetColour(),intensity=low?legacy.sunIntensity:SUNSET_INTENSITY;
   scene.userData.lighting={temperature:low?null:analysis?.temperature??3500,elevation:low?THREE.MathUtils.radToDeg(Math.asin(-legacy.direction.y)):SUNSET_ELEVATION,sourceElevation:analysis?.sourceElevation,environmentIntensity:scene.environmentIntensity,skyFill:low?'legacy hemisphere':scene.environment?'HDRI, warm white balance':'limited fallback hemisphere',staticAO:!low,sunDirection:direction.toArray()};
   return {direction,color,intensity};
  }

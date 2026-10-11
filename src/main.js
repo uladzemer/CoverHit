@@ -91,6 +91,7 @@ async function boot() {
   const lookTarget = new THREE.Vector3();
   const desiredCamera = new THREE.Vector3();
   const desiredTarget = new THREE.Vector3();
+  let viewOffset = 0, desiredViewOffset = 0;
   let desiredFov = 48, framingReady = false, phoneFraming = false;
   if (yard.renderFallback) { device.name = 'lite'; setAssetProfile('lite'); }
   // Soft courtyard bounce lights the front; the pipeline cascades own sun shadows.
@@ -337,6 +338,7 @@ async function boot() {
     phoneFraming = device.mobile || camera.aspect < 1.3;
     const framing = cameraFraming(camera.aspect, yard.barLength, carpet.cloth.drop, BAR_HEIGHT, phoneFraming, carpet.cloth.span);
     desiredFov = framing.fov;
+    desiredViewOffset = framing.viewOffset || 0;
     desiredCamera.set(framing.x, framing.y, framing.distance);
     desiredTarget.copy(yard.barPosition).add(new THREE.Vector3(0, -carpet.cloth.drop / 2, 0));
     if (framing.phone) desiredTarget.y = framing.targetY;
@@ -344,10 +346,13 @@ async function boot() {
       baseCamera.copy(desiredCamera);
       lookTarget.copy(desiredTarget);
       camera.fov = desiredFov;
+      viewOffset = desiredViewOffset;
       camera.position.copy(baseCamera);
       camera.lookAt(lookTarget);
       framingReady = true;
     }
+    if (phoneFraming) camera.setViewOffset(rect.width, rect.height, 0, viewOffset * rect.height, rect.width, rect.height);
+    else camera.clearViewOffset();
     camera.updateProjectionMatrix();
     pipeline.updateCameraFraming();
     camera.updateMatrixWorld();
@@ -439,7 +444,10 @@ async function boot() {
       const blend = 1 - Math.exp(-Math.min(dt, .1) * 10);
       baseCamera.lerp(desiredCamera, blend);
       lookTarget.lerp(desiredTarget, blend);
-      if (Math.abs(desiredFov - camera.fov) > 1e-6) {
+      if (Math.abs(desiredFov - camera.fov) > 1e-6 || Math.abs(desiredViewOffset - viewOffset) > 1e-6) {
+        viewOffset += (desiredViewOffset - viewOffset) * blend;
+        const rect = renderer.domElement.getBoundingClientRect();
+        camera.setViewOffset(rect.width, rect.height, 0, viewOffset * rect.height, rect.width, rect.height);
         camera.fov += (desiredFov - camera.fov) * blend;
         camera.updateProjectionMatrix();
         pipeline.updateCameraFraming();
@@ -456,6 +464,9 @@ async function boot() {
           0,
         ),
       );
+    // Impact shake must respect the phone's six-degree ceiling too.
+    if (phoneFraming) camera.position.y = Math.min(camera.position.y,
+      lookTarget.y + Math.hypot(camera.position.x - lookTarget.x, camera.position.z - lookTarget.z) * Math.tan(Math.PI / 30));
     camera.lookAt(lookTarget);
     camera.updateMatrixWorld();
     moths.update(dt);
